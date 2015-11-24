@@ -120,7 +120,7 @@ CREATE TABLE users
 	roleID               TINYINT NOT NULL,
 	email                VARCHAR(30) NOT NULL,
 	phone                VARCHAR(15) NOT NULL,
-	cash_amount          DECIMAL(10,2) NOT NULL,
+	cash_amount          DECIMAL(10,2) NULL,
 PRIMARY KEY PK_users(userID)
 );
  

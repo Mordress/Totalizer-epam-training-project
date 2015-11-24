@@ -7,5 +7,6 @@
     <file url="file://$PROJECT_DIR$/dbscheme/sql/3_insert_roles.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/dbscheme/sql/4_insert_races.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/dbscheme/sql/5_insert_horse_races.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/dbscheme/sql/6_insert_users.sql" dialect="MySQL" />
   </component>
 </project>
