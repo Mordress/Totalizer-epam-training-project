@@ -7,23 +7,14 @@ import java.util.List;
 public class User extends Entity {
 
     private String login;
-
     private String firstName;
-
     private String lastName;
-
-    private String pass;
-
+    private String password;
     private String email;
-
     private String phone;
-
     private Role role;
-
     private BigDecimal cashAmount;
-
     private Calendar registrationDate;
-
     private List<Bet> bets;
 
     public String getLogin() {
@@ -50,12 +41,12 @@ public class User extends Entity {
         this.lastName = lastName;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {

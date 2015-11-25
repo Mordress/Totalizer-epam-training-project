@@ -5,7 +5,6 @@ import java.util.Calendar;
 public class Race extends Entity {
 
     private Calendar raceDate;
-
     private Integer distance;
 
     public Calendar getRaceDate() {

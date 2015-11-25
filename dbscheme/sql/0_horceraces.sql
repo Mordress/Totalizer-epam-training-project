@@ -113,7 +113,7 @@ PRIMARY KEY PK_role (roleID)
 CREATE TABLE users
 (
 	userID               INTEGER AUTO_INCREMENT,
-	login                CHAR(30) NOT NULL,
+	login                CHAR(30) UNIQUE NOT NULL,
 	firstName            VARCHAR(30) NOT NULL,
 	lastName             VARCHAR(30) NOT NULL,
 	password             VARCHAR(255) NOT NULL,

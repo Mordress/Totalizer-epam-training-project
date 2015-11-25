@@ -5,11 +5,8 @@ import java.util.Calendar;
 public class HorseRace extends Entity {
 
     private Race race;
-
     private Horse horse;
-
     private Integer resultRank;
-
     private Calendar resultTime;
 
     public Race getRace() {
