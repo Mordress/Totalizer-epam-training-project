@@ -116,7 +116,7 @@ CREATE TABLE users
 	login                CHAR(30) NOT NULL,
 	firstName            VARCHAR(30) NOT NULL,
 	lastName             VARCHAR(30) NOT NULL,
-	password             VARCHAR(25) NOT NULL,
+	password             VARCHAR(255) NOT NULL,
 	roleID               TINYINT NOT NULL,
 	email                VARCHAR(30) NOT NULL,
 	phone                VARCHAR(15) NOT NULL,
