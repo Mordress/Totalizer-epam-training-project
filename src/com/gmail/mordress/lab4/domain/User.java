@@ -1,8 +1,10 @@
-package domain;
+package com.gmail.mordress.lab4.domain;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class User extends Entity {
 
@@ -24,7 +26,7 @@ public class User extends Entity {
 
     private Calendar registrationDate;
 
-    private List<Bet> bets;
+    private Set<Bet> bets = new HashSet<Bet>();
 
     public String getLogin() {
         return login;
@@ -90,11 +92,11 @@ public class User extends Entity {
         this.cashAmount = cashAmount;
     }
 
-    public List<Bet> getBets() {
+    public Set<Bet> getBets() {
         return bets;
     }
 
-    public void setBets(List<Bet> bets) {
+    public void setBets(Set<Bet> bets) {
         this.bets = bets;
     }
 

@@ -1,4 +1,4 @@
-package dao.pool;
+package com.gmail.mordress.lab4.dao.pool;
 
 import org.apache.log4j.Logger;
 

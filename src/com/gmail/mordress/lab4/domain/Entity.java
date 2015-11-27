@@ -1,25 +1,25 @@
-package domain;
+package com.gmail.mordress.lab4.domain;
 
 import java.io.Serializable;
 
 public abstract class Entity  implements Serializable {
 
-    private Integer identity;
+    private Integer id;
 
-    public Integer getIdentity() {
-        return identity;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdentity(Integer identity) {
-        this.identity = identity;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Override
     public boolean equals(Object obj) {
         if(obj != null) {
             if(obj != this) {
-                if(obj.getClass() == getClass() && identity != null) {
-                    return identity.equals(((Entity)obj).identity);
+                if(obj.getClass() == getClass() && id != null) {
+                    return id.equals(((Entity)obj).id);
                 }
                 return false;
             }
@@ -30,6 +30,6 @@ public abstract class Entity  implements Serializable {
 
     @Override
     public int hashCode() {
-        return identity != null ? identity.hashCode() : 0;
+        return id != null ? id.hashCode() : 0;
     }
 }

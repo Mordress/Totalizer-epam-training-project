@@ -1,4 +1,4 @@
-package domain;
+package com.gmail.mordress.lab4.domain;
 
 public class Breed extends Entity {
 
