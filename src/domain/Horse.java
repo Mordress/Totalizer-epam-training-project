@@ -3,8 +3,11 @@ package domain;
 public class Horse extends Entity {
 
     private String name;
+
     private Breed breed;
+
     private Integer weight;
+
     private Integer age;
 
     public String getName() {

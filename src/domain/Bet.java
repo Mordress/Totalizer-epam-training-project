@@ -6,12 +6,19 @@ import java.util.Calendar;
 public class Bet extends Entity {
 
     private HorseRace horseRace;
+
     private Integer resultRank;
+
     private Calendar resultTime;
+
     private BigDecimal betAmount;
+
     private BigDecimal winAmount;
+
     private Boolean isWinner;
+
     private User user;
+
     private Calendar createdDate;
 
     public HorseRace getHorseRace() {
