@@ -1,16 +1,16 @@
 package com.gmail.mordress.lab4.dao;
 
-import com.gmail.mordress.lab4.exceptions.PersistentException;
 import java.io.Serializable;
+import java.sql.SQLException;
 
 
-public interface Dao<T, PK extends Serializable> {
+public interface Dao<T extends Serializable> {
 
-    PK create(T instance) throws PersistentException;
+    public Integer create(T instance) throws SQLException;
 
-    T read(PK id) throws PersistentException;
+    public T read(Integer id) throws SQLException;
 
-    void update(T instance) throws PersistentException;
+    public void update(T instance) throws SQLException;
 
-    void delete(PK id) throws PersistentException;
+    public void delete(Integer id) throws SQLException;
 }

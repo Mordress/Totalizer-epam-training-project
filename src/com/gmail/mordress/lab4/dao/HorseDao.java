@@ -1,10 +1,16 @@
 package com.gmail.mordress.lab4.dao;
 
+import com.gmail.mordress.lab4.domain.Breed;
 import com.gmail.mordress.lab4.domain.Horse;
-import com.gmail.mordress.lab4.exceptions.PersistentException;
 
-public interface HorseDao  extends Dao<Horse, Integer>{
+import java.util.List;
 
-    Horse find(String name) throws PersistentException;
+public interface HorseDao  extends Dao<Horse> {
+
+    public Horse findByName(String name) throws DaoException;
+
+    public List<Horse> findHorsesByBreed(Breed breed) throws DaoException;
+
+    public List<Horse> getAllHorses() throws DaoException;
 
 }
