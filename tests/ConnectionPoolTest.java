@@ -1,16 +1,9 @@
-
 import com.gmail.mordress.lab4.dao.pool.ConnectionPool;
-import com.gmail.mordress.lab4.exceptions.PersistentException;
-import org.apache.log4j.Logger;
-
 import java.sql.Connection;
 
 public class ConnectionPoolTest {
 
     public static void main(String[] args) {
-        /*Logger logger = Logger.getLogger(ConnectionPoolTest.class);
-        logger.*/
-
         ConnectionPool pool = ConnectionPool.getInstance();
         try {
             pool.init();
