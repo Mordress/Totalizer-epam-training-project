@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - horse_racing@localhost" uuid="2c8d121c-d1db-4ba6-a1ce-180d3c17d2bf">
+  <data-source name="MySQL - racing@localhost" uuid="5924bf51-ee72-4ebc-9647-648b4bd4a7d1">
     <database-info product="MySQL" version="5.7.9-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
-    <schema name="" catalog="horse_racing"/>
-    <table name="bet" schema="" catalog="horse_racing" type="TABLE">
+    <schema name="" catalog="racing"/>
+    <table name="bet" schema="" catalog="racing" type="TABLE">
       <column name="bet_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="horse_race_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="result_rank" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
@@ -18,56 +18,56 @@
       <column name="user_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="created_date" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
       <primary-key name="PRIMARY" columns="bet_ID"/>
-      <foreign-key name="bet_ibfk_1" columns="horse_race_ID" ref-table="horse_race" ref-schema="" ref-catalog="horse_racing" ref-columns="horse_race_ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="bet_ibfk_2" columns="user_ID" ref-table="users" ref-schema="" ref-catalog="horse_racing" ref-columns="user_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="bet_ibfk_1" columns="horse_race_ID" ref-table="horse_race" ref-schema="" ref-catalog="racing" ref-columns="horse_race_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="bet_ibfk_2" columns="user_ID" ref-table="users" ref-schema="" ref-catalog="racing" ref-columns="user_ID" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="XIF1_bet_horse_race_ID" unique="false" columns="horse_race_ID"/>
       <index name="XIF2_bet_user_ID" unique="false" columns="user_ID"/>
     </table>
-    <table name="breed" schema="" catalog="horse_racing" type="TABLE">
+    <table name="breed" schema="" catalog="racing" type="TABLE">
       <column name="breed_ID" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="breed_ID"/>
-      <exported-key name="horse_ibfk_1" table="horse" schema="" catalog="horse_racing" columns="breed_ID"/>
+      <exported-key name="horse_ibfk_1" table="horse" schema="" catalog="racing" columns="breed_ID"/>
     </table>
-    <table name="horse" schema="" catalog="horse_racing" type="TABLE">
+    <table name="horse" schema="" catalog="racing" type="TABLE">
       <column name="horse_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
       <column name="breed_ID" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="weight" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5"/>
       <column name="age" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <primary-key name="PRIMARY" columns="horse_ID"/>
-      <foreign-key name="horse_ibfk_1" columns="breed_ID" ref-table="breed" ref-schema="" ref-catalog="horse_racing" ref-columns="breed_ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="horse_race_ibfk_1" table="horse_race" schema="" catalog="horse_racing" columns="horse_ID"/>
+      <foreign-key name="horse_ibfk_1" columns="breed_ID" ref-table="breed" ref-schema="" ref-catalog="racing" ref-columns="breed_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="horse_race_ibfk_1" table="horse_race" schema="" catalog="racing" columns="horse_ID"/>
       <index name="XIF1_horse_breed_ID" unique="false" columns="breed_ID"/>
     </table>
-    <table name="horse_race" schema="" catalog="horse_racing" type="TABLE">
+    <table name="horse_race" schema="" catalog="racing" type="TABLE">
       <column name="horse_race_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="race_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="horse_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="result_rank" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
       <column name="result_time" sqlType="TIME" precision="8" scale="0" nullable="true" jdbcType="92"/>
       <primary-key name="PRIMARY" columns="horse_race_ID"/>
-      <foreign-key name="horse_race_ibfk_1" columns="horse_ID" ref-table="horse" ref-schema="" ref-catalog="horse_racing" ref-columns="horse_ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="horse_race_ibfk_2" columns="race_ID" ref-table="race" ref-schema="" ref-catalog="horse_racing" ref-columns="race_ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="bet_ibfk_1" table="bet" schema="" catalog="horse_racing" columns="horse_race_ID"/>
+      <foreign-key name="horse_race_ibfk_1" columns="horse_ID" ref-table="horse" ref-schema="" ref-catalog="racing" ref-columns="horse_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="horse_race_ibfk_2" columns="race_ID" ref-table="race" ref-schema="" ref-catalog="racing" ref-columns="race_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="bet_ibfk_1" table="bet" schema="" catalog="racing" columns="horse_race_ID"/>
       <index name="UIX_horse_race_race_ID_horse_ID" unique="true" columns="race_ID,horse_ID"/>
       <index name="XIF1_horse_race_horse_ID" unique="false" columns="horse_ID"/>
     </table>
-    <table name="race" schema="" catalog="horse_racing" type="TABLE">
+    <table name="race" schema="" catalog="racing" type="TABLE">
       <column name="race_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="distance" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="race_ID"/>
-      <exported-key name="horse_race_ibfk_2" table="horse_race" schema="" catalog="horse_racing" columns="race_ID"/>
+      <exported-key name="horse_race_ibfk_2" table="horse_race" schema="" catalog="racing" columns="race_ID"/>
     </table>
-    <table name="role" schema="" catalog="horse_racing" type="TABLE">
+    <table name="role" schema="" catalog="racing" type="TABLE">
       <column name="role_ID" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="role_ID"/>
-      <exported-key name="users_ibfk_1" table="users" schema="" catalog="horse_racing" columns="role_ID"/>
+      <exported-key name="users_ibfk_1" table="users" schema="" catalog="racing" columns="role_ID"/>
       <index name="name" unique="true" columns="name"/>
     </table>
-    <table name="users" schema="" catalog="horse_racing" type="TABLE">
+    <table name="users" schema="" catalog="racing" type="TABLE">
       <column name="user_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="login" sqlType="CHAR" precision="30" scale="0" nullable="false" jdbcType="1"/>
       <column name="first_name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
@@ -78,8 +78,8 @@
       <column name="phone" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12"/>
       <column name="cash_amount" sqlType="DECIMAL" precision="10" scale="2" nullable="true" jdbcType="3"/>
       <primary-key name="PRIMARY" columns="user_ID"/>
-      <foreign-key name="users_ibfk_1" columns="role_ID" ref-table="role" ref-schema="" ref-catalog="horse_racing" ref-columns="role_ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="bet_ibfk_2" table="bet" schema="" catalog="horse_racing" columns="user_ID"/>
+      <foreign-key name="users_ibfk_1" columns="role_ID" ref-table="role" ref-schema="" ref-catalog="racing" ref-columns="role_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="bet_ibfk_2" table="bet" schema="" catalog="racing" columns="user_ID"/>
       <index name="login" unique="true" columns="login"/>
       <index name="UIX_user_login" unique="true" columns="login"/>
       <index name="XIF1_users_role_ID" unique="false" columns="role_ID"/>
