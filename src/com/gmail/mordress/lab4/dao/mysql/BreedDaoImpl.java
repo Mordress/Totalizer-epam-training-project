@@ -76,7 +76,6 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
         }
     }
 
-
     @Override
     public Integer create(Breed instance) throws DaoException {
         String sql = "INSERT INTO `breed` (`name`) VALUES (?)";
