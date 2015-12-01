@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
@@ -30,8 +31,26 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
         String sql = "INSERT INTO `breed` (`name`) VALUES (?)";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-
-        return null;
+        try {
+            statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            statement.setString(1, instance.getName());
+            resultSet = statement.getGeneratedKeys();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            } else {
+                logger.error("There is no autoincremented index after trying to add record into table `breed`");
+                throw new DaoException();
+            }
+        } catch (SQLException e) {
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
