@@ -3,7 +3,6 @@ package com.gmail.mordress.lab4.dao.mysql;
 import com.gmail.mordress.lab4.dao.BreedDao;
 import com.gmail.mordress.lab4.dao.DaoException;
 import com.gmail.mordress.lab4.domain.Breed;
-import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
 
 import java.sql.PreparedStatement;

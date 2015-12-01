@@ -132,31 +132,32 @@ CREATE INDEX XIF1_users_role_ID ON users
 
 
 ALTER TABLE bet
-ADD FOREIGN KEY FK_horse_race_to_bet (horse_race_ID) REFERENCES horse_race (horse_race_ID);
+ADD FOREIGN KEY FK_horse_race_to_bet (horse_race_ID) REFERENCES horse_race (horse_race_ID) ON UPDATE CASCADE
+	ON DELETE RESTRICT;
 
 
 
 ALTER TABLE bet
-ADD FOREIGN KEY FK_users_to_bet (user_ID) REFERENCES users (user_ID);
+ADD FOREIGN KEY FK_users_to_bet (user_ID) REFERENCES users (user_ID) ON UPDATE CASCADE ON DELETE RESTRICT;
 
 
 
 ALTER TABLE horse
-ADD FOREIGN KEY FK_breed_to_horse (breed_ID) REFERENCES breed (breed_ID);
+ADD FOREIGN KEY FK_breed_to_horse (breed_ID) REFERENCES breed (breed_ID) ON UPDATE CASCADE ON DELETE RESTRICT;
 
 
 
 ALTER TABLE horse_race
-ADD FOREIGN KEY FK_horse_to_horse_race (horse_ID) REFERENCES horse (horse_ID);
+ADD FOREIGN KEY FK_horse_to_horse_race (horse_ID) REFERENCES horse (horse_ID) ON UPDATE CASCADE ON DELETE RESTRICT;
 
 
 
 ALTER TABLE horse_race
-ADD FOREIGN KEY FK_race_to_horse_race (race_ID) REFERENCES race (race_ID);
+ADD FOREIGN KEY FK_race_to_horse_race (race_ID) REFERENCES race (race_ID) ON UPDATE CASCADE ON DELETE RESTRICT;
 
 
 
 ALTER TABLE users
-ADD FOREIGN KEY FK_role_to_users (role_ID) REFERENCES role (role_ID);
+ADD FOREIGN KEY FK_role_to_users (role_ID) REFERENCES role (role_ID) ON UPDATE CASCADE ON DELETE RESTRICT;
 
 
