@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
@@ -18,13 +19,64 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
 
     @Override
     public Breed findByName(String name) throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `breed` WHERE `name` = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, name);
+            resultSet = statement.executeQuery();
+            Breed breed = new Breed();
+            if (resultSet.next()) {
+                breed = new Breed();
+                breed.setId(resultSet.getInt("breed_ID"));
+                breed.setName(resultSet.getString("name"));
+            }
+            return breed;
+        } catch (SQLException e) {
+            logger.debug("Can not find breed with name = " + name);
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
+
     }
 
     @Override
     public List<Breed> getAllBreeds() throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `breed` ORDER BY `name`";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+            List<Breed> breeds = new ArrayList<>();
+            Breed breed = null;
+            while (resultSet.next()) {
+                breed = new Breed();
+                breed.setId(resultSet.getInt("breed_ID"));
+                breed.setName(resultSet.getString("name"));
+                breeds.add(breed);
+            }
+            return breeds;
+        } catch (SQLException e) {
+            logger.debug("Can not read all breeds");
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
+
 
     @Override
     public Integer create(Breed instance) throws DaoException {
