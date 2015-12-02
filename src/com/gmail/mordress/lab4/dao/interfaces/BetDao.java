@@ -1,5 +1,6 @@
-package com.gmail.mordress.lab4.dao;
+package com.gmail.mordress.lab4.dao.interfaces;
 
+import com.gmail.mordress.lab4.exceptions.DaoException;
 import com.gmail.mordress.lab4.domain.Bet;
 import com.gmail.mordress.lab4.domain.User;
 

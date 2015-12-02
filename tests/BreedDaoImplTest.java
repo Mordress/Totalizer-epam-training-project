@@ -1,6 +1,5 @@
-import com.gmail.mordress.lab4.dao.DaoException;
-import com.gmail.mordress.lab4.dao.mysql.BaseDaoImpl;
-import com.gmail.mordress.lab4.dao.mysql.BreedDaoImpl;
+import com.gmail.mordress.lab4.exceptions.DaoException;
+import com.gmail.mordress.lab4.dao.implementation.BreedDaoImpl;
 import com.gmail.mordress.lab4.domain.Breed;
 
 import java.util.List;

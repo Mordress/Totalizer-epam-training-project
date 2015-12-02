@@ -1,4 +1,6 @@
-package com.gmail.mordress.lab4.dao;
+package com.gmail.mordress.lab4.dao.interfaces;
+
+import com.gmail.mordress.lab4.exceptions.DaoException;
 
 public interface DaoFactory {
 

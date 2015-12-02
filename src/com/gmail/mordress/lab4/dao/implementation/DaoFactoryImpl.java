@@ -1,7 +1,11 @@
-package com.gmail.mordress.lab4.dao.mysql;
+package com.gmail.mordress.lab4.dao.implementation;
 
-import com.gmail.mordress.lab4.dao.*;
+import com.gmail.mordress.lab4.dao.interfaces.BreedDao;
+import com.gmail.mordress.lab4.dao.interfaces.Dao;
+import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
+import com.gmail.mordress.lab4.dao.interfaces.HorseDao;
 import com.gmail.mordress.lab4.dao.pool.ConnectionPool;
+import com.gmail.mordress.lab4.exceptions.DaoException;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
 import java.sql.Connection;

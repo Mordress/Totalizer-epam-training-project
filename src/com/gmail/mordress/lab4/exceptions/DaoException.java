@@ -1,4 +1,4 @@
-package com.gmail.mordress.lab4.dao;
+package com.gmail.mordress.lab4.exceptions;
 
 public class DaoException extends Exception {
 

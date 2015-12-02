@@ -1,7 +1,7 @@
-package com.gmail.mordress.lab4.dao.mysql;
+package com.gmail.mordress.lab4.dao.implementation;
 
-import com.gmail.mordress.lab4.dao.DaoException;
-import com.gmail.mordress.lab4.dao.HorseDao;
+import com.gmail.mordress.lab4.exceptions.DaoException;
+import com.gmail.mordress.lab4.dao.interfaces.HorseDao;
 import com.gmail.mordress.lab4.domain.Breed;
 import com.gmail.mordress.lab4.domain.Horse;
 import org.apache.log4j.Logger;
@@ -81,8 +81,9 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
 
             }
         } catch (SQLException e) {
-
+            //TODO
         }
+        return null;
     }
 
     @Override
