@@ -40,12 +40,13 @@ public class DaoFactoryImpl implements DaoFactory {
 
     @SuppressWarnings("unchecked")
     @Override
-    public <T extends Dao<?>> T createDao(Class<T> key) throws DaoException {
+    public <T extends Dao<?>> T createDao(Class<? extends Dao<?>> key) throws DaoException {
         Class<? extends BaseDaoImpl> value = classes.get(key);
         if(value != null) {
             try {
                 BaseDaoImpl dao = value.newInstance();
                 dao.setConnection(connection);
+                logger.debug("Successful creating DAO " + dao.getClass());
                 return (T)dao;
             } catch(InstantiationException | IllegalAccessException e) {
                 logger.error("It is impossible to create DAO", e);

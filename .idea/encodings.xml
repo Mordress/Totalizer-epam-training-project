@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/logs/log_file.log" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/servlets/TestServlet.java" charset="UTF-8" />
   </component>
 </project>

@@ -62,6 +62,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
                 breed.setName(resultSet.getString("name"));
                 breeds.add(breed);
             }
+            logger.debug("Successful read breeds");
             return breeds;
         } catch (SQLException e) {
             logger.debug("Can not read all breeds");

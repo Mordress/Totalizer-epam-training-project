@@ -40,7 +40,14 @@ public final class ConnectionPool {
 
     private Set<PooledConnection> usedConnections = new ConcurrentSkipListSet<>();
 
-    private ConnectionPool() {};
+    private ConnectionPool() {
+        try {
+            init();
+        } catch (PersistentException e) {
+            logger.fatal("Can not init connection pool");
+            e.printStackTrace();
+        }
+    };
 
     public static ConnectionPool getInstance() {
         return instance;
@@ -88,7 +95,7 @@ public final class ConnectionPool {
                 } else if(usedConnections.size() < maxPoolSize) {
                     connection = createConnection();
                 } else {
-                    logger.error("The limit of number of database connections is exceeded");
+                    logger.error("The limit of number of database connections is exceeded" + usedConnections.size() + " usedConnection.Size()");
                     throw new PersistentException();
                 }
             } catch(InterruptedException | SQLException e) {
