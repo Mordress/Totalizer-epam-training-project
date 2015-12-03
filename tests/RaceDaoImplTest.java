@@ -1,16 +1,9 @@
-import com.gmail.mordress.lab4.dao.implementation.BreedDaoImpl;
 import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
 import com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl;
-import com.gmail.mordress.lab4.dao.interfaces.BreedDao;
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
 import com.gmail.mordress.lab4.dao.interfaces.RaceDao;
-import com.gmail.mordress.lab4.domain.Race;
 import com.gmail.mordress.lab4.exceptions.DaoException;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
 
 public class RaceDaoImplTest {
 
@@ -36,6 +29,9 @@ public class RaceDaoImplTest {
             neoRace.setDistance(1);
             rdi.update(neoRace);
             */
+
+            //test race.delete
+            /*rdi.delete(2);*/
 
 
 

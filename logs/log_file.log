@@ -26,3 +26,8 @@
 2015-12-03 22:09:27 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
 2015-12-03 22:10:20 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
 2015-12-03 22:10:20 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 22:13:18 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 22:13:18 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 22:13:18 DEBUG RaceDaoImpl:119 - Can not delete breed with ID = 2
+2015-12-03 22:15:13 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 22:15:13 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl

@@ -109,6 +109,19 @@ public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
 
     @Override
     public void delete(Integer id) throws DaoException {
-
+        String sql = "DELETE FROM `race` WHERE `race_ID` = ?";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        }catch (SQLException e) {
+            logger.debug("Can not delete breed with ID = " + id);
+            throw new DaoException(e.getMessage(), e.getCause());
+        }finally {
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 }
