@@ -1,18 +1,18 @@
 package com.gmail.mordress.lab4.domain;
 
-import java.util.Calendar;
+import java.util.Date;
 
 public class Race extends Entity {
 
-    private Calendar raceDate;
+    private Date raceDate;
 
     private Integer distance;
 
-    public Calendar getRaceDate() {
+    public Date getRaceDate() {
         return raceDate;
     }
 
-    public void setRaceDate(Calendar raceDate) {
+    public void setRaceDate(Date raceDate) {
         this.raceDate = raceDate;
     }
 

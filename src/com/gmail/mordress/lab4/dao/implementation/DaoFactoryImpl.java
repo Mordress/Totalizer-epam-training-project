@@ -1,9 +1,6 @@
 package com.gmail.mordress.lab4.dao.implementation;
 
-import com.gmail.mordress.lab4.dao.interfaces.BreedDao;
-import com.gmail.mordress.lab4.dao.interfaces.Dao;
-import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
-import com.gmail.mordress.lab4.dao.interfaces.HorseDao;
+import com.gmail.mordress.lab4.dao.interfaces.*;
 import com.gmail.mordress.lab4.dao.pool.ConnectionPool;
 import com.gmail.mordress.lab4.exceptions.DaoException;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
@@ -23,6 +20,7 @@ public class DaoFactoryImpl implements DaoFactory {
     static {
         classes.put(BreedDao.class, BreedDaoImpl.class);
         classes.put(HorseDao.class, HorseDaoImpl.class);
+        classes.put(RaceDao.class, RaceDaoImpl.class);
         //TODO OTHER CLASSES
     }
 
