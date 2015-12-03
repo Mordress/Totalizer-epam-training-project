@@ -22,6 +22,10 @@ public class ConnectionPoolTest {
             Connection con10 = pool.getConnection();
             Connection con11 = pool.getConnection();
             Connection con12 = pool.getConnection();
+            con4.close();
+            con5.close();
+            con6.close();
+            con7.close();
             Connection con13 = pool.getConnection();
             Connection con14 = pool.getConnection();
         } catch (Exception e) {

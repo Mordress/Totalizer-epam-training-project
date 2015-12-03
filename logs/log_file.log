@@ -82,3 +82,39 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database '///
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:497)
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:134 - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 2 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 3 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 2 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 3 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 5 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 6 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 7 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 8 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 9 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 10 used connections; 0 free connection
+2015-12-02 23:52:13 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 11 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:134 - Connection was returned into pool. Current pool size: 0 used connections; 1 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 2 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 3 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 2 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 3 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 4 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 5 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 6 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 7 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 8 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 9 used connections; 0 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:134 - Connection was returned into pool. Current pool size: 8 used connections; 1 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:134 - Connection was returned into pool. Current pool size: 7 used connections; 2 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:134 - Connection was returned into pool. Current pool size: 6 used connections; 3 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:134 - Connection was returned into pool. Current pool size: 5 used connections; 4 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 6 used connections; 3 free connection
+2015-12-02 23:53:38 DEBUG ConnectionPool:100 - Connection was received from pool. Current pool size: 7 used connections; 2 free connection
