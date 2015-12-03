@@ -14,10 +14,39 @@ public class BreedDaoImplTest {
         try {
             DaoFactory instance = new DaoFactoryImpl();
             BreedDaoImpl bdi = instance.createDao(BreedDao.class);
+
+            /*Testing BreedDaoImpl.getAllBreeds()*/
             List<Breed> breeds = bdi.getAllBreeds();
             for (Breed breed : breeds) {
                 System.out.println(breed.getId() + " " + breed.getName());
             }
+
+            /*Testing BreedDaoImpl.findByName()*/
+            Breed b = bdi.findByName("Американский рысак");
+            System.out.println(b);
+
+            /*Testing BreedDaoImpl.create()*/
+
+            /*Breed br = new Breed();
+            br.setName("some");
+            br.setId(6);
+            Integer i = bdi.create(br);
+            System.out.println(i);*/
+
+            /*Testing read*/
+            Integer i = 3;
+            Breed brd = bdi.read(i);
+            System.out.println(brd);
+
+            /*Testing update*/
+            Breed bUpdate = new Breed();
+            bUpdate.setId(3);
+            bUpdate.setName("Американский гусь");
+            bdi.update(bUpdate);
+
+            /*Testing delete*/
+            bdi.delete(5);
+
         } catch (DaoException e) {
             e.printStackTrace();
         } catch (PersistentException e) {

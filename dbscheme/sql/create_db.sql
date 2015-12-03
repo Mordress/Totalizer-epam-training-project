@@ -33,7 +33,7 @@ CREATE INDEX XIF2_bet_user_ID ON bet
 CREATE TABLE breed
 (
 	breed_ID             TINYINT AUTO_INCREMENT,
-	name           			 VARCHAR(50) NOT NULL,
+	name           			 VARCHAR(50) UNIQUE NOT NULL,
 PRIMARY KEY PK_breed(breed_ID)
 );
 

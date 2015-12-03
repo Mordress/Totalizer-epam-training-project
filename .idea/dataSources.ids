@@ -28,6 +28,7 @@
       <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="breed_ID"/>
       <exported-key name="horse_ibfk_1" table="horse" schema="" catalog="racing" columns="breed_ID"/>
+      <index name="name" unique="true" columns="name"/>
     </table>
     <table name="horse" schema="" catalog="racing" type="TABLE">
       <column name="horse_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>

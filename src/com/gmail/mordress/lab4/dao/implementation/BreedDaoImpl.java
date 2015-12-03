@@ -85,6 +85,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
         try {
             statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, instance.getName());
+            statement.executeUpdate();
             resultSet = statement.getGeneratedKeys();
             if (resultSet.next()) {
                 return resultSet.getInt(1);
@@ -135,12 +136,13 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
 
     @Override
     public void update(Breed instance) throws DaoException {
-        //TODO LOGIC FOR CHECKING UNIQUE BREEDS
-        String sql = "UPDATE `breed` SET `name` = ?";
+        String sql = "UPDATE `breed` SET `name` = ? WHERE `breed_ID` = ?";
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(sql);
             statement.setString(1, instance.getName());
+            statement.setInt(2, instance.getId());
+            statement.executeUpdate();
 
         } catch (SQLException e) {
             logger.debug("Can not update breed with ID = "  + instance.getId());

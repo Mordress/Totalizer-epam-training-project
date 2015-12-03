@@ -31,7 +31,7 @@ public class DaoFactoryImpl implements DaoFactory {
     public DaoFactoryImpl() throws DaoException, PersistentException {
         connection = ConnectionPool.getInstance().getConnection();
         try {
-            connection.setAutoCommit(false);
+            connection.setAutoCommit(true);
         } catch(SQLException e) {
             logger.error("It is impossible to turn off autocommiting for database connection", e);
             throw new DaoException(e.getMessage(), e.getCause());
