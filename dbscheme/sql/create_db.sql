@@ -11,7 +11,7 @@ CREATE TABLE bet
 	win_amount           DECIMAL(10,2) NULL,
 	is_winner            BOOLEAN NULL,
 	user_ID              INTEGER NOT NULL,
-	created_date         TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	created_date         TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY PK_bet(bet_ID)
 );
 
@@ -85,7 +85,7 @@ CREATE INDEX XIF1_horse_race_horse_ID ON horse_race
 CREATE TABLE race
 (
 	race_ID              INTEGER AUTO_INCREMENT,
-	date            		 DATETIME NOT NULL,
+	date            		 TIMESTAMP NOT NULL,
 	distance             INTEGER NOT NULL,
 PRIMARY KEY PK_race(race_ID)
 );

@@ -10,6 +10,7 @@ import com.gmail.mordress.lab4.exceptions.PersistentException;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class RaceDaoImplTest {
 
@@ -18,16 +19,23 @@ public class RaceDaoImplTest {
             DaoFactory instance = new DaoFactoryImpl();
             RaceDaoImpl rdi = instance.createDao(RaceDao.class);
 
-            /*test race.create*/
+            //test race.create
+            /*
             Race race = new Race();
             race.setId(12);
-            Date now = new Date();
-
-            race.setRaceDate(now);
+            race.setRaceDate(new Date());
             race.setDistance(1200);
             System.out.println(rdi.create(race));
-            System.out.println(now);
+            */
 
+            //test race.read + race.update
+
+            /*
+            Race neoRace = rdi.read(1);
+            System.out.println(neoRace);
+            neoRace.setDistance(1);
+            rdi.update(neoRace);
+            */
 
 
 

@@ -1,11 +1,28 @@
-2015-12-03 18:21:23 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
-2015-12-03 18:21:23 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.BreedDaoImpl
-2015-12-03 18:21:23 DEBUG BreedDaoImpl:65 - Successful read breeds
-2015-12-03 19:05:48 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
-2015-12-03 19:05:48 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
-2015-12-03 19:13:36 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
-2015-12-03 19:13:36 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
-2015-12-03 19:17:47 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
-2015-12-03 19:17:47 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
-2015-12-03 19:18:53 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
-2015-12-03 19:18:53 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 21:50:59 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 21:50:59 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 21:50:59 ERROR RaceDaoImpl:76 - Can not read race with id = 1 from db
+2015-12-03 21:55:59 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 21:55:59 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 21:55:59 ERROR RaceDaoImpl:77 - Can not read race with id = 1 from db
+2015-12-03 21:56:41 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 21:56:41 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 21:56:41 ERROR RaceDaoImpl:77 - Can not read race with id = 1 from db
+2015-12-03 21:58:06 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 21:58:06 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.BreedDaoImpl
+2015-12-03 21:58:06 DEBUG BreedDaoImpl:65 - Successful read breeds
+2015-12-03 21:58:16 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 21:58:16 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 21:58:37 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 21:58:37 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 21:59:05 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 21:59:05 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 21:59:22 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 21:59:22 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 21:59:33 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 21:59:33 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 22:08:37 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 22:08:37 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 22:09:27 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 22:09:27 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl
+2015-12-03 22:10:20 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-03 22:10:20 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl

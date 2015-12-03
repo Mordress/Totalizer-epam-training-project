@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 import java.util.List;
 
 public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
@@ -32,7 +33,7 @@ public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
         ResultSet resultSet = null;
         try {
             statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            statement.setDate(1, new java.sql.Date(instance.getRaceDate().getTime()));
+            statement.setTimestamp(1, new java.sql.Timestamp(instance.getRaceDate().getTime()));
             statement.setInt(2, instance.getDistance());
             statement.executeUpdate();
             resultSet = statement.getGeneratedKeys();
@@ -57,11 +58,52 @@ public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
 
     @Override
     public Race read(Integer id) throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `race` WHERE `race_ID` = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            resultSet = statement.executeQuery();
+            Race race = null;
+            if (resultSet.next()) {
+                race = new Race();
+                race.setId(id);
+                race.setRaceDate(new Date(resultSet.getTimestamp("date").getTime()));
+                race.setDistance(resultSet.getInt("distance"));
+            }
+            return race;
+        } catch (SQLException e) {
+            logger.error("Can not read race with id = " + id + " from db");
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
     public void update(Race instance) throws DaoException {
+        String sql = "UPDATE `race` SET `date` = ?, `distance` = ? WHERE `race_ID` = ?";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setTimestamp(1, new java.sql.Timestamp(instance.getRaceDate().getTime()));
+            statement.setInt(2, instance.getDistance());
+            statement.setInt(3, instance.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            logger.debug("Can not update race with ID = "  + instance.getId());
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
 
     }
 

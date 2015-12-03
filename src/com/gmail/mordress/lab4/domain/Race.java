@@ -23,4 +23,12 @@ public class Race extends Entity {
     public void setDistance(Integer distance) {
         this.distance = distance;
     }
+
+    @Override
+    public String toString() {
+        return "Race{" +
+                "raceDate=" + raceDate +
+                ", distance=" + distance +
+                '}';
+    }
 }
