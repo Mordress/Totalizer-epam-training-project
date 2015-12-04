@@ -48,6 +48,16 @@ public class RaceDaoImplTest {
                 System.out.println(race);
             }
 
+            List<Race> passed1 = rdi.getPassedRaces();
+            for (Race race : passed1) {
+                System.out.println(race);
+            }
+            System.out.println("* * * *");
+            List<Race> future2 = rdi.getFutureRaces();
+            for (Race race : future2) {
+                System.out.println(race);
+            }
+
 
 
         } catch (DaoException | PersistentException e) {

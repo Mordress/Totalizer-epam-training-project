@@ -1,0 +1,2 @@
+2015-12-04 12:41:45 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 0 free connection
+2015-12-04 12:41:45 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl

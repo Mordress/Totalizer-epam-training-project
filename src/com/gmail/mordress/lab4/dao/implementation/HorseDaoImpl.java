@@ -78,16 +78,26 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
                 Breed breed = new Breed();
                 breed.setId(resultSet.getInt("breed_ID"));
                 horse.setBreed(breed);
-
+                horse.setAge(resultSet.getInt("age"));
+                horse.setWeight(resultSet.getInt("weight"));
             }
+            return horse;
         } catch (SQLException e) {
-            //TODO
+            logger.debug("Can not read Horse form db with ID + " + id);
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
         }
-        return null;
     }
 
     @Override
     public void update(Horse instance) throws DaoException {
+
 
     }
 
