@@ -2,8 +2,11 @@ import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
 import com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl;
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
 import com.gmail.mordress.lab4.dao.interfaces.RaceDao;
+import com.gmail.mordress.lab4.domain.Race;
 import com.gmail.mordress.lab4.exceptions.DaoException;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
+
+import java.util.List;
 
 public class RaceDaoImplTest {
 
@@ -32,6 +35,18 @@ public class RaceDaoImplTest {
 
             //test race.delete
             /*rdi.delete(2);*/
+
+
+            //test race.getPassedRaces() and getFutureRaces()
+            List<Race> passed = rdi.getPassedRaces();
+            for (Race race : passed) {
+                System.out.println(race);
+            }
+            System.out.println("* * * *");
+            List<Race> future = rdi.getFutureRaces();
+            for (Race race : future) {
+                System.out.println(race);
+            }
 
 
 

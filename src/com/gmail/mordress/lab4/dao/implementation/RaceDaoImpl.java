@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,12 +19,68 @@ public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
 
     @Override
     public List<Race> getPassedRaces() throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `race` WHERE date < ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setTimestamp(1, new java.sql.Timestamp(new Date().getTime()));
+            resultSet = statement.executeQuery();
+            List<Race> races = new ArrayList<>();
+            Race race = null;
+            while (resultSet.next()) {
+                race = new Race();
+                race.setId(resultSet.getInt("race_ID"));
+                race.setDistance(resultSet.getInt("distance"));
+                race.setRaceDate(new Date(resultSet.getTimestamp("date").getTime()));
+                races.add(race);
+            }
+            return races;
+
+        } catch (SQLException e) {
+            logger.debug("Can not read passed races");
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
     public List<Race> getFutureRaces() throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `race` WHERE date > ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setTimestamp(1, new java.sql.Timestamp(new Date().getTime()));
+            resultSet = statement.executeQuery();
+            List<Race> races = new ArrayList<>();
+            Race race = null;
+            while (resultSet.next()) {
+                race = new Race();
+                race.setId(resultSet.getInt("race_ID"));
+                race.setDistance(resultSet.getInt("distance"));
+                race.setRaceDate(new Date(resultSet.getTimestamp("date").getTime()));
+                races.add(race);
+            }
+            return races;
+
+        } catch (SQLException e) {
+            logger.debug("Can not read future races");
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override

@@ -22,7 +22,7 @@ INSERT INTO `role` (`name`) VALUES ('administrator');
 #insert races
 INSERT INTO `race` (`date`, `distance`) VALUES ('2015-11-22-10-00-00', 2400);
 INSERT INTO `race` (`date`, `distance`) VALUES ('2015-11-24-16-30-00', 4400);
-INSERT INTO `race` (`date`, `distance`) VALUES ('2015-12-01-08-00-00', 3500);
+INSERT INTO `race` (`date`, `distance`) VALUES ('2015-12-30-08-00-00', 3500);
 #insert horse_races
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (1, 1, 1, '00:05:30');
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (1, 2, 3, '00:05:46');
