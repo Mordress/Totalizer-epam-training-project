@@ -1,20 +1,20 @@
 USE racing;
 # insert breeds
-INSERT INTO `breed` (`name`) VALUES ('Орловский рысак');
-INSERT INTO `breed` (`name`) VALUES ('Французский рысак');
-INSERT INTO `breed` (`name`) VALUES ('Американский рысак');
-INSERT INTO `breed` (`name`) VALUES ('Русский рысак');
+INSERT INTO `breed` (`name`) VALUES ('РћСЂР»РѕРІСЃРєРёР№ СЂС‹СЃР°Рє');
+INSERT INTO `breed` (`name`) VALUES ('Р¤СЂР°РЅС†СѓР·СЃРєРёР№ СЂС‹СЃР°Рє');
+INSERT INTO `breed` (`name`) VALUES ('РђРјРµСЂРёРєР°РЅСЃРєРёР№ СЂС‹СЃР°Рє');
+INSERT INTO `breed` (`name`) VALUES ('Р СѓСЃСЃРєРёР№ СЂС‹СЃР°Рє');
 #insert horses
-INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Черная молния', 1, 452, 4);
-INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Адский жеребец', 2, 467, 5);
-INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Красный дракон', 3, 422, 4);
-INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Посейдон', 4, 563, 6);
-INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Зевс', 2, 485, 5);
-INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Свифти', 3, 512, 6);
-INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Большой пони', 4, 601, 7);
-INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Дживс', 1, 468, 5);
-INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Хантер', 3, 493, 4);
-INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Зератул', 4, 410, 3);
+INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Р§РµСЂРЅР°СЏ РјРѕР»РЅРёСЏ', 1, 452, 4);
+INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('РђРґСЃРєРёР№ Р¶РµСЂРµР±РµС†', 2, 467, 5);
+INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('РљСЂР°СЃРЅС‹Р№ РґСЂР°РєРѕРЅ', 3, 422, 4);
+INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('РџРѕСЃРµР№РґРѕРЅ', 4, 563, 6);
+INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Р—РµРІСЃ', 2, 485, 5);
+INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('РЎРІРёС„С‚Рё', 3, 512, 6);
+INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Р‘РѕР»СЊС€РѕР№ РїРѕРЅРё', 4, 601, 7);
+INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Р”Р¶РёРІСЃ', 1, 468, 5);
+INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('РҐР°РЅС‚РµСЂ', 3, 493, 4);
+INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Р—РµСЂР°С‚СѓР»', 4, 410, 3);
 #insert roles
 INSERT INTO `role` (`name`) VALUES ('user');
 INSERT INTO `role` (`name`) VALUES ('bookmaker');
@@ -78,8 +78,8 @@ INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role_ID`, 
    NULL),
 
   ('alex1985',
-   'Alex',
-   'Angel',
+   'РђРЅРґСЂРµР№',
+   'РќРµРєСЂР°СЃРѕРІ',
    '6C8FE625B2F67E1565BA9830372C62887918F43ACE76C6EAF764EA2EE02A0B8C',
    1,
    'alex.angel@gmail.com',
