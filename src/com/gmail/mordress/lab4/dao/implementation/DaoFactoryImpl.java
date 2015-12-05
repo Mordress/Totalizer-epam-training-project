@@ -21,7 +21,9 @@ public class DaoFactoryImpl implements DaoFactory {
         classes.put(BreedDao.class, BreedDaoImpl.class);
         classes.put(HorseDao.class, HorseDaoImpl.class);
         classes.put(RaceDao.class, RaceDaoImpl.class);
-        //TODO OTHER CLASSES
+        classes.put(HorseRaceDao.class, HorseRaceDaoImpl.class);
+        classes.put(BetDao.class, BetDaoImpl.class);
+        classes.put(UserDao.class, UserDaoImpl.class);
     }
 
     private Connection connection;

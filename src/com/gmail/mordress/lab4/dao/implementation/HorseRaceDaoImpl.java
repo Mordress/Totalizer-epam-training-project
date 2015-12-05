@@ -147,7 +147,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
             statement.setInt(1, instance.getRace().getId());
             statement.setInt(2, instance.getHorse().getId());
             statement.setInt(3, instance.getResultRank());
-            statement.setTimestamp(4, new java.sql.Timestamp(instance.getResultTime().getTime()));
+            statement.setTime(4, new java.sql.Time(instance.getResultTime().getTime()));
             statement.executeUpdate();
             resultSet = statement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -170,7 +170,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
 
     @Override
     public HorseRace read(Integer id) throws DaoException {
-        String sql = "SELECT * FROM `horse_race` WHERE `horserace_ID` = ?";
+        String sql = "SELECT * FROM `horse_race` WHERE `horse_race_ID` = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -182,7 +182,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace = new HorseRace();
                 horseRace.setId(id);
                 horseRace.setResultRank(resultSet.getInt("result_rank"));
-                horseRace.setResultTime(new java.sql.Timestamp(resultSet.getTimestamp("result_time").getTime()));
+                horseRace.setResultTime(new java.sql.Time(resultSet.getTime("result_time").getTime()));
                 Horse horse = new Horse();
                 Race race = new Race();
                 horse.setId(resultSet.getInt("horse_ID"));
@@ -213,7 +213,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
             statement.setInt(1, instance.getRace().getId());
             statement.setInt(2, instance.getHorse().getId());
             statement.setInt(3, instance.getResultRank());
-            statement.setTimestamp(4, new java.sql.Timestamp(instance.getResultTime().getTime()));
+            statement.setTime(4, new java.sql.Time(instance.getResultTime().getTime()));
             statement.setInt(5, instance.getId());
             statement.executeUpdate();
         } catch(SQLException e) {
