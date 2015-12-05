@@ -12,7 +12,6 @@ public class ConnectionPoolTest {
             Connection con1 = pool.getConnection();
             Connection con2 = pool.getConnection();
             Connection con3 = pool.getConnection();
-            pool.destroy();
             Connection con4 = pool.getConnection();
             Connection con5 = pool.getConnection();
             Connection con6 = pool.getConnection();

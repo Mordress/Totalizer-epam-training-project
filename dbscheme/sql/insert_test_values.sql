@@ -15,10 +15,7 @@ INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Большо�
 INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Дживс', 1, 468, 5);
 INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Хантер', 3, 493, 4);
 INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Зератул', 4, 410, 3);
-#insert roles
-INSERT INTO `role` (`name`) VALUES ('user');
-INSERT INTO `role` (`name`) VALUES ('bookmaker');
-INSERT INTO `role` (`name`) VALUES ('administrator');
+
 #insert races
 INSERT INTO `race` (`date`, `distance`) VALUES ('2015-11-22-10-00-00', 2400);
 INSERT INTO `race` (`date`, `distance`) VALUES ('2015-11-24-16-30-00', 4400);
@@ -58,7 +55,7 @@ INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) V
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (3, 10, NULL , NULL );
 #insert users
 #for store password using SHA-256
-INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role_ID`, `email`, `phone`, `cash_amount`) VALUES
+INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `email`, `phone`, `cash_amount`) VALUES
   ('administrator',
    'Andrew',
    'Bownell',
