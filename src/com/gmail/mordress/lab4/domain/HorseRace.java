@@ -1,6 +1,6 @@
 package com.gmail.mordress.lab4.domain;
 
-import java.util.Calendar;
+import java.util.Date;
 
 public class HorseRace extends Entity {
 
@@ -10,7 +10,7 @@ public class HorseRace extends Entity {
 
     private Integer resultRank;
 
-    private Calendar resultTime;
+    private Date resultTime;
 
     public Race getRace() {
         return race;
@@ -36,11 +36,21 @@ public class HorseRace extends Entity {
         this.resultRank = resultRank;
     }
 
-    public Calendar getResultTime() {
+    public Date getResultTime() {
         return resultTime;
     }
 
-    public void setResultTime(Calendar resultTime) {
+    public void setResultTime(Date resultTime) {
         this.resultTime = resultTime;
+    }
+
+    @Override
+    public String toString() {
+        return "HorseRace{" +
+                "race=" + race +
+                ", horse=" + horse +
+                ", resultRank=" + resultRank +
+                ", resultTime=" + resultTime +
+                '}';
     }
 }
