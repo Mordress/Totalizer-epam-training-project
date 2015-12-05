@@ -97,7 +97,7 @@ CREATE TABLE users
 	first_name           VARCHAR(30) NOT NULL,
 	last_name            VARCHAR(30) NOT NULL,
 	password             VARCHAR(255) NOT NULL,
-	role                 TINYINT NOT NULL CHECK (role IN (1, 2, 3)),
+	role                 TINYINT NOT NULL DEFAULT 1,
 	email                VARCHAR(30) NOT NULL,
 	phone                VARCHAR(15) NOT NULL,
 	cash_amount          DECIMAL(10,2) NULL,
