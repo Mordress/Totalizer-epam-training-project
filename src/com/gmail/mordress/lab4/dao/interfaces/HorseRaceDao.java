@@ -9,13 +9,11 @@ import java.util.List;
 
 public interface HorseRaceDao extends Dao<HorseRace> {
 
-    public HorseRace findByHorse(Horse horse) throws DaoException;
-
-    public HorseRace findByRace(Race race) throws DaoException;
-
-    public List<HorseRace> getAllHorseRacesByHorse(Horse horse) throws DaoException;
+    public List<HorseRace> findByRace(Race race) throws DaoException;
 
     public List<HorseRace> getAllHorseRaces() throws DaoException;
+
+    public List<HorseRace> getStatisticPerHorse(Horse horse) throws DaoException;
 
 
 

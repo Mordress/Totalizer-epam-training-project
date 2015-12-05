@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
@@ -19,23 +21,120 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
     private static Logger logger = Logger.getLogger(HorseRaceDaoImpl.class);
 
     @Override
-    public HorseRace findByHorse(Horse horse) throws DaoException {
-        return null;
+    public List<HorseRace> findByRace(Race instance) throws DaoException {
+        String sql = "SELECT * FROM `horse_race` WHERE race_ID = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, instance.getId());
+            resultSet = statement.executeQuery();
+            List<HorseRace> horseRaces = new ArrayList<>();
+            HorseRace horseRace = null;
+            while (resultSet.next()) {
+                horseRace = new HorseRace();
+                horseRace.setId(resultSet.getInt("horse_race_ID"));
+                horseRace.setResultRank(resultSet.getInt("result_rank"));
+                horseRace.setResultTime(new Date(resultSet.getTimestamp("result_time").getTime()));
+                Race race = new Race();
+                race.setId(resultSet.getInt("race_ID"));
+                horseRace.setRace(race);
+                Horse horse = new Horse();
+                horse.setId(resultSet.getInt("horse_ID"));
+                horseRace.setHorse(horse);
+                horseRaces.add(horseRace);
+            }
+            logger.debug("Successful read horseRaces by race with id = " + instance.getId());
+            return horseRaces;
+        } catch (SQLException e) {
+            logger.debug("Can not read  horseRaces by race with id = " + instance.getId());
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
+
     }
 
     @Override
-    public HorseRace findByRace(Race race) throws DaoException {
-        return null;
-    }
-
-    @Override
-    public List<HorseRace> getAllHorseRacesByHorse(Horse horse) throws DaoException {
-        return null;
+    public List<HorseRace> getStatisticPerHorse(Horse instance) throws DaoException {
+        String sql = "SELECT * FROM `horse_race` WHERE horse_ID = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, instance.getId());
+            resultSet = statement.executeQuery();
+            List<HorseRace> horseRaces = new ArrayList<>();
+            HorseRace horseRace = null;
+            while (resultSet.next()) {
+                horseRace = new HorseRace();
+                horseRace.setId(resultSet.getInt("horse_race_ID"));
+                horseRace.setResultRank(resultSet.getInt("result_rank"));
+                horseRace.setResultTime(new Date(resultSet.getTimestamp("result_time").getTime()));
+                Race race = new Race();
+                race.setId(resultSet.getInt("race_ID"));
+                horseRace.setRace(race);
+                Horse horse = new Horse();
+                horse.setId(resultSet.getInt("horse_ID"));
+                horseRace.setHorse(horse);
+                horseRaces.add(horseRace);
+            }
+            logger.debug("Successful read horseRaces with id = " + instance.getId());
+            return horseRaces;
+        } catch (SQLException e) {
+            logger.debug("Can not read  horseRaces by horse with id = " + instance.getId());
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
     public List<HorseRace> getAllHorseRaces() throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `horse_race`";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+            List<HorseRace> horseRaces = new ArrayList<>();
+            HorseRace horseRace = null;
+            while (resultSet.next()) {
+                horseRace = new HorseRace();
+                horseRace.setId(resultSet.getInt("horse_race_ID"));
+                horseRace.setResultRank(resultSet.getInt("result_rank"));
+                horseRace.setResultTime(new Date(resultSet.getTimestamp("result_time").getTime()));
+                Race race = new Race();
+                race.setId(resultSet.getInt("race_ID"));
+                horseRace.setRace(race);
+                Horse horse = new Horse();
+                horse.setId(resultSet.getInt("horse_ID"));
+                horseRace.setHorse(horse);
+                horseRaces.add(horseRace);
+            }
+            logger.debug("Successful read horseRaces");
+            return horseRaces;
+        } catch (SQLException e) {
+            logger.debug("Can not read all horseRaces");
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
@@ -107,27 +206,41 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
 
     @Override
     public void update(HorseRace instance) throws DaoException {
-        String sql = "UPDATE `horse_race` SET `race_ID` = ?, `horse_ID` = ?, `result_rank` = ?, `result_time` = ? WHERE `id` = ?";
+        String sql = "UPDATE `horse_race` SET `race_ID` = ?, `horse_ID` = ?, `result_rank` = ?, `result_time` = ? WHERE `horse_race_ID` = ?";
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(sql);
-            statement.setString(1, user.getLogin());
-            statement.setString(2, user.getPassword());
-            statement.setInt(3, user.getRole().getIdentity());
-            statement.setInt(4, user.getIdentity());
+            statement.setInt(1, instance.getRace().getId());
+            statement.setInt(2, instance.getHorse().getId());
+            statement.setInt(3, instance.getResultRank());
+            statement.setTimestamp(4, new java.sql.Timestamp(instance.getResultTime().getTime()));
+            statement.setInt(5, instance.getId());
             statement.executeUpdate();
         } catch(SQLException e) {
-            throw new PersistentException(e);
+            logger.error("Can not update HorseRace with id = " + instance.getId());
+            throw new DaoException(e.getMessage(), e.getCause());
         } finally {
             try {
                 statement.close();
             } catch(SQLException | NullPointerException e) {}
         }
     }
-    }
 
     @Override
     public void delete(Integer id) throws DaoException {
-
+        String sql = "DELETE FROM `horse_race` WHERE horse_race_ID = ?";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            logger.error("Can not delete HorseRace with id = "+ id);
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 }
