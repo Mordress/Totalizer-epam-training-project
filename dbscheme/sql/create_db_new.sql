@@ -41,7 +41,7 @@ PRIMARY KEY PK_breed(breed_ID)
 CREATE TABLE horse
 (
 	horse_ID             INTEGER AUTO_INCREMENT,
-	name                 VARCHAR(30) NOT NULL,
+	name                 VARCHAR(30) NOT NULL UNIQUE,
 	breed_ID             TINYINT NOT NULL,
 	weight               SMALLINT UNSIGNED NOT NULL,
 	age                  TINYINT UNSIGNED NOT NULL,

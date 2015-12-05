@@ -43,7 +43,6 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
                 statement.close();
             } catch (SQLException | NullPointerException e) {}
         }
-
     }
 
     @Override

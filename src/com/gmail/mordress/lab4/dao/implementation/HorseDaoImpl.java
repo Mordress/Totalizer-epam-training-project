@@ -16,10 +16,38 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
 
     private static Logger logger = Logger.getLogger(HorseDaoImpl.class);
 
-
     @Override
     public Horse findByName(String name) throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `horse` WHERE `name` = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, name);
+            resultSet = statement.executeQuery();
+            Horse horse = null;
+            if (resultSet.next()) {
+                horse = new Horse();
+                horse.setId(resultSet.getInt("horse_ID"));
+                horse.setName("name");
+                horse.setWeight(resultSet.getInt("weight"));
+                horse.setAge(resultSet.getInt("age"));
+                Breed breed = new Breed();
+                breed.setId(resultSet.getInt("breed_ID"));
+                horse.setBreed(breed);
+            }
+            return horse;
+        } catch (SQLException e) {
+            logger.debug("Can not find horse with name = " + name);
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override

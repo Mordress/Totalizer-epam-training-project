@@ -27,7 +27,7 @@ public class HorseDaoImplTest {
             horse2.setWeight(99);
             Breed breed2 = new Breed();
             breed2.setId(1);
-            breed2.setName("Орловский рысак");
+            breed2.setName("РћСЂР»РѕРІСЃРєРёР№ СЂС‹СЃР°Рє");
             horse2.setBreed(breed2);
 
             hdi.update(horse2);*/
@@ -38,12 +38,15 @@ public class HorseDaoImplTest {
             }
             */
 
-            Breed breed = new Breed();
+            /*Breed breed = new Breed();
             breed.setId(3);
             List<Horse> horses = hdi.findHorsesByBreed(breed);
             for (Horse horse : horses) {
                 System.out.println(horse);
-            }
+            }*/
+
+            Horse horse = hdi.findByName("Р—РµСЂР°С‚СѓР»");
+            System.out.println(horse);
 
 
         } catch (DaoException e) {

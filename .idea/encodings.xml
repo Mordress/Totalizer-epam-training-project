@@ -38,6 +38,7 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/servlets/TestServlet.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/BreedDaoImplTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/ConnectionPoolTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/HorseDaoImplTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/RaceDaoImplTest.java" charset="UTF-8" />
   </component>
 </project>
