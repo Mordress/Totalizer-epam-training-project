@@ -43,8 +43,8 @@ CREATE TABLE horse
 	horse_ID             INTEGER AUTO_INCREMENT,
 	name                 VARCHAR(30) NOT NULL,
 	breed_ID             TINYINT NOT NULL,
-	weight               SMALLINT NOT NULL,
-	age                  TINYINT NOT NULL,
+	weight               SMALLINT UNSIGNED NOT NULL,
+	age                  TINYINT UNSIGNED NOT NULL,
 PRIMARY KEY PK_horse(horse_ID)
 );
 
@@ -86,7 +86,7 @@ CREATE TABLE race
 (
 	race_ID              INTEGER AUTO_INCREMENT,
 	date            		 TIMESTAMP NOT NULL,
-	distance             INTEGER NOT NULL,
+	distance             INTEGER UNSIGNED NOT NULL,
 PRIMARY KEY PK_race(race_ID)
 );
 

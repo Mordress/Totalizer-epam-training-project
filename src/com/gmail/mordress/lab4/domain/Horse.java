@@ -41,4 +41,14 @@ public class Horse extends Entity {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "Horse{" +
+                "name='" + name + '\'' +
+                ", breed=" + breed +
+                ", weight=" + weight +
+                ", age=" + age +
+                '}';
+    }
 }

@@ -80,3 +80,24 @@
 2015-12-05 16:48:06 DEBUG ConnectionPool:141 - Connection was returned into pool. Current pool size: 8 used connections; 42 free connection
 2015-12-05 16:48:06 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 9 used connections; 41 free connection
 2015-12-05 16:48:06 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 10 used connections; 40 free connection
+2015-12-05 16:58:53 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-05 16:58:53 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl
+2015-12-05 17:09:52 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-05 17:09:52 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl
+2015-12-05 17:10:48 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-05 17:10:48 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl
+2015-12-05 17:10:48 DEBUG HorseDaoImpl:111 - Can not update horse with ID = 3
+2015-12-05 17:13:08 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-05 17:13:08 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl
+2015-12-05 17:23:20 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-05 17:23:20 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl
+2015-12-05 17:23:20 DEBUG HorseDaoImpl:51 - Successful read horses
+2015-12-05 17:23:37 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-05 17:23:37 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl
+2015-12-05 17:23:37 DEBUG HorseDaoImpl:51 - Successful read horses
+2015-12-05 17:23:54 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-05 17:23:54 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl
+2015-12-05 17:23:54 DEBUG HorseDaoImpl:51 - Successful read horses
+2015-12-05 17:33:54 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-05 17:33:54 DEBUG DaoFactoryImpl:47 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl
+2015-12-05 17:33:54 DEBUG HorseDaoImpl:47 - Successful find horses by breed = 3 null

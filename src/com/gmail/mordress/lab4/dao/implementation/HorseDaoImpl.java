@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
@@ -22,13 +23,77 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
     }
 
     @Override
-    public List<Horse> findHorsesByBreed(Breed breed) throws DaoException {
-        return null;
+    public List<Horse> findHorsesByBreed(Breed instance) throws DaoException {
+        String sql = "SELECT * FROM `horse` WHERE `breed_ID` = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, instance.getId());
+            resultSet = statement.executeQuery();
+            List<Horse> horses = new ArrayList<>();
+            Horse horse = null;
+            while (resultSet.next()) {
+                horse = new Horse();
+                horse.setId(resultSet.getInt("horse_ID"));
+                horse.setName(resultSet.getString("name"));
+                horse.setAge(resultSet.getInt("age"));
+                horse.setWeight(resultSet.getInt("weight"));
+                Breed breed = new Breed();
+                breed.setId(resultSet.getInt("breed_ID"));
+                horse.setBreed(breed);
+                horses.add(horse);
+            }
+            logger.debug("Successful find horses by breed = " + instance);
+            return horses;
+
+        } catch (SQLException e) {
+            logger.debug("Can not find  horses by breed = " + instance);
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
     public List<Horse> getAllHorses() throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `horse` ORDER BY `name`";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+            List<Horse> horses = new ArrayList<>();
+            Horse horse = null;
+            while (resultSet.next()) {
+                horse = new Horse();
+                horse.setId(resultSet.getInt("horse_ID"));
+                horse.setName(resultSet.getString("name"));
+                horse.setAge(resultSet.getInt("age"));
+                horse.setWeight(resultSet.getInt("weight"));
+                Breed breed = new Breed();
+                breed.setId(resultSet.getInt("breed_ID"));
+                horse.setBreed(breed);
+                horses.add(horse);
+            }
+            logger.debug("Successful read horses");
+            return horses;
+        } catch (SQLException e) {
+            logger.debug("Can not read all horses");
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
@@ -97,12 +162,40 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
 
     @Override
     public void update(Horse instance) throws DaoException {
-
-
+        String sql = "UPDATE `horse` SET `name` = ?, `breed_ID` = ?, `weight` = ?, `age` = ? WHERE `horse_ID` = ?";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, instance.getName());
+            statement.setInt(2, instance.getBreed().getId());
+            statement.setInt(3, instance.getWeight());
+            statement.setInt(4, instance.getAge());
+            statement.setInt(5, instance.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            logger.debug("Can not update horse with ID = "  + instance.getId());
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
     public void delete(Integer id) throws DaoException {
-
+        String sql = "DELETE FROM `horse` WHERE `horse_ID` = ?";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch(SQLException e) {
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                statement.close();
+            } catch(SQLException | NullPointerException e) {}
+        }
     }
 }
