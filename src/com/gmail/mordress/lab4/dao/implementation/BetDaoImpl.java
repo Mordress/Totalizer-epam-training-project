@@ -4,10 +4,13 @@ import com.gmail.mordress.lab4.dao.interfaces.BetDao;
 import com.gmail.mordress.lab4.domain.Bet;
 import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.DaoException;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 public class BetDaoImpl extends BaseDaoImpl implements BetDao {
+
+    private static Logger logger = Logger.getLogger(BetDaoImpl.class);
 
 
     @Override

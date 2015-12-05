@@ -4,10 +4,13 @@ import com.gmail.mordress.lab4.dao.interfaces.UserDao;
 import com.gmail.mordress.lab4.domain.Bet;
 import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.DaoException;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 public class UserDaoImpl extends BaseDaoImpl implements UserDao {
+
+    private static Logger logger = Logger.getLogger(UserDaoImpl.class);
 
 
     @Override
