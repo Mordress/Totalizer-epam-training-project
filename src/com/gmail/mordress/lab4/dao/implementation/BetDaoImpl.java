@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,15 +19,86 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
 
     private static Logger logger = Logger.getLogger(BetDaoImpl.class);
 
-
     @Override
-    public List<Bet> findAllBetsByUser(User user) throws DaoException {
-        return null;
+    public List<Bet> findAllBetsByUser(User instance) throws DaoException {
+        String sql = "SELECT * FROM `bet` WHERE `user_ID` = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, instance.getId());
+            resultSet = statement.executeQuery();
+            List<Bet> bets = new ArrayList<>();
+            Bet bet = null;
+            while (resultSet.next()) {
+                bet = new Bet();
+                bet.setId(resultSet.getInt("bet_ID"));
+                bet.setResultRank(resultSet.getInt("result_rank"));
+                bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                bet.setBetAmount(resultSet.getBigDecimal("bet_amount"));
+                bet.setWinAmount(resultSet.getBigDecimal("win_amount"));
+                bet.setIsWinner(resultSet.getBoolean("is_winner"));
+                bet.setUser(instance);
+                HorseRace horseRace = new HorseRace();
+                horseRace.setId(resultSet.getInt("horse_race_ID"));
+                bet.setHorseRace(horseRace);
+                bet.setCreatedDate(new Date(resultSet.getTimestamp("created_date").getTime()));
+                bets.add(bet);
+            }
+            return bets;
+        } catch (SQLException e) {
+            logger.debug("Can not find winned users by user with id = " + instance.getId());
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
     public List<Bet> findWinnedBets() throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `bet` WHERE `is_winner` = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setBoolean(1, new Boolean(true));
+            resultSet = statement.executeQuery();
+            List<Bet> bets = new ArrayList<>();
+            Bet bet = null;
+            while (resultSet.next()) {
+                bet = new Bet();
+                bet.setId(resultSet.getInt("bet_ID"));
+                bet.setResultRank(resultSet.getInt("result_rank"));
+                bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                bet.setBetAmount(resultSet.getBigDecimal("bet_amount"));
+                bet.setWinAmount(resultSet.getBigDecimal("win_amount"));
+                bet.setIsWinner(resultSet.getBoolean("is_winner"));
+                User user = new User();
+                user.setId(resultSet.getInt("user_ID"));
+                bet.setUser(user);
+                HorseRace horseRace = new HorseRace();
+                horseRace.setId(resultSet.getInt("horse_race_ID"));
+                bet.setHorseRace(horseRace);
+                bet.setCreatedDate(new Date(resultSet.getTimestamp("created_date").getTime()));
+                bets.add(bet);
+            }
+            return bets;
+        } catch (SQLException e) {
+            logger.debug("Can not find winned bets.");
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
@@ -37,9 +109,36 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
         try {
             statement = connection.prepareStatement(sql);
             statement.setInt(1, instance.getId());
-
+            statement.setBoolean(2, new Boolean(true));
+            resultSet = statement.executeQuery();
+            List<Bet> bets = new ArrayList<>();
+            Bet bet = null;
+            while (resultSet.next()) {
+                bet = new Bet();
+                bet.setId(resultSet.getInt("bet_ID"));
+                bet.setResultRank(resultSet.getInt("result_rank"));
+                bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                bet.setBetAmount(resultSet.getBigDecimal("bet_amount"));
+                bet.setWinAmount(resultSet.getBigDecimal("win_amount"));
+                bet.setIsWinner(resultSet.getBoolean("is_winner"));
+                bet.setUser(instance);
+                HorseRace horseRace = new HorseRace();
+                horseRace.setId(resultSet.getInt("horse_race_ID"));
+                bet.setHorseRace(horseRace);
+                bet.setCreatedDate(new Date(resultSet.getTimestamp("created_date").getTime()));
+                bets.add(bet);
+            }
+            return bets;
         } catch (SQLException e) {
-
+            logger.debug("Can not find winned users by user with id = " + instance.getId());
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
         }
     }
 
