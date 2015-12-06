@@ -34,7 +34,11 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
                 bet = new Bet();
                 bet.setId(resultSet.getInt("bet_ID"));
                 bet.setResultRank(resultSet.getInt("result_rank"));
-                bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                if (resultSet.getTime("result_time") != null) {
+                    bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                } else {
+                    bet.setResultTime(null);
+                }
                 bet.setBetAmount(resultSet.getBigDecimal("bet_amount"));
                 bet.setWinAmount(resultSet.getBigDecimal("win_amount"));
                 bet.setIsWinner(resultSet.getBoolean("is_winner"));
@@ -74,7 +78,11 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
                 bet = new Bet();
                 bet.setId(resultSet.getInt("bet_ID"));
                 bet.setResultRank(resultSet.getInt("result_rank"));
-                bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                if (resultSet.getTime("result_time") != null) {
+                    bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                } else {
+                    bet.setResultTime(null);
+                }
                 bet.setBetAmount(resultSet.getBigDecimal("bet_amount"));
                 bet.setWinAmount(resultSet.getBigDecimal("win_amount"));
                 bet.setIsWinner(resultSet.getBoolean("is_winner"));
@@ -117,7 +125,11 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
                 bet = new Bet();
                 bet.setId(resultSet.getInt("bet_ID"));
                 bet.setResultRank(resultSet.getInt("result_rank"));
-                bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                if (resultSet.getTime("result_time") != null) {
+                    bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                } else {
+                    bet.setResultTime(null);
+                }
                 bet.setBetAmount(resultSet.getBigDecimal("bet_amount"));
                 bet.setWinAmount(resultSet.getBigDecimal("win_amount"));
                 bet.setIsWinner(resultSet.getBoolean("is_winner"));
@@ -152,7 +164,11 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setInt(1, instance.getId());
             statement.setInt(2, instance.getResultRank());
-            statement.setTime(3, new java.sql.Time(instance.getResultTime().getTime()));
+            if (instance.getResultTime() != null) {
+                statement.setTime(3, new java.sql.Time(instance.getResultTime().getTime()));
+            } else {
+                statement.setTime(3, null);
+            }
             statement.setBigDecimal(4, instance.getBetAmount());
             statement.setBigDecimal(5, instance.getWinAmount());
             statement.setBoolean(6, instance.getIsWinner());
@@ -196,7 +212,9 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
                 horseRace.setId(resultSet.getInt("horse_race_ID"));
                 bet.setHorseRace(horseRace);
                 bet.setResultRank(resultSet.getInt("result_rank"));
-                bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                if (resultSet.getTime("result_time") != null) {
+                    bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                }
                 bet.setIsWinner(resultSet.getBoolean("is_winner"));
                 bet.setBetAmount(resultSet.getBigDecimal("bet_amount"));
                 bet.setWinAmount(resultSet.getBigDecimal("win_amount"));
@@ -228,7 +246,11 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             statement = connection.prepareStatement(sql);
             statement.setInt(1, instance.getHorseRace().getId());
             statement.setInt(2, instance.getResultRank());
-            statement.setTime(3, new java.sql.Time(instance.getResultTime().getTime()));
+            if (instance.getResultTime() != null) {
+                statement.setTime(3, new java.sql.Time(instance.getResultTime().getTime()));
+            } else {
+                statement.setTime(3, null);
+            }
             statement.setBigDecimal(4, instance.getBetAmount());
             statement.setBigDecimal(5, instance.getWinAmount());
             statement.setBoolean(6, instance.getIsWinner());

@@ -14,3 +14,8 @@
 2015-12-06 02:09:27 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseRaceDaoImpl
 2015-12-06 02:09:37 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
 2015-12-06 02:09:37 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseRaceDaoImpl
+2015-12-06 12:19:32 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-06 12:19:32 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.BetDaoImpl
+2015-12-06 12:23:47 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-06 12:23:47 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.BetDaoImpl
+2015-12-06 12:23:47 DEBUG BetDaoImpl:209 - Successfull reading bet with id = 1
