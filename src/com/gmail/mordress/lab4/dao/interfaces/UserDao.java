@@ -14,7 +14,5 @@ public interface UserDao extends Dao<User> {
 
     public List<User> getAllSimpleUsers() throws DaoException;
 
-    public List<User> getAllUsers() throws DaoException;
-
     public List<Bet> findAllBetsByUser(User user) throws DaoException;
 }

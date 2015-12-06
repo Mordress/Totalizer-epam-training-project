@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoImpl extends BaseDaoImpl implements UserDao {
@@ -83,12 +84,40 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public List<User> getAllSimpleUsers() throws DaoException {
-        String sql = ""
-    }
-
-    @Override
-    public List<User> getAllUsers() throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `users` WHERE role = 1";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+            List<User> users = new ArrayList<>();
+            User user = null;
+            while (resultSet.next()) {
+                user = new User();
+                user.setId(resultSet.getInt("user_ID"));
+                user.setLogin(resultSet.getString("login"));
+                user.setPassword(resultSet.getString("password"));
+                user.setFirstName(resultSet.getString("first_name"));
+                user.setLastName(resultSet.getString("last_name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setPhone(resultSet.getString("phone"));
+                user.setRole(Role.getByIdentity(resultSet.getInt("role")));
+                user.setCashAmount(resultSet.getBigDecimal("cash_amount"));
+                users.add(user);
+            }
+            logger.debug("Succesfull getting all simple-users");
+            return users;
+        } catch (SQLException e) {
+            logger.error("Can not get all simple-users");
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
@@ -98,17 +127,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public Integer create(User instance) throws DaoException {
-        String sql = "INSERT INTO `users` ()";
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        try {
-            statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-
-        } catch (SQLException e) {
-
-        } finally {
-
-        }
+        return null;
     }
 
     @Override
