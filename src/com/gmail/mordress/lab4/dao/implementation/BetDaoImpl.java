@@ -30,13 +30,17 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
     }
 
     @Override
-    public List<Bet> findWinnedBetsByUser(User user) throws DaoException {
-        return null;
-    }
+    public List<Bet> findWinnedBetsByUser(User instance) throws DaoException {
+        String sql = "SELECT * FROM `bet` WHERE (`user_ID` = ? AND `is_winner` = ?)";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, instance.getId());
 
-    @Override
-    public boolean isBetPassed(Bet bet) {
-        return false;
+        } catch (SQLException e) {
+
+        }
     }
 
     @Override
@@ -118,11 +122,44 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
 
     @Override
     public void update(Bet instance) throws DaoException {
-
+        String sql = "UPDATE `bet` SET `horse_race_ID` = ?, `result_rank` = ?, `result_time` = ?, `bet_amount` = ?, " +
+                "`win_amount` = ?, `is_winner` = ?, `created_date` = ?, `user_ID` = ?";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, instance.getHorseRace().getId());
+            statement.setInt(2, instance.getResultRank());
+            statement.setTime(3, new java.sql.Time(instance.getResultTime().getTime()));
+            statement.setBigDecimal(4, instance.getBetAmount());
+            statement.setBigDecimal(5, instance.getWinAmount());
+            statement.setBoolean(6, instance.getIsWinner());
+            statement.setTimestamp(7, new java.sql.Timestamp(instance.getCreatedDate().getTime()));
+            statement.setInt(8, instance.getUser().getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            logger.debug("Can not update bet with id = " + instance.getId());
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                statement.close();
+            } catch(SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
     public void delete(Integer id) throws DaoException {
-
+        String sql = "DELETE FROM `bet` WHERE `bet_ID` = ?";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            logger.debug("Can not delete bet with ID = " + id);
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 }
