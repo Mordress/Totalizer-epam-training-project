@@ -42,11 +42,26 @@ public class RaceServiceImpl extends ServiceImpl implements RaceService {
 
     @Override
     public void save(Race race) throws ServiceException {
-
+        try {
+            RaceDao raceDao = factory.createDao(RaceDao.class);
+            if (race.getId() != null) {
+                raceDao.update(race);
+            } else {
+                race.setId(raceDao.create(race));
+            }
+        } catch (DaoException e) {
+            throw new ServiceException(e.getMessage(), e.getCause());
+        }
     }
 
     @Override
     public void delete(Integer id) throws ServiceException {
+        try {
+            RaceDao raceDao = factory.createDao(RaceDao.class);
+            raceDao.delete(id);
+        } catch (DaoException e) {
+            throw new ServiceException(e.getMessage(), e.getCause());
+        }
 
     }
 }
