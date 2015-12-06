@@ -24,10 +24,6 @@ public class User extends Entity {
 
     private BigDecimal cashAmount;
 
-    private Calendar registrationDate;
-
-    private Set<Bet> bets = new HashSet<Bet>();
-
     public String getLogin() {
         return login;
     }
@@ -92,19 +88,17 @@ public class User extends Entity {
         this.cashAmount = cashAmount;
     }
 
-    public Set<Bet> getBets() {
-        return bets;
-    }
-
-    public void setBets(Set<Bet> bets) {
-        this.bets = bets;
-    }
-
-    public Calendar getRegistrationDate() {
-        return registrationDate;
-    }
-
-    public void setRegistrationDate(Calendar registrationDate) {
-        this.registrationDate = registrationDate;
+    @Override
+    public String toString() {
+        return "User{" +
+                "login='" + login + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", role=" + role +
+                ", cashAmount=" + cashAmount +
+                '}';
     }
 }

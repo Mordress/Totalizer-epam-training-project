@@ -41,7 +41,6 @@ public class BreedServiceImpl extends ServiceImpl implements BreedService {
         } catch (DaoException e) {
             throw new ServiceException(e.getMessage(), e.getCause());
         }
-
     }
 
     @Override

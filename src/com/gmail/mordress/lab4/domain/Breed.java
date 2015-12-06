@@ -14,6 +14,8 @@ public class Breed extends Entity {
 
     @Override
     public String toString() {
-        return getId() +" " + getName();
+        return "Breed{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

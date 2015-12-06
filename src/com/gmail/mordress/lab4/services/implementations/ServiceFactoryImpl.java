@@ -19,6 +19,7 @@ public class ServiceFactoryImpl implements ServiceFactory {
 
     static {
         SERVICES.put(BreedService.class, BreedServiceImpl.class);
+        //SERVICES.put(HorseService.class, HorseServiceImpl.class);
         //TODO OTHER
     }
 
