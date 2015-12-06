@@ -29,24 +29,41 @@ public class HorseServiceImpl extends ServiceImpl implements HorseService {
     }
 
     @Override
-    public Horse findHorseById(Integer id) throws ServiceException {
+    public Horse findHorseById(final Integer id) throws ServiceException {
         try {
             HorseDao horseDao = factory.createDao(HorseDao.class);
+            Horse horse = horseDao.read(id);
+            buildHorse(horse);
+            return horse;
         } catch (DaoException e) {
             throw new ServiceException(e.getMessage(), e.getCause());
         }
     }
 
     @Override
-    public List<Horse> findHorsesByBreed(Breed breed) throws ServiceException {
-        return null;
+    public List<Horse> findHorsesByBreed(final Breed breed) throws ServiceException {
+        try {
+            HorseDao horseDao = factory.createDao(HorseDao.class);
+            List<Horse> horses = horseDao.findHorsesByBreed(breed);
+            buildHorseList(horses);
+            return horses;
+        } catch (DaoException e) {
+            throw new ServiceException(e.getMessage(), e.getCause());
+        }
     }
 
     @Override
     public List<Horse> getAllHorses() throws ServiceException {
-        return null;
+        try {
+            HorseDao horseDao = factory.createDao(HorseDao.class);
+            List<Horse> horses = horseDao.getAllHorses();
+            buildHorseList(horses);
+            return horses;
+        } catch (DaoException e) {
+            throw new ServiceException(e.getMessage(), e.getCause());
+        }
     }
-    
+
     /* Собираем коня по частям из разных DAO */
     private void buildHorse(Horse horse) throws ServiceException {
         try {
@@ -58,6 +75,14 @@ public class HorseServiceImpl extends ServiceImpl implements HorseService {
         } catch (DaoException e) {
             logger.debug("Service layer can't build horse with ID = " + horse.getId());
             throw new ServiceException(e.getMessage(), e.getCause());
+        }
+    }
+
+    private void buildHorseList(List<Horse> horses) throws ServiceException {
+        for (Horse horse : horses) {
+            if (horse != null) {
+                buildHorse(horse);
+            }
         }
     }
 }
