@@ -65,7 +65,6 @@
       <column name="role_ID" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="role_ID"/>
-      <exported-key name="users_ibfk_1" table="users" schema="" catalog="racing" columns="role_ID"/>
       <index name="name" unique="true" columns="name"/>
     </table>
     <table name="users" schema="" catalog="racing" type="TABLE">
@@ -74,16 +73,14 @@
       <column name="first_name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="role_ID" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="role" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
       <column name="email" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
       <column name="phone" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12"/>
       <column name="cash_amount" sqlType="DECIMAL" precision="10" scale="2" nullable="true" jdbcType="3"/>
       <primary-key name="PRIMARY" columns="user_ID"/>
-      <foreign-key name="users_ibfk_1" columns="role_ID" ref-table="role" ref-schema="" ref-catalog="racing" ref-columns="role_ID" update-rule="0" delete-rule="3" deferrability="2"/>
       <exported-key name="bet_ibfk_2" table="bet" schema="" catalog="racing" columns="user_ID"/>
       <index name="login" unique="true" columns="login"/>
       <index name="UIX_user_login" unique="true" columns="login"/>
-      <index name="XIF1_users_role_ID" unique="false" columns="role_ID"/>
     </table>
   </data-source>
 </component>
