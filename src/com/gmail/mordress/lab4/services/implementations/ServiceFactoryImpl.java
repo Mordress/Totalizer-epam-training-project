@@ -3,9 +3,7 @@ package com.gmail.mordress.lab4.services.implementations;
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
 import com.gmail.mordress.lab4.exceptions.DaoException;
 import com.gmail.mordress.lab4.exceptions.ServiceException;
-import com.gmail.mordress.lab4.services.interfaces.BreedService;
-import com.gmail.mordress.lab4.services.interfaces.Service;
-import com.gmail.mordress.lab4.services.interfaces.ServiceFactory;
+import com.gmail.mordress.lab4.services.interfaces.*;
 import org.apache.log4j.Logger;
 
 import java.util.Map;
@@ -19,7 +17,8 @@ public class ServiceFactoryImpl implements ServiceFactory {
 
     static {
         SERVICES.put(BreedService.class, BreedServiceImpl.class);
-        //SERVICES.put(HorseService.class, HorseServiceImpl.class);
+        SERVICES.put(HorseService.class, HorseServiceImpl.class);
+        SERVICES.put(RaceService.class, RaceServiceImpl.class);
         //TODO OTHER
     }
 
