@@ -1,7 +1,7 @@
 package com.gmail.mordress.lab4.domain;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.util.Date;
 
 public class Bet extends Entity {
 
@@ -9,7 +9,7 @@ public class Bet extends Entity {
 
     private Integer resultRank;
 
-    private Calendar resultTime;
+    private Date resultTime;
 
     private BigDecimal betAmount;
 
@@ -19,7 +19,7 @@ public class Bet extends Entity {
 
     private User user;
 
-    private Calendar createdDate;
+    private Date createdDate;
 
     public HorseRace getHorseRace() {
         return horseRace;
@@ -37,11 +37,11 @@ public class Bet extends Entity {
         this.resultRank = resultRank;
     }
 
-    public Calendar getResultTime() {
+    public Date getResultTime() {
         return resultTime;
     }
 
-    public void setResultTime(Calendar resultTime) {
+    public void setResultTime(Date resultTime) {
         this.resultTime = resultTime;
     }
 
@@ -77,11 +77,11 @@ public class Bet extends Entity {
         this.user = user;
     }
 
-    public Calendar getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Calendar createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 }
