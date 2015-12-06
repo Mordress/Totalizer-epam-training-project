@@ -2,6 +2,7 @@ package com.gmail.mordress.lab4.dao.implementation;
 
 import com.gmail.mordress.lab4.dao.interfaces.BetDao;
 import com.gmail.mordress.lab4.domain.Bet;
+import com.gmail.mordress.lab4.domain.HorseRace;
 import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.DaoException;
 import org.apache.log4j.Logger;
@@ -10,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 import java.util.List;
 
 public class BetDaoImpl extends BaseDaoImpl implements BetDao {
@@ -53,15 +55,65 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             statement.setBoolean(6, instance.getIsWinner());
             statement.setInt(7, instance.getUser().getId());
             statement.setTimestamp(8, new java.sql.Timestamp(instance.getCreatedDate().getTime()));
-
+            statement.executeUpdate();
+            resultSet = statement.getGeneratedKeys();
+            if (resultSet.next()) {
+                logger.debug("Bet with id = " + instance.getId() + " successfully created!");
+                return resultSet.getInt(1);
+            } else {
+                logger.error("There is no autoincremented index after trying to add record into table `bets`");
+                throw new DaoException();
+            }
         } catch (SQLException e) {
-
+            logger.error("Can not create bet with id = " + instance.getId());
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch(SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch(SQLException | NullPointerException e) {}
         }
     }
 
     @Override
     public Bet read(Integer id) throws DaoException {
-        return null;
+        String sql = "SELECT  * FROM `bet` WHERE `bet_ID` = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            resultSet = statement.executeQuery();
+            Bet bet = null;
+            if (resultSet.next()) {
+                bet = new Bet();
+                HorseRace horseRace = new HorseRace();
+                horseRace.setId(resultSet.getInt("horse_race_ID"));
+                bet.setHorseRace(horseRace);
+                bet.setResultRank(resultSet.getInt("result_rank"));
+                bet.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                bet.setIsWinner(resultSet.getBoolean("is_winner"));
+                bet.setBetAmount(resultSet.getBigDecimal("bet_amount"));
+                bet.setWinAmount(resultSet.getBigDecimal("win_amount"));
+                User user = new User();
+                user.setId(resultSet.getInt("user_ID"));
+                bet.setUser(user);
+            }
+            logger.debug("Successfull reading bet with id = " + id);
+            return bet;
+        } catch (SQLException e) {
+            logger.error("Can not read bet with id = " + id);
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch(SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch(SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
