@@ -162,7 +162,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
         ResultSet resultSet = null;
         try {
             statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            statement.setInt(1, instance.getId());
+            statement.setInt(1, instance.getHorseRace().getId());
             statement.setInt(2, instance.getResultRank());
             if (instance.getResultTime() != null) {
                 statement.setTime(3, new java.sql.Time(instance.getResultTime().getTime()));
@@ -221,6 +221,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
                 User user = new User();
                 user.setId(resultSet.getInt("user_ID"));
                 bet.setUser(user);
+                bet.setCreatedDate(new Date(resultSet.getTimestamp("created_date").getTime()));
             }
             logger.debug("Successfull reading bet with id = " + id);
             return bet;

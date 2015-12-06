@@ -2,6 +2,7 @@ import com.gmail.mordress.lab4.dao.implementation.BetDaoImpl;
 import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
 import com.gmail.mordress.lab4.dao.interfaces.BetDao;
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
+import com.gmail.mordress.lab4.domain.Bet;
 import com.gmail.mordress.lab4.exceptions.DaoException;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 
@@ -13,12 +14,14 @@ public class BetDaoImplTest {
         DaoFactory factory = new DaoFactoryImpl();
         BetDaoImpl bdi = factory.createDao(BetDao.class);
 
-        System.out.println(bdi.read(1));
+            Bet bet = bdi.read(3);
+            System.out.println(bet);
+            //bdi.create(bet);
         } catch (DaoException e) {
             e.printStackTrace();
         } catch (PersistentException e1) {
             e1.printStackTrace();
         }
-
+        //TODO other test
     }
 }

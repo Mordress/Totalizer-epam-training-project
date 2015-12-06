@@ -84,4 +84,18 @@ public class Bet extends Entity {
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
+
+    @Override
+    public String toString() {
+        return "Bet{" +
+                "horseRace=" + horseRace +
+                ", resultRank=" + resultRank +
+                ", resultTime=" + resultTime +
+                ", betAmount=" + betAmount +
+                ", winAmount=" + winAmount +
+                ", isWinner=" + isWinner +
+                ", user=" + user +
+                ", createdDate=" + createdDate +
+                '}';
+    }
 }

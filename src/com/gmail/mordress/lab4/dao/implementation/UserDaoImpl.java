@@ -6,6 +6,10 @@ import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.DaoException;
 import org.apache.log4j.Logger;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 public class UserDaoImpl extends BaseDaoImpl implements UserDao {
@@ -50,7 +54,17 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public Integer create(User instance) throws DaoException {
-        return null;
+        String sql = "INSERT INTO `users` ()";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+        } catch (SQLException e) {
+
+        } finally {
+
+        }
     }
 
     @Override
