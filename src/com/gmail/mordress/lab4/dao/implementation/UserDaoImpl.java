@@ -17,7 +17,6 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     private static Logger logger = Logger.getLogger(UserDaoImpl.class);
 
-
     @Override
     public User findUser(String login, String password) throws DaoException {
         String sql = "SELECT * FROM `users` WHERE (`login` = ? AND `password` = ?)";
@@ -83,18 +82,8 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean isSimpleUser(User user) throws DaoException {
-        return false;
-    }
-
-    @Override
-    public boolean isPositiveCashAmount(User user) throws DaoException {
-        return false;
-    }
-
-    @Override
     public List<User> getAllSimpleUsers() throws DaoException {
-        return null;
+        String sql = ""
     }
 
     @Override

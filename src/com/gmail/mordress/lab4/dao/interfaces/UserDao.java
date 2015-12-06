@@ -12,10 +12,6 @@ public interface UserDao extends Dao<User> {
 
     public boolean checkUniqueLogin(String login) throws DaoException;
 
-    public boolean isSimpleUser(User user) throws DaoException;
-
-    public boolean isPositiveCashAmount(User user) throws DaoException;
-
     public List<User> getAllSimpleUsers() throws DaoException;
 
     public List<User> getAllUsers() throws DaoException;
