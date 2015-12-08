@@ -20,9 +20,9 @@ public enum Role {
         return ordinal();
     }
 
-    public static Role getByIdentity(Integer identity) {
-        if (identity >= 0 && identity <= 2) {
-            return Role.values()[identity];
+    public static Role getById(Integer id) {
+        if (id >= 0 && id <= 2) {
+            return Role.values()[id];
         } else {
             return null;
         }

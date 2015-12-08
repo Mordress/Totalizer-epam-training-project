@@ -35,7 +35,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                 user.setPassword(password);
                 user.setFirstName(resultSet.getString("first_name"));
                 user.setLastName(resultSet.getString("last_name"));
-                user.setRole(Role.getByIdentity(resultSet.getInt("role")));
+                user.setRole(Role.getById(resultSet.getInt("role")));
                 user.setEmail(resultSet.getString("email"));
                 user.setCashAmount(resultSet.getBigDecimal("cash_amount"));
             }
@@ -98,7 +98,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                 user.setFirstName(resultSet.getString("first_name"));
                 user.setLastName(resultSet.getString("last_name"));
                 user.setEmail(resultSet.getString("email"));
-                user.setRole(Role.getByIdentity(resultSet.getInt("role")));
+                user.setRole(Role.getById(resultSet.getInt("role")));
                 user.setCashAmount(resultSet.getBigDecimal("cash_amount"));
                 users.add(user);
             }
@@ -156,7 +156,36 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public User read(Integer id) throws DaoException {
-        return null;
+        String sql = "SELECT * FROM `users` WHERE user_ID = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            resultSet = statement.executeQuery();
+            User user = null;
+            if (resultSet.next()) {
+                user = new User();
+                user.setId(id);
+                user.setLogin(resultSet.getString("login"));
+                user.setPassword(resultSet.getString("password"));
+                user.setFirstName(resultSet.getString("first_name"));
+                user.setLastName(resultSet.getString("last_name"));
+                user.setRole(Role.getById(resultSet.getInt("role")));
+                user.setEmail(resultSet.getString("email"));
+                user.setCashAmount(resultSet.getBigDecimal("cash_amount"));
+            }
+            return user;
+        } catch(SQLException e) {
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch(SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch(SQLException | NullPointerException e) {}
+        }
     }
 
     @Override

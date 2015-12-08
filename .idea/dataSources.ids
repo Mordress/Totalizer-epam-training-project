@@ -70,7 +70,6 @@
       <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="role" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
       <column name="email" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
-      <column name="phone" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12"/>
       <column name="cash_amount" sqlType="DECIMAL" precision="10" scale="2" nullable="true" jdbcType="3"/>
       <primary-key name="PRIMARY" columns="user_ID"/>
       <exported-key name="bet_ibfk_2" table="bet" schema="" catalog="racing" columns="user_ID"/>
