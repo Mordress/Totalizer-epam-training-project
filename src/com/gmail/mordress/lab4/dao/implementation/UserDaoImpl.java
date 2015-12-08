@@ -213,6 +213,18 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public void delete(Integer id) throws DaoException {
-
+        String sql = "DELETE FROM `users` WHERE `user_ID` = ?";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch(SQLException e) {
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                statement.close();
+            } catch(SQLException | NullPointerException e) {}
+        }
     }
 }

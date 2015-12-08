@@ -18,6 +18,7 @@ import java.util.List;
 public class BetDaoImpl extends BaseDaoImpl implements BetDao {
 
     private static Logger logger = Logger.getLogger(BetDaoImpl.class);
+    //TODO ПЕРЕДЕЛАТЬ КЛАСС!
 
     @Override
     public List<Bet> findAllBetsByUser(User instance) throws DaoException {
