@@ -6,9 +6,17 @@
         <element id="directory" name="classes">
           <element id="module-output" name="lab4" />
         </element>
-        <element id="directory" name="lib" />
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="log4j-1.2.16" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.37-bin" />
+          <element id="library" level="project" name="servlet-api" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="lab4/web/Web" />
+      <element id="directory" name="resources">
+        <element id="dir-copy" path="$PROJECT_DIR$/resources" />
+      </element>
     </root>
   </artifact>
 </component>

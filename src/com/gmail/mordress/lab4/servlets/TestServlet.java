@@ -1,8 +1,12 @@
 package com.gmail.mordress.lab4.servlets;
 
 import com.gmail.mordress.lab4.dao.implementation.BreedDaoImpl;
+import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
+import com.gmail.mordress.lab4.dao.interfaces.BreedDao;
+import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
 import com.gmail.mordress.lab4.domain.Breed;
 import com.gmail.mordress.lab4.exceptions.DaoException;
+import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -25,11 +29,15 @@ public class TestServlet extends HttpServlet {
         PrintWriter pw = resp.getWriter();
         pw.println("<h1> Hello from Test Servlet </h1>");
         pw.println("<h1> Привет </h1>");
-        BreedDaoImpl breedDaoImpl = new BreedDaoImpl();
+        logger.debug("test");
         try {
-            List<Breed> list = breedDaoImpl.getAllBreeds();
-            pw.println(list.get(1));
-        } catch (DaoException e) {
+            DaoFactory instance = new DaoFactoryImpl();
+            BreedDaoImpl bdi = instance.createDao(BreedDao.class);
+            List<Breed> breeds = bdi.getAllBreeds();
+            for (Breed breed : breeds) {
+                pw.println(breed.getName());
+            }
+        } catch (DaoException | PersistentException e) {
             logger.error("not working =(");
             e.printStackTrace();
         }

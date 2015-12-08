@@ -1,30 +1,43 @@
-2015-12-06 02:03:40 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 02:03:40 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseRaceDaoImpl
-2015-12-06 02:04:29 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 02:04:29 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseRaceDaoImpl
-2015-12-06 02:05:25 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 02:05:25 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseRaceDaoImpl
-2015-12-06 02:06:01 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 02:06:01 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseRaceDaoImpl
-2015-12-06 02:07:55 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 02:07:55 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseRaceDaoImpl
-2015-12-06 02:08:50 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 02:08:50 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseRaceDaoImpl
-2015-12-06 02:09:27 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 02:09:27 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseRaceDaoImpl
-2015-12-06 02:09:37 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 02:09:37 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.HorseRaceDaoImpl
-2015-12-06 12:19:32 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 12:19:32 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.BetDaoImpl
-2015-12-06 12:23:47 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 12:23:47 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.BetDaoImpl
-2015-12-06 12:23:47 DEBUG BetDaoImpl:209 - Successfull reading bet with id = 1
-2015-12-06 12:44:35 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 12:44:35 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.BetDaoImpl
-2015-12-06 12:44:35 DEBUG BetDaoImpl:225 - Successfull reading bet with id = 3
-2015-12-06 12:45:45 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 12:45:45 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.BetDaoImpl
-2015-12-06 12:45:45 DEBUG BetDaoImpl:225 - Successfull reading bet with id = 3
-2015-12-06 12:49:48 DEBUG ConnectionPool:107 - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
-2015-12-06 12:49:48 DEBUG DaoFactoryImpl:49 - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.BetDaoImpl
-2015-12-06 12:49:48 DEBUG BetDaoImpl:226 - Successfull reading bet with id = 3
+2015-12-08 07:47:18 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-08 07:47:18 DEBUG [   implementation.DaoFactoryImpl] - Successful creating DAO class com.gmail.mordress.lab4.dao.implementation.BreedDaoImpl
+2015-12-08 07:47:18 DEBUG [     implementation.BreedDaoImpl] - Successful read breeds
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was returned into pool. Current pool size: 0 used connections; 50 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 1 used connections; 49 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 2 used connections; 48 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 3 used connections; 47 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 4 used connections; 46 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 5 used connections; 45 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 6 used connections; 44 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 7 used connections; 43 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 8 used connections; 42 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 9 used connections; 41 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 10 used connections; 40 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 11 used connections; 39 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 12 used connections; 38 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was returned into pool. Current pool size: 11 used connections; 39 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was returned into pool. Current pool size: 10 used connections; 40 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was returned into pool. Current pool size: 9 used connections; 41 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was returned into pool. Current pool size: 8 used connections; 42 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 9 used connections; 41 free connection
+2015-12-08 07:47:22 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 10 used connections; 40 free connection
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 1 used connection(s); 49 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was returned into pool. Current pool size: 0 used connections; 50 free connection
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 1 used connection(s); 49 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 2 used connection(s); 48 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 3 used connection(s); 47 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 4 used connection(s); 46 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 5 used connection(s); 45 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 6 used connection(s); 44 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 7 used connection(s); 43 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 8 used connection(s); 42 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 9 used connection(s); 41 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 10 used connection(s); 40 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 11 used connection(s); 39 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 12 used connection(s); 38 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was returned into pool. Current pool size: 11 used connections; 39 free connection
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was returned into pool. Current pool size: 10 used connections; 40 free connection
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was returned into pool. Current pool size: 9 used connections; 41 free connection
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was returned into pool. Current pool size: 8 used connections; 42 free connection
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 9 used connection(s); 41 free connection(s)
+2015-12-08 07:48:12 DEBUG [             pool.ConnectionPool] - Connection was received from pool. Current pool size: 10 used connection(s); 40 free connection(s)

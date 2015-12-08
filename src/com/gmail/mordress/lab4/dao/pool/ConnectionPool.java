@@ -105,7 +105,7 @@ public final class ConnectionPool {
         }
         usedConnections.add(connection);
         logger.debug(String.format("Connection was received from pool." +
-                " Current pool size: %d used connections; %d free connection",
+                " Current pool size: %d used connection(s); %d free connection(s)",
                 usedConnections.size(), freeConnections.size()));
         return connection;
 

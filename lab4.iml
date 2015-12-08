@@ -11,7 +11,7 @@
         </webroots>
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src" />
-          <root url="file://$MODULE_DIR$/resources" />
+          <root url="file://$MODULE_DIR$/tests" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -25,8 +25,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="log4j-1.2.16" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.37-bin" level="project" />
-    <orderEntry type="library" name="servlet-api" level="project" />
+    <orderEntry type="library" exported="" name="log4j-1.2.16" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-5.1.37-bin" level="project" />
+    <orderEntry type="library" exported="" name="servlet-api" level="project" />
+    <orderEntry type="library" exported="" name="jstl-1.2" level="project" />
   </component>
 </module>
