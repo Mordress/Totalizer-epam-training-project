@@ -91,15 +91,14 @@ INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `em
 #insert bets
 INSERT INTO `bet` (`horse_race_ID`,
                    `result_rank`,
-                   `result_time`,
                    `bet_amount`,
                    `win_amount`,
                    `is_winner`,
                    `user_ID`,
                    `created_date`)
 VALUES
-  (21, 3, NULL, 100.00, NULL, NULL, 3, DEFAULT),
-  (23, NULL, '00:07:10', 50.00, NULL, NULL, 3, DEFAULT),
-  (3, 2, NULL, 10.00, 20.00, TRUE, 4, '2015-01-09 15:30:00');
+  (21, 3, 100.00, NULL, NULL, 3, DEFAULT),
+  (23, NULL, 50.00, NULL, NULL, 3, DEFAULT),
+  (3, 2, 10.00, 20.00, TRUE, 4, '2015-01-09 15:30:00');
 
 

@@ -6,7 +6,6 @@ CREATE TABLE bet
 	bet_ID               INTEGER AUTO_INCREMENT,
 	horse_race_ID        INTEGER NOT NULL,
 	result_rank          TINYINT NULL,
-	result_time          TIME NULL,
 	bet_amount           DECIMAL(10,2) NOT NULL,
 	win_amount           DECIMAL(10,2) NULL,
 	is_winner            BOOLEAN NULL,

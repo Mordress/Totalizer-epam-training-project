@@ -9,8 +9,6 @@ public class Bet extends Entity {
 
     private Integer resultRank;
 
-    private Date resultTime;
-
     private BigDecimal betAmount;
 
     private BigDecimal winAmount;
@@ -35,14 +33,6 @@ public class Bet extends Entity {
 
     public void setResultRank(Integer resultRank) {
         this.resultRank = resultRank;
-    }
-
-    public Date getResultTime() {
-        return resultTime;
-    }
-
-    public void setResultTime(Date resultTime) {
-        this.resultTime = resultTime;
     }
 
     public BigDecimal getBetAmount() {
@@ -90,7 +80,6 @@ public class Bet extends Entity {
         return "Bet{" +
                 "horseRace=" + horseRace +
                 ", resultRank=" + resultRank +
-                ", resultTime=" + resultTime +
                 ", betAmount=" + betAmount +
                 ", winAmount=" + winAmount +
                 ", isWinner=" + isWinner +
