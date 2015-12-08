@@ -1,3 +1,5 @@
+package dao;
+
 import com.gmail.mordress.lab4.dao.implementation.*;
 import com.gmail.mordress.lab4.dao.interfaces.*;
 import com.gmail.mordress.lab4.domain.Breed;
@@ -19,7 +21,7 @@ public class HorseRaceDaoImplTest {
             RaceDaoImpl rdi = factory.createDao(RaceDao.class);
             BreedDaoImpl bdi = factory.createDao(BreedDao.class);
 
-            HorseRace horseRace = hrdi.read(1);
+            HorseRace horseRace = hrdi.read(21);
             Horse horse = hdi.read(horseRace.getHorse().getId());
             Breed breed = bdi.read(horse.getBreed().getId());
             horse.setBreed(breed);

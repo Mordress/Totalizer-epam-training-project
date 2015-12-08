@@ -1,3 +1,5 @@
+package dao;
+
 import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
 import com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl;
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;

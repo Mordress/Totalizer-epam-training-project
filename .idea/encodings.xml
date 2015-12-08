@@ -38,9 +38,13 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/Service.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/ServiceFactory.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/servlets/TestServlet.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tests/BreedDaoImplTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tests/ConnectionPoolTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tests/HorseDaoImplTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tests/RaceDaoImplTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/dao/BetDaoImplTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/dao/BreedDaoImplTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/dao/HorseDaoImplTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/dao/HorseRaceDaoImplTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/dao/RaceDaoImplTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/dao/UserDaoImplTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/domain/RoleTester.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/pool/ConnectionPoolTest.java" charset="UTF-8" />
   </component>
 </project>

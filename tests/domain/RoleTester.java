@@ -1,3 +1,5 @@
+package domain;
+
 import com.gmail.mordress.lab4.domain.Role;
 
 public class RoleTester {

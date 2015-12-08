@@ -1,3 +1,5 @@
+package pool;
+
 import com.gmail.mordress.lab4.dao.pool.ConnectionPool;
 import java.sql.Connection;
 
