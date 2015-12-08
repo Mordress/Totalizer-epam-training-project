@@ -4,6 +4,7 @@ import com.gmail.mordress.lab4.dao.interfaces.UserDao;
 import com.gmail.mordress.lab4.domain.Role;
 import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.DaoException;
+import com.sun.istack.internal.Nullable;
 import org.apache.log4j.Logger;
 
 import java.sql.PreparedStatement;
@@ -39,10 +40,8 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                 user.setEmail(resultSet.getString("email"));
                 user.setCashAmount(resultSet.getBigDecimal("cash_amount"));
             }
-            logger.debug("User found.");
             return user;
         } catch (SQLException e) {
-            logger.error("Can not find user with login = " + login);
             throw new DaoException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -201,6 +200,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             statement.setInt(5, instance.getRole().getId());
             statement.setString(6, instance.getEmail());
             statement.setBigDecimal(7, instance.getCashAmount());
+            statement.setInt(8, instance.getId());
             statement.executeUpdate();
         } catch(SQLException e) {
             throw new DaoException(e.getMessage(), e.getCause());
