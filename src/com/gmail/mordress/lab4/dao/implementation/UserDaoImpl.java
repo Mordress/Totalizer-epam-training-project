@@ -190,7 +190,25 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public void update(User instance) throws DaoException {
-
+        String sql = "UPDATE `users` SET `login` = ?, `password` = ?, `first_name` = ?, `last_name` = ?, `role` = ?, `email` = ?, `cash_amount` = ? WHERE `user_ID` = ?";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, instance.getLogin());
+            statement.setString(2, instance.getPassword());
+            statement.setString(3, instance.getFirstName());
+            statement.setString(4, instance.getLastName());
+            statement.setInt(5, instance.getRole().getId());
+            statement.setString(6, instance.getEmail());
+            statement.setBigDecimal(7, instance.getCashAmount());
+            statement.executeUpdate();
+        } catch(SQLException e) {
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                statement.close();
+            } catch(SQLException | NullPointerException e) {}
+        }
     }
 
     @Override
