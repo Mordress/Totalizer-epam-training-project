@@ -50,13 +50,34 @@ public final class ConnectionPool {
     };
 
     public static ConnectionPool getInstance() {
+        logger.debug("Successful created connection pool.");
         return instance;
     }
 
     public synchronized void init() throws PersistentException {
         try {
             destroy();
-            FileInputStream fileInputStream = new FileInputStream("resources" + File.separator + "db.properties");
+            this.driverClass = "com.mysql.jdbc.Driver";
+            this.dbURL = "jdbc:mysql://localhost:3306/racing?useUnicode=true&characterEncoding=UTF-8";
+            this.dbUser = "dev";
+            this.dbPassword = "9958108";
+            this.maxPoolSize = 100;
+            this.minPoolSize = 50;
+            this.timeout = 180;
+            Class.forName(driverClass);
+            for(int counter = 0; counter < minPoolSize; counter++) {
+                freeConnections.put(createConnection());
+            }
+        } catch(ClassNotFoundException | SQLException | InterruptedException e) {
+            logger.fatal("Can't initialize db connection pool.", e);
+            throw new PersistentException(e.getMessage(), e.getCause());
+        }
+    }
+
+    /*public synchronized void init() throws PersistentException {
+        try {
+            destroy();
+            FileInputStream fileInputStream = new FileInputStream("\\WEB-INF\\classes\\db.properties");
             Properties properties = new Properties();
             properties.load(fileInputStream);
             this.driverClass = properties.getProperty("DRIVER_CLASS");
@@ -71,6 +92,7 @@ public final class ConnectionPool {
                 freeConnections.put(createConnection());
             }
             fileInputStream.close();
+            logger.debug("Successful reading db.props");
         } catch (IOException | NumberFormatException e) {
             logger.fatal("File db.properties not found or invalid.", e);
             throw new PersistentException(e.getMessage(), e.getCause());
@@ -78,7 +100,7 @@ public final class ConnectionPool {
             logger.fatal("Can't initialize db connection pool.", e);
             throw new PersistentException(e.getMessage(), e.getCause());
         }
-    }
+    }*/
 
     public synchronized Connection getConnection() throws PersistentException {
         PooledConnection connection = null;
@@ -105,7 +127,7 @@ public final class ConnectionPool {
         }
         usedConnections.add(connection);
         logger.debug(String.format("Connection was received from pool." +
-                " Current pool size: %d used connection(s); %d free connection(s)",
+                " Current pool size: %2d used connection(s); %2d free connection(s)",
                 usedConnections.size(), freeConnections.size()));
         return connection;
 
@@ -139,7 +161,7 @@ public final class ConnectionPool {
                 usedConnections.remove(connection);
                 freeConnections.put(connection);
                 logger.debug(String.format("Connection was returned into pool." +
-                        " Current pool size: %d used connections; %d free connection",
+                        " Current pool size: %2d used connection(s); %2d free connection(s)",
                         usedConnections.size(), freeConnections.size()));
             }
         } catch(SQLException | InterruptedException e1) {

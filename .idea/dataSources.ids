@@ -34,11 +34,12 @@
       <column name="horse_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
       <column name="breed_ID" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
-      <column name="weight" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5"/>
-      <column name="age" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="weight" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="age" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <primary-key name="PRIMARY" columns="horse_ID"/>
       <foreign-key name="horse_ibfk_1" columns="breed_ID" ref-table="breed" ref-schema="" ref-catalog="racing" ref-columns="breed_ID" update-rule="0" delete-rule="3" deferrability="2"/>
       <exported-key name="horse_race_ibfk_1" table="horse_race" schema="" catalog="racing" columns="horse_ID"/>
+      <index name="name" unique="true" columns="name"/>
       <index name="XIF1_horse_breed_ID" unique="false" columns="breed_ID"/>
     </table>
     <table name="horse_race" schema="" catalog="racing" type="TABLE">
@@ -57,15 +58,9 @@
     <table name="race" schema="" catalog="racing" type="TABLE">
       <column name="race_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="date" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
-      <column name="distance" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="distance" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="race_ID"/>
       <exported-key name="horse_race_ibfk_2" table="horse_race" schema="" catalog="racing" columns="race_ID"/>
-    </table>
-    <table name="role" schema="" catalog="racing" type="TABLE">
-      <column name="role_ID" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="role_ID"/>
-      <index name="name" unique="true" columns="name"/>
     </table>
     <table name="users" schema="" catalog="racing" type="TABLE">
       <column name="user_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>

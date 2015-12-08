@@ -30,7 +30,7 @@ public class ServiceFactoryImpl implements ServiceFactory {
 
     @Override
     @SuppressWarnings("unchecked")
-    public <Type extends Service> Type getService(Class<Type> key) throws ServiceException {
+    public <Type extends Service> Type getService(Class<? extends Service> key) throws ServiceException {
         Class<? extends ServiceImpl> value = SERVICES.get(key);
         if(value != null) {
             try {

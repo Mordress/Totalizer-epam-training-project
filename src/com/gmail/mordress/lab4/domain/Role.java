@@ -21,6 +21,10 @@ public enum Role {
     }
 
     public static Role getByIdentity(Integer identity) {
-        return Role.values()[identity];
+        if (identity >= 0 && identity <= 2) {
+            return Role.values()[identity];
+        } else {
+            return null;
+        }
     }
 }
