@@ -99,7 +99,6 @@ CREATE TABLE users
 	password             VARCHAR(255) NOT NULL,
 	role                 TINYINT NOT NULL DEFAULT 1,
 	email                VARCHAR(30) NOT NULL,
-	phone                VARCHAR(15) NOT NULL,
 	cash_amount          DECIMAL(10,2) NULL,
 PRIMARY KEY PK_users(user_ID)
 );

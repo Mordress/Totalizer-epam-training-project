@@ -1,7 +1,6 @@
 package com.gmail.mordress.lab4.dao.implementation;
 
 import com.gmail.mordress.lab4.dao.interfaces.UserDao;
-import com.gmail.mordress.lab4.domain.Bet;
 import com.gmail.mordress.lab4.domain.Role;
 import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.DaoException;
@@ -38,7 +37,6 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                 user.setLastName(resultSet.getString("last_name"));
                 user.setRole(Role.getByIdentity(resultSet.getInt("role")));
                 user.setEmail(resultSet.getString("email"));
-                user.setPhone(resultSet.getString("phone"));
                 user.setCashAmount(resultSet.getBigDecimal("cash_amount"));
             }
             logger.debug("User found.");
@@ -84,7 +82,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public List<User> getAllSimpleUsers() throws DaoException {
-        String sql = "SELECT * FROM `users` WHERE role = 1";
+        String sql = "SELECT * FROM `users` WHERE role = 0";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
@@ -100,7 +98,6 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                 user.setFirstName(resultSet.getString("first_name"));
                 user.setLastName(resultSet.getString("last_name"));
                 user.setEmail(resultSet.getString("email"));
-                user.setPhone(resultSet.getString("phone"));
                 user.setRole(Role.getByIdentity(resultSet.getInt("role")));
                 user.setCashAmount(resultSet.getBigDecimal("cash_amount"));
                 users.add(user);
@@ -120,14 +117,41 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
         }
     }
 
-    @Override
-    public List<Bet> findAllBetsByUser(User user) throws DaoException {
-        return null;
-    }
 
     @Override
     public Integer create(User instance) throws DaoException {
-        return null;
+        String sql = "INSERT INTO `users` (`login`, `password`, `first_name`, `last_name`, `role`, `email`, `cash_amount`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            statement.setString(1, instance.getLogin());
+            statement.setString(2, instance.getPassword());
+            statement.setString(3, instance.getFirstName());
+            statement.setString(4, instance.getLastName());
+            statement.setInt(5, instance.getRole().getId());
+            statement.setString(6, instance.getEmail());
+            statement.setBigDecimal(7, instance.getCashAmount());
+            statement.executeUpdate();
+            resultSet = statement.getGeneratedKeys();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            } else {
+                logger.error("There is no autoincremented index after trying to add record into table `users`");
+                throw new DaoException();
+            }
+
+        } catch (SQLException e) {
+            throw new DaoException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch(SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch(SQLException | NullPointerException e) {}
+        }
+
     }
 
     @Override

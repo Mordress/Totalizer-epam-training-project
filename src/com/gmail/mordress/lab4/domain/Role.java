@@ -16,7 +16,7 @@ public enum Role {
         return name;
     }
 
-    public Integer getIdentity() {
+    public Integer getId() {
         return ordinal();
     }
 

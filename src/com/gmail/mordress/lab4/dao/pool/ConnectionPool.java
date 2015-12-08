@@ -50,7 +50,6 @@ public final class ConnectionPool {
     };
 
     public static ConnectionPool getInstance() {
-        logger.debug("Successful created connection pool.");
         return instance;
     }
 

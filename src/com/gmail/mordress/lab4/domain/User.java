@@ -1,10 +1,6 @@
 package com.gmail.mordress.lab4.domain;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 public class User extends Entity {
 
@@ -17,8 +13,6 @@ public class User extends Entity {
     private String password;
 
     private String email;
-
-    private String phone;
 
     private Role role;
 
@@ -64,14 +58,6 @@ public class User extends Entity {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public Role getRole() {
         return role;
     }
@@ -96,7 +82,6 @@ public class User extends Entity {
                 ", lastName='" + lastName + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
                 ", role=" + role +
                 ", cashAmount=" + cashAmount +
                 '}';

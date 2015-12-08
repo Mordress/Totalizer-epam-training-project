@@ -55,14 +55,13 @@ INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) V
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (3, 10, NULL , NULL );
 #insert users
 #for store password using SHA-256
-INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `email`, `phone`, `cash_amount`) VALUES
+INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `email`, `cash_amount`) VALUES
   ('administrator',
    'Andrew',
    'Bownell',
    '4194D1706ED1F408D5E02D672777019F4D5385C766A8C6CA8ACBA3167D36A7B9',
    2,
    'andrew.bownell@gmail.com',
-   '8(029)111-22-33',
    NULL),
 
   ('bookmaker',
@@ -71,7 +70,6 @@ INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `em
    'A8977290E24F481DC6291CEE29C9041254F041427B31D07484C563035F35251C',
    1,
    'oleg.tur@gmail.com',
-   '8(029)252-62-27',
    NULL),
 
   ('alex1985',
@@ -80,7 +78,6 @@ INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `em
    '6C8FE625B2F67E1565BA9830372C62887918F43ACE76C6EAF764EA2EE02A0B8C',
    0,
    'alex.angel@gmail.com',
-   '8(029)555-66-77',
    1000),
 
   ('sophia22',
@@ -89,7 +86,6 @@ INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `em
    'EC26534EBDD2BB0C8CE521F861930A8F9994FDB2560F4E824EC9898C067170ED',
    0,
    'sophia.brown@gmail.com',
-   '8(029)432-23-17',
    2200);
 
 #insert bets
