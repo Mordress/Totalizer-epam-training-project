@@ -4,17 +4,49 @@
            xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
            version="3.0">
+    <display-name>Тотализатор</display-name>
     <welcome-file-list>
-        <welcome-file>/index.jsp</welcome-file>
+        <welcome-file>/index.html</welcome-file>
     </welcome-file-list>
 
     <servlet>
-        <servlet-name>testServlet</servlet-name>
-        <servlet-class>com.gmail.mordress.lab4.servlets.TestServlet</servlet-class>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>com.gmail.mordress.lab4.controller.DispatcherServlet</servlet-class>
     </servlet>
-    
     <servlet-mapping>
-        <servlet-name>testServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <url-pattern>*.html</url-pattern>
     </servlet-mapping>
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.gmail.mordress.lab4.controller.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>ActionFromUriFilter</filter-name>
+        <filter-class>com.gmail.mordress.lab4.controller.ActionFromUriFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ActionFromUriFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>SecurityFilter</filter-name>
+        <filter-class>com.gmail.mordress.lab4.controller.SecurityFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SecurityFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/jsp/error.jsp</location>
+    </error-page>
+
+
+
+
 </web-app>

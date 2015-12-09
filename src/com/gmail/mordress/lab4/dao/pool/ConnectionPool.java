@@ -76,7 +76,7 @@ public final class ConnectionPool {
     /*public synchronized void init() throws PersistentException {
         try {
             destroy();
-            FileInputStream fileInputStream = new FileInputStream("\\WEB-INF\\classes\\db.properties");
+            FileInputStream fileInputStream = new FileInputStream("\\WEB-INF\\classes\\~db.properties");
             Properties properties = new Properties();
             properties.load(fileInputStream);
             this.driverClass = properties.getProperty("DRIVER_CLASS");
@@ -93,7 +93,7 @@ public final class ConnectionPool {
             fileInputStream.close();
             logger.debug("Successful reading db.props");
         } catch (IOException | NumberFormatException e) {
-            logger.fatal("File db.properties not found or invalid.", e);
+            logger.fatal("File ~db.properties not found or invalid.", e);
             throw new PersistentException(e.getMessage(), e.getCause());
         } catch(ClassNotFoundException | SQLException | InterruptedException e) {
             logger.fatal("Can't initialize db connection pool.", e);
