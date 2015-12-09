@@ -1,8 +1,8 @@
 package com.gmail.mordress.lab4.dao.implementation;
 
 import com.gmail.mordress.lab4.dao.interfaces.BreedDao;
-import com.gmail.mordress.lab4.exceptions.DaoException;
 import com.gmail.mordress.lab4.domain.Breed;
+import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
 
 import java.sql.PreparedStatement;
@@ -17,7 +17,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
     private static Logger logger = Logger.getLogger(BreedDaoImpl.class);
 
     @Override
-    public Breed findByName(String name) throws DaoException {
+    public Breed findByName(String name) throws PersistentException {
         String sql = "SELECT * FROM `breed` WHERE `name` = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -34,7 +34,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
             return breed;
         } catch (SQLException e) {
             logger.debug("Can not find breed with name = " + name);
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -46,7 +46,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
     }
 
     @Override
-    public List<Breed> getAllBreeds() throws DaoException {
+    public List<Breed> getAllBreeds() throws PersistentException {
         String sql = "SELECT * FROM `breed` ORDER BY `name`";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -65,7 +65,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
             return breeds;
         } catch (SQLException e) {
             logger.debug("Can not read all breeds");
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -77,7 +77,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
     }
 
     @Override
-    public Integer create(Breed instance) throws DaoException {
+    public Integer create(Breed instance) throws PersistentException {
         String sql = "INSERT INTO `breed` (`name`) VALUES (?)";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -90,10 +90,10 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
                 return resultSet.getInt(1);
             } else {
                 logger.error("There is no autoincremented index after trying to add record into table `breed`");
-                throw new DaoException();
+                throw new PersistentException();
             }
         } catch (SQLException e) {
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -105,7 +105,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
     }
 
     @Override
-    public Breed read(Integer id) throws DaoException {
+    public Breed read(Integer id) throws PersistentException {
         String sql = "SELECT `name` FROM `breed` WHERE `breed_ID` = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -122,7 +122,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
             return breed;
         } catch (SQLException e) {
             logger.debug("Can not read breed with ID = " + id);
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -134,7 +134,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
     }
 
     @Override
-    public void update(Breed instance) throws DaoException {
+    public void update(Breed instance) throws PersistentException {
         String sql = "UPDATE `breed` SET `name` = ? WHERE `breed_ID` = ?";
         PreparedStatement statement = null;
         try {
@@ -145,7 +145,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
 
         } catch (SQLException e) {
             logger.debug("Can not update breed with ID = "  + instance.getId());
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 statement.close();
@@ -155,7 +155,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
     }
 
     @Override
-    public void delete(Integer id) throws DaoException {
+    public void delete(Integer id) throws PersistentException {
         String sql = "DELETE FROM `breed` WHERE `breed_ID` = ?";
         PreparedStatement statement = null;
         try {
@@ -164,7 +164,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
             statement.executeUpdate();
         }catch (SQLException e) {
             logger.debug("Can not delete breed with ID = " + id);
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         }finally {
             try {
                 statement.close();

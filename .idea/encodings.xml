@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/dbscheme/sql/insert_test_values.sql" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/logs/log_file.log" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/controller/DispatcherServlet.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/BaseDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/BetDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/BreedDaoImpl.java" charset="UTF-8" />

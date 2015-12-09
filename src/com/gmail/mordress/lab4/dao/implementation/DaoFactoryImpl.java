@@ -2,7 +2,6 @@ package com.gmail.mordress.lab4.dao.implementation;
 
 import com.gmail.mordress.lab4.dao.interfaces.*;
 import com.gmail.mordress.lab4.dao.pool.ConnectionPool;
-import com.gmail.mordress.lab4.exceptions.DaoException;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
 import java.sql.Connection;
@@ -28,19 +27,19 @@ public class DaoFactoryImpl implements DaoFactory {
 
     private Connection connection;
 
-    public DaoFactoryImpl() throws DaoException, PersistentException {
+    public DaoFactoryImpl() throws PersistentException {
         connection = ConnectionPool.getInstance().getConnection();
         try {
             connection.setAutoCommit(true);
         } catch(SQLException e) {
             logger.error("It is impossible to turn off autocommiting for database connection", e);
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         }
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public <T extends Dao<?>> T createDao(Class<? extends Dao<?>> key) throws DaoException {
+    public <T extends Dao<?>> T createDao(Class<? extends Dao<?>> key) throws PersistentException {
         Class<? extends BaseDaoImpl> value = classes.get(key);
         if(value != null) {
             try {
@@ -50,7 +49,7 @@ public class DaoFactoryImpl implements DaoFactory {
                 return (T)dao;
             } catch(InstantiationException | IllegalAccessException e) {
                 logger.error("It is impossible to create DAO", e);
-                throw new DaoException(e.getMessage(), e.getCause());
+                throw new PersistentException(e.getMessage(), e.getCause());
             }
         }
         return null;

@@ -6,7 +6,6 @@ import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
 import com.gmail.mordress.lab4.dao.interfaces.RaceDao;
 import com.gmail.mordress.lab4.domain.Race;
 import com.gmail.mordress.lab4.exceptions.DaoException;
-import com.gmail.mordress.lab4.exceptions.PersistentException;
 
 import java.util.List;
 

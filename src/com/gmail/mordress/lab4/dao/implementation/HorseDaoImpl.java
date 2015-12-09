@@ -1,9 +1,9 @@
 package com.gmail.mordress.lab4.dao.implementation;
 
-import com.gmail.mordress.lab4.exceptions.DaoException;
 import com.gmail.mordress.lab4.dao.interfaces.HorseDao;
 import com.gmail.mordress.lab4.domain.Breed;
 import com.gmail.mordress.lab4.domain.Horse;
+import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +17,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
     private static Logger logger = Logger.getLogger(HorseDaoImpl.class);
 
     @Override
-    public Horse findByName(String name) throws DaoException {
+    public Horse findByName(String name) throws PersistentException {
         String sql = "SELECT * FROM `horse` WHERE `name` = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -39,7 +39,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
             return horse;
         } catch (SQLException e) {
             logger.debug("Can not find horse with name = " + name);
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -51,7 +51,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
     }
 
     @Override
-    public List<Horse> findHorsesByBreed(Breed instance) throws DaoException {
+    public List<Horse> findHorsesByBreed(Breed instance) throws PersistentException {
         String sql = "SELECT * FROM `horse` WHERE `breed_ID` = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -77,7 +77,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
 
         } catch (SQLException e) {
             logger.debug("Can not find  horses by breed = " + instance);
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -89,7 +89,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
     }
 
     @Override
-    public List<Horse> getAllHorses() throws DaoException {
+    public List<Horse> getAllHorses() throws PersistentException {
         String sql = "SELECT * FROM `horse` ORDER BY `name`";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -113,7 +113,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
             return horses;
         } catch (SQLException e) {
             logger.debug("Can not read all horses");
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -125,7 +125,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
     }
 
     @Override
-    public Integer create(Horse instance) throws DaoException {
+    public Integer create(Horse instance) throws PersistentException {
         String sql = "INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES (?, ?, ?, ?)";
         PreparedStatement statement= null;
         ResultSet resultSet= null;
@@ -141,10 +141,10 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
                 return resultSet.getInt(1);
             } else {
                 logger.error("There is no autoincremented index after trying to add record into table `horse`");
-                throw new DaoException();
+                throw new PersistentException();
             }
         } catch (SQLException e) {
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -156,7 +156,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
     }
 
     @Override
-    public Horse read(Integer id) throws DaoException {
+    public Horse read(Integer id) throws PersistentException {
         String sql = "SELECT `name`, `breed_ID`, `weight`, `age` FROM `horse` WHERE `horse_ID` = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -177,7 +177,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
             return horse;
         } catch (SQLException e) {
             logger.debug("Can not read Horse form db with ID + " + id);
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -189,7 +189,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
     }
 
     @Override
-    public void update(Horse instance) throws DaoException {
+    public void update(Horse instance) throws PersistentException {
         String sql = "UPDATE `horse` SET `name` = ?, `breed_ID` = ?, `weight` = ?, `age` = ? WHERE `horse_ID` = ?";
         PreparedStatement statement = null;
         try {
@@ -202,7 +202,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
             statement.executeUpdate();
         } catch (SQLException e) {
             logger.debug("Can not update horse with ID = "  + instance.getId());
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 statement.close();
@@ -211,7 +211,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
     }
 
     @Override
-    public void delete(Integer id) throws DaoException {
+    public void delete(Integer id) throws PersistentException {
         String sql = "DELETE FROM `horse` WHERE `horse_ID` = ?";
         PreparedStatement statement = null;
         try {
@@ -219,7 +219,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch(SQLException e) {
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 statement.close();

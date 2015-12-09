@@ -6,7 +6,6 @@ import com.gmail.mordress.lab4.dao.interfaces.BetDao;
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
 import com.gmail.mordress.lab4.domain.Bet;
 import com.gmail.mordress.lab4.exceptions.DaoException;
-import com.gmail.mordress.lab4.exceptions.PersistentException;
 
 public class BetDaoImplTest {
 

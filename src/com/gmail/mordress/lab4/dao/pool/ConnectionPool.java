@@ -62,7 +62,7 @@ public final class ConnectionPool {
             this.dbPassword = "9958108";
             this.maxPoolSize = 100;
             this.minPoolSize = 50;
-            this.timeout = 180;
+            this.timeout = 0;
             Class.forName(driverClass);
             for(int counter = 0; counter < minPoolSize; counter++) {
                 freeConnections.put(createConnection());

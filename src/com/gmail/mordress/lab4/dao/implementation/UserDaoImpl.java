@@ -3,10 +3,8 @@ package com.gmail.mordress.lab4.dao.implementation;
 import com.gmail.mordress.lab4.dao.interfaces.UserDao;
 import com.gmail.mordress.lab4.domain.Role;
 import com.gmail.mordress.lab4.domain.User;
-import com.gmail.mordress.lab4.exceptions.DaoException;
-import com.sun.istack.internal.Nullable;
+import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +17,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     private static Logger logger = Logger.getLogger(UserDaoImpl.class);
 
     @Override
-    public User findUser(String login, String password) throws DaoException {
+    public User findUser(String login, String password) throws PersistentException {
         String sql = "SELECT * FROM `users` WHERE (`login` = ? AND `password` = ?)";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -42,7 +40,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             }
             return user;
         } catch (SQLException e) {
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -54,7 +52,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean checkUniqueLogin(String login) throws DaoException {
+    public boolean checkUniqueLogin(String login) throws PersistentException {
         String sql = "SELECT `user_ID` FROM `users` WHERE `login` = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -68,7 +66,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             return true;
         } catch (SQLException e) {
             logger.debug("Can not check user-login for unique" + login);
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -80,7 +78,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     }
 
     @Override
-    public List<User> getAllSimpleUsers() throws DaoException {
+    public List<User> getAllSimpleUsers() throws PersistentException {
         String sql = "SELECT * FROM `users` WHERE role = 0";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -105,7 +103,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             return users;
         } catch (SQLException e) {
             logger.error("Can not get all simple-users");
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -118,7 +116,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
 
     @Override
-    public Integer create(User instance) throws DaoException {
+    public Integer create(User instance) throws PersistentException {
         String sql = "INSERT INTO `users` (`login`, `password`, `first_name`, `last_name`, `role`, `email`, `cash_amount`) VALUES (?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -137,11 +135,11 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                 return resultSet.getInt(1);
             } else {
                 logger.error("There is no autoincremented index after trying to add record into table `users`");
-                throw new DaoException();
+                throw new PersistentException();
             }
 
         } catch (SQLException e) {
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -154,7 +152,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     }
 
     @Override
-    public User read(Integer id) throws DaoException {
+    public User read(Integer id) throws PersistentException {
         String sql = "SELECT * FROM `users` WHERE user_ID = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -176,7 +174,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             }
             return user;
         } catch(SQLException e) {
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 resultSet.close();
@@ -188,7 +186,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     }
 
     @Override
-    public void update(User instance) throws DaoException {
+    public void update(User instance) throws PersistentException {
         String sql = "UPDATE `users` SET `login` = ?, `password` = ?, `first_name` = ?, `last_name` = ?, `role` = ?, `email` = ?, `cash_amount` = ? WHERE `user_ID` = ?";
         PreparedStatement statement = null;
         try {
@@ -203,7 +201,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             statement.setInt(8, instance.getId());
             statement.executeUpdate();
         } catch(SQLException e) {
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 statement.close();
@@ -212,7 +210,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     }
 
     @Override
-    public void delete(Integer id) throws DaoException {
+    public void delete(Integer id) throws PersistentException {
         String sql = "DELETE FROM `users` WHERE `user_ID` = ?";
         PreparedStatement statement = null;
         try {
@@ -220,7 +218,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch(SQLException e) {
-            throw new DaoException(e.getMessage(), e.getCause());
+            throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
                 statement.close();

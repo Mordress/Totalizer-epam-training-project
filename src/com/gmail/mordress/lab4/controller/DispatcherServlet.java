@@ -1,10 +1,71 @@
 package com.gmail.mordress.lab4.controller;
 
-import javax.servlet.http.HttpServlet;
+import com.gmail.mordress.lab4.action.Action;
+import com.gmail.mordress.lab4.action.ActionManager;
+import com.gmail.mordress.lab4.action.ActionManagerFactory;
+import com.gmail.mordress.lab4.action.ActionManagerFactoryImpl;
+import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
+import com.gmail.mordress.lab4.exceptions.PersistentException;
+import com.gmail.mordress.lab4.services.implementations.ServiceFactoryImpl;
+import org.apache.log4j.Logger;
 
-/**
- * Created by mordress on 09.12.2015.
- */
-public class DispatcherServlet extends HttpServlet{
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class DispatcherServlet extends HttpServlet {
+
+    private static Logger logger = Logger.getLogger(DispatcherServlet.class);
     //TODO LATER
+
+
+    @Override
+    public void init() throws ServletException {
+            Logger root = Logger.getRootLogger();
+    }
+
+    public ActionManagerFactory getFactory() throws PersistentException {
+        return new ActionManagerFactoryImpl(new ServiceFactoryImpl(new DaoFactoryImpl()));
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        process(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        process(req, resp);
+    }
+
+    private void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        Action action = (Action)request.getAttribute("action");
+        try {
+            ActionManager actionManager = getFactory().getManager();
+            Action.Forward forward = actionManager.execute(action, request, response);
+            actionManager.close();
+            String requestedUri = request.getRequestURI();
+            if(forward != null && forward.isRedirect()) {
+                String redirectedUri = request.getContextPath() + forward.getForward();
+                logger.debug(String.format("Request for URI \"%s\" id redirected to URI \"%s\"", requestedUri, redirectedUri));
+                response.sendRedirect(redirectedUri);
+            } else {
+                String jspPage;
+                if(forward != null) {
+                    jspPage = forward.getForward();
+                } else {
+                    jspPage = action.getName() + ".jsp";
+                }
+                jspPage = "/WEB-INF/jsp" + jspPage;
+                logger.debug(String.format("Request for URI \"%s\" is forwarded to JSP \"%s\"", requestedUri, jspPage));
+                getServletContext().getRequestDispatcher(jspPage).forward(request, response);
+            }
+        } catch(PersistentException e) {
+            logger.error("It is impossible to process request", e);
+            request.setAttribute("error", "Ошибка обработки данных");
+            getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
+        }
+    }
 }

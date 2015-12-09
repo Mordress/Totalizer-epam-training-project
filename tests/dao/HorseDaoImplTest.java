@@ -4,14 +4,8 @@ import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
 import com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl;
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
 import com.gmail.mordress.lab4.dao.interfaces.HorseDao;
-import com.gmail.mordress.lab4.domain.Breed;
 import com.gmail.mordress.lab4.domain.Horse;
 import com.gmail.mordress.lab4.exceptions.DaoException;
-import com.gmail.mordress.lab4.exceptions.PersistentException;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class HorseDaoImplTest {
 
