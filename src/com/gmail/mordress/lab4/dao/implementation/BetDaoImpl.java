@@ -47,7 +47,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             }
             return bets;
         } catch (SQLException e) {
-            logger.debug("Can not find winned users by user with id = " + instance.getId());
+            logger.debug("Can not find bets by userID = " + instance.getId());
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -219,7 +219,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
     @Override
     public void update(Bet instance) throws PersistentException {
         String sql = "UPDATE `bet` SET `horse_race_ID` = ?, `result_rank` = ?,`bet_amount` = ?, " +
-                "`win_amount` = ?, `is_winner` = ?, `created_date` = ?, `user_ID` = ?";
+                "`win_amount` = ?, `is_winner` = ?, `created_date` = ?, `user_ID` = ? WHERE `bet_ID` = ?";
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(sql);
@@ -230,6 +230,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             statement.setBoolean(5, instance.getIsWinner());
             statement.setTimestamp(6, new java.sql.Timestamp(instance.getCreatedDate().getTime()));
             statement.setInt(7, instance.getUser().getId());
+            statement.setInt(8, instance.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
             logger.debug("Can not update bet with id = " + instance.getId());
