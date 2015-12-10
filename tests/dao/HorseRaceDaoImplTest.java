@@ -35,9 +35,6 @@ public class HorseRaceDaoImplTest {
             horseRace.setResultRank(3);
             //hrdi.update(horseRace);
             hrdi.create(horseRace);
-
-
-
         } catch (Exception e) {
             e.printStackTrace();
 
