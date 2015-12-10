@@ -23,7 +23,7 @@ public class ServiceFactoryImpl implements ServiceFactory {
 
     private DaoFactory factory;
 
-    public ServiceFactoryImpl(DaoFactory factory) throws PersistentException {
+    public ServiceFactoryImpl(final DaoFactory factory) throws PersistentException {
         this.factory = factory;
     }
 

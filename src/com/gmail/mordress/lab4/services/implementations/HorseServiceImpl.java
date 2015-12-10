@@ -54,7 +54,7 @@ public class HorseServiceImpl extends ServiceImpl implements HorseService {
             horse.setBreed(breed);
         }
     }
-
+    /* Собираем лист коней по частям из разных DAO */
     private void buildHorseList(List<Horse> horses) throws PersistentException {
         for (Horse horse : horses) {
             if (horse != null) {

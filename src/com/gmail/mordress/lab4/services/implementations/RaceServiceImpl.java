@@ -22,7 +22,7 @@ public class RaceServiceImpl extends ServiceImpl implements RaceService {
     }
 
     @Override
-    public Race findById(Integer id) throws PersistentException {
+    public Race findById(final Integer id) throws PersistentException {
         RaceDao raceDao = factory.createDao(RaceDao.class);
         return raceDao.read(id);
     }
@@ -38,7 +38,7 @@ public class RaceServiceImpl extends ServiceImpl implements RaceService {
     }
 
     @Override
-    public void delete(Integer id) throws PersistentException {
+    public void delete(final Integer id) throws PersistentException {
         RaceDao raceDao = factory.createDao(RaceDao.class);
         raceDao.delete(id);
     }

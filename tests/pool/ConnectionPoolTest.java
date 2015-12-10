@@ -1,7 +1,10 @@
 package pool;
 
 import com.gmail.mordress.lab4.dao.pool.ConnectionPool;
+import com.gmail.mordress.lab4.exceptions.PersistentException;
+
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class ConnectionPoolTest {
 
@@ -36,7 +39,7 @@ public class ConnectionPoolTest {
             con12.close();
             con13.close();
             con14.close();
-        } catch (Exception e) {
+        } catch (PersistentException | SQLException e) {
             e.printStackTrace();
         }
 
