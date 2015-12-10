@@ -8,9 +8,6 @@ public class ConnectionPoolTest {
     public static void main(String[] args) {
         ConnectionPool pool = ConnectionPool.getInstance();
         try {
-            pool.init();
-            Connection connection = pool.getConnection();
-            connection.close();
             Connection con1 = pool.getConnection();
             Connection con2 = pool.getConnection();
             Connection con3 = pool.getConnection();
@@ -23,12 +20,22 @@ public class ConnectionPoolTest {
             Connection con10 = pool.getConnection();
             Connection con11 = pool.getConnection();
             Connection con12 = pool.getConnection();
+            Connection con13 = pool.getConnection();
+            Connection con14 = pool.getConnection();
+            con1.close();
+            con2.close();
+            con3.close();
             con4.close();
             con5.close();
             con6.close();
             con7.close();
-            Connection con13 = pool.getConnection();
-            Connection con14 = pool.getConnection();
+            con8.close();
+            con9.close();
+            con10.close();
+            con11.close();
+            con12.close();
+            con13.close();
+            con14.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
