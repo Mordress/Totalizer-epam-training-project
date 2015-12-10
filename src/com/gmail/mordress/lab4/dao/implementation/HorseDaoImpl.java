@@ -170,6 +170,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
                 horse.setName(resultSet.getString("name"));
                 Breed breed = new Breed();
                 breed.setId(resultSet.getInt("breed_ID"));
+                horse.setId(id);
                 horse.setBreed(breed);
                 horse.setAge(resultSet.getInt("age"));
                 horse.setWeight(resultSet.getInt("weight"));

@@ -13,7 +13,7 @@ public interface HorseRaceDao extends Dao<HorseRace> {
 
     public List<HorseRace> getAllHorseRaces() throws PersistentException;
 
-    public List<HorseRace> getStatisticPerHorse(Horse horse) throws PersistentException;
+    public List<HorseRace> getHorseRacePerHorse(Horse horse) throws PersistentException;
 
 
 

@@ -5,7 +5,7 @@ import com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl;
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
 import com.gmail.mordress.lab4.dao.interfaces.HorseDao;
 import com.gmail.mordress.lab4.domain.Horse;
-import com.gmail.mordress.lab4.exceptions.DaoException;
+import com.gmail.mordress.lab4.exceptions.PersistentException;
 
 public class HorseDaoImplTest {
 
@@ -45,8 +45,7 @@ public class HorseDaoImplTest {
             System.out.println(horse);
 
 
-        } catch (DaoException e) {
-            e.printStackTrace();
+
         } catch (PersistentException e) {
             e.printStackTrace();
         }

@@ -34,7 +34,11 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace = new HorseRace();
                 horseRace.setId(resultSet.getInt("horse_race_ID"));
                 horseRace.setResultRank(resultSet.getInt("result_rank"));
-                horseRace.setResultTime(new Date(resultSet.getTimestamp("result_time").getTime()));
+                if (resultSet.getTimestamp("result_time") != null) {
+                    horseRace.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                } else {
+                    horseRace.setResultTime(null);
+                }
                 Race race = new Race();
                 race.setId(resultSet.getInt("race_ID"));
                 horseRace.setRace(race);
@@ -60,7 +64,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
     }
 
     @Override
-    public List<HorseRace> getStatisticPerHorse(Horse instance) throws PersistentException {
+    public List<HorseRace> getHorseRacePerHorse(Horse instance) throws PersistentException {
         String sql = "SELECT * FROM `horse_race` WHERE horse_ID = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -74,7 +78,11 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace = new HorseRace();
                 horseRace.setId(resultSet.getInt("horse_race_ID"));
                 horseRace.setResultRank(resultSet.getInt("result_rank"));
-                horseRace.setResultTime(new Date(resultSet.getTimestamp("result_time").getTime()));
+                if (resultSet.getTimestamp("result_time") != null) {
+                    horseRace.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                } else {
+                    horseRace.setResultTime(null);
+                }
                 Race race = new Race();
                 race.setId(resultSet.getInt("race_ID"));
                 horseRace.setRace(race);
@@ -112,7 +120,11 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace = new HorseRace();
                 horseRace.setId(resultSet.getInt("horse_race_ID"));
                 horseRace.setResultRank(resultSet.getInt("result_rank"));
-                horseRace.setResultTime(new Date(resultSet.getTimestamp("result_time").getTime()));
+                if (resultSet.getTimestamp("result_time") != null) {
+                    horseRace.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                } else {
+                    horseRace.setResultTime(null);
+                }
                 Race race = new Race();
                 race.setId(resultSet.getInt("race_ID"));
                 horseRace.setRace(race);
@@ -146,7 +158,11 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
             statement.setInt(1, instance.getRace().getId());
             statement.setInt(2, instance.getHorse().getId());
             statement.setInt(3, instance.getResultRank());
-            statement.setTime(4, new java.sql.Time(instance.getResultTime().getTime()));
+            if (instance.getResultTime() != null) {
+                statement.setTime(4, new java.sql.Time(instance.getResultTime().getTime()));
+            } else {
+                statement.setTime(4, null);
+            }
             statement.executeUpdate();
             resultSet = statement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -181,7 +197,11 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace = new HorseRace();
                 horseRace.setId(id);
                 horseRace.setResultRank(resultSet.getInt("result_rank"));
-                horseRace.setResultTime(new java.sql.Time(resultSet.getTime("result_time").getTime()));
+                if (resultSet.getTimestamp("result_time") != null) {
+                    horseRace.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                } else {
+                    horseRace.setResultTime(null);
+                }
                 Horse horse = new Horse();
                 Race race = new Race();
                 horse.setId(resultSet.getInt("horse_ID"));
@@ -212,7 +232,11 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
             statement.setInt(1, instance.getRace().getId());
             statement.setInt(2, instance.getHorse().getId());
             statement.setInt(3, instance.getResultRank());
-            statement.setTime(4, new java.sql.Time(instance.getResultTime().getTime()));
+            if (instance.getResultTime() != null) {
+                statement.setTime(4, new java.sql.Time(instance.getResultTime().getTime()));
+            } else {
+                statement.setTime(4, null);
+            }
             statement.setInt(5, instance.getId());
             statement.executeUpdate();
         } catch(SQLException e) {

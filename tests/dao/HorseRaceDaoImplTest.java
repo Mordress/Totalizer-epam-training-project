@@ -6,7 +6,8 @@ import com.gmail.mordress.lab4.domain.Breed;
 import com.gmail.mordress.lab4.domain.Horse;
 import com.gmail.mordress.lab4.domain.HorseRace;
 import com.gmail.mordress.lab4.domain.Race;
-import com.gmail.mordress.lab4.exceptions.DaoException;
+
+import java.util.Date;
 
 public class HorseRaceDaoImplTest {
 
@@ -15,7 +16,7 @@ public class HorseRaceDaoImplTest {
         try {
             DaoFactory factory = new DaoFactoryImpl();
             HorseRaceDaoImpl hrdi = factory.createDao(HorseRaceDao.class);
-            /*System.out.println(hrdi.read(1));*/
+            System.out.println(hrdi.read(1));
             HorseDaoImpl hdi = factory.createDao(HorseDao.class);
             RaceDaoImpl rdi = factory.createDao(RaceDao.class);
             BreedDaoImpl bdi = factory.createDao(BreedDao.class);
@@ -28,6 +29,14 @@ public class HorseRaceDaoImplTest {
             horseRace.setHorse(horse);
             horseRace.setRace(race);
             System.out.println(horseRace);
+
+            //System.out.println(horse.getId());
+            horseRace.setResultTime(new Date());
+            horseRace.setResultRank(3);
+            //hrdi.update(horseRace);
+            hrdi.create(horseRace);
+
+
 
         } catch (Exception e) {
             e.printStackTrace();
