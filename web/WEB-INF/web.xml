@@ -17,6 +17,7 @@
         <servlet-name>dispatcherServlet</servlet-name>
         <url-pattern>*.html</url-pattern>
     </servlet-mapping>
+    <!--
     <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>com.gmail.mordress.lab4.controller.EncodingFilter</filter-class>
@@ -25,6 +26,7 @@
         <filter-name>EncodingFilter</filter-name>
         <url-pattern>*.html</url-pattern>
     </filter-mapping>
+    -->
     <!--
     <filter>
         <filter-name>ActionFromUriFilter</filter-name>
