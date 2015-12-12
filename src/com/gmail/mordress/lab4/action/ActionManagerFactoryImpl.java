@@ -5,12 +5,14 @@ import com.gmail.mordress.lab4.services.interfaces.ServiceFactory;
 
 public class ActionManagerFactoryImpl implements ActionManagerFactory {
 
-    @Override
-    public ActionManager getManager() {
-        return null;
-    }
+    private ServiceFactory factory;
 
     public ActionManagerFactoryImpl(ServiceFactory factory) {
-        //TODO LATER
+        this.factory = factory;
+    }
+
+    @Override
+    public ActionManager getManager() {
+        return new ActionManagerImpl(factory);
     }
 }
