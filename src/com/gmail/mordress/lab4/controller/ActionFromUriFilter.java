@@ -3,7 +3,7 @@ package com.gmail.mordress.lab4.controller;
 import com.gmail.mordress.lab4.action.Action;
 import com.gmail.mordress.lab4.action.LoginAction;
 import com.gmail.mordress.lab4.action.MainAction;
-import com.gmail.mordress.lab4.action.administrator.RacesListAction;
+import com.gmail.mordress.lab4.action.administrator.RaceListAction;
 import org.apache.log4j.Logger;
 
 import javax.servlet.*;
@@ -21,7 +21,7 @@ public class ActionFromUriFilter implements Filter {
         actions.put("/", MainAction.class);
         actions.put("/index", MainAction.class);
         actions.put("/login", LoginAction.class);
-        actions.put("/races/list", RacesListAction.class);
+        actions.put("/races/list", RaceListAction.class);
         //actions.put("/logout", LogoutAction.class);
 
         /*actions.put("/profile/edit", ProfileEditAction.class);
