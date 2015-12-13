@@ -38,6 +38,7 @@ public class DispatcherServlet extends HttpServlet {
         process(req, resp);
     }
 
+    /* В этом методе мы перенаправляем запрос хxx.html на xxx.jsp, сохраняя данные в сессию(откуда мы пришли)*/
     private void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         /*Читаем из реквеста экшен*/
         Action action = (Action)request.getAttribute("action");
