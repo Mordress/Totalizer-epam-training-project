@@ -21,7 +21,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
 
     @Override
     public List<HorseRace> findByRace(Race instance) throws PersistentException {
-        String sql = "SELECT * FROM `horse_race` WHERE race_ID = ?";
+        String sql = "SELECT * FROM `horse_race` WHERE race_ID = ? ORDER BY `result_rank`";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {

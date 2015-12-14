@@ -23,13 +23,13 @@ public class LoginAction extends Action {
 
     static {
         menu.put(Role.BOOKMAKER, new ArrayList<>(Arrays.asList(
-                new MenuItem("/bets/list.html", "ставки")
+                new MenuItem("/bets/list.html", "СЃС‚Р°РІРєРё")
         )));
         menu.put(Role.ADMINISTRATOR, new ArrayList<>(Arrays.asList(
-                new MenuItem("/races/list.html", "забеги")
+                new MenuItem("/races/list.html", "Р·Р°Р±РµРіРё")
         )));
         menu.put(Role.USER, new ArrayList<>(Arrays.asList(
-                new MenuItem("/bets/list.html", "ставки")
+                new MenuItem("/bets/list.html", "СЃС‚Р°РІРєРё")
         )));
     }
 
@@ -47,7 +47,7 @@ public class LoginAction extends Action {
                 logger.info(String.format("user \"%s\" is logged in from %s (%s:%s)", login, request.getRemoteAddr(), request.getRemoteHost(), request.getRemotePort()));
                 return new Forward("/index.html");
             } else {
-                request.setAttribute("message", "Имя пользователя или пароль не опознанны");
+                request.setAttribute("message", "РРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РёР»Рё РїР°СЂРѕР»СЊ РЅРµ РѕРїРѕР·РЅР°РЅРЅС‹");
                 logger.info(String.format("user \"%s\" unsuccessfully tried to log in from %s (%s:%s)", login, request.getRemoteAddr(), request.getRemoteHost(), request.getRemotePort()));
             }
         }

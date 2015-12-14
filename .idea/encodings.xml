@@ -2,12 +2,30 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/dbscheme/sql/insert_test_values.sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/Action.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/ActionManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/ActionManagerFactory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/ActionManagerFactoryImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/ActionManagerImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/AuthorizedUserAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/LoginAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/MainAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/MenuItem.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/ProfileEditAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/ProfileSaveAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/administrator/AdministratorAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/administrator/RaceEditAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/administrator/RaceListAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/controller/ActionFromUriFilter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/controller/DispatcherServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/controller/EncodingFilter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/controller/SecurityFilter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/BaseDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/BetDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/BreedDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/DaoFactoryImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/HorseDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/HorseRaceDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/RaceDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/UserDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/interfaces/BetDao.java" charset="UTF-8" />
@@ -29,12 +47,20 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/domain/User.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/exceptions/PersistentException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/BreedServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/HorseRaceServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/HorseServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/RaceServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/ServiceFactoryImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/ServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/UserServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/BreedService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/HorseRaceService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/HorseService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/RaceService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/Service.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/ServiceFactory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/utils/Hasher.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/dao/BetDaoImplTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/dao/BreedDaoImplTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/dao/HorseDaoImplTest.java" charset="UTF-8" />
@@ -43,6 +69,7 @@
     <file url="file://$PROJECT_DIR$/tests/dao/UserDaoImplTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/domain/RoleTester.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/pool/ConnectionPoolTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/services/HorseRaceServiceImplTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/index.jsp" charset="UTF-8" />
   </component>
 </project>

@@ -49,7 +49,7 @@ public class UserServiceImpl extends ServiceImpl implements UserService {
             user.setPassword(hashing(new String()));
             user.setId(dao.create(user));
         }
-        //TODO Странный метод, подумать хорошенько
+        //TODO РЎС‚СЂР°РЅРЅС‹Р№ РјРµС‚РѕРґ, РїРѕРґСѓРјР°С‚СЊ С…РѕСЂРѕС€РµРЅСЊРєРѕ
 
     }
 

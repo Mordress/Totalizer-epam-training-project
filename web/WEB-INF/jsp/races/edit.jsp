@@ -4,13 +4,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<c:choose>
-    <c:when test="${not empty race}">
-        <c:set var="date" value="${race.raceDate}"/>
-        <c:set var="distance" value="${race.distance}"/>
-    </c:when>
 
-</c:choose>
 <html>
 <head>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -34,24 +28,33 @@
     <table border="2">
         <tr>
             <th>Дата забега</th>
-            <th>Длина дистанции (м)</th>
+            <th>Дистанции (м)</th>
             <th>Имя лошади</th>
             <th>Место</th>
             <th>Время финиша</th>
+            <th>Изменить результат</th>
         </tr>
-            <c:set var="id" value="${horseRace0.id}"/>
-            <c:set var="date" value="${horseRace0.race.raceDate}"/>
-            <c:set var="distance" value="${horseRace0.race.distance}"/>
-            <c:set var="horsename" value="${horseRace0.horse.name}"/>
-            <c:set var="resultRank" value="${horseRace0.resultRank}"/>
-            <c:set var="resultTime" value="${horseRace0.resultTime}"/>
-            <tr>
-                <td>${date}</td>
-                <td>${distance}</td>
-                <td>${horsename}</td>
-                <td>${resultRank}</td>
-                <td>${resultTime}</td>
-            </tr>
+            <c:forEach items="${horseRaces}" var="hRace">
+                <c:set var="id" value="${hRace.id}"/>
+                <c:set var="date" value="${hRace.race.raceDate}"/>
+                <c:set var="distance" value="${hRace.race.distance}"/>
+                <c:set var="horsename" value="${hRace.horse.name}"/>
+                <c:set var="resultRank" value="${hRace.resultRank}"/>
+                <c:set var="resultTime" value="${hRace.resultTime}"/>
+                <tr>
+                    <td>${date}</td>
+                    <td>${distance}</td>
+                    <td>${horsename}</td>
+                    <td>${resultRank}</td>
+                    <td>${resultTime}</td>
+                    <td>
+                        <FORM action="${resultEditUrl}" method="post">
+                            <INPUT type="hidden" name="id" value="${hRace.id}">
+                            <BUTTON type="submit">Изменить результат</BUTTON>
+                        </FORM>
+                    </td>
+                </tr>
+            </c:forEach>
     </table>
 </DIV>
 It's races edit page!

@@ -24,10 +24,10 @@ public class ProfileSaveAction extends AuthorizedUserAction {
             if(user != null) {
                 user.setPassword(newPassword);
                 service.save(user);
-                forward.getAttributes().put("message", "Пароль успешно изменён");
+                forward.getAttributes().put("message", "РџР°СЂРѕР»СЊ СѓСЃРїРµС€РЅРѕ РёР·РјРµРЅС‘РЅ");
                 logger.info(String.format("User \"%s\" changed password", authorizedUser.getLogin()));
             } else {
-                forward.getAttributes().put("message", "Старый пароль неопознан");
+                forward.getAttributes().put("message", "РЎС‚Р°СЂС‹Р№ РїР°СЂРѕР»СЊ РЅРµРѕРїРѕР·РЅР°РЅ");
                 logger.info(String.format("User \"%s\" tried to change password and specified the incorrect previous password", authorizedUser.getLogin()));
             }
         } else {

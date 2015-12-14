@@ -29,14 +29,14 @@
     <TABLE border="2">
         <TR>
             <TH>Дата забега</TH>
-            <TH>Дистанция</TH>
+            <TH>Дистанция (м)</TH>
             <TH>Результаты</TH>
         </TR>
         <c:url value="/races/edit.html" var="racesEditUrl"/>
         <c:forEach items="${passedRaces}" var="pRace">
             <TR align="center">
                 <TD>${pRace.raceDate}</TD>
-                <TD>${pRace.distance} м.</TD>
+                <TD>${pRace.distance}</TD>
                 <TD>
                     <FORM action="${racesEditUrl}" method="post">
                         <INPUT type="hidden" name="id" value="${pRace.id}">

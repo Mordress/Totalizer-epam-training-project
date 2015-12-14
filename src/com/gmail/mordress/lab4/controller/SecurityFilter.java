@@ -48,7 +48,7 @@ public class SecurityFilter implements Filter {
             } else {
                 logger.info(String.format("Trying of %s access to forbidden resource \"%s\"", userName, action.getName()));
                 if(session != null && action.getClass() != MainAction.class) {
-                    session.setAttribute("SecurityFilterMessage", "Доступ запрещён");
+                    session.setAttribute("SecurityFilterMessage", "Р”РѕСЃС‚СѓРї Р·Р°РїСЂРµС‰С‘РЅ");
                 }
                 httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.html");
             }

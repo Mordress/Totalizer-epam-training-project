@@ -33,7 +33,7 @@ public class RaceEditAction extends AdministratorAction {
 
             if (horseRaces != null) {
                 logger.debug("HORSERACESLENGTH: " + horseRaces.size());
-                request.setAttribute("horseRace0", horseRaces.get(0));
+                request.setAttribute("horseRaces", horseRaces);
             }
         } catch (NumberFormatException e) {}
         return null;
