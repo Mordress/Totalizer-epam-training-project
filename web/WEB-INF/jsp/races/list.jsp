@@ -32,13 +32,13 @@
             <TH>Дистанция (м)</TH>
             <TH>Результаты</TH>
         </TR>
-        <c:url value="/races/edit.html" var="racesEditUrl"/>
+        <c:url value="/horseraces/edit.html" var="horseRacesEditUrl"/>
         <c:forEach items="${passedRaces}" var="pRace">
             <TR align="center">
                 <TD>${pRace.raceDate}</TD>
                 <TD>${pRace.distance}</TD>
                 <TD>
-                    <FORM action="${racesEditUrl}" method="post">
+                    <FORM action="${horseRacesEditUrl}" method="post">
                         <INPUT type="hidden" name="id" value="${pRace.id}">
                         <BUTTON type="submit">Результаты</BUTTON>
                     </FORM>
@@ -64,8 +64,8 @@
     </TABLE>
     <br>
     <%--прикрутить кнопку добавления нового забега--%>
-    <c:url value="/races/create.html" var="raceCreateUrl"/>
-    <FORM action="${raceCreateUrl}" method="post">
+    <c:url value="/races/edit.html" var="raceEditUrl"/>
+    <FORM action="${raceEditUrl}" method="post">
         <BUTTON type="submit">Добавить забег</BUTTON>
     </FORM>
 </DIV>

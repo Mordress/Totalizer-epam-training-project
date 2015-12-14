@@ -14,28 +14,11 @@ import java.util.List;
 
 public class RaceEditAction extends AdministratorAction {
 
-    private static Logger logger = Logger.getLogger(RaceEditAction.class);
+    private static Logger logger = Logger.getLogger(HorseRaceEditAction.class);
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
-        try {
-            Integer id = (Integer) request.getAttribute("id");
-            if (id == null) {
-                id = Integer.parseInt(request.getParameter("id"));
-            }
-            RaceService service = factory.getService(RaceService.class);
-            Race race = service.findById(id);
-            if (race != null) {
-                request.setAttribute("race", race);
-            }
-            HorseRaceService horseRaceService = factory.getService(HorseRaceService.class);
-            List<HorseRace> horseRaces = horseRaceService.findByRace(race);
 
-            if (horseRaces != null) {
-                logger.debug("HORSERACESLENGTH: " + horseRaces.size());
-                request.setAttribute("horseRaces", horseRaces);
-            }
-        } catch (NumberFormatException e) {}
         return null;
     }
 }

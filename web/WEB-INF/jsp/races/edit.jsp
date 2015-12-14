@@ -8,7 +8,7 @@
 <html>
 <head>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <TITLE>Тотализатор - результаты забега</TITLE>
+    <TITLE>Тотализатор - создание нового забега</TITLE>
 </head>
 <body>
 <DIV id="header">
@@ -25,38 +25,18 @@
     </UL>
 </DIV>
 <DIV id="page">
-    <table border="2">
-        <tr>
-            <th>Дата забега</th>
-            <th>Дистанции (м)</th>
-            <th>Имя лошади</th>
-            <th>Место</th>
-            <th>Время финиша</th>
-            <th>Изменить результат</th>
-        </tr>
-            <c:forEach items="${horseRaces}" var="hRace">
-                <c:set var="id" value="${hRace.id}"/>
-                <c:set var="date" value="${hRace.race.raceDate}"/>
-                <c:set var="distance" value="${hRace.race.distance}"/>
-                <c:set var="horsename" value="${hRace.horse.name}"/>
-                <c:set var="resultRank" value="${hRace.resultRank}"/>
-                <c:set var="resultTime" value="${hRace.resultTime}"/>
-                <tr>
-                    <td>${date}</td>
-                    <td>${distance}</td>
-                    <td>${horsename}</td>
-                    <td>${resultRank}</td>
-                    <td>${resultTime}</td>
-                    <td>
-                        <FORM action="${resultEditUrl}" method="post">
-                            <INPUT type="hidden" name="id" value="${hRace.id}">
-                            <BUTTON type="submit">Изменить результат</BUTTON>
-                        </FORM>
-                    </td>
-                </tr>
-            </c:forEach>
-    </table>
+    <c:url value="/races/save.html" var="racesSaveUrl"/>
+    <FORM action="${racesSaveUrl}" method="post" >
+        <label for="date">Введите дату и время будущего забега</label>
+        <INPUT type="datetime-local" id="date" name="date">
+        <br>
+        <label for="distance">Введите длину дистанции</label>
+        <INPUT type="number" id="distance" name="distance">
+        <br>
+        <BUTTON type="submit">Сохранить</BUTTON>
+        <BUTTON type="reset">Сбросить</BUTTON>
+    </FORM>
 </DIV>
-It's races edit page!
+it's race create page!
 </body>
 </html>
