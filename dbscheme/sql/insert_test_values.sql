@@ -20,6 +20,7 @@ INSERT INTO `horse` (`name`, `breed_ID`, `weight`, `age`) VALUES ('Зерату�
 INSERT INTO `race` (`date`, `distance`) VALUES ('2015-11-22-10-00-00', 2400);
 INSERT INTO `race` (`date`, `distance`) VALUES ('2015-11-24-16-30-00', 4400);
 INSERT INTO `race` (`date`, `distance`) VALUES ('2015-12-30-08-00-00', 3500);
+INSERT INTO `race` (`date`, `distance`) VALUES ('2015-12-12-15-45-00', 8800);
 #insert horse_races
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (1, 1, 1, '00:05:30');
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (1, 2, 3, '00:05:46');
@@ -53,6 +54,17 @@ INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) V
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (3, 8, NULL , NULL );
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (3, 9, NULL , NULL );
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (3, 10, NULL , NULL );
+
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 1, NULL , NULL );
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 2, NULL , NULL );
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 3, NULL , NULL );
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 4, NULL , NULL );
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 5, NULL , NULL );
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 6, NULL , NULL );
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 7, NULL , NULL );
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 8, NULL , NULL );
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 9, NULL , NULL );
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 10, NULL , NULL );
 #insert users
 #for store password using SHA-256
 INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `email`, `cash_amount`) VALUES
