@@ -25,7 +25,6 @@
         <br>
         <INPUT type="password" id="password" name="password" value="${param.password}" placeholder="Пароль:">
         <BUTTON type="submit">Войти</BUTTON>
-        <BUTTON type="">Войти</BUTTON>
     </FORM>
 </DIV>
 </body>

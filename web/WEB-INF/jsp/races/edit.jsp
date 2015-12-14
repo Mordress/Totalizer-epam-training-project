@@ -8,7 +8,7 @@
 <html>
 <head>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <TITLE>Результаты забега</TITLE>
+    <TITLE>Тотализатор - результаты забега</TITLE>
 </head>
 <body>
 <DIV id="header">

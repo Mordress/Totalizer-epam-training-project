@@ -64,7 +64,8 @@
     </TABLE>
     <br>
     <%--прикрутить кнопку добавления нового забега--%>
-    <FORM action="${racesEditUrl}" method="post">
+    <c:url value="/races/create.html" var="raceCreateUrl"/>
+    <FORM action="${raceCreateUrl}" method="post">
         <BUTTON type="submit">Добавить забег</BUTTON>
     </FORM>
 </DIV>

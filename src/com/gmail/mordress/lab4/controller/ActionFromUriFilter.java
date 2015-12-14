@@ -4,6 +4,7 @@ import com.gmail.mordress.lab4.action.Action;
 import com.gmail.mordress.lab4.action.LoginAction;
 import com.gmail.mordress.lab4.action.LogoutAction;
 import com.gmail.mordress.lab4.action.MainAction;
+import com.gmail.mordress.lab4.action.administrator.RaceCreateAction;
 import com.gmail.mordress.lab4.action.administrator.RaceEditAction;
 import com.gmail.mordress.lab4.action.administrator.RaceListAction;
 import org.apache.log4j.Logger;
@@ -26,6 +27,7 @@ public class ActionFromUriFilter implements Filter {
         actions.put("/races/list", RaceListAction.class);
         actions.put("/logout", LogoutAction.class);
         actions.put("/races/edit", RaceEditAction.class);
+        actions.put("/races/create", RaceCreateAction.class);
 
         /*actions.put("/profile/edit", ProfileEditAction.class);
         actions.put("/profile/save", ProfileSaveAction.class);
