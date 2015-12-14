@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.Set;
 
 public class SecurityFilter implements Filter {
+
     private static Logger logger = Logger.getLogger(SecurityFilter.class);
 
     @Override
@@ -38,7 +39,7 @@ public class SecurityFilter implements Filter {
                     session.removeAttribute("SecurityFilterMessage");
                 }
             }
-            boolean canExecute = allowRoles == null;
+            boolean canExecute = allowRoles != null;
             if(user != null) {
                 userName = "\"" + user.getLogin() + "\" user";
                 canExecute = canExecute || allowRoles.contains(user.getRole());

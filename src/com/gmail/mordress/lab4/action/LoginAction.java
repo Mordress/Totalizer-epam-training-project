@@ -47,7 +47,7 @@ public class LoginAction extends Action {
                 logger.info(String.format("user \"%s\" is logged in from %s (%s:%s)", login, request.getRemoteAddr(), request.getRemoteHost(), request.getRemotePort()));
                 return new Forward("/index.html");
             } else {
-                request.setAttribute("message", "Имя пользователя или пароль не опознанны");
+                request.setAttribute("message", "Неправильный логин или пароль");
                 logger.info(String.format("user \"%s\" unsuccessfully tried to log in from %s (%s:%s)", login, request.getRemoteAddr(), request.getRemoteHost(), request.getRemotePort()));
             }
         }

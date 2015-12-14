@@ -70,6 +70,6 @@
     <file url="file://$PROJECT_DIR$/tests/domain/RoleTester.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/pool/ConnectionPoolTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/services/HorseRaceServiceImplTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web/index.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/~index.jsp" charset="UTF-8" />
   </component>
 </project>

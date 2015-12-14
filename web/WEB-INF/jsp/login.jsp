@@ -16,6 +16,9 @@
 </DIV>
 <DIV id="page">
     <H2>Вход в систему</H2>
+    <c:if test="${not empty message}">
+        <H3 style="color: #733;">${message}</H3>
+    </c:if>
     <c:url value="/login.html" var="loginUrl"/>
     <FORM action="${loginUrl}" method="post" >
         <INPUT type="text" id="login" name="login" value="${param.login}" maxlength="30" placeholder="Логин:">
