@@ -39,7 +39,7 @@
                 <TD>${pRace.distance} м.</TD>
                 <TD>
                     <FORM action="${racesEditUrl}" method="post">
-                        <INPUT type="hidden" name="identity" value="${frace.id}">
+                        <INPUT type="hidden" name="id" value="${pRace.id}">
                         <BUTTON type="submit">Результаты</BUTTON>
                     </FORM>
                 </TD>
@@ -55,10 +55,10 @@
             <TH>Дистанция</TH>
 
         </TR>
-        <c:forEach items="${futureRaces}" var="frace">
+        <c:forEach items="${futureRaces}" var="fRace">
             <TR align="center">
-                <TD>${frace.raceDate}</TD>
-                <TD>${frace.distance} м.</TD>
+                <TD>${fRace.raceDate}</TD>
+                <TD>${fRace.distance} м.</TD>
             </TR>
         </c:forEach>
     </TABLE>
