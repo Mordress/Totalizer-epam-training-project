@@ -38,7 +38,7 @@ BODY {
 }
 
 #header .drop, #header A {
-    background: #393;
+    background: deepskyblue;
 }
 
 #header A {
@@ -54,7 +54,7 @@ BODY {
 }
 
 #header A:hover, #header A.drop-button {
-    background: #363;
+    background: deepskyblue;
 }
 
 #header .drop A {
@@ -70,15 +70,15 @@ BODY {
     margin: 20px auto;
     background: white;
     padding: 0 20px 20px 20px;
-    border: 1px solid #373;
+    border: 1px solid deepskyblue;
 }
 
 #page A {
-    color: #393;
+    color: deepskyblue;
 }
 
 #page A:hover {
-    color: #373;
+    color: deepskyblue;
 }
 
 #page H2 {
@@ -110,7 +110,7 @@ BODY {
 }
 
 #page INPUT:focus, #page SELECT:focus {
-    border: 1px solid #373;
+    border: 1px solid deepskyblue;
 }
 
 #page INPUT, #page SELECT {
@@ -126,14 +126,14 @@ BODY {
     height: 30px;
     line-height: 30px;
     margin: 20px 20px 0 0;
-    background: #393;
+    background: deepskyblue;
     color: white;
     padding: 0 20px;
 }
 
 #page BUTTON:hover, #confirm-message BUTTON:hover {
     cursor: pointer;
-    background: #363;
+    background: deepskyblue;
 }
 
 #page BUTTON[disabled], #page BUTTON[disabled]:hover {
@@ -202,15 +202,15 @@ BODY {
 }
 
 #page TH {
-    background: #393;
+    background: deepskyblue;
     color: white;
     font-weight: normal;
-    border: 1px solid #373;
+    border: 1px solid deepskyblue;
 }
 
 #page HR {
     height: 1px;
-    background-color: #393;
+    background-color: deepskyblue;
     margin: 20px 0;
 }
 
@@ -230,8 +230,8 @@ IMG.arrow {
 
 #confirm-message DIV {
     position: fixed;
-    background: white;
-    border: 1px solid #373;
+    background: deepskyblue;
+    border: 1px solid deepskyblue;
     height: 38%;
     width: 38%;
     top: 31%;
