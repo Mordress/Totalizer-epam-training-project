@@ -28,6 +28,7 @@ public class ActionFromUriFilter implements Filter {
         actions.put("/races/edit", RaceEditAction.class);
         actions.put("/races/save", RaceSaveAction.class);
         actions.put("/horseraces/resultedit", HorseRaceResultEditAction.class);
+        actions.put("/horseraces/resultsave", HorseRaceResultSaveAction.class);
 
         /*actions.put("/profile/edit", ProfileEditAction.class);
         actions.put("/profile/save", ProfileSaveAction.class);
