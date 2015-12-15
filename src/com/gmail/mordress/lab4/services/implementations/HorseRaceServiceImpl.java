@@ -38,6 +38,16 @@ public class HorseRaceServiceImpl extends ServiceImpl implements HorseRaceServic
         return null;
     }
 
+    @Override
+    public void save(HorseRace horseRace) throws PersistentException {
+        HorseRaceDao dao = factory.createDao(HorseRaceDao.class);
+        if (horseRace.getId() != null) {
+            dao.update(horseRace);
+        } else {
+            horseRace.setId(dao.create(horseRace));
+        }
+    }
+
     private void buildHorseRace(HorseRace hr) {
         if (hr != null && hr.getId() !=null ) {
             try {

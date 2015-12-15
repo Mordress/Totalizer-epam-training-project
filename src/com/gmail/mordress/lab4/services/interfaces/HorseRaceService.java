@@ -11,4 +11,6 @@ public interface HorseRaceService extends Service {
     public List<HorseRace> findByRace(Race race) throws PersistentException;
 
     public HorseRace findById(Integer id) throws PersistentException;
+
+    public void save(HorseRace horseRace) throws PersistentException;
 }

@@ -46,7 +46,6 @@
             <c:url value="/horseraces/resultsave.html" var="resultSaveUrl"/>
             <FORM action="${resultSaveUrl}" method="post">
                 <INPUT type="hidden" name="horseRaceId" value="${horseRace.id}">
-                <INPUT type="hidden" name="id" value="${horseRace.race.id}">
                 <td colspan="3">
                     Введите результаты:
                 </td>
