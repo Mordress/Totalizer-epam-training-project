@@ -26,15 +26,8 @@
 </DIV>
 
 <DIV id="page">
-    <%--<c:set var="id" value="${horseRace.id}"/>
-    <c:set var="date" value="${horseRace.race.raceDate}"/>
-    <c:set var="distance" value="${horseRace.race.distance}"/>
-    <c:set var="horsename" value="${horseRace.horse.name}"/>
-    <c:set var="resultRank" value="${hRhorseRaceace.resultRank}"/>
-    <c:set var="resultTime" value="${hRhorseRaceace.resultTime}"/>--%>
     <table border="2">
         <tr>
-            <th>empty</th>
             <th>Дата забега</th>
             <th>Дистанции (м)</th>
             <th>Имя лошади</th>
@@ -42,7 +35,6 @@
             <th>Время финиша</th>
         </tr>
         <tr>
-            <td>Текущее значение</td>
             <td>${horseRace.race.raceDate}</td>
             <td>${horseRace.race.distance}</td>
             <td>${horseRace.horse.name}</td>
@@ -50,12 +42,21 @@
             <td>${horseRace.resultTime}</td>
         </tr>
         <tr>
-            <td>Новое значение</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <c:url value="/horseraces/resultsave.html" var="resultSaveUrl"/>
+            <FORM action="${resultSaveUrl}" method="post">
+                <td colspan="3">
+                    Введите результаты:
+                </td>
+                <td>
+                    <input type="number" id="newRank" name="newRank"/>
+                </td>
+                <td>
+                    <input type="datetime-local" id="newTime" name="newTime"/>
+                </td>
+                <br>
+                <button type="submit">Сохранить</button>
+                <button type="reset">Сбросить</button>
+            </form>
         </tr>
     </table>
 </DIV>
