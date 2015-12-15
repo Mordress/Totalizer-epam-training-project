@@ -24,6 +24,41 @@
     <LI class="item"><A href="${logoutUrl}">выход</A></LI>
   </UL>
 </DIV>
+
+<DIV id="page">
+    <%--<c:set var="id" value="${horseRace.id}"/>
+    <c:set var="date" value="${horseRace.race.raceDate}"/>
+    <c:set var="distance" value="${horseRace.race.distance}"/>
+    <c:set var="horsename" value="${horseRace.horse.name}"/>
+    <c:set var="resultRank" value="${hRhorseRaceace.resultRank}"/>
+    <c:set var="resultTime" value="${hRhorseRaceace.resultTime}"/>--%>
+    <table border="2">
+        <tr>
+            <th>empty</th>
+            <th>Дата забега</th>
+            <th>Дистанции (м)</th>
+            <th>Имя лошади</th>
+            <th>Место</th>
+            <th>Время финиша</th>
+        </tr>
+        <tr>
+            <td>Текущее значение</td>
+            <td>${horseRace.race.raceDate}</td>
+            <td>${horseRace.race.distance}</td>
+            <td>${horseRace.horse.name}</td>
+            <td>${horseRace.resultRank}</td>
+            <td>${horseRace.resultTime}</td>
+        </tr>
+        <tr>
+            <td>Новое значение</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+    </table>
+</DIV>
 result edit page
 </body>
 </html>
