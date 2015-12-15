@@ -34,4 +34,15 @@ public class HorseRaceServiceImpl extends ServiceImpl implements HorseRaceServic
         }
         return horseRaces;
     }
+
+    @Override
+    public HorseRace findById(final Integer id) throws PersistentException {
+        if (id != null) {
+            HorseRaceDao dao = factory.createDao(HorseRaceDao.class);
+            return dao.read(id);
+        }
+        return null;
+    }
+
+
 }

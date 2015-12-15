@@ -25,6 +25,7 @@
     </UL>
 </DIV>
 <DIV id="page">
+    <c:url value="/horseraces/resultedit.html" var="resultEditUrl"/>
     <table border="2">
         <tr>
             <th>Дата забега</th>
