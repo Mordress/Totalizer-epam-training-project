@@ -157,7 +157,11 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
             statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setInt(1, instance.getRace().getId());
             statement.setInt(2, instance.getHorse().getId());
-            statement.setInt(3, instance.getResultRank());
+            if (instance.getResultRank() != null) {
+                statement.setInt(3, instance.getResultRank());
+            } else {
+                statement.setInt(3, 0);
+            }
             if (instance.getResultTime() != null) {
                 statement.setTimestamp(4, new java.sql.Timestamp(instance.getResultTime().getTime()));
             } else {
@@ -231,7 +235,11 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
             statement = connection.prepareStatement(sql);
             statement.setInt(1, instance.getRace().getId());
             statement.setInt(2, instance.getHorse().getId());
-            statement.setInt(3, instance.getResultRank());
+            if (instance.getResultRank() != null) {
+                statement.setInt(3, instance.getResultRank());
+            } else {
+                statement.setInt(3, 0);
+            }
             if (instance.getResultTime() != null) {
                 statement.setTimestamp(4, new java.sql.Timestamp(instance.getResultTime().getTime()));
             } else {
