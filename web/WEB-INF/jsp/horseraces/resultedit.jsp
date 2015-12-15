@@ -52,6 +52,7 @@
                 </td>
                 <td>
                     <input type="datetime-local" id="newTime" name="newTime"/>
+                    <input type="number" min="0" max="59" id="newTimeSeconds" name="newTimeSeconds" placeholder="сек."/>
                 </td>
                 <br>
                 <button type="submit">Сохранить</button>

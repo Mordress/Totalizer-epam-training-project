@@ -35,7 +35,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace.setId(resultSet.getInt("horse_race_ID"));
                 horseRace.setResultRank(resultSet.getInt("result_rank"));
                 if (resultSet.getTimestamp("result_time") != null) {
-                    horseRace.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                    horseRace.setResultTime(new Date(resultSet.getTimestamp("result_time").getTime()));
                 } else {
                     horseRace.setResultTime(null);
                 }
@@ -79,7 +79,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace.setId(resultSet.getInt("horse_race_ID"));
                 horseRace.setResultRank(resultSet.getInt("result_rank"));
                 if (resultSet.getTimestamp("result_time") != null) {
-                    horseRace.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                    horseRace.setResultTime(new Date(resultSet.getTimestamp("result_time").getTime()));
                 } else {
                     horseRace.setResultTime(null);
                 }
@@ -121,7 +121,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace.setId(resultSet.getInt("horse_race_ID"));
                 horseRace.setResultRank(resultSet.getInt("result_rank"));
                 if (resultSet.getTimestamp("result_time") != null) {
-                    horseRace.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                    horseRace.setResultTime(new Date(resultSet.getTimestamp("result_time").getTime()));
                 } else {
                     horseRace.setResultTime(null);
                 }
@@ -159,9 +159,9 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
             statement.setInt(2, instance.getHorse().getId());
             statement.setInt(3, instance.getResultRank());
             if (instance.getResultTime() != null) {
-                statement.setTime(4, new java.sql.Time(instance.getResultTime().getTime()));
+                statement.setTimestamp(4, new java.sql.Timestamp(instance.getResultTime().getTime()));
             } else {
-                statement.setTime(4, null);
+                statement.setTimestamp(4, null);
             }
             statement.executeUpdate();
             resultSet = statement.getGeneratedKeys();
@@ -198,7 +198,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace.setId(id);
                 horseRace.setResultRank(resultSet.getInt("result_rank"));
                 if (resultSet.getTimestamp("result_time") != null) {
-                    horseRace.setResultTime(new Date(resultSet.getTime("result_time").getTime()));
+                    horseRace.setResultTime(new Date(resultSet.getTimestamp("result_time").getTime()));
                 } else {
                     horseRace.setResultTime(null);
                 }
@@ -233,9 +233,9 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
             statement.setInt(2, instance.getHorse().getId());
             statement.setInt(3, instance.getResultRank());
             if (instance.getResultTime() != null) {
-                statement.setTime(4, new java.sql.Time(instance.getResultTime().getTime()));
+                statement.setTimestamp(4, new java.sql.Timestamp(instance.getResultTime().getTime()));
             } else {
-                statement.setTime(4, null);
+                statement.setTimestamp(4, null);
             }
             statement.setInt(5, instance.getId());
             statement.executeUpdate();

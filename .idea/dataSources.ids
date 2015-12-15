@@ -11,7 +11,6 @@
       <column name="bet_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="horse_race_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="result_rank" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
-      <column name="result_time" sqlType="TIME" precision="8" scale="0" nullable="true" jdbcType="92"/>
       <column name="bet_amount" sqlType="DECIMAL" precision="10" scale="2" nullable="false" jdbcType="3"/>
       <column name="win_amount" sqlType="DECIMAL" precision="10" scale="2" nullable="true" jdbcType="3"/>
       <column name="is_winner" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
@@ -47,7 +46,7 @@
       <column name="race_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="horse_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="result_rank" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
-      <column name="result_time" sqlType="TIME" precision="8" scale="0" nullable="true" jdbcType="92"/>
+      <column name="result_time" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="horse_race_ID"/>
       <foreign-key name="horse_race_ibfk_1" columns="horse_ID" ref-table="horse" ref-schema="" ref-catalog="racing" ref-columns="horse_ID" update-rule="0" delete-rule="3" deferrability="2"/>
       <foreign-key name="horse_race_ibfk_2" columns="race_ID" ref-table="race" ref-schema="" ref-catalog="racing" ref-columns="race_ID" update-rule="0" delete-rule="3" deferrability="2"/>

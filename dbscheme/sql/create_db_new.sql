@@ -61,7 +61,7 @@ CREATE TABLE horse_race
 	race_ID              INTEGER NOT NULL,
 	horse_ID             INTEGER NOT NULL,
 	result_rank          TINYINT NULL,
-	result_time          TIME NULL,
+	result_time          TIMESTAMP NULL,
 PRIMARY KEY PK_horse_race(horse_race_ID)
 );
  
