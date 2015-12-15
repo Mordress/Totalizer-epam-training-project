@@ -7,6 +7,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Тотализатор - забеги</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" media="all">
 </head>
 <body>
 <DIV id="header">

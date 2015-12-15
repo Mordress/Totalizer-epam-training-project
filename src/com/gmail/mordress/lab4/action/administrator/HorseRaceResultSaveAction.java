@@ -16,7 +16,16 @@ public class HorseRaceResultSaveAction extends AdministratorAction {
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
+        Forward forward = new Forward("/horseraces/edit.html");
+        //TODO
+       /* HorseRace horseRace = new HorseRace();
+        horseRace.set
+        HorseRaceService service = factory.getService(HorseRaceService.class);
+        service.save()
+        */
+        forward.getAttributes().put("id", request.getAttribute("id"));
+        forward.getAttributes().put("message", "Данные успешно сохранены");
 
-        return null;
+        return forward;
     }
 }

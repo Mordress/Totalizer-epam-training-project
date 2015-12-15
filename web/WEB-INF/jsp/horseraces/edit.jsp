@@ -9,6 +9,7 @@
 <head>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <TITLE>Тотализатор - результаты забега</TITLE>
+    <link rel="stylesheet" type="text/css" href="/styles.css" media="all">
 </head>
 <body>
 <DIV id="header">

@@ -8,6 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Тотализатор - Вход</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" media="all">
     <!-- Подключение css-->
 </head>
 <body>

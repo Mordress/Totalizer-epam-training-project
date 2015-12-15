@@ -7,8 +7,9 @@
 
 <html>
 <head>
-  <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <TITLE>Тотализатор - редактирование результатов забега</TITLE>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <TITLE>Тотализатор - редактирование результатов забега</TITLE>
+    <link rel="stylesheet" type="text/css" href="/styles.css" media="all">
 </head>
 <body>
 <DIV id="header">
@@ -44,6 +45,8 @@
         <tr>
             <c:url value="/horseraces/resultsave.html" var="resultSaveUrl"/>
             <FORM action="${resultSaveUrl}" method="post">
+                <INPUT type="hidden" name="horseRaceId" value="${horseRace.id}">
+                <INPUT type="hidden" name="id" value="${horseRace.race.id}">
                 <td colspan="3">
                     Введите результаты:
                 </td>

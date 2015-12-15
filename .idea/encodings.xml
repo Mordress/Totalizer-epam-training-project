@@ -17,6 +17,7 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/administrator/AdministratorAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/administrator/HorseRaceEditAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/administrator/HorseRaceResultEditAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/administrator/HorseRaceResultSaveAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/administrator/RaceListAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/controller/ActionFromUriFilter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/controller/DispatcherServlet.java" charset="UTF-8" />
@@ -72,6 +73,7 @@
     <file url="file://$PROJECT_DIR$/tests/domain/RoleTester.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/pool/ConnectionPoolTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/services/HorseRaceServiceImplTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/styles.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/~index.jsp" charset="UTF-8" />
   </component>
 </project>
