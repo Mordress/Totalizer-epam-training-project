@@ -19,18 +19,21 @@ public class HorseRaceResultSaveAction extends AdministratorAction {
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/races/list.html");
-        HorseRaceService service = factory.getService(HorseRaceService.class);
-        String parameter = request.getParameter("horseRaceId");
-        HorseRace horseRace  = service.findById(Integer.parseInt(parameter));
-        parameter = request.getParameter("newRank");
-        horseRace.setResultRank(Integer.parseInt(parameter));
-        parameter = request.getParameter("newTime");
-        String paramter2 = request.getParameter("newTimeSeconds");
-        Date newDate = DateFormatConverter.stringToDate(parameter, paramter2);
-        horseRace.setResultTime(newDate);
-        service.save(horseRace);
-        //todo try
 
+        String parameter1 = request.getParameter("horseRaceId");
+        String parameter2 = request.getParameter("newRank");
+        String parameter3 = request.getParameter("newTime");
+        String parameter4 = request.getParameter("newTimeSeconds");
+        try {
+            HorseRaceService service = factory.getService(HorseRaceService.class);
+            HorseRace horseRace = service.findById(Integer.parseInt(parameter1));
+            horseRace.setResultRank(Integer.parseInt(parameter2));
+            Date newDate = DateFormatConverter.stringToDate(parameter3, parameter4);
+            horseRace.setResultTime(newDate);
+            service.save(horseRace);
+        } catch (NumberFormatException e) {
+            logger.warn("Can not update horserace result with new values: " + parameter2 + " " + parameter3 + " "+ parameter4);
+        }
 
         return forward;
     }
