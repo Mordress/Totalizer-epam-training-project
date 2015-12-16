@@ -46,11 +46,11 @@ public class UserServiceImpl extends ServiceImpl implements UserService {
             }
             dao.update(user);
         } else {
-            user.setPassword(hashing(new String()));
-            user.setId(dao.create(user));
+            if (user.getLogin() != null) {
+                user.setPassword(hashing(user.getLogin()));
+                user.setId(dao.create(user));
+            }
         }
-        //TODO Странный метод, подумать хорошенько
-
     }
 
     @Override

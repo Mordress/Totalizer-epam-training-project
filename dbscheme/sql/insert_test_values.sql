@@ -84,10 +84,10 @@ INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `em
    'oleg.tur@gmail.com',
    NULL),
 
-  ('alex1985',
+  ('user',
    'Андрей',
    'Некрасов',
-   '6C8FE625B2F67E1565BA9830372C62887918F43ACE76C6EAF764EA2EE02A0B8C',
+   '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb',
    0,
    'alex.angel@gmail.com',
    1000),
@@ -98,7 +98,7 @@ INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `em
    'EC26534EBDD2BB0C8CE521F861930A8F9994FDB2560F4E824EC9898C067170ED',
    0,
    'sophia.brown@gmail.com',
-   2200);
+   1000);
 
 #insert bets
 INSERT INTO `bet` (`horse_race_ID`,
