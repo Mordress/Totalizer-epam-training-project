@@ -38,9 +38,14 @@
                 <th>Выигрыш</th>
                 <th>Победила ли ставка?</th>
             </tr>
-            <c:if test="${not empty bets}">
+            <c:forEach items="${bets}" var="bet">
+                <tr>
+                    <td>${bet.horseRace.race.raceDate}</td>
+                </tr>
+            </c:forEach>
+
         </table>
-    </c:if>
+
 
 </DIV>
 Это страница ставок!
