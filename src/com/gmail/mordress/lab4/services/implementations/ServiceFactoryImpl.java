@@ -20,6 +20,7 @@ public class ServiceFactoryImpl implements ServiceFactory {
         SERVICES.put(RaceService.class, RaceServiceImpl.class);
         SERVICES.put(UserService.class, UserServiceImpl.class);
         SERVICES.put(HorseRaceService.class, HorseRaceServiceImpl.class);
+        SERVICES.put(BetService.class, BetServiceImpl.class);
         //TODO OTHER
     }
 

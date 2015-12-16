@@ -27,7 +27,7 @@
 <DIV id="page">
     <H2>Список прошлых забегов</H2>
     <c:if test="${not empty message}"><H3>${message}</H3></c:if>
-    <TABLE border="2">
+    <TABLE>
         <TR>
             <TH>Дата забега</TH>
             <TH>Дистанция (м)</TH>

@@ -23,6 +23,26 @@
     <LI class="item"><A href="${logoutUrl}">выход</A></LI>
   </UL>
 </DIV>
+
+<DIV id="page">
+    <H2>Список предыдущих ставок</H2>
+        <table border="2">
+            <tr>
+                <th>Дата забега</th>
+                <th>Дистанция (м)</th>
+                <th>Имя лошади</th>
+                <th>Место</th>
+                <th>Время финиша</th>
+                <th>Предполагаемое место</th>
+                <th>Ставка</th>
+                <th>Выигрыш</th>
+                <th>Победила ли ставка?</th>
+            </tr>
+            <c:if test="${not empty bets}">
+        </table>
+    </c:if>
+
+</DIV>
 Это страница ставок!
 </body>
 </html>

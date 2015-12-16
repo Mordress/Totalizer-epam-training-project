@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BetsListAction extends UserAction {
@@ -25,8 +26,11 @@ public class BetsListAction extends UserAction {
         UserService userService = factory.getService(UserService.class);
         User currentUser = (User)request.getSession(false).getAttribute("authorizedUser");
         BetService betService = factory.getService(BetService.class);
-        List<Bet> thisUserBets = betService.findAllBetsByUser(currentUser);
-        request.setAttribute("bets", thisUserBets);
+        List<Bet> thisUserBets = new ArrayList<>();
+        thisUserBets = betService.findAllBetsByUser(currentUser);
+        if (!thisUserBets.isEmpty()) {
+            request.setAttribute("bets", thisUserBets);
+        }
         return null;
     }
 
