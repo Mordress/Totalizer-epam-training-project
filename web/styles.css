@@ -70,7 +70,7 @@ BODY {
     margin: 20px auto;
     background: white;
     padding: 0 20px 20px 20px;
-    border: 1px solid deepskyblue;
+    border: 0px solid deepskyblue;
 }
 
 #page A {
@@ -82,6 +82,7 @@ BODY {
 }
 
 #page H2 {
+    text-align: center;
     font-size: 14pt;
     min-height: 30px;
     line-height: 30px;
@@ -176,6 +177,7 @@ BODY {
 }
 
 #page TR {
+    text-align: center;
     min-height: 30px;
     line-height: 30px;
 }
@@ -196,10 +198,13 @@ BODY {
 
 #page TH, #page TD {
     text-align: center;
+    vertical-align: top;
     padding: 0 10px;
 }
 
 #page TD {
+    text-align: center;
+    background: white;
     border: 1px solid #ABA;
 }
 
@@ -207,6 +212,7 @@ BODY {
     background: deepskyblue;
     color: white;
     font-weight: normal;
+    vertical-align: top;
     border: 1px solid deepskyblue;
 }
 
@@ -214,12 +220,6 @@ BODY {
     height: 1px;
     background-color: deepskyblue;
     margin: 20px 0;
-}
-
-IMG.arrow {
-    height: 7px;
-    width: 7px;
-    vertical-align: middle;
 }
 
 #confirm-message {
@@ -255,4 +255,9 @@ IMG.arrow {
 #confirm-message FORM {
     position: absolute;
     bottom: 20px;
+}
+#jokey {
+    position: absolute;
+    right: 100px;
+    top: 400px;
 }

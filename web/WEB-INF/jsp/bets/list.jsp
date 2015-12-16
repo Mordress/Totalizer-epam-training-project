@@ -25,7 +25,7 @@
 </DIV>
 
 <DIV id="page">
-    <H2>Список предыдущих ставок</H2>
+    <H2>Cтавки</H2>
         <table border="2">
             <tr>
                 <th>Дата забега</th>
@@ -34,20 +34,40 @@
                 <th>Место</th>
                 <th>Время финиша</th>
                 <th>Предполагаемое место</th>
-                <th>Ставка</th>
-                <th>Выигрыш</th>
-                <th>Победила ли ставка?</th>
+                <th>Размер ставки</th>
+                <th>Размер выигрыша</th>
+                <th>Победа</th>
             </tr>
-            <c:forEach items="${bets}" var="bet">
-                <tr>
-                    <td>${bet.horseRace.race.raceDate}</td>
-                </tr>
-            </c:forEach>
-
+            <c:if test="${not empty bets}">
+                <c:forEach items="${bets}" var="bet">
+                    <tr>
+                        <td>${bet.horseRace.race.raceDate}</td>
+                        <td>${bet.horseRace.race.distance}</td>
+                        <td>${bet.horseRace.horse.name}</td>
+                        <td>${bet.horseRace.resultRank}</td>
+                        <td>${bet.horseRace.resultTime}</td>
+                        <td>${bet.resultRank}</td>
+                        <td>${bet.betAmount}</td>
+                        <td>${bet.winAmount}</td>
+                        <c:choose>
+                            <c:when test="${not empty bet.winAmount}">
+                                <td>${bet.isWinner}</td>
+                            </c:when>
+                            <c:when test="${empty bet.winAmount}">
+                                <td></td>
+                            </c:when>
+                        </c:choose>
+                    </tr>
+                </c:forEach>
+            </c:if>
         </table>
-
-
+    <c:url value="/bets/create.html" var="betsCreateUrl"/>
+    <FORM action="${betsCreateUrl}" method="post">
+        <BUTTON type="submit">Сделать ставку</BUTTON>
+    </FORM>
 </DIV>
-Это страница ставок!
+<div id="jokey">
+    <img src="/footer.jpg" alt="Жокей" align="right">
+</div>
 </body>
 </html>

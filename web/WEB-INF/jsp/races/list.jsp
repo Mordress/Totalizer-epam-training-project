@@ -25,7 +25,7 @@
 </DIV>
 
 <DIV id="page">
-    <H2>Список прошлых забегов</H2>
+    <H2>Список состоявшихся забегов</H2>
     <c:if test="${not empty message}"><H3>${message}</H3></c:if>
     <TABLE>
         <TR>
@@ -64,11 +64,13 @@
         </c:forEach>
     </TABLE>
     <br>
-    <%--прикрутить кнопку добавления нового забега--%>
     <c:url value="/races/edit.html" var="raceEditUrl"/>
     <FORM action="${raceEditUrl}" method="post">
         <BUTTON type="submit">Добавить забег</BUTTON>
     </FORM>
 </DIV>
+<div id="jokey">
+    <img src="/footer.jpg" alt="Жокей" align="right">
+</div>
 </body>
 </html>

@@ -98,6 +98,14 @@ INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `em
    'EC26534EBDD2BB0C8CE521F861930A8F9994FDB2560F4E824EC9898C067170ED',
    0,
    'sophia.brown@gmail.com',
+   1000),
+
+  ('tester',
+  'tester',
+  'tester',
+  '9bba5c53a0545e0c80184b946153c9f58387e3bd1d4ee35740f29ac2e718b019',
+  0,
+  'tester@gmail.com',
    1000);
 
 #insert bets
@@ -109,8 +117,8 @@ INSERT INTO `bet` (`horse_race_ID`,
                    `user_ID`,
                    `created_date`)
 VALUES
-  (21, 3, 100.00, NULL, NULL, 3, DEFAULT),
-  (23, NULL, 50.00, NULL, NULL, 3, DEFAULT),
+  (2, 3, 100.00, 20.00, TRUE, 3, '2015-11-20 15:33:23'),
+  (23, 5, 50.00, NULL, NULL, 3, DEFAULT),
   (3, 2, 10.00, 20.00, TRUE, 4, '2015-01-09 15:30:00');
 
 

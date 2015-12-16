@@ -1,13 +1,10 @@
 package com.gmail.mordress.lab4.services.implementations;
 
-import com.gmail.mordress.lab4.dao.interfaces.BetDao;
-import com.gmail.mordress.lab4.dao.interfaces.HorseRaceDao;
-import com.gmail.mordress.lab4.dao.interfaces.UserDao;
-import com.gmail.mordress.lab4.domain.Bet;
-import com.gmail.mordress.lab4.domain.HorseRace;
-import com.gmail.mordress.lab4.domain.User;
+import com.gmail.mordress.lab4.dao.interfaces.*;
+import com.gmail.mordress.lab4.domain.*;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.interfaces.BetService;
+import com.gmail.mordress.lab4.services.interfaces.HorseRaceService;
 
 import java.util.List;
 
@@ -24,11 +21,36 @@ public class BetServiceImpl extends ServiceImpl implements BetService {
     }
 
     private void betBuild(Bet bet) throws PersistentException {
-        HorseRaceDao horseRaceDao = factory.createDao(HorseRaceDao.class);
         UserDao userDao = factory.createDao(UserDao.class);
-        HorseRace horseRace = horseRaceDao.read(bet.getHorseRace().getId());
         User u = userDao.read(bet.getUser().getId());
-        bet.setHorseRace(horseRace);
         bet.setUser(u);
+
+        HorseRaceDao horseRaceDao = factory.createDao(HorseRaceDao.class);
+        HorseRace horseRace = horseRaceDao.read(bet.getHorseRace().getId());
+        //bet.setHorseRace(horseRace);
+        buildHorseRace(horseRace);
+        bet.setHorseRace(horseRace);
+
+
+
+    }
+
+    private void buildHorseRace(HorseRace hr) {
+        if (hr != null && hr.getId() !=null ) {
+            try {
+                RaceDao raceDao = factory.createDao(RaceDao.class);
+                HorseDao horseDao = factory.createDao(HorseDao.class);
+                BreedDao breedDao = factory.createDao(BreedDao.class);
+
+                hr.setRace(raceDao.read(hr.getRace().getId()));
+                hr.setHorse(horseDao.read(hr.getHorse().getId()));
+                Breed breed = breedDao.read(hr.getHorse().getBreed().getId());
+                Horse horse = horseDao.read(hr.getHorse().getId());
+                horse.setBreed(breed);
+                hr.setHorse(horse);
+            } catch (PersistentException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

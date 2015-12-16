@@ -42,10 +42,11 @@
             <td>${horseRace.resultRank}</td>
             <td>${horseRace.resultTime}</td>
         </tr>
-        <tr>
-            <c:url value="/horseraces/resultsave.html" var="resultSaveUrl"/>
-            <FORM action="${resultSaveUrl}" method="post">
-                <INPUT type="hidden" name="horseRaceId" value="${horseRace.id}">
+
+        <c:url value="/horseraces/resultsave.html" var="resultSaveUrl"/>
+        <FORM action="${resultSaveUrl}" method="post">
+            <INPUT type="hidden" name="horseRaceId" value="${horseRace.id}">
+            <tr>
                 <td colspan="3">
                     Введите результаты:
                 </td>
@@ -56,13 +57,19 @@
                     <input type="datetime-local" id="newTime" name="newTime"/>
                     <input type="number" min="0" max="59" id="newTimeSeconds" name="newTimeSeconds" placeholder="сек."/>
                 </td>
-                <br>
-                <button type="submit">Сохранить</button>
-                <button type="reset">Сбросить</button>
-            </form>
-        </tr>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <button type="submit">Сохранить</button>
+                    <button type="reset">Сбросить</button>
+                </td>
+            </tr>
+        </form>
+
     </table>
 </DIV>
-result edit page
+<div id="jokey">
+    <img src="/footer.jpg" alt="Жокей" align="right">
+</div>
 </body>
 </html>
