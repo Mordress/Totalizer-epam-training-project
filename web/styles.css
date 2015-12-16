@@ -101,9 +101,19 @@ BODY {
     line-height: 30px;
 }
 
-#page INPUT, #page SELECT {
-    border: 1px solid #ABA;
-    width: 100%;
+#page INPUT {
+    border: 1px solid deepskyblue;
+    width: 250px;
+    height: 30px;
+    line-height: 10px;
+
+
+}
+
+#page SELECT {
+    border: 1px solid deepskyblue;
+    height: 30px;
+
 }
 
 #page INPUT[disabled], #page SELECT[disabled] {
@@ -112,11 +122,6 @@ BODY {
 
 #page INPUT:focus, #page SELECT:focus {
     border: 1px solid deepskyblue;
-}
-
-#page INPUT, #page SELECT {
-    height: 30px;
-    line-height: 30px;
 }
 
 #page INPUT.search {
