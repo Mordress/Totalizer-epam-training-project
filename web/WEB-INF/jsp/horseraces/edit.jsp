@@ -59,6 +59,8 @@
             </c:forEach>
     </table>
 </DIV>
-It's horseraces edit page!
+<div id="jokey">
+    <img src="/footer.jpg" alt="Жокей" align="right">
+</div>
 </body>
 </html>

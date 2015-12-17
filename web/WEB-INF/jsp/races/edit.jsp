@@ -38,6 +38,8 @@
         <BUTTON type="reset">Сбросить</BUTTON>
     </FORM>
 </DIV>
-it's race create page!
+<div id="jokey">
+    <img src="/footer.jpg" alt="Жокей" align="right">
+</div>
 </body>
 </html>

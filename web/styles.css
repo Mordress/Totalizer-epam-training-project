@@ -113,7 +113,6 @@ BODY {
 #page SELECT {
     border: 1px solid deepskyblue;
     height: 30px;
-
 }
 
 #page INPUT[disabled], #page SELECT[disabled] {

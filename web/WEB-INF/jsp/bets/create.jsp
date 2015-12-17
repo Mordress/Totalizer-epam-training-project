@@ -24,16 +24,26 @@
   </UL>
 </DIV>
 <div id="page">
+
+  <h1>Текущий баланс: ${cash}$</h1>
   <h2>Создать ставку</h2>
   <form action="" method="post">
-      <select size = "3" multiple name = "name[]">
-        <option disabled>Какие имена вам нравятся?</option>
-        <option selected value = "Никакие">Никакие</option>
-        <option value = "Иван">Иван</option>
-        <option value = "Петр">Петр</option>
-        <option value = "Николай">Николай</option>
+      <select name="chosenRace">
+          <option selected value = "emptyRace">Выберите дату и время забега</option>
+          <c:forEach items="${futureRaces}" var="fRace">
+            <option value = "${fRace}">${fRace.raceDate}</option>
+        </c:forEach>
       </select>
-      <input type = "submit" value = "Ответить">
+      <select name="chosenHorse">
+          <option selected value = "emptyHorse">Выберите лошадь</option>
+          <c:forEach items="${allHorses}" var="horse">
+              <option value = "${horse}">${horse.name}</option>
+          </c:forEach>
+      </select>
+      <input type="number" min="10" max="${cash}" id="betAmount" name="betAmount" placeholder="Размер ставки"/>
+      <input type="number" min="1" max="${horseCount}" id="rank" name="rank" placeholder="Предполагаемое место"/>
+      <button type="submit">Создать ставку</button>
+      <button type="reset">Сбросить</button>
   </form>
 </div>
 <div id="jokey">

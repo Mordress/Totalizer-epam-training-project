@@ -28,5 +28,8 @@
         <BUTTON type="submit">Войти</BUTTON>
     </FORM>
 </DIV>
+<div id="jokey">
+    <img src="/footer.jpg" alt="Жокей" align="right">
+</div>
 </body>
 </html>

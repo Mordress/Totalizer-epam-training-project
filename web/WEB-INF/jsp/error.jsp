@@ -37,6 +37,8 @@
   <c:url value="/index.html" var="mainUrl"/>
   <A href="${mainUrl}">На главную</A>
 </DIV>
-
+<div id="jokey">
+  <img src="/footer.jpg" alt="Жокей" align="right">
+</div>
 </body>
 </html>
