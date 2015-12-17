@@ -6,7 +6,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Тотализатор - сделать ставку</title>
+  <title>Тотализатор - создание ставки</title>
   <link rel="stylesheet" type="text/css" href="/styles.css" media="all">
 </head>
 <body>
@@ -26,7 +26,8 @@
 <div id="page">
 
   <h1>Текущий баланс: ${cash}$</h1>
-  <h2>Создать ставку</h2>
+  <h2>Введите данные ставки</h2>
+  <br>
   <form action="" method="post">
       <select name="chosenRace">
           <option selected value = "emptyRace">Выберите дату и время забега</option>
@@ -45,6 +46,26 @@
       <button type="submit">Создать ставку</button>
       <button type="reset">Сбросить</button>
   </form>
+  <br>
+  <br>
+  <br>
+  <h3>Доступные лошади</h3>
+  <table>
+      <tr>
+          <th>Имя</th>
+          <th>Порода</th>
+          <th>Возраст (лет)</th>
+          <th>Вес (кг)</th>
+      </tr>
+      <c:forEach items="${allHorses}" var="horse">
+          <tr>
+            <td>${horse.name}</td>
+            <td>${horse.breed.name}</td>
+            <td>${horse.age}</td>
+            <td>${horse.weight}</td>
+          </tr>
+      </c:forEach>
+  </table>
 </div>
 <div id="jokey">
   <img src="/footer.jpg" alt="Жокей" align="right">

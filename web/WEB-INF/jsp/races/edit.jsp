@@ -32,7 +32,7 @@
         <INPUT type="datetime-local" id="date" name="date">
         <br>
         <label for="distance">Введите длину дистанции</label>
-        <INPUT type="number" id="distance" name="distance">
+        <INPUT type="number" id="distance" name="distance" min="100">
         <br>
         <BUTTON type="submit">Сохранить</BUTTON>
         <BUTTON type="reset">Сбросить</BUTTON>
