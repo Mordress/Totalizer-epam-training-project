@@ -48,8 +48,8 @@ public class BetsNewSaveAction extends UserAction {
             HorseRace horseRace = horseRaceService.findByRaceAndHorse(horseId, raceId);
             //Создали готовый хорс-рейс, надо создать бет и запихнуть в него этот хорс рейс и остальное
 
-        } catch (NumberFormatException e) {
-
+        } catch (NumberFormatException} PersistentException e) {
+            //ловить эксепшн, есои что- то пошло не так и не создавать ставку
         }
 
         return null;
