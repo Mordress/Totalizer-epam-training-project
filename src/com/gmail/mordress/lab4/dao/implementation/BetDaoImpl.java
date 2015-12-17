@@ -151,8 +151,16 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             statement.setInt(1, instance.getHorseRace().getId());
             statement.setInt(2, instance.getResultRank());
             statement.setBigDecimal(3, instance.getBetAmount());
-            statement.setBigDecimal(4, instance.getWinAmount());
-            statement.setBoolean(5, instance.getIsWinner());
+            if (instance.getWinAmount() != null) {
+                statement.setBigDecimal(4, instance.getWinAmount());
+            } else {
+                statement.setBigDecimal(4, null);
+            }
+            if (instance.getIsWinner() != null) {
+                statement.setBoolean(5, instance.getIsWinner());
+            } else {
+                statement.setBoolean(5, false);
+            }
             statement.setInt(6, instance.getUser().getId());
             statement.setTimestamp(7, new java.sql.Timestamp(instance.getCreatedDate().getTime()));
             statement.executeUpdate();

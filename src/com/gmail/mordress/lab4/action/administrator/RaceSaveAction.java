@@ -40,7 +40,7 @@ public class RaceSaveAction extends AdministratorAction {
             }
             RaceService service = factory.getService(RaceService.class);
             service.save(race);
-            /* Создаем для нового забега список результатов без результатов о_О*/
+            /* РЎРѕР·РґР°РµРј РґР»СЏ РЅРѕРІРѕРіРѕ Р·Р°Р±РµРіР° СЃРїРёСЃРѕРє СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ Р±РµР· СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ Рѕ_Рћ*/
             HorseRaceService horseRaceService = factory.getService(HorseRaceService.class);
             HorseService horseService = factory.getService(HorseService.class);
             List<Horse> horses = horseService.getAllHorses();

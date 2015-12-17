@@ -20,6 +20,16 @@ public class BetServiceImpl extends ServiceImpl implements BetService {
         return bets;
     }
 
+    @Override
+    public void save(Bet bet) throws PersistentException {
+        BetDao betDao = factory.createDao(BetDao.class);
+        if (bet.getId() != null) {
+            betDao.update(bet);
+        } else {
+            bet.setId(betDao.create(bet));
+        }
+    }
+
     private void betBuild(Bet bet) throws PersistentException {
         UserDao userDao = factory.createDao(UserDao.class);
         User u = userDao.read(bet.getUser().getId());

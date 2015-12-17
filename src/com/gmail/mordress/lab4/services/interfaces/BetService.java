@@ -10,5 +10,7 @@ public interface BetService extends Service{
 
     public List<Bet> findAllBetsByUser(User user) throws PersistentException;
 
+    public void save(Bet bet) throws PersistentException;
+
 
 }

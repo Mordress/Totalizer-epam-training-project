@@ -1,20 +1,15 @@
 package com.gmail.mordress.lab4.action.user;
 
 import com.gmail.mordress.lab4.action.Action;
-import com.gmail.mordress.lab4.domain.Horse;
-import com.gmail.mordress.lab4.domain.HorseRace;
-import com.gmail.mordress.lab4.domain.Race;
-import com.gmail.mordress.lab4.domain.User;
+import com.gmail.mordress.lab4.domain.*;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.interfaces.HorseRaceService;
-import com.gmail.mordress.lab4.services.interfaces.HorseService;
-import com.gmail.mordress.lab4.services.interfaces.RaceService;
-import com.gmail.mordress.lab4.services.interfaces.UserService;
+import com.gmail.mordress.lab4.services.interfaces.*;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class BetsNewSaveAction extends UserAction {
 
@@ -22,7 +17,8 @@ public class BetsNewSaveAction extends UserAction {
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
-        //todo forward
+        Forward forward = new Forward("/bets/list.html");
+        User currentUser = (User)request.getSession(false).getAttribute("authorizedUser");
         try {
             Integer raceId = Integer.parseInt(request.getParameter("chosenRaceId"));
             Integer horseId = Integer.parseInt(request.getParameter("chosenHorseId"));
@@ -30,7 +26,7 @@ public class BetsNewSaveAction extends UserAction {
             Integer rank = Integer.parseInt(request.getParameter("rank"));
 
             UserService userService = factory.getService(UserService.class);
-            User currentUser = (User)request.getSession(false).getAttribute("authorizedUser");
+
             /* Вычитаем размер ставки из баланса пользователя */
             BigDecimal newCashAmount = currentUser.getCashAmount();
             newCashAmount = newCashAmount.subtract(new BigDecimal(betAmount));
@@ -46,13 +42,23 @@ public class BetsNewSaveAction extends UserAction {
 
             HorseRaceService horseRaceService = factory.getService(HorseRaceService.class);
             HorseRace horseRace = horseRaceService.findByRaceAndHorse(horseId, raceId);
-            //Создали готовый хорс-рейс, надо создать бет и запихнуть в него этот хорс рейс и остальное
+            BetService betService = factory.getService(BetService.class);
+            Bet bet = new Bet();
+            bet.setHorseRace(horseRace);
+            bet.setResultRank(rank);
+            bet.setBetAmount(new BigDecimal(betAmount));
+            bet.setUser(currentUser);
+            bet.setCreatedDate(new Date());
+            betService.save(bet);
 
-        } catch (NumberFormatException} PersistentException e) {
+        } catch (NumberFormatException | PersistentException e) {
+            logger.error("User " + currentUser.getLogin() + " can't create new bet");
+            //написать в mesage, что он не может сделать ставку
+            //откатить деньги назад
             //ловить эксепшн, есои что- то пошло не так и не создавать ставку
         }
 
-        return null;
+        return forward;
     }
 
 
