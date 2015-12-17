@@ -2,9 +2,11 @@ package com.gmail.mordress.lab4.action.user;
 
 import com.gmail.mordress.lab4.action.Action;
 import com.gmail.mordress.lab4.domain.Horse;
+import com.gmail.mordress.lab4.domain.HorseRace;
 import com.gmail.mordress.lab4.domain.Race;
 import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
+import com.gmail.mordress.lab4.services.interfaces.HorseRaceService;
 import com.gmail.mordress.lab4.services.interfaces.HorseService;
 import com.gmail.mordress.lab4.services.interfaces.RaceService;
 import com.gmail.mordress.lab4.services.interfaces.UserService;
@@ -41,6 +43,10 @@ public class BetsNewSaveAction extends UserAction {
             RaceService raceService = factory.getService(RaceService.class);
             Race race = raceService.findById(raceId);
             System.out.println();
+
+            HorseRaceService horseRaceService = factory.getService(HorseRaceService.class);
+            HorseRace horseRace = horseRaceService.findByRaceAndHorse(horseId, raceId);
+            //Создали готовый хорс-рейс, надо создать бет и запихнуть в него этот хорс рейс и остальное
 
         } catch (NumberFormatException e) {
 

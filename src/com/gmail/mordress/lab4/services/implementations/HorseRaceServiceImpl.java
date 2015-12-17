@@ -67,5 +67,11 @@ public class HorseRaceServiceImpl extends ServiceImpl implements HorseRaceServic
         }
     }
 
-
+    @Override
+    public HorseRace findByRaceAndHorse(Integer horseId, Integer raceId) throws PersistentException {
+        HorseRaceDao horseRaceDao = factory.createDao(HorseRaceDao.class);
+        HorseRace horseRace = horseRaceDao.findByRaceAndHorse(horseId, raceId);
+        buildHorseRace(horseRace);
+        return horseRace;
+    }
 }

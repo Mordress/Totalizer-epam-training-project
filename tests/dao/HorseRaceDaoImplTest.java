@@ -16,7 +16,7 @@ public class HorseRaceDaoImplTest {
         try {
             DaoFactory factory = new DaoFactoryImpl();
             HorseRaceDaoImpl hrdi = factory.createDao(HorseRaceDao.class);
-            System.out.println(hrdi.read(1));
+            /*System.out.println(hrdi.read(1));
             HorseDaoImpl hdi = factory.createDao(HorseDao.class);
             RaceDaoImpl rdi = factory.createDao(RaceDao.class);
             BreedDaoImpl bdi = factory.createDao(BreedDao.class);
@@ -34,7 +34,11 @@ public class HorseRaceDaoImplTest {
             horseRace.setResultTime(new Date());
             horseRace.setResultRank(3);
             //hrdi.update(horseRace);
-            hrdi.create(horseRace);
+            hrdi.create(horseRace);*/
+
+            HorseRace horseRace= hrdi.findByRaceAndHorse(1, 2);
+            System.out.println(horseRace.getId());
+            System.out.println(horseRace);
         } catch (Exception e) {
             e.printStackTrace();
 

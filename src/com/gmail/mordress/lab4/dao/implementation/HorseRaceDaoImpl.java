@@ -276,7 +276,43 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
     }
 
     @Override
-    public HorseRace findByRaceAndHorse(Integer horseId, Integer RaceId) throws PersistentException {
-        return null;
+    public HorseRace findByRaceAndHorse(Integer horseId, Integer raceId) throws PersistentException {
+        String sql = "SELECT * FROM `horse_race` WHERE (`horse_ID` = ? AND `race_ID` = ?)";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, horseId);
+            statement.setInt(2, raceId);
+            resultSet = statement.executeQuery();
+            HorseRace horseRace = null;
+            if (resultSet.next()) {
+                horseRace = new HorseRace();
+                horseRace.setId(resultSet.getInt("horse_race_ID"));
+                horseRace.setResultRank(resultSet.getInt("result_rank"));
+                if (resultSet.getTimestamp("result_time") != null) {
+                    horseRace.setResultTime(new Date(resultSet.getTimestamp("result_time").getTime()));
+                } else {
+                    horseRace.setResultTime(null);
+                }
+                Horse horse = new Horse();
+                Race race = new Race();
+                horse.setId(horseId);
+                race.setId(raceId);
+                horseRace.setRace(race);
+                horseRace.setHorse(horse);
+            }
+            return horseRace;
+        } catch (SQLException e) {
+            logger.error("Can not find horseRace by RaceId: " + raceId + " and HorseId: " + horseId);
+            throw new PersistentException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
     }
 }
