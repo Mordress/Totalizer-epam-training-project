@@ -274,4 +274,9 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
             } catch (SQLException | NullPointerException e) {}
         }
     }
+
+    @Override
+    public HorseRace findByRaceAndHorse(Integer horseId, Integer RaceId) throws PersistentException {
+        return null;
+    }
 }

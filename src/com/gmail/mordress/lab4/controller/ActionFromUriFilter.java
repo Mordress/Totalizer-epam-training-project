@@ -7,6 +7,7 @@ import com.gmail.mordress.lab4.action.MainAction;
 import com.gmail.mordress.lab4.action.administrator.*;
 import com.gmail.mordress.lab4.action.user.BetsCreateAction;
 import com.gmail.mordress.lab4.action.user.BetsListAction;
+import com.gmail.mordress.lab4.action.user.BetsNewSaveAction;
 import org.apache.log4j.Logger;
 
 import javax.servlet.*;
@@ -33,6 +34,7 @@ public class ActionFromUriFilter implements Filter {
         actions.put("/horseraces/resultsave", HorseRaceResultSaveAction.class);
         actions.put("/bets/list", BetsListAction.class);
         actions.put("/bets/create", BetsCreateAction.class);
+        actions.put("/bets/newsave", BetsNewSaveAction.class);
 
 
         /*actions.put("/profile/edit", ProfileEditAction.class);

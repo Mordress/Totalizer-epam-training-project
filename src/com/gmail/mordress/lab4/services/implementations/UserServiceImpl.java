@@ -6,6 +6,7 @@ import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.interfaces.UserService;
 import com.gmail.mordress.lab4.utils.Hasher;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class UserServiceImpl extends ServiceImpl implements UserService {
@@ -62,5 +63,11 @@ public class UserServiceImpl extends ServiceImpl implements UserService {
 
     private String hashing(String input) {
         return Hasher.SHA256(input);
+    }
+
+    @Override
+    public void updateUserCash(Integer userId, BigDecimal newCashAmount) throws PersistentException {
+        UserDao dao = factory.createDao(UserDao.class);
+        dao.updateUserCash(userId, newCashAmount);
     }
 }

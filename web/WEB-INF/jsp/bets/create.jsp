@@ -28,17 +28,18 @@
   <h1>Текущий баланс: ${cash}$</h1>
   <h2>Введите данные ставки</h2>
   <br>
-  <form action="" method="post">
-      <select name="chosenRace">
+    <c:url value="/bets/newsave.html" var="betsNewSave"/>
+  <form action="${betsNewSave}" method="post">
+      <select name="chosenRaceId">
           <option selected value = "emptyRace">Выберите дату и время забега</option>
           <c:forEach items="${futureRaces}" var="fRace">
-            <option value = "${fRace}">${fRace.raceDate}</option>
+            <option value = "${fRace.id}">${fRace.raceDate}</option>
         </c:forEach>
       </select>
-      <select name="chosenHorse">
+      <select name="chosenHorseId">
           <option selected value = "emptyHorse">Выберите лошадь</option>
           <c:forEach items="${allHorses}" var="horse">
-              <option value = "${horse}">${horse.name}</option>
+              <option value = "${horse.id}">${horse.name}</option>
           </c:forEach>
       </select>
       <input type="number" min="10" max="${cash}" id="betAmount" name="betAmount" placeholder="Размер ставки"/>

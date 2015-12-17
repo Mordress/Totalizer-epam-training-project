@@ -11,6 +11,8 @@ public interface HorseRaceDao extends Dao<HorseRace> {
 
     public List<HorseRace> findByRace(Race race) throws PersistentException;
 
+    public HorseRace findByRaceAndHorse(Integer horseId, Integer RaceId) throws PersistentException;
+
     public List<HorseRace> getAllHorseRaces() throws PersistentException;
 
     public List<HorseRace> getHorseRacePerHorse(Horse horse) throws PersistentException;

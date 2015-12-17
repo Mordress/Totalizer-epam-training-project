@@ -3,6 +3,7 @@ package com.gmail.mordress.lab4.services.interfaces;
 import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface UserService extends Service {
@@ -18,5 +19,7 @@ public interface UserService extends Service {
     public void save(User user) throws PersistentException;
 
     public void delete(Integer id) throws PersistentException;
+
+    public void updateUserCash(Integer userId, BigDecimal newCashAmount) throws PersistentException;
 
 }

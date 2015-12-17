@@ -5,6 +5,8 @@ import com.gmail.mordress.lab4.domain.Role;
 import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
+
+import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -218,6 +220,25 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch(SQLException e) {
+            throw new PersistentException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                statement.close();
+            } catch(SQLException | NullPointerException e) {}
+        }
+    }
+
+    @Override
+    public void updateUserCash(Integer userId, BigDecimal newCashAmount) throws PersistentException {
+        String sql = "UPDATE `users` SET `cash_amount` = ? WHERE `user_ID` = ?";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setBigDecimal(1, newCashAmount);
+            statement.setInt(2, userId);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            logger.error("Can not update user's cashAmount for user with id: " + userId);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
