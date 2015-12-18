@@ -1,9 +1,6 @@
 package com.gmail.mordress.lab4.controller;
 
-import com.gmail.mordress.lab4.action.Action;
-import com.gmail.mordress.lab4.action.LoginAction;
-import com.gmail.mordress.lab4.action.LogoutAction;
-import com.gmail.mordress.lab4.action.MainAction;
+import com.gmail.mordress.lab4.action.*;
 import com.gmail.mordress.lab4.action.administrator.*;
 import com.gmail.mordress.lab4.action.user.BetsCreateAction;
 import com.gmail.mordress.lab4.action.user.BetsListAction;
@@ -35,6 +32,7 @@ public class ActionFromUriFilter implements Filter {
         actions.put("/bets/list", BetsListAction.class);
         actions.put("/bets/create", BetsCreateAction.class);
         actions.put("/bets/newsave", BetsNewSaveAction.class);
+        actions.put("/registration", RegistrationAction.class);
 
 
         /*actions.put("/profile/edit", ProfileEditAction.class);

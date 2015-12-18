@@ -6,7 +6,7 @@
            version="3.0">
     <display-name>Тотализатор</display-name>
     <welcome-file-list>
-        <welcome-file>/index.html</welcome-file>
+        <welcome-file>/login.html</welcome-file>
     </welcome-file-list>
 
     <servlet>

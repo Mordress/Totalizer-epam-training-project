@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
@@ -9,25 +8,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Тотализатор - Вход</title>
     <link rel="stylesheet" type="text/css" href="/styles.css" media="all">
-    <!-- Подключение css-->
 </head>
 <body>
-<DIV id="header">
+<div id="header">
     <H1>Тотализатор</H1>
-</DIV>
-<DIV id="page">
-    <H2>Вход в систему</H2>
+</div>
+<div id="page">
+    <h2>Вход в систему</h2>
     <c:if test="${not empty message}">
-        <H3 style="color: #fc0011;">${message}</H3>
+        <h3 style="color: #fc0011;">${message}</h3>
     </c:if>
     <c:url value="/login.html" var="loginUrl"/>
-    <FORM action="${loginUrl}" method="post">
-        <INPUT type="text" id="login" name="login" value="${param.login}" maxlength="30" placeholder="Логин:">
+    <form action="${loginUrl}" method="post">
+        <input type="text" id="login" name="login" value="${param.login}" maxlength="30" placeholder="Логин:">
         <br>
-        <INPUT type="password" id="password" name="password" value="${param.password}" placeholder="Пароль:">
-        <BUTTON type="submit">Войти</BUTTON>
-    </FORM>
-</DIV>
+        <input type="password" id="password" name="password" value="${param.password}" placeholder="Пароль:">
+        <br>
+        <button type="submit">Войти</button>
+    </form>
+    <c:url value="/registration.html" var="registrationUrl"/>
+    <form action="${registrationUrl}" method="post">
+        <button type="submit">Регистрация</button>
+    </form>
+</div>
 <div id="jokey">
     <img src="/jokey.jpg" alt="Жокей" align="right">
 </div>
