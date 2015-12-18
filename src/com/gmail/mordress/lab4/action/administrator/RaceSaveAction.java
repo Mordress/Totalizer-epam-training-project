@@ -50,9 +50,10 @@ public class RaceSaveAction extends AdministratorAction {
                 hr.setHorse(horse);
                 horseRaceService.save(hr);
             }
-            logger.debug(race.toString());
+            forward.getAttributes().put("message", "Новый забег успешно сохранен");
         } catch (NumberFormatException e) {
-            logger.debug("Can not parse input date or distance for race creation");
+            logger.error("administrator had tried to create new race with wrong parameters");
+            forward.getAttributes().put("message", "Невозможно создать такой забег");
 
         }
         return forward;

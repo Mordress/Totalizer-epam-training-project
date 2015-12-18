@@ -21,12 +21,13 @@
         <LI class="item"><A href="${profileEditUrl}">${authorizedUser.login}</A></LI>
         <c:url value="/logout.html" var="logoutUrl"/>
         <LI class="item"><A href="${logoutUrl}">выход</A></LI>
+
     </UL>
 </DIV>
 
 <DIV id="page">
+
     <H2>Список состоявшихся забегов</H2>
-    <c:if test="${not empty message}"><H3>${message}</H3></c:if>
     <TABLE>
         <TR>
             <TH>Дата забега</TH>
@@ -49,7 +50,7 @@
     </TABLE>
 
     <H2>Список будущих забегов</H2>
-    <c:if test="${not empty message}"><H3>${message}</H3></c:if>
+    <c:if test="${not empty message}"><H4>${message}</H4></c:if>
     <TABLE border="2">
         <TR>
             <TH>Дата забега</TH>

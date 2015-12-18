@@ -22,9 +22,11 @@
     <c:url value="/logout.html" var="logoutUrl"/>
     <LI class="item"><A href="${logoutUrl}">выход</A></LI>
   </UL>
+
 </DIV>
 
 <DIV id="page">
+    <c:if test="${not empty message}"><H4 align="center">${message}</H4></c:if>
     <H2>Cтавки</H2>
         <table border="2">
             <tr>

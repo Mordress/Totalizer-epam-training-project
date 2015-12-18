@@ -25,21 +25,11 @@ public class BetsNewSaveAction extends UserAction {
             String betAmount = request.getParameter("betAmount");
             Integer rank = Integer.parseInt(request.getParameter("rank"));
 
-            UserService userService = factory.getService(UserService.class);
-
-            /* Вычитаем размер ставки из баланса пользователя */
-            BigDecimal newCashAmount = currentUser.getCashAmount();
-            newCashAmount = newCashAmount.subtract(new BigDecimal(betAmount));
-            currentUser.setCashAmount(newCashAmount);
-            userService.updateUserCash(currentUser.getId(), currentUser.getCashAmount());
-
             /*Создаем по частям новую ставку*/
             HorseService horseService = factory.getService(HorseService.class);
             Horse horse = horseService.findHorseById(horseId);
             RaceService raceService = factory.getService(RaceService.class);
             Race race = raceService.findById(raceId);
-            System.out.println();
-
             HorseRaceService horseRaceService = factory.getService(HorseRaceService.class);
             HorseRace horseRace = horseRaceService.findByRaceAndHorse(horseId, raceId);
             BetService betService = factory.getService(BetService.class);
@@ -51,8 +41,17 @@ public class BetsNewSaveAction extends UserAction {
             bet.setCreatedDate(new Date());
             betService.save(bet);
 
+            /*Если всё прошло хорошо и не был выброшен никакой эксепшн, то вычитаем размер ставки из баланса пользователя */
+            UserService userService = factory.getService(UserService.class);
+            BigDecimal newCashAmount = currentUser.getCashAmount();
+            newCashAmount = newCashAmount.subtract(new BigDecimal(betAmount));
+            currentUser.setCashAmount(newCashAmount);
+            userService.updateUserCash(currentUser.getId(), currentUser.getCashAmount());
+            forward.getAttributes().put("message", "Ваша ставка успешно создана");
+
         } catch (NumberFormatException | PersistentException e) {
             logger.error("User " + currentUser.getLogin() + " can't create new bet");
+            forward.getAttributes().put("message", "Не удалось создать ставку");
             //написать в mesage, что он не может сделать ставку
             //откатить деньги назад
             //ловить эксепшн, есои что- то пошло не так и не создавать ставку
