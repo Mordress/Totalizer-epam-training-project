@@ -39,7 +39,7 @@
     </FORM>
 </DIV>
 <div id="jokey">
-    <img src="/footer.jpg" alt="Жокей" align="right">
+    <img src="/jokey.jpg" alt="Жокей" align="right">
 </div>
 </body>
 </html>
