@@ -175,6 +175,7 @@ BODY {
 
 #page TABLE {
     text-align: center;
+    font-size: 8pt;
     margin-top: 20px;
     width: 100%;
     border-collapse: collapse;

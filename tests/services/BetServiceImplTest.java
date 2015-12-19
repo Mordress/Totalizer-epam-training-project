@@ -1,15 +1,10 @@
 package services;
 
-
 import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
 import com.gmail.mordress.lab4.domain.Bet;
-import com.gmail.mordress.lab4.domain.HorseRace;
-import com.gmail.mordress.lab4.domain.Race;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.implementations.ServiceFactoryImpl;
 import com.gmail.mordress.lab4.services.interfaces.BetService;
-import com.gmail.mordress.lab4.services.interfaces.HorseRaceService;
-import com.gmail.mordress.lab4.services.interfaces.RaceService;
 import com.gmail.mordress.lab4.services.interfaces.ServiceFactory;
 
 import java.util.List;
@@ -20,7 +15,7 @@ public class BetServiceImplTest {
         try {
             ServiceFactory factory = new ServiceFactoryImpl(new DaoFactoryImpl());
             BetService betService = factory.getService(BetService.class);
-            List<Bet> bets = betService.findNotCompleteBets();
+            List<Bet> bets = betService.findNoFinishedBets();
             for (Bet bet : bets) {
                 System.out.println(bets);
             }

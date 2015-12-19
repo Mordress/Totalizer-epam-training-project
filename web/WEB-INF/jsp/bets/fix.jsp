@@ -24,7 +24,51 @@
   </UL>
 
 </DIV>
-
+<div id="page">
+  <table>
+      <tr>
+          <th>Дата забега</th>
+          <th>Дистанция</th>
+          <th>Имя лошади</th>
+          <th>Факт. место</th>
+          <th>Предп. место</th>
+          <th>Ставка($)</th>
+          <th>Выигрыш($)</th>
+          <th>Победа ставки</th>
+          <th>Дата создания ставки</th>
+          <th>Установить результат</th>
+      </tr>
+      <c:if test="${not empty nofixbets}">
+          <c:forEach items="${nofixbets}" var="bet">
+              <tr>
+                  <form action="" method="post">
+                      <input type="hidden" name="betId" value="${bet.id}">
+                      <td>${bet.horseRace.race.raceDate}</td>
+                      <td>${bet.horseRace.race.distance}</td>
+                      <td>${bet.horseRace.horse.name}</td>
+                      <td>${bet.horseRace.resultRank}</td>
+                      <td>${bet.resultRank}</td>
+                      <td>${bet.betAmount}</td>
+                      <td>
+                          <input type="number" min="${bet.betAmount}" id="winamount" name="winamount" placeholder="$">
+                      </td>
+                      <td>
+                          <select name="iswinner">
+                              <option selected value = "empty">не выбрано</option>
+                                  <option value = "yes">Да</option>
+                                  <option value = "no">Нет</option>
+                          </select>
+                      </td>
+                      <td>${bet.createdDate}</td>
+                      <td>
+                          <BUTTON type="submit">Установить</BUTTON>
+                      </td>
+                  </form>
+              </tr>
+          </c:forEach>
+      </c:if>
+  </table>
+</div>
 it's page for bets fixing
 </body>
 </html>

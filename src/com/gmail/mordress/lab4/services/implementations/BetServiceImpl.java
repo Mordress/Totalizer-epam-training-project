@@ -6,6 +6,8 @@ import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.interfaces.BetService;
 import com.gmail.mordress.lab4.services.interfaces.HorseRaceService;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class BetServiceImpl extends ServiceImpl implements BetService {
@@ -32,11 +34,22 @@ public class BetServiceImpl extends ServiceImpl implements BetService {
 
     @Override
     public List<Bet> findNotFixedBets() throws PersistentException {
-        return null;
+        BetDao betDao = factory.createDao(BetDao.class);
+        List<Bet> notCompleteBets = betDao.findNotCompleteBets();
+        for (Bet notCompleteBet : notCompleteBets) {
+            betBuild(notCompleteBet);
+        }
+        List<Bet> notFixedBets = new ArrayList<>();
+        for (Bet bet : notCompleteBets) {
+            if (bet.getHorseRace().getRace().getRaceDate().getTime() < new Date().getTime()) {
+                notFixedBets.add(bet);
+            }
+        }
+        return notFixedBets;
     }
 
     @Override
-    public List<Bet> findNotCompleteBets() throws PersistentException {
+    public List<Bet> findNoFinishedBets() throws PersistentException {
         BetDao betDao = factory.createDao(BetDao.class);
         List<Bet> notCompleteBets = betDao.findNotCompleteBets();
         for (Bet notCompleteBet : notCompleteBets) {
