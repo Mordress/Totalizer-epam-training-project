@@ -28,15 +28,14 @@
   <table>
       <tr>
           <th>Дата забега</th>
-          <th>Дистанция</th>
+          <th>Дата ставки</th>
           <th>Имя лошади</th>
           <th>Факт. место</th>
           <th>Предп. место</th>
           <th>Ставка($)</th>
           <th>Выигрыш($)</th>
           <th>Победа ставки</th>
-          <th>Дата создания ставки</th>
-          <th>Установить результат</th>
+          <th>Результат</th>
       </tr>
       <c:if test="${not empty nofixbets}">
           <c:forEach items="${nofixbets}" var="bet">
@@ -44,7 +43,7 @@
                   <form action="" method="post">
                       <input type="hidden" name="betId" value="${bet.id}">
                       <td>${bet.horseRace.race.raceDate}</td>
-                      <td>${bet.horseRace.race.distance}</td>
+                      <td>${bet.createdDate}</td>
                       <td>${bet.horseRace.horse.name}</td>
                       <td>${bet.horseRace.resultRank}</td>
                       <td>${bet.resultRank}</td>
@@ -59,9 +58,8 @@
                                   <option value = "no">Нет</option>
                           </select>
                       </td>
-                      <td>${bet.createdDate}</td>
                       <td>
-                          <BUTTON type="submit">Установить</BUTTON>
+                          <BUTTON type="submit">Сохранить</BUTTON>
                       </td>
                   </form>
               </tr>
