@@ -40,7 +40,8 @@
       <c:if test="${not empty nofixbets}">
           <c:forEach items="${nofixbets}" var="bet">
               <tr>
-                  <form action="" method="post">
+                  <c:url value="/bets/fixsave.html" var="fixSaveUrl"/>
+                  <form action="${fixSaveUrl}" method="post">
                       <input type="hidden" name="betId" value="${bet.id}">
                       <td>${bet.horseRace.race.raceDate}</td>
                       <td>${bet.createdDate}</td>

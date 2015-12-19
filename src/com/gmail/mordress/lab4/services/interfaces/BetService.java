@@ -16,5 +16,7 @@ public interface BetService extends Service{
 
     public void save(Bet bet) throws PersistentException;
 
+    public Bet read(Integer id) throws PersistentException;
+
 
 }

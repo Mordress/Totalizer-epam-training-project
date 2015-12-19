@@ -3,6 +3,7 @@ package com.gmail.mordress.lab4.controller;
 import com.gmail.mordress.lab4.action.*;
 import com.gmail.mordress.lab4.action.administrator.*;
 import com.gmail.mordress.lab4.action.bookmaker.BetFixListAction;
+import com.gmail.mordress.lab4.action.bookmaker.BetsFixedAction;
 import com.gmail.mordress.lab4.action.user.BetsCreateAction;
 import com.gmail.mordress.lab4.action.user.BetsListAction;
 import com.gmail.mordress.lab4.action.user.BetsNewSaveAction;
@@ -35,6 +36,7 @@ public class ActionFromUriFilter implements Filter {
         actions.put("/bets/newsave", BetsNewSaveAction.class);
         actions.put("/registration", RegistrationAction.class);
         actions.put("/bets/fix", BetFixListAction.class);
+        actions.put("/bets/fixsave", BetsFixedAction.class);
 
 
         /*actions.put("/profile/edit", ProfileEditAction.class);
