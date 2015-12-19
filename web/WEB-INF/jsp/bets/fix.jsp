@@ -25,6 +25,7 @@
 
 </DIV>
 <div id="page">
+
   <table>
       <tr>
           <th>Дата забега</th>
@@ -34,7 +35,7 @@
           <th>Предп. место</th>
           <th>Ставка($)</th>
           <th>Выигрыш($)</th>
-          <th>Победа ставки</th>
+          <th>Победил?</th>
           <th>Результат</th>
       </tr>
       <c:if test="${not empty nofixbets}">
@@ -67,6 +68,7 @@
           </c:forEach>
       </c:if>
   </table>
+    <c:if test="${not empty message}"><H4>${message}</H4></c:if>
 </div>
 it's page for bets fixing
 </body>

@@ -27,7 +27,7 @@
 
 <DIV id="page">
 
-    <H2>Список состоявшихся забегов</H2>
+    <H2>Состоявшиеся забеги</H2>
     <TABLE>
         <TR>
             <TH>Дата забега</TH>
@@ -49,7 +49,7 @@
         </c:forEach>
     </TABLE>
 
-    <H2>Список будущих забегов</H2>
+    <H2>Будущие забеги</H2>
     <c:if test="${not empty message}"><H4>${message}</H4></c:if>
     <TABLE border="2">
         <TR>

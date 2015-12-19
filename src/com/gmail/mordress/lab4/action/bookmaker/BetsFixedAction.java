@@ -18,7 +18,7 @@ public class BetsFixedAction extends BookmakerAction {
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
-
+        Forward forward = new Forward("/bets/fix.html");
         try {
             String isWinner = request.getParameter("iswinner");
             Integer betId = Integer.parseInt(request.getParameter("betId"));
@@ -26,12 +26,19 @@ public class BetsFixedAction extends BookmakerAction {
 
             BetService betService = factory.getService(BetService.class);
             Bet bet = betService.read(betId);
-
-            System.out.println();
+            bet.setWinAmount(winAmount);
+            if (isWinner.equals("yes")) {
+                bet.setIsWinner(true);
+            } else if (isWinner.equals("no")) {
+                bet.setIsWinner(false);
+            }
+            betService.save(bet);
+            //закинуть юзеру деньги на счет
+            forward.getAttributes().put("message", "Ставка успешно обработана");
         } catch (NumberFormatException e) {
-            logger.error("Can not parse input data from bookmaker");
+            forward.getAttributes().put("message", "Невозможно обработать ставку с такими параметрами");
+            logger.error("Can not parse input data from bookmaker for update bet");
         }
-        //todo forward
-        return null;
+        return forward;
     }
 }

@@ -237,6 +237,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             Bet bet = null;
             if (resultSet.next()) {
                 bet = new Bet();
+                bet.setId(id);
                 HorseRace horseRace = new HorseRace();
                 horseRace.setId(resultSet.getInt("horse_race_ID"));
                 bet.setHorseRace(horseRace);
