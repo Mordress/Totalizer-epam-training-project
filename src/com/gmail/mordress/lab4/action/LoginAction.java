@@ -23,7 +23,7 @@ public class LoginAction extends Action {
 
     static {
         menu.put(Role.BOOKMAKER, new ArrayList<>(Arrays.asList(
-                new MenuItem("/bets/list.html", "ставки")
+                new MenuItem("/bets/fix.html", "победы")
         )));
         menu.put(Role.ADMINISTRATOR, new ArrayList<>(Arrays.asList(
                 new MenuItem("/races/list.html", "забеги")

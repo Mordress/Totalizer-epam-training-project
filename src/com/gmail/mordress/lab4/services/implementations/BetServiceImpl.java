@@ -30,6 +30,21 @@ public class BetServiceImpl extends ServiceImpl implements BetService {
         }
     }
 
+    @Override
+    public List<Bet> findNotFixedBets() throws PersistentException {
+        return null;
+    }
+
+    @Override
+    public List<Bet> findNotCompleteBets() throws PersistentException {
+        BetDao betDao = factory.createDao(BetDao.class);
+        List<Bet> notCompleteBets = betDao.findNotCompleteBets();
+        for (Bet notCompleteBet : notCompleteBets) {
+            betBuild(notCompleteBet);
+        }
+        return notCompleteBets;
+    }
+
     private void betBuild(Bet bet) throws PersistentException {
         UserDao userDao = factory.createDao(UserDao.class);
         User u = userDao.read(bet.getUser().getId());
@@ -40,9 +55,6 @@ public class BetServiceImpl extends ServiceImpl implements BetService {
         //bet.setHorseRace(horseRace);
         buildHorseRace(horseRace);
         bet.setHorseRace(horseRace);
-
-
-
     }
 
     private void buildHorseRace(HorseRace hr) {

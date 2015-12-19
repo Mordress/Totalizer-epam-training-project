@@ -25,7 +25,7 @@ public class BetDaoImplTest {
             for (Bet bet : bets) {
                 System.out.println(bet);
             }*/
-            BreedDaoImpl brdi = factory.createDao(BreedDao.class);
+            /*BreedDaoImpl brdi = factory.createDao(BreedDao.class);
             HorseDaoImpl hdi = factory.createDao(HorseDao.class);
             RaceDaoImpl rdi = factory.createDao(RaceDao.class);
             UserDaoImpl udi = factory.createDao(UserDao.class);
@@ -58,7 +58,12 @@ public class BetDaoImplTest {
             System.out.println(bet);
             bdi.create(bet);
             bet.setIsWinner(true);
-            bdi.update(bet);
+            bdi.update(bet);*/
+
+            List<Bet> bets = bdi.findNotCompleteBets();
+            for (Bet bet : bets) {
+                System.out.println(bet);
+            }
 
 
 

@@ -51,7 +51,7 @@
                     Введите результаты:
                 </td>
                 <td>
-                    <input type="number" id="newRank" name="newRank"/>
+                    <input type="number" id="newRank" name="newRank" min="1" max="10"/>
                 </td>
                 <td>
                     <input type="datetime-local" id="newTime" name="newTime"/>

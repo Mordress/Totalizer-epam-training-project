@@ -14,4 +14,6 @@ public interface BetDao extends Dao<Bet> {
 
     public List<Bet> findWinnedBetsByUser(User user) throws PersistentException;
 
+    public List<Bet> findNotCompleteBets() throws PersistentException;
+
 }

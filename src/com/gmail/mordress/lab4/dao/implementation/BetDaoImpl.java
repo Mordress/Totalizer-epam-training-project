@@ -18,7 +18,7 @@ import java.util.List;
 public class BetDaoImpl extends BaseDaoImpl implements BetDao {
 
     private static Logger logger = Logger.getLogger(BetDaoImpl.class);
-    //TODO ПЕРЕДЕЛАТЬ КЛАСС!
+
 
     @Override
     public List<Bet> findAllBetsByUser(User instance) throws PersistentException {
@@ -129,6 +129,46 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             return bets;
         } catch (SQLException e) {
             logger.debug("Can not find winned users by user with id = " + instance.getId());
+            throw new PersistentException(e.getMessage(), e.getCause());
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException | NullPointerException e) {}
+            try {
+                statement.close();
+            } catch (SQLException | NullPointerException e) {}
+        }
+    }
+
+    @Override
+    public List<Bet> findNotCompleteBets() throws PersistentException {
+        String sql = "SELECT * FROM `bet` WHERE `win_amount` IS NULL";
+        PreparedStatement statement = null;
+        ResultSet resultSet= null;
+        try {
+            statement = connection.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+            List<Bet> bets = new ArrayList<>();
+            Bet bet = null;
+            while (resultSet.next()) {
+                bet = new Bet();
+                bet.setId(resultSet.getInt("bet_ID"));
+                bet.setResultRank(resultSet.getInt("result_rank"));
+                bet.setBetAmount(resultSet.getBigDecimal("bet_amount"));
+                bet.setWinAmount(null);
+                bet.setIsWinner(null);
+                User user = new User();
+                user.setId(resultSet.getInt("user_ID"));
+                bet.setUser(user);
+                HorseRace horseRace = new HorseRace();
+                horseRace.setId(resultSet.getInt("horse_race_ID"));
+                bet.setHorseRace(horseRace);
+                bet.setCreatedDate(new Date(resultSet.getTimestamp("created_date").getTime()));
+                bets.add(bet);
+            }
+            return bets;
+        } catch (SQLException e) {
+            logger.debug("Can not take no complete bets form db");
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
