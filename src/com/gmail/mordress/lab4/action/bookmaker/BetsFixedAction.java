@@ -3,8 +3,10 @@ package com.gmail.mordress.lab4.action.bookmaker;
 import com.gmail.mordress.lab4.action.Action;
 import com.gmail.mordress.lab4.action.user.BetsListAction;
 import com.gmail.mordress.lab4.domain.Bet;
+import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.interfaces.BetService;
+import com.gmail.mordress.lab4.services.interfaces.UserService;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,7 +35,13 @@ public class BetsFixedAction extends BookmakerAction {
                 bet.setIsWinner(false);
             }
             betService.save(bet);
-            //закинуть юзеру деньги на счет
+            /* Закидываем деньни юзеру на счет*/
+            if (bet.getIsWinner()) {
+                UserService userService = factory.getService(UserService.class);
+                User user = userService.findById(bet.getUser().getId());
+                BigDecimal newCashAmount = user.getCashAmount().add(winAmount);
+                userService.updateUserCash(user.getId(), newCashAmount);
+            }
             forward.getAttributes().put("message", "Ставка успешно обработана");
         } catch (NumberFormatException e) {
             forward.getAttributes().put("message", "Невозможно обработать ставку с такими параметрами");
