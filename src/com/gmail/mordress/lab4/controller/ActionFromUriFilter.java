@@ -37,6 +37,7 @@ public class ActionFromUriFilter implements Filter {
         actions.put("/registration", RegistrationAction.class);
         actions.put("/bets/fix", BetFixListAction.class);
         actions.put("/bets/fixsave", BetsFixedAction.class);
+        actions.put("/regsave", RegistrationSaveAction.class);
 
 
         /*actions.put("/profile/edit", ProfileEditAction.class);
