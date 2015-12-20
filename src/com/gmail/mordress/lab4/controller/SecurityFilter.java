@@ -39,13 +39,14 @@ public class SecurityFilter implements Filter {
                     session.removeAttribute("SecurityFilterMessage");
                 }
             }
-            boolean canExecute = allowRoles != null;
+            boolean canExecute = allowRoles == null || allowRoles.isEmpty();
             if(user != null) {
                 userName = "\"" + user.getLogin() + "\" user";
                 canExecute = canExecute || allowRoles.contains(user.getRole());
             }
             if(canExecute) {
                 chain.doFilter(request, response);
+                logger.debug("Successful past throught Security filter");
             } else {
                 logger.info(String.format("Trying of %s access to forbidden resource \"%s\"", userName, action.getName()));
                 if(session != null && action.getClass() != MainAction.class) {
