@@ -6,7 +6,9 @@
 <fmt:setLocale value="ru"/>
 
 <u:html title="создание ставки" message="${message}">
-    <h1>Текущий баланс: ${cash}$</h1>
+    <h1>Текущий баланс: ${cash}$
+        <button>Пополнить</button>
+    </h1>
     <h2>Введите данные ставки</h2>
     <br>
     <c:url value="/bets/newsave.html" var="betsNewSave"/>
