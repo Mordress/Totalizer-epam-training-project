@@ -1,75 +1,57 @@
-<!DOCTYPE html>
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Тотализатор - создание ставки</title>
-  <link rel="stylesheet" type="text/css" href="/styles.css" media="all">
-</head>
-<body>
-<DIV id="header">
-  <H1>Тотализатор</H1>
-  <UL class="right">
-    <c:forEach items="${menu}" var="item">
-      <c:url value="${item.url}" var="itemUrl"/>
-      <LI class="item"><A href="${itemUrl}">${item.name}</A></LI>
-    </c:forEach>
-    <c:url value="/profile/edit.html" var="profileEditUrl"/>
-    <LI class="item"><A href="${profileEditUrl}">${authorizedUser.login}</A></LI>
-    <c:url value="/logout.html" var="logoutUrl"/>
-    <LI class="item"><A href="${logoutUrl}">выход</A></LI>
-  </UL>
-</DIV>
-<div id="page">
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib tagdir="/WEB-INF/tags" prefix="u"%>
+<fmt:setLocale value="ru"/>
 
-  <h1>Текущий баланс: ${cash}$</h1>
-  <h2>Введите данные ставки</h2>
-  <br>
+<u:html title="создание ставки" message="${message}">
+    <h1>Текущий баланс: ${cash}$</h1>
+    <h2>Введите данные ставки</h2>
+    <br>
     <c:url value="/bets/newsave.html" var="betsNewSave"/>
-  <form action="${betsNewSave}" method="post">
-      <select name="chosenRaceId">
-          <option selected value = "emptyRace">Выберите дату и время забега</option>
-          <c:forEach items="${futureRaces}" var="fRace">
-            <option value = "${fRace.id}">${fRace.raceDate}</option>
+    <form action="${betsNewSave}" method="post">
+        <label for="chosenRaceId">Выберите дату и время забега:</label>
+        <select name="chosenRaceId" id="chosenRaceId">
+            <option selected value = "emptyRace">не выбрано</option>
+            <c:forEach items="${futureRaces}" var="fRace">
+                <option value = "${fRace.id}">
+                    <fmt:formatDate value="${fRace.raceDate}" pattern="dd MMMM yyyy - HH:mm:ss"/>
+                </option>
+            </c:forEach>
+        </select>
+        <label for="chosenHorseId">Выберите лошадь:</label>
+        <select name="chosenHorseId" id="chosenHorseId">
+            <option selected value = "emptyHorse">не выбрана</option>
+            <c:forEach items="${allHorses}" var="horse">
+                <option value = "${horse.id}">${horse.name}</option>
+            </c:forEach>
+        </select>
+        <label for="betAmount">Размер ставки:</label>
+        <input type="number" min="10" max="${cash}" id="betAmount" name="betAmount" placeholder="мин. 10$"/>
+        <label for="rank">Предполагаемое место:</label>
+        <input type="number" min="1" max="${horseCount}" id="rank" name="rank" placeholder="1 - ${horseCount}"/>
+        <button type="submit">Создать ставку</button>
+        <button type="reset">Сбросить</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <h3>Доступные лошади</h3>
+    <table>
+        <tr>
+            <th>Имя</th>
+            <th>Порода</th>
+            <th>Возраст (лет)</th>
+            <th>Вес (кг)</th>
+        </tr>
+        <c:forEach items="${allHorses}" var="horse">
+            <tr>
+                <td>${horse.name}</td>
+                <td>${horse.breed.name}</td>
+                <td>${horse.age}</td>
+                <td>${horse.weight}</td>
+            </tr>
         </c:forEach>
-      </select>
-      <select name="chosenHorseId">
-          <option selected value = "emptyHorse">Выберите лошадь</option>
-          <c:forEach items="${allHorses}" var="horse">
-              <option value = "${horse.id}">${horse.name}</option>
-          </c:forEach>
-      </select>
-      <input type="number" min="10" max="${cash}" id="betAmount" name="betAmount" placeholder="Размер ставки"/>
-      <input type="number" min="1" max="${horseCount}" id="rank" name="rank" placeholder="Предполагаемое место"/>
-      <button type="submit">Создать ставку</button>
-      <button type="reset">Сбросить</button>
-  </form>
-  <br>
-  <br>
-  <br>
-  <h3>Доступные лошади</h3>
-  <table>
-      <tr>
-          <th>Имя</th>
-          <th>Порода</th>
-          <th>Возраст (лет)</th>
-          <th>Вес (кг)</th>
-      </tr>
-      <c:forEach items="${allHorses}" var="horse">
-          <tr>
-            <td>${horse.name}</td>
-            <td>${horse.breed.name}</td>
-            <td>${horse.age}</td>
-            <td>${horse.weight}</td>
-          </tr>
-      </c:forEach>
-  </table>
-</div>
-<div id="jokey">
-  <img src="/jokey.jpg" alt="Жокей" align="right">
-</div>
-</body>
-</html>
+    </table>
+</u:html>

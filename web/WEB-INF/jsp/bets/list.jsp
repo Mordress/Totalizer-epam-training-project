@@ -1,53 +1,36 @@
-<!DOCTYPE html>
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Тотализатор - Ставки</title>
-  <link rel="stylesheet" type="text/css" href="/styles.css" media="all">
-</head>
-<body>
-<DIV id="header">
-  <H1>Тотализатор</H1>
-  <UL class="right">
-    <c:forEach items="${menu}" var="item">
-      <c:url value="${item.url}" var="itemUrl"/>
-      <LI class="item"><A href="${itemUrl}">${item.name}</A></LI>
-    </c:forEach>
-    <c:url value="/profile/edit.html" var="profileEditUrl"/>
-    <LI class="item"><A href="${profileEditUrl}">${authorizedUser.login}</A></LI>
-    <c:url value="/logout.html" var="logoutUrl"/>
-    <LI class="item"><A href="${logoutUrl}">выход</A></LI>
-  </UL>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib tagdir="/WEB-INF/tags" prefix="u"%>
+<fmt:setLocale value="ru"/>
 
-</DIV>
-
-<DIV id="page">
-    <c:if test="${not empty message}"><H4 align="center">${message}</H4></c:if>
-    <H2>Cтавки</H2>
-        <table border="2">
+<u:html title="ставки" message="${message}">
+    <h2>Cтавки</h2>
+        <table>
             <tr>
-                <th>Дата забега</th>
-                <th>Дистанция (м)</th>
-                <th>Имя лошади</th>
+                <th>Дата забега/время старта</th>
+                <th>Дистанция(м)</th>
+                <th>Лошадь</th>
                 <th>Место</th>
                 <th>Время финиша</th>
                 <th>Предполагаемое место</th>
                 <th>Размер ставки</th>
                 <th>Размер выигрыша</th>
-                <th>Победа</th>
+                <th>Победа?</th>
             </tr>
             <c:if test="${not empty bets}">
                 <c:forEach items="${bets}" var="bet">
                     <tr>
-                        <td>${bet.horseRace.race.raceDate}</td>
+                        <td>
+                            <fmt:formatDate value="${bet.horseRace.race.raceDate}" pattern="dd MMMM yyyy - HH:mm:ss"/>
+                        </td>
                         <td>${bet.horseRace.race.distance}</td>
                         <td>${bet.horseRace.horse.name}</td>
                         <td>${bet.horseRace.resultRank}</td>
-                        <td>${bet.horseRace.resultTime}</td>
+                        <td>
+                            <fmt:formatDate value="${bet.horseRace.resultTime}" pattern="HH:mm:ss"/>
+                        </td>
                         <td>${bet.resultRank}</td>
                         <td>${bet.betAmount}</td>
                         <td>${bet.winAmount}</td>
@@ -64,12 +47,7 @@
             </c:if>
         </table>
     <c:url value="/bets/create.html" var="betsCreateUrl"/>
-    <FORM action="${betsCreateUrl}" method="post">
-        <BUTTON type="submit">Сделать ставку</BUTTON>
-    </FORM>
-</DIV>
-<div id="jokey">
-    <img src="/jokey.jpg" alt="Жокей" align="right">
-</div>
-</body>
-</html>
+    <form action="${betsCreateUrl}" method="post">
+        <button type="submit">Сделать ставку</button>
+    </form>
+</u:html>
