@@ -1,21 +1,12 @@
-<!DOCTYPE HTML>
-
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib tagdir="/WEB-INF/tags" prefix="u"%>
 
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Тотализатор - Вход</title>
-  <link rel="stylesheet" type="text/css" href="/styles.css" media="all">
-</head>
-<body>
-<div id="header">
-  <H1>Тотализатор</H1>
-</div>
-<div id="page">
+<u:html title="регистрация" message="${message}">
     <c:url value="/regsave.html" var="registrationSave"/>
-    <FORM action="${registrationSave}" method="post" >
+    <form action="${registrationSave}" method="post" >
         <table>
             <tr>
                 <th colspan="2">Данные пользователя</th>
@@ -30,6 +21,11 @@
                 <td>Пароль</td>
                 <td>
                     <input type="password" name="password" id="password" placeholder="не более 30 символов" maxlength="30">
+                </td>
+            </tr>
+            <tr>
+                <td>Подтверждение пароля</td>
+                <td>
                     <input type="password" name="confpassword" id="confpassword" placeholder="подтверждение" maxlength="30">
                 </td>
             </tr>
@@ -57,8 +53,5 @@
                 </td>
             </tr>
         </table>
-    </FORM>
-</div>
-it's registration page
-</body>
-</html>
+    </form>
+</u:html>
