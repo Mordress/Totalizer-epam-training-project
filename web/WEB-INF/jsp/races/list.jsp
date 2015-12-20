@@ -15,7 +15,7 @@
         </tr>
         <c:url value="/horseraces/edit.html" var="horseRacesEditUrl"/>
         <c:forEach items="${passedRaces}" var="pRace">
-            <tr align="center">
+            <tr>
                 <td>
                     <fmt:formatDate value="${pRace.raceDate}" pattern="dd MMMM yyyy - HH:mm"/>
                 </td>
@@ -31,28 +31,23 @@
     </table>
 
     <h2>Будущие забеги</h2>
-    <c:if test="${not empty message}"><H4>${message}</H4></c:if>
-    <table border="2">
+    <table>
         <tr>
             <th>Дата забега</th>
-            <th>Дистанция</th>
-
+            <th>Дистанция(м)</th>
         </tr>
         <c:forEach items="${futureRaces}" var="fRace">
-            <TR align="center">
-                <TD>${fRace.raceDate}</TD>
-                <TD>${fRace.distance} м.</TD>
-            </TR>
+            <tr>
+                <td>
+                    <fmt:formatDate value="${fRace.raceDate}" pattern="dd MMMM yyyy - HH:mm"/>
+                </td>
+                <td>${fRace.distance}</td>
+            </tr>
         </c:forEach>
     </table>
     <br>
     <c:url value="/races/edit.html" var="raceEditUrl"/>
-    <FORM action="${raceEditUrl}" method="post">
-        <BUTTON type="submit">Добавить забег</BUTTON>
-    </FORM>
-</DIV>
-<div id="jokey">
-    <img src="/jokey.jpg" alt="Жокей" align="right">
-</div>
-</body>
-</html>
+    <form action="${raceEditUrl}" method="post">
+        <button type="submit">Добавить забег</button>
+    </form>
+</u:html>

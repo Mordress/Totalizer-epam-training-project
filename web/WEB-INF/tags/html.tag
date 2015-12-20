@@ -1,3 +1,5 @@
+<%@ tag import="java.util.Date" %>
+<%@ tag import="com.gmail.mordress.lab4.utils.DateFormatConverter" %>
 <!DOCTYPE html>
 <%@tag language="java" pageEncoding="UTF-8"%>
 <%@attribute name="title" required="true" rtexprvalue="true" type="java.lang.String"%>

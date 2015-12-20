@@ -5,7 +5,7 @@
 <div id="header">
     <h1>Тотализатор</h1>
     <c:if test="${not empty authorizedUser}">
-        <<ul class="right">
+        <ul class="right">
         <c:forEach items="${menu}" var="item">
             <c:url value="${item.url}" var="itemUrl"/>
             <li class="item"><A href="${itemUrl}">на главную</A></li>
