@@ -1,0 +1,3 @@
+CREATE USER 'dev'@'localhost' IDENTIFIED BY '9958108';
+GRANT ALL PRIVILEGES ON racing.* TO 'dev'@'localhost';
+FLUSH PRIVILEGES;
