@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 
-public class RegistrationSaveAction extends MainAction {
+public class RegistrationSaveAction extends Action {
 
     private static Logger logger = Logger.getLogger(LogoutAction.class);
 

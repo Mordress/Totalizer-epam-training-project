@@ -29,6 +29,10 @@ public class HorseRaceResultSaveAction extends AdministratorAction {
             HorseRace horseRace = service.findById(Integer.parseInt(parameter1));
             horseRace.setResultRank(Integer.parseInt(parameter2));
             Date newDate = DateFormatConverter.stringToDate(parameter3, parameter4);
+            if (horseRace.getRace().getRaceDate().getTime() > newDate.getTime()) {
+                forward.getAttributes().put("message", "Неправильное время финиша, результат не сохранен.");
+                throw new PersistentException();
+            }
             horseRace.setResultTime(newDate);
             service.save(horseRace);
         } catch (NumberFormatException e) {
