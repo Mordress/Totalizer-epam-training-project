@@ -5,7 +5,7 @@
 <%@taglib tagdir="/WEB-INF/tags" prefix="u"%>
 <fmt:setLocale value="ru"/>
 
-<u:html title="редактирование результатов забега" message="${message}">
+<u:html title="редактирование результатов забега" message="${message}" validator="validator-of-horserace-edit.js">
     <table>
         <tr>
             <th>Дата забега/Время старта</th>
@@ -26,7 +26,7 @@
             </td>
         </tr>
         <c:url value="/horseraces/resultsave.html" var="resultSaveUrl"/>
-        <form action="${resultSaveUrl}" method="post">
+        <form action="${resultSaveUrl}" method="post" onsubmit="return validateHorseRaceEdit(this)">
             <input type="hidden" name="horseRaceId" value="${horseRace.id}">
             <tr>
                 <td colspan="3">
@@ -36,7 +36,6 @@
                     <input type="number" id="newRank" name="newRank" min="1" max="10"/>
                 </td>
                 <td>
-                    <%-- TODO Сделать time вместо datetime--%>
                     <input type="datetime-local" id="newTime" name="newTime"/>
                     <input type="number" min="0" max="59" id="newTimeSeconds" name="newTimeSeconds" placeholder="сек."/>
                 </td>

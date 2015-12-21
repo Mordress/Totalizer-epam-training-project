@@ -5,17 +5,17 @@
 <%@taglib tagdir="/WEB-INF/tags" prefix="u"%>
 <fmt:setLocale value="ru"/>
 
-<u:html title="создание ставки" message="${message}">
+<u:html title="создание ставки" message="${message}" validator="validator-of-bet-create.js">
     <h1>Текущий баланс: ${cash}$
         <button>Пополнить</button>
     </h1>
     <h2>Введите данные ставки</h2>
     <br>
     <c:url value="/bets/newsave.html" var="betsNewSave"/>
-    <form action="${betsNewSave}" method="post">
+    <form action="${betsNewSave}" method="post" onsubmit="return validateBetCreate(this)">
         <label for="chosenRaceId">Выберите дату и время забега:</label>
-        <select name="chosenRaceId" id="chosenRaceId">
-            <option selected value = "emptyRace">не выбрано</option>
+        <select name="chosenRaceId" id="chosenRaceId" required="required">
+            <option selected="" value = "">не выбрано</option>
             <c:forEach items="${futureRaces}" var="fRace">
                 <option value = "${fRace.id}">
                     <fmt:formatDate value="${fRace.raceDate}" pattern="dd MMMM yyyy - HH:mm:ss"/>
@@ -23,8 +23,8 @@
             </c:forEach>
         </select>
         <label for="chosenHorseId">Выберите лошадь:</label>
-        <select name="chosenHorseId" id="chosenHorseId">
-            <option selected value = "emptyHorse">не выбрана</option>
+        <select name="chosenHorseId" id="chosenHorseId" required="required">
+            <option selected="" value = "">не выбрана</option>
             <c:forEach items="${allHorses}" var="horse">
                 <option value = "${horse.id}">${horse.name}</option>
             </c:forEach>

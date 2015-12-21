@@ -4,9 +4,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib tagdir="/WEB-INF/tags" prefix="u"%>
 
-<u:html title="создание нового забега" message="${message}">
+<u:html title="создание нового забега" message="${message}" validator="validator-of-create-race.js">
     <c:url value="/races/save.html" var="racesSaveUrl"/>
-    <form action="${racesSaveUrl}" method="post" >
+    <form action="${racesSaveUrl}" method="post" onsubmit="return validateCreateRace(this)">
         <%--TODO JS VALIDATION--%>
         <label for="date">Введите дату и время нового забега</label>
         <input type="datetime-local" id="date" name="date">

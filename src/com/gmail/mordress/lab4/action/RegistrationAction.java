@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class RegistrationAction extends MainAction {
+public class RegistrationAction extends Action {
 
     private static Logger logger = Logger.getLogger(LogoutAction.class);
 

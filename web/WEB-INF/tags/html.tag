@@ -14,13 +14,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Тотализатор - ${title}</title>
         <link rel="stylesheet" type="text/css" href="/styles.css" media="all">
-        <%--<c:if test="${not empty message}">
-            <SCRIPT type="text/javascript">
+        <c:url value="/js" var="javascriptUrl"/>
+        <script type="text/javascript" src="${javascriptUrl}/main.js"></script>
+        <c:if test="${not empty message}">
+            <script type="text/javascript">
                 startMessage = "${message}";
-            </SCRIPT>
-        </c:if>--%>
-        <%--скрипты--%>
-        <%--валидаторы--%>
+            </script>
+        </c:if>
+        <c:if test="${not empty validator}">
+            <script type="text/javascript" src="${javascriptUrl}/validator.js"></script>
+            <script type="text/javascript" src="${javascriptUrl}/${validator}"></script>
+        </c:if>
     </head>
 <body>
     <u:menu/>

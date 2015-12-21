@@ -5,24 +5,28 @@
 <%@taglib tagdir="/WEB-INF/tags" prefix="u"%>
 <fmt:setLocale value="ru"/>
 
-<u:html title="ставки" message="${message}">
-    <table>
-        <tr>
-            <th>Дата забега</th>
-            <th>Дата ставки</th>
-            <th>Имя лошади</th>
-            <th>Факт. место</th>
-            <th>Предп. место</th>
-            <th>Ставка($)</th>
-            <th>Выигрыш($)</th>
-            <th>Победил?</th>
-            <th>Результат</th>
-        </tr>
-        <c:if test="${not empty nofixbets}">
+<u:html title="ставки" message="${message}" validator="validator-of-bet-fix.js">
+    <c:if test="${empty nofixbets}">
+        <h3>На данный момент все ставки по завершенным забегам обработаны</h3>
+    </c:if>
+    <c:if test="${not empty nofixbets}">
+        <h3>Необработанные ставки</h3>
+        <table>
+            <tr>
+                <th>Дата забега</th>
+                <th>Дата ставки</th>
+                <th>Имя лошади</th>
+                <th>Факт. место</th>
+                <th>Предп. место</th>
+                <th>Ставка($)</th>
+                <th>Выигрыш($)</th>
+                <th>Победил?</th>
+                <th>Результат</th>
+            </tr>
             <c:forEach items="${nofixbets}" var="bet">
                 <tr>
                     <c:url value="/bets/fixsave.html" var="fixSaveUrl"/>
-                    <form action="${fixSaveUrl}" method="post">
+                    <form action="${fixSaveUrl}" method="post" onsubmit="return validateBetFix(this)">
                         <input type="hidden" name="betId" value="${bet.id}">
                         <td>
                             <fmt:formatDate value="${bet.horseRace.race.raceDate}" pattern="dd MMMM yyyy - HH:mm:ss"/>
@@ -38,8 +42,8 @@
                             <input type="number" min="${bet.betAmount}" id="winamount" name="winamount" placeholder="$">
                         </td>
                         <td>
-                            <select name="iswinner">
-                                <option selected value = "empty">не выбрано</option>
+                            <select name="iswinner" required="required">
+                                <option selected="" value = "">не выбрано</option>
                                 <option value = "yes">Да</option>
                                 <option value = "no">Нет</option>
                             </select>
@@ -50,6 +54,6 @@
                     </form>
                 </tr>
             </c:forEach>
-        </c:if>
-  </table>
+        </table>
+    </c:if>
 </u:html>
