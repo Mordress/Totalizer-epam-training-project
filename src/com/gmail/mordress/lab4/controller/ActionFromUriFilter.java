@@ -40,6 +40,7 @@ public class ActionFromUriFilter implements Filter {
         actions.put("/regsave", RegistrationSaveAction.class);
         actions.put("/profile/edit", ProfileEditAction.class);
         actions.put("/profile/save", ProfileSaveAction.class);
+        actions.put("/races/delete", RaceDeleteAction.class);
 
     }
 

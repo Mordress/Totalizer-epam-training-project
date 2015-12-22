@@ -35,6 +35,7 @@
         <tr>
             <th>Дата забега</th>
             <th>Дистанция(м)</th>
+            <th>Редактирование</th>
         </tr>
         <c:forEach items="${futureRaces}" var="fRace">
             <tr>
@@ -42,6 +43,13 @@
                     <fmt:formatDate value="${fRace.raceDate}" pattern="dd MMMM yyyy - HH:mm"/>
                 </td>
                 <td>${fRace.distance}</td>
+                <td>
+                    <c:url value="/races/delete.html" var="raceDeleteUrl"/>
+                    <form action="${raceDeleteUrl}" method="post">
+                        <input type="hidden" name="id" value="${fRace.id}">
+                        <button type="submit">Удалить</button>
+                    </form>
+                </td>
             </tr>
         </c:forEach>
     </table>
