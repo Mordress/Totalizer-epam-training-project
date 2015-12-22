@@ -4,10 +4,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib tagdir="/WEB-INF/tags" prefix="u"%>
 
-<u:html title="редактирование профиля" message="${message}">
-    <c:if test="${not empty message}"><H4>${message}</H4></c:if>
+<u:html title="редактирование профиля" message="${message}" validator="validator-of-change-password.js">
     <c:url value="/profile/save.html" var="profileSaveUrl"/>
-    <form action="${profileSaveUrl}" method="post">
+    <form action="${profileSaveUrl}" method="post" onsubmit="return validateChangePassword(this)">
         <label for="login">Имя пользователя:</label>
         <input type="text" id="login" value="${authorizedUser.login}" disabled>
         <label for="role">Роль:</label>

@@ -11,32 +11,34 @@
     </h1>
     <h2>Введите данные ставки</h2>
     <br>
-    <c:url value="/bets/newsave.html" var="betsNewSave"/>
-    <form action="${betsNewSave}" method="post" onsubmit="return validateBetCreate(this)">
-        <label for="chosenRaceId">Выберите дату и время забега:</label>
-        <select name="chosenRaceId" id="chosenRaceId" required="required">
-            <option selected="" value = "">не выбрано</option>
-            <c:forEach items="${futureRaces}" var="fRace">
-                <option value = "${fRace.id}">
-                    <fmt:formatDate value="${fRace.raceDate}" pattern="dd MMMM yyyy - HH:mm:ss"/>
-                </option>
-            </c:forEach>
-        </select>
-        <label for="chosenHorseId">Выберите лошадь:</label>
-        <select name="chosenHorseId" id="chosenHorseId" required="required">
-            <option selected="" value = "">не выбрана</option>
-            <c:forEach items="${allHorses}" var="horse">
-                <option value = "${horse.id}">${horse.name}</option>
-            </c:forEach>
-        </select>
-        <label for="betAmount">Размер ставки($):</label>
-        <input type="number" min="10" max="${cash}" id="betAmount" name="betAmount" placeholder=">10$"/>
-        <label for="rank">Предполагаемое место:</label>
-        <input type="number" min="1" max="${horseCount}" id="rank" name="rank" placeholder="1-${horseCount}"/>
-        <br>
-        <button type="submit">Сделать ставку</button>
-        <button type="reset">Сбросить</button>
-    </form>
+    <div id="bet">
+        <c:url value="/bets/newsave.html" var="betsNewSave"/>
+        <form action="${betsNewSave}" method="post" onsubmit="return validateBetCreate(this)">
+            <label for="chosenRaceId">Выберите дату и время забега:</label>
+            <select name="chosenRaceId" id="chosenRaceId" required="required">
+                <option selected="" value = "">не выбрано</option>
+                <c:forEach items="${futureRaces}" var="fRace">
+                    <option value = "${fRace.id}">
+                        <fmt:formatDate value="${fRace.raceDate}" pattern="dd MMMM yyyy - HH:mm:ss"/>
+                    </option>
+                </c:forEach>
+            </select>
+            <label for="chosenHorseId">Выберите лошадь:</label>
+            <select name="chosenHorseId" id="chosenHorseId" required="required">
+                <option selected="" value = "">не выбрана</option>
+                <c:forEach items="${allHorses}" var="horse">
+                    <option value = "${horse.id}">${horse.name}</option>
+                </c:forEach>
+            </select>
+            <label for="betAmount">Размер ставки($):</label>
+            <input type="number" min="10" max="${cash}" id="betAmount" name="betAmount" placeholder=">10$"/>
+            <label for="rank">Предполагаемое место:</label>
+            <input type="number" min="1" max="${horseCount}" id="rank" name="rank" placeholder="1-${horseCount}"/>
+            <br>
+            <button type="submit">Сделать ставку</button>
+            <button type="reset">Сбросить</button>
+        </form>
+    </div>
     <br>
     <br>
     <br>

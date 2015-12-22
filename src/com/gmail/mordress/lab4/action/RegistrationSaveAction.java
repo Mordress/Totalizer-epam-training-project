@@ -17,7 +17,8 @@ public class RegistrationSaveAction extends Action {
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
-        Action.Forward forward = new Action.Forward("/login.html");
+        Action.Forward forwardSuccesfull = new Action.Forward("/login.html");
+        Action.Forward forwardFailed = new Action.Forward("/registration.html");
         String userFirstName = request.getParameter("firstname");
         String userLastName = request.getParameter("lastname");
         String userLogin = request.getParameter("login");
@@ -25,10 +26,10 @@ public class RegistrationSaveAction extends Action {
         String userConfirmPassword = request.getParameter("confpassword");
         String userEmail = request.getParameter("email");
         try {
-            //TODO сделать валидацию входных данных
             UserService userService = factory.getService(UserService.class);
             if (!userPassword.equals(userConfirmPassword)) {
-                forward.getAttributes().put("message", "Пользователь не создан: введенные пароли не совпадают");
+                forwardFailed.getAttributes().put("message", "Пользователь не создан: введенные пароли не совпадают");
+                return forwardFailed;
             }
             else if (userService.checkUniqueLogin(userLogin)) {
                 User user = new User();
@@ -40,16 +41,18 @@ public class RegistrationSaveAction extends Action {
                 user.setEmail(userEmail);
                 user.setCashAmount(new BigDecimal("1000"));
                 userService.save(user);
-                forward.getAttributes().put("message", "Пользователь успешно создан.");
+                forwardSuccesfull.getAttributes().put("message", "Пользователь успешно создан.");
                 logger.info("Пользователь " + user.getLogin() + " успешно создан.");
             } else {
-                forward.getAttributes().put("message", "Пользователь с таким логином уже существует");
+                forwardFailed.getAttributes().put("message", "Пользователь с таким логином уже существует");
                 logger.error("Не удалось создать пользователя: " + userLogin + ". Причина: такой пользователь уже существует.");
+                return forwardFailed;
             }
         } catch (PersistentException | NullPointerException e) {
-            forward.getAttributes().put("message", "Не удалось создать пользователя с такими данным");
+            forwardFailed.getAttributes().put("message", "Не удалось создать пользователя с такими данным");
             logger.error("Не удалось создать пользователя: " + userLogin + ". Причина: введены некорректные данные.");
+            return forwardFailed;
         }
-        return forward;
+        return forwardSuccesfull;
     }
 }

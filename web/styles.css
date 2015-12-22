@@ -8,13 +8,21 @@
 
 BODY {
     background: white;
+    text-align: center;
+}
+
+#logo {
+    padding-left: 90px;
 }
 
 #header {
-    padding-left: 90px;
     width: 100%;
     height: 150px;
     color: deepskyblue;
+}
+
+#bet {
+    text-align: left;
 }
 
 #header .item {
@@ -85,13 +93,22 @@ BODY {
     text-align: center;
 }
 
-#page INPUT {
+#page INPUT[type=password] {
     border: 1px solid deepskyblue;
-    width: 200px;
+    width: 196px;
     height: 30px;
     line-height: 10px;
-    text-align: center;
+    text-align: left;
 }
+
+#page INPUT {
+    border: 1px solid deepskyblue;
+    width: 196px;
+    height: 30px;
+    line-height: 10px;
+    text-align: left;
+}
+
 
 #page SELECT {
     border: 1px solid deepskyblue;
@@ -99,18 +116,20 @@ BODY {
 }
 
 #page BUTTON, #confirm-message BUTTON {
-    width: 200px;
+    width: 160px;
     height: 30px;
     line-height: 30px;
-    margin: 20px 20px 0 0;
+    margin: 20px 0px 0 0;
     background: deepskyblue;
     color: white;
     padding: 0 20px;
+
 }
 
 #page BUTTON:hover, #confirm-message BUTTON:hover {
     cursor: pointer;
     background: #0098cb;
+
 }
 
 #page BUTTON[disabled], #page BUTTON[disabled]:hover {
@@ -211,6 +230,7 @@ BODY {
     top: 31%;
     left: 31%;
     padding: 20px;
+    text-align: center;
 }
 
 #confirm-message BUTTON {
