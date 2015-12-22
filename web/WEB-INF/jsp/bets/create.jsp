@@ -29,11 +29,12 @@
                 <option value = "${horse.id}">${horse.name}</option>
             </c:forEach>
         </select>
-        <label for="betAmount">Размер ставки:</label>
-        <input type="number" min="10" max="${cash}" id="betAmount" name="betAmount" placeholder="мин. 10$"/>
+        <label for="betAmount">Размер ставки($):</label>
+        <input type="number" min="10" max="${cash}" id="betAmount" name="betAmount" placeholder=">10$"/>
         <label for="rank">Предполагаемое место:</label>
-        <input type="number" min="1" max="${horseCount}" id="rank" name="rank" placeholder="1 - ${horseCount}"/>
-        <button type="submit">Создать ставку</button>
+        <input type="number" min="1" max="${horseCount}" id="rank" name="rank" placeholder="1-${horseCount}"/>
+        <br>
+        <button type="submit">Сделать ставку</button>
         <button type="reset">Сбросить</button>
     </form>
     <br>

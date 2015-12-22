@@ -20,6 +20,7 @@
         <input type="password" id="new-password" name="new-password">
         <label for="confirm-password">Подтверждение:</label>
         <input type="password" id="confirm-password" name="confirm-password">
+        <br>
         <button type="submit">Сменить пароль</button>
         <button type="reset">Сбросить</button>
     </form>

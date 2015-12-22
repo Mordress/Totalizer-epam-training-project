@@ -10,7 +10,6 @@
         <%--TODO JS VALIDATION--%>
         <label for="date">Введите дату и время нового забега</label>
         <input type="datetime-local" id="date" name="date">
-        <br>
         <label for="distance">Введите длину дистанции</label>
         <input type="number" id="distance" name="distance" min="100" max="10000">
         <br>

@@ -33,10 +33,10 @@
                     Введите результаты:
                 </td>
                 <td>
-                    <input type="number" id="newRank" name="newRank" min="1" max="10"/>
+                    <input type="number" id="newRank" name="newRank" min="1" max="10" required="required"/>
                 </td>
                 <td>
-                    <input type="datetime-local" id="newTime" name="newTime"/>
+                    <input type="datetime-local" id="newTime" name="newTime" required="required"/>
                     <input type="number" min="0" max="59" id="newTimeSeconds" name="newTimeSeconds" placeholder="сек."/>
                 </td>
             </tr>

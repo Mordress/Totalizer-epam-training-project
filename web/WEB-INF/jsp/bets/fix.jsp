@@ -7,7 +7,7 @@
 
 <u:html title="ставки" message="${message}" validator="validator-of-bet-fix.js">
     <c:if test="${empty nofixbets}">
-        <h3>На данный момент все ставки по завершенным забегам обработаны</h3>
+        <h2>На данный момент все ставки по завершенным забегам обработаны</h2>
     </c:if>
     <c:if test="${not empty nofixbets}">
         <h3>Необработанные ставки</h3>
