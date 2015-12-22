@@ -14,7 +14,7 @@ import java.util.List;
 
 public class RaceEditAction extends AdministratorAction {
 
-    private static Logger logger = Logger.getLogger(HorseRaceEditAction.class);
+    private static Logger logger = Logger.getLogger(RaceEditAction.class);
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {

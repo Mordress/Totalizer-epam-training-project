@@ -30,6 +30,7 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/bookmaker/BetFixListAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/bookmaker/BetsFixedAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/bookmaker/BookmakerAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/user/BetDeleteAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/user/BetsCreateAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/user/BetsListAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/action/user/BetsNewSaveAction.java" charset="UTF-8" />

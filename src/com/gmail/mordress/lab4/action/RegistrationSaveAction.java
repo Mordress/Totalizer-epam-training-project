@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 
 public class RegistrationSaveAction extends Action {
 
-    private static Logger logger = Logger.getLogger(LogoutAction.class);
+    private static Logger logger = Logger.getLogger(RegistrationSaveAction.class);
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {

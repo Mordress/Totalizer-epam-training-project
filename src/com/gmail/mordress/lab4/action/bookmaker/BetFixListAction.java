@@ -13,7 +13,7 @@ import java.util.List;
 
 public class BetFixListAction extends BookmakerAction {
 
-    private static Logger logger = Logger.getLogger(BetsListAction.class);
+    private static Logger logger = Logger.getLogger(BetFixListAction.class);
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {

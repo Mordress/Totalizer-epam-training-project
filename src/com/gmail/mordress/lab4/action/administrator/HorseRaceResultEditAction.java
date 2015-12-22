@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HorseRaceResultEditAction extends AdministratorAction {
 
-    private static Logger logger = Logger.getLogger(HorseRaceEditAction.class);
+    private static Logger logger = Logger.getLogger(HorseRaceResultEditAction.class);
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {

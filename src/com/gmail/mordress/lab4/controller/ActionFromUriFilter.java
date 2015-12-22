@@ -4,6 +4,7 @@ import com.gmail.mordress.lab4.action.*;
 import com.gmail.mordress.lab4.action.administrator.*;
 import com.gmail.mordress.lab4.action.bookmaker.BetFixListAction;
 import com.gmail.mordress.lab4.action.bookmaker.BetsFixedAction;
+import com.gmail.mordress.lab4.action.user.BetDeleteAction;
 import com.gmail.mordress.lab4.action.user.BetsCreateAction;
 import com.gmail.mordress.lab4.action.user.BetsListAction;
 import com.gmail.mordress.lab4.action.user.BetsNewSaveAction;
@@ -41,6 +42,7 @@ public class ActionFromUriFilter implements Filter {
         actions.put("/profile/edit", ProfileEditAction.class);
         actions.put("/profile/save", ProfileSaveAction.class);
         actions.put("/races/delete", RaceDeleteAction.class);
+        actions.put("/bets/delete", BetDeleteAction.class);
 
     }
 

@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class BetsNewSaveAction extends UserAction {
 
-    private static Logger logger = Logger.getLogger(BetsListAction.class);
+    private static Logger logger = Logger.getLogger(BetsNewSaveAction.class);
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {

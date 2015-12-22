@@ -16,7 +16,7 @@ import java.util.List;
 
 public class BetsFixedAction extends BookmakerAction {
 
-    private static Logger logger = Logger.getLogger(BetsListAction.class);
+    private static Logger logger = Logger.getLogger(BetsFixedAction.class);
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class RegistrationAction extends Action {
 
-    private static Logger logger = Logger.getLogger(LogoutAction.class);
+    private static Logger logger = Logger.getLogger(RegistrationAction.class);
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {

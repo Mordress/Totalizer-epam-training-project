@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class RaceDeleteAction extends AdministratorAction {
 
-    private static Logger logger = Logger.getLogger(HorseRaceEditAction.class);
+    private static Logger logger = Logger.getLogger(RaceDeleteAction.class);
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
@@ -22,7 +22,7 @@ public class RaceDeleteAction extends AdministratorAction {
             service.delete(id);
             logger.info("Race with id= " + id + " was deleted by administrator");
             forward.getAttributes().put("message", "Забег успешно удален");
-        } catch (PersistentException | NullPointerException e) {
+        } catch (PersistentException | NullPointerException| NumberFormatException e) {
             logger.info("Can not delete race with id= " + request.getParameter("id"));
             forward.getAttributes().put("message", "Невозможно удалить такой забег");
         }
