@@ -6,9 +6,10 @@
     <h2>Вход</h2>
     <c:url value="/login.html" var="loginUrl"/>
     <form action="${loginUrl}" method="post">
-        <input type="text" id="login" name="login" value="${param.login}" maxlength="30" placeholder="Логин:">
-        <br>
-        <input type="password" id="password" name="password" value="${param.password}" placeholder="Пароль:">
+        <label for="login">Логин</label>
+        <input type="text" id="login" name="login" value="${param.login}" maxlength="30">
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" value="${param.password}">
         <br>
         <button type="submit">Войти</button>
     </form>

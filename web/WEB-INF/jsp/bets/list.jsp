@@ -38,9 +38,9 @@
                             <c:when test="${not empty bet.winAmount}">
                                 <td>${bet.isWinner}</td>
                             </c:when>
-                            <c:when test="${empty bet.winAmount}">
+                            <c:otherwise>
                                 <td></td>
-                            </c:when>
+                            </c:otherwise>
                         </c:choose>
                     </tr>
                 </c:forEach>
