@@ -3,7 +3,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="header">
-    <h1>Тотализатор</h1>
+    <div id="logo">
+        <img src="/jokey.png" alt="jokey" align="left">
+    </div>
     <c:if test="${not empty authorizedUser}">
         <ul class="right">
         <c:forEach items="${menu}" var="item">

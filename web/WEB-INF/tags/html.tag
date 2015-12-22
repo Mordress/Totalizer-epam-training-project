@@ -28,9 +28,6 @@
     </head>
 <body>
     <u:menu/>
-    <c:if test="${not empty message}">
-        <h3>${message}</h3>
-    </c:if>
     <div id="page">
         <jsp:doBody/>
     </div>
