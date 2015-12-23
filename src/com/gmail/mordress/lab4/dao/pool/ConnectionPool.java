@@ -9,10 +9,8 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
-
 import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListSet;
 
@@ -73,34 +71,6 @@ public final class ConnectionPool {
         }
     }
 
-    /*public synchronized void init() throws PersistentException {
-        try {
-            destroy();
-            FileInputStream fileInputStream = new FileInputStream("\\WEB-INF\\classes\\~db.properties");
-            Properties properties = new Properties();
-            properties.load(fileInputStream);
-            this.driverClass = properties.getProperty("DRIVER_CLASS");
-            this.dbURL = properties.getProperty("URL");
-            this.dbUser = properties.getProperty("USER");
-            this.dbPassword = properties.getProperty("PASSWORD");
-            this.maxPoolSize = Integer.parseInt(properties.getProperty("MAXPOOLSIZE"));
-            this.minPoolSize = Integer.parseInt(properties.getProperty("MINPOOLSIZE"));
-            this.timeout = Integer.parseInt(properties.getProperty("TIMEOUT"));
-            Class.forName(driverClass);
-            for(int counter = 0; counter < minPoolSize; counter++) {
-                freeConnections.put(createConnection());
-            }
-            fileInputStream.close();
-            logger.debug("Successful reading db.props");
-        } catch (IOException | NumberFormatException e) {
-            logger.fatal("File ~db.properties not found or invalid.", e);
-            throw new PersistentException(e.getMessage(), e.getCause());
-        } catch(ClassNotFoundException | SQLException | InterruptedException e) {
-            logger.fatal("Can't initialize db connection pool.", e);
-            throw new PersistentException(e.getMessage(), e.getCause());
-        }
-    }*/
-
     public synchronized Connection getConnection() throws PersistentException {
         PooledConnection connection = null;
         while(connection == null) {
@@ -148,10 +118,6 @@ public final class ConnectionPool {
         destroy();
     }
 
-    private PooledConnection createConnection() throws SQLException {
-        return new PooledConnection(DriverManager.getConnection(dbURL, dbUser, dbPassword));
-    }
-
     synchronized void freeConnection(PooledConnection connection) {
         try {
             if(connection.isValid(timeout)) {
@@ -170,5 +136,9 @@ public final class ConnectionPool {
             } catch(SQLException e2) {}
         }
     }
+
+    private PooledConnection createConnection() throws SQLException {
+        return new PooledConnection(DriverManager.getConnection(dbURL, dbUser, dbPassword));
+    }
 }
-//TODO Подумать над освобождением коннекшенов
+

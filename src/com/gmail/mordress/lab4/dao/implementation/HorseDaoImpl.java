@@ -38,7 +38,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
             }
             return horse;
         } catch (SQLException e) {
-            logger.debug("Can not find horse with name = " + name);
+            logger.error("Can not find horse with name = " + name);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -72,11 +72,11 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
                 horse.setBreed(breed);
                 horses.add(horse);
             }
-            logger.debug("Successful find horses by breed = " + instance);
+            logger.error("Successful find horses by breed = " + instance);
             return horses;
 
         } catch (SQLException e) {
-            logger.debug("Can not find  horses by breed = " + instance);
+            logger.error("Can not find  horses by breed = " + instance);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -109,10 +109,9 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
                 horse.setBreed(breed);
                 horses.add(horse);
             }
-            logger.debug("Successful read horses");
             return horses;
         } catch (SQLException e) {
-            logger.debug("Can not read all horses");
+            logger.error("Can not read all horses");
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -177,7 +176,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
             }
             return horse;
         } catch (SQLException e) {
-            logger.debug("Can not read Horse form db with ID + " + id);
+            logger.error("Can not read Horse form db with ID + " + id);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -202,7 +201,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
             statement.setInt(5, instance.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
-            logger.debug("Can not update horse with ID = "  + instance.getId());
+            logger.error("Can not update horse with ID = "  + instance.getId());
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -220,6 +219,7 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch(SQLException e) {
+            logger.error("Can not delete horse with id = " + id);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {

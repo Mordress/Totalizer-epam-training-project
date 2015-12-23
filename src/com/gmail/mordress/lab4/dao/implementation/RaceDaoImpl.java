@@ -4,7 +4,6 @@ import com.gmail.mordress.lab4.dao.interfaces.RaceDao;
 import com.gmail.mordress.lab4.domain.Race;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -38,7 +37,7 @@ public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
             return races;
 
         } catch (SQLException e) {
-            logger.debug("Can not read passed races");
+            logger.error("Can not read passed races");
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -71,7 +70,7 @@ public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
             return races;
 
         } catch (SQLException e) {
-            logger.debug("Can not read future races");
+            logger.error("Can not read future races");
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -101,7 +100,7 @@ public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
                 throw new PersistentException();
             }
         } catch (SQLException e) {
-            logger.debug("Can not create race in database");
+            logger.error("Can not create race in database");
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -154,7 +153,7 @@ public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
             statement.setInt(3, instance.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
-            logger.debug("Can not update race with ID = "  + instance.getId());
+            logger.error("Can not update race with ID = "  + instance.getId());
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -173,7 +172,7 @@ public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
             statement.setInt(1, id);
             statement.executeUpdate();
         }catch (SQLException e) {
-            logger.debug("Can not delete breed with ID = " + id);
+            logger.error("Can not delete breed with ID = " + id);
             throw new PersistentException(e.getMessage(), e.getCause());
         }finally {
             try {

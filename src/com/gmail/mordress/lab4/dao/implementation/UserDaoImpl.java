@@ -42,6 +42,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             }
             return user;
         } catch (SQLException e) {
+            logger.error("Can not find user by login and password, login = " + login);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -67,7 +68,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             }
             return true;
         } catch (SQLException e) {
-            logger.debug("Can not check user-login for unique" + login);
+            logger.error("Can not check user-login for unique" + login);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -101,7 +102,6 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                 user.setCashAmount(resultSet.getBigDecimal("cash_amount"));
                 users.add(user);
             }
-            logger.debug("Succesfull getting all simple-users");
             return users;
         } catch (SQLException e) {
             logger.error("Can not get all simple-users");
@@ -141,6 +141,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             }
 
         } catch (SQLException e) {
+            logger.error("Can not create instance of user in db for user with login = " + instance.getLogin());
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -176,6 +177,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             }
             return user;
         } catch(SQLException e) {
+            logger.error("Can not read user from db with id = " + id);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -203,6 +205,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             statement.setInt(8, instance.getId());
             statement.executeUpdate();
         } catch(SQLException e) {
+            logger.error("Can not update user in db, user login = " + instance.getLogin());
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -220,6 +223,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch(SQLException e) {
+            logger.error("Can not delete user from db with id = " + id);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {

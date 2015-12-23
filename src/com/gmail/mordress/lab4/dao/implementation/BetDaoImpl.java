@@ -6,7 +6,6 @@ import com.gmail.mordress.lab4.domain.HorseRace;
 import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,7 +17,6 @@ import java.util.List;
 public class BetDaoImpl extends BaseDaoImpl implements BetDao {
 
     private static Logger logger = Logger.getLogger(BetDaoImpl.class);
-
 
     @Override
     public List<Bet> findAllBetsByUser(User instance) throws PersistentException {
@@ -47,7 +45,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             }
             return bets;
         } catch (SQLException e) {
-            logger.debug("Can not find bets by userID = " + instance.getId());
+            logger.error("Can not find bets by userID = " + instance.getId());
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -88,7 +86,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             }
             return bets;
         } catch (SQLException e) {
-            logger.debug("Can not find winned bets.");
+            logger.error("Can not find winned bets.");
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -128,7 +126,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             }
             return bets;
         } catch (SQLException e) {
-            logger.debug("Can not find winned users by user with id = " + instance.getId());
+            logger.error("Can not find winned users by user with id = " + instance.getId());
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -168,7 +166,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             }
             return bets;
         } catch (SQLException e) {
-            logger.debug("Can not take no complete bets form db");
+            logger.error("Can not take no complete bets form db");
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -206,7 +204,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             statement.executeUpdate();
             resultSet = statement.getGeneratedKeys();
             if (resultSet.next()) {
-                logger.debug("Bet with id = " + instance.getId() + " successfully created!");
+                logger.info("Bet with id = " + instance.getId() + " successfully created!");
                 return resultSet.getInt(1);
             } else {
                 logger.error("There is no autoincremented index after trying to add record into table `bets`");
@@ -250,7 +248,6 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
                 bet.setUser(user);
                 bet.setCreatedDate(new Date(resultSet.getTimestamp("created_date").getTime()));
             }
-            logger.debug("Successfull reading bet with id = " + id);
             return bet;
         } catch (SQLException e) {
             logger.error("Can not read bet with id = " + id);
@@ -282,7 +279,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             statement.setInt(8, instance.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
-            logger.debug("Can not update bet with id = " + instance.getId());
+            logger.error("Can not update bet with id = " + instance.getId());
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -300,7 +297,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
-            logger.debug("Can not delete bet with ID = " + id);
+            logger.error("Can not delete bet with ID = " + id);
         } finally {
             try {
                 statement.close();

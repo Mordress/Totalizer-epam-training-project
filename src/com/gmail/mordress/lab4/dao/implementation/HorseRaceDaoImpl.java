@@ -6,7 +6,6 @@ import com.gmail.mordress.lab4.domain.HorseRace;
 import com.gmail.mordress.lab4.domain.Race;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -47,10 +46,9 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace.setHorse(horse);
                 horseRaces.add(horseRace);
             }
-            logger.debug("Successful read horseRaces by race with id = " + instance.getId());
             return horseRaces;
         } catch (SQLException e) {
-            logger.debug("Can not read  horseRaces by race with id = " + instance.getId());
+            logger.error("Can not find horseRaces by race with id = " + instance.getId());
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -91,10 +89,9 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace.setHorse(horse);
                 horseRaces.add(horseRace);
             }
-            logger.debug("Successful read horseRaces with id = " + instance.getId());
             return horseRaces;
         } catch (SQLException e) {
-            logger.debug("Can not read  horseRaces by horse with id = " + instance.getId());
+            logger.error("Can not find horseRaces by horse with id = " + instance.getId());
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -133,10 +130,9 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
                 horseRace.setHorse(horse);
                 horseRaces.add(horseRace);
             }
-            logger.debug("Successful read horseRaces");
             return horseRaces;
         } catch (SQLException e) {
-            logger.debug("Can not read all horseRaces");
+            logger.error("Can not read all horseRaces");
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -215,7 +211,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
             }
             return horseRace;
         } catch (SQLException e) {
-            logger.debug("Can not read HorseRace form db with ID + " + id);
+            logger.error("Can not read HorseRace form db with ID + " + id);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -304,7 +300,7 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
             }
             return horseRace;
         } catch (SQLException e) {
-            logger.error("Can not find horseRace by RaceId: " + raceId + " and HorseId: " + horseId);
+            logger.error("Can not find horseRace by raceId: " + raceId + " and horseId: " + horseId);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {

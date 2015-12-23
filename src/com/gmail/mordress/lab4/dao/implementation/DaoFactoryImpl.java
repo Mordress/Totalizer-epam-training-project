@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-
 public class DaoFactoryImpl implements DaoFactory {
 
     private static Logger logger = Logger.getLogger(DaoFactoryImpl.class);
@@ -32,7 +31,6 @@ public class DaoFactoryImpl implements DaoFactory {
         try {
             connection.setAutoCommit(true);
         } catch(SQLException e) {
-            logger.error("It is impossible to turn off autocommiting for database connection", e);
             throw new PersistentException(e.getMessage(), e.getCause());
         }
     }
@@ -45,7 +43,6 @@ public class DaoFactoryImpl implements DaoFactory {
             try {
                 BaseDaoImpl dao = value.newInstance();
                 dao.setConnection(connection);
-                logger.debug("Successful creating DAO " + dao.getClass());
                 return (T)dao;
             } catch(InstantiationException | IllegalAccessException e) {
                 logger.error("It is impossible to create DAO", e);

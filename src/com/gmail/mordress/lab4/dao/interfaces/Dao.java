@@ -1,7 +1,6 @@
 package com.gmail.mordress.lab4.dao.interfaces;
 
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-
 import java.io.Serializable;
 
 

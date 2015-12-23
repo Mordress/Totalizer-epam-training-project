@@ -4,7 +4,6 @@ import com.gmail.mordress.lab4.dao.interfaces.BreedDao;
 import com.gmail.mordress.lab4.domain.Breed;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,7 +32,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
             }
             return breed;
         } catch (SQLException e) {
-            logger.debug("Can not find breed with name = " + name);
+            logger.error("Can not find breed with name = " + name);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -61,10 +60,9 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
                 breed.setName(resultSet.getString("name"));
                 breeds.add(breed);
             }
-            logger.debug("Successful read breeds");
             return breeds;
         } catch (SQLException e) {
-            logger.debug("Can not read all breeds");
+            logger.error("Can not read all breeds");
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -121,7 +119,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
             }
             return breed;
         } catch (SQLException e) {
-            logger.debug("Can not read breed with ID = " + id);
+            logger.error("Can not read breed with ID = " + id);
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -144,7 +142,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
             statement.executeUpdate();
 
         } catch (SQLException e) {
-            logger.debug("Can not update breed with ID = "  + instance.getId());
+            logger.error("Can not update breed with ID = "  + instance.getId());
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -163,7 +161,7 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
             statement.setInt(1, id);
             statement.executeUpdate();
         }catch (SQLException e) {
-            logger.debug("Can not delete breed with ID = " + id);
+            logger.error("Can not delete breed with ID = " + id);
             throw new PersistentException(e.getMessage(), e.getCause());
         }finally {
             try {
