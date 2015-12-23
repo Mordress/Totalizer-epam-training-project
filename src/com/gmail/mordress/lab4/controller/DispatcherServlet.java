@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.TimeZone;
 
 public class DispatcherServlet extends HttpServlet {
 
@@ -21,6 +22,7 @@ public class DispatcherServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         Logger root = Logger.getRootLogger();
+        TimeZone.setDefault(TimeZone.getTimeZone("Europe/Minsk"));
     }
 
     public ActionManagerFactory getFactory() throws PersistentException {
