@@ -19,7 +19,6 @@ public class HorseRaceServiceImpl extends ServiceImpl implements HorseRaceServic
     public List<HorseRace> findByRace(Race race) throws PersistentException {
         HorseRaceDao horseRaceDao = factory.createDao(HorseRaceDao.class);
         List<HorseRace> horseRaces = horseRaceDao.findByRace(race);
-
         if (horseRaces != null && !horseRaces.isEmpty())
         for (HorseRace horseRace : horseRaces) {
             buildHorseRace(horseRace);
@@ -48,6 +47,7 @@ public class HorseRaceServiceImpl extends ServiceImpl implements HorseRaceServic
         }
     }
 
+    /* Create sterling instance HorseRace from id-s */
     private void buildHorseRace(HorseRace hr) {
         if (hr != null && hr.getId() !=null ) {
             try {

@@ -46,7 +46,7 @@ public class HorseServiceImpl extends ServiceImpl implements HorseService {
         return horses;
     }
 
-    /* Собираем коня по частям из разных DAO */
+    /* Create sterling instance Horse from id-s*/
     private void buildHorse(Horse horse) throws PersistentException {
         BreedDao breedDao = factory.createDao(BreedDao.class);
         if (horse != null) {
@@ -54,7 +54,7 @@ public class HorseServiceImpl extends ServiceImpl implements HorseService {
             horse.setBreed(breed);
         }
     }
-    /* Собираем лист коней по частям из разных DAO */
+    /* Create sterling instance for each Horse in List from id-s*/
     private void buildHorseList(List<Horse> horses) throws PersistentException {
         for (Horse horse : horses) {
             if (horse != null) {

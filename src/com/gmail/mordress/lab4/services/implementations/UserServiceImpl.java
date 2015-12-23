@@ -5,7 +5,6 @@ import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.interfaces.UserService;
 import com.gmail.mordress.lab4.utils.Hasher;
-
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -48,7 +47,6 @@ public class UserServiceImpl extends ServiceImpl implements UserService {
             dao.update(user);
         } else {
             if (user.getLogin() != null) {
-                /*user.setPassword(hashing(user.getLogin()));*/
                 user.setId(dao.create(user));
             }
         }

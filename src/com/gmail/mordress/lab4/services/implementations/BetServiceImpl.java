@@ -72,25 +72,24 @@ public class BetServiceImpl extends ServiceImpl implements BetService {
         betDao.delete(id);
     }
 
+    /* Create sterling instance Bet from id-s */
     private void betBuild(Bet bet) throws PersistentException {
         UserDao userDao = factory.createDao(UserDao.class);
         User u = userDao.read(bet.getUser().getId());
         bet.setUser(u);
-
         HorseRaceDao horseRaceDao = factory.createDao(HorseRaceDao.class);
         HorseRace horseRace = horseRaceDao.read(bet.getHorseRace().getId());
-        //bet.setHorseRace(horseRace);
         buildHorseRace(horseRace);
         bet.setHorseRace(horseRace);
     }
 
+    /* Create sterling instance HorseRace from id-s */
     private void buildHorseRace(HorseRace hr) {
         if (hr != null && hr.getId() !=null ) {
             try {
                 RaceDao raceDao = factory.createDao(RaceDao.class);
                 HorseDao horseDao = factory.createDao(HorseDao.class);
                 BreedDao breedDao = factory.createDao(BreedDao.class);
-
                 hr.setRace(raceDao.read(hr.getRace().getId()));
                 hr.setHorse(horseDao.read(hr.getHorse().getId()));
                 Breed breed = breedDao.read(hr.getHorse().getBreed().getId());

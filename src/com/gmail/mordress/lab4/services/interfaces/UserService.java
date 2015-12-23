@@ -2,7 +2,6 @@ package com.gmail.mordress.lab4.services.interfaces;
 
 import com.gmail.mordress.lab4.domain.User;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-
 import java.math.BigDecimal;
 import java.util.List;
 
