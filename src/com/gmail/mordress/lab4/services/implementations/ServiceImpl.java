@@ -7,7 +7,7 @@ abstract public class ServiceImpl implements Service {
 
     protected DaoFactory factory = null;
 
-    public void setDaoFactory(final DaoFactory factory) {
+    public void setDaoFactory(DaoFactory factory) {
         this.factory = factory;
     }
 }

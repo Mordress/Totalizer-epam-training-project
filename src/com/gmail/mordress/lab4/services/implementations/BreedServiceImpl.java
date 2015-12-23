@@ -8,7 +8,7 @@ import java.util.List;
 
 public class BreedServiceImpl extends ServiceImpl implements BreedService {
     @Override
-    public Breed findByName(final String name) throws PersistentException {
+    public Breed findByName(String name) throws PersistentException {
         BreedDao dao = factory.createDao(BreedDao.class);
         return dao.findByName(name);
     }
@@ -30,7 +30,7 @@ public class BreedServiceImpl extends ServiceImpl implements BreedService {
     }
 
     @Override
-    public void delete(final Integer id) throws PersistentException {
+    public void delete(Integer id) throws PersistentException {
         BreedDao dao = factory.createDao(BreedDao.class);
         dao.delete(id);
     }

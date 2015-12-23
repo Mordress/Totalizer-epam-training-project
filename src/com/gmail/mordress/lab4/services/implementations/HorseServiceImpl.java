@@ -15,7 +15,7 @@ public class HorseServiceImpl extends ServiceImpl implements HorseService {
     private static Logger logger = Logger.getLogger(HorseServiceImpl.class);
 
     @Override
-    public Horse findByName(final String name) throws PersistentException {
+    public Horse findByName(String name) throws PersistentException {
         HorseDao horseDao = factory.createDao(HorseDao.class);
         Horse horse = horseDao.findByName(name);
         buildHorse(horse);
@@ -23,7 +23,7 @@ public class HorseServiceImpl extends ServiceImpl implements HorseService {
     }
 
     @Override
-    public Horse findHorseById(final Integer id) throws PersistentException {
+    public Horse findHorseById(Integer id) throws PersistentException {
         HorseDao horseDao = factory.createDao(HorseDao.class);
         Horse horse = horseDao.read(id);
         buildHorse(horse);
@@ -31,7 +31,7 @@ public class HorseServiceImpl extends ServiceImpl implements HorseService {
     }
 
     @Override
-    public List<Horse> findHorsesByBreed(final Breed breed) throws PersistentException {
+    public List<Horse> findHorsesByBreed(Breed breed) throws PersistentException {
         HorseDao horseDao = factory.createDao(HorseDao.class);
         List<Horse> horses = horseDao.findHorsesByBreed(breed);
         buildHorseList(horses);

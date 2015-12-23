@@ -11,13 +11,13 @@ import java.util.List;
 public class UserServiceImpl extends ServiceImpl implements UserService {
 
     @Override
-    public User findUser(final String login, String password) throws PersistentException {
+    public User findUser(String login, String password) throws PersistentException {
         UserDao dao = factory.createDao(UserDao.class);
         return dao.findUser(login, hashing(password));
     }
 
     @Override
-    public boolean checkUniqueLogin(final String login) throws PersistentException {
+    public boolean checkUniqueLogin(String login) throws PersistentException {
         UserDao dao = factory.createDao(UserDao.class);
         return dao.checkUniqueLogin(login);
     }
@@ -29,7 +29,7 @@ public class UserServiceImpl extends ServiceImpl implements UserService {
     }
 
     @Override
-    public User findById(final Integer id) throws PersistentException {
+    public User findById(Integer id) throws PersistentException {
         UserDao dao = factory.createDao(UserDao.class);
         return dao.read(id);
     }
@@ -53,7 +53,7 @@ public class UserServiceImpl extends ServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(final Integer id) throws PersistentException {
+    public void delete(Integer id) throws PersistentException {
         UserDao dao = factory.createDao(UserDao.class);
         dao.delete(id);
 
