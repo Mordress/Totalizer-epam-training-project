@@ -24,26 +24,30 @@ public class ActionFromUriFilter implements Filter {
     static {
         actions.put("/", MainAction.class);
         actions.put("/index", MainAction.class);
+
         actions.put("/login", LoginAction.class);
-        actions.put("/races/list", RaceListAction.class);
         actions.put("/logout", LogoutAction.class);
-        actions.put("/horseraces/edit", HorseRaceEditAction.class);
+        actions.put("/registration", RegistrationAction.class);
+        actions.put("/regsave", RegistrationSaveAction.class);
+
+        actions.put("/profile/edit", ProfileEditAction.class);
+        actions.put("/profile/save", ProfileSaveAction.class);
+
+        actions.put("/races/list", RaceListAction.class);
         actions.put("/races/edit", RaceEditAction.class);
         actions.put("/races/save", RaceSaveAction.class);
+        actions.put("/races/delete", RaceDeleteAction.class);
+
+        actions.put("/horseraces/edit", HorseRaceEditAction.class);
         actions.put("/horseraces/resultedit", HorseRaceResultEditAction.class);
         actions.put("/horseraces/resultsave", HorseRaceResultSaveAction.class);
+
         actions.put("/bets/list", BetsListAction.class);
         actions.put("/bets/create", BetsCreateAction.class);
         actions.put("/bets/newsave", BetsNewSaveAction.class);
-        actions.put("/registration", RegistrationAction.class);
         actions.put("/bets/fix", BetFixListAction.class);
         actions.put("/bets/fixsave", BetsFixedAction.class);
-        actions.put("/regsave", RegistrationSaveAction.class);
-        actions.put("/profile/edit", ProfileEditAction.class);
-        actions.put("/profile/save", ProfileSaveAction.class);
-        actions.put("/races/delete", RaceDeleteAction.class);
         actions.put("/bets/delete", BetDeleteAction.class);
-
     }
 
     @Override
@@ -83,5 +87,4 @@ public class ActionFromUriFilter implements Filter {
 
     @Override
     public void destroy() {}
-
 }

@@ -20,7 +20,7 @@ public class DateFormatConverter {
                 return date;
             }
         } catch (ParseException e) {
-            logger.debug("Can not parse datestring - " + input);
+            logger.error("Can not parse datestring - " + input);
         }
         return null;
     }
@@ -36,7 +36,7 @@ public class DateFormatConverter {
                     return date;
             }
         } catch (ParseException | NumberFormatException e) {
-            logger.debug("Can not parse datestring - " + input + "or seconds - " + seconds);
+            logger.error("Can not parse datestring - " + input + "or seconds - " + seconds);
         }
         return null;
     }
