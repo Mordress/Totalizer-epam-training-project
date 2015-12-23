@@ -21,6 +21,7 @@ INSERT INTO `race` (`date`, `distance`) VALUES ('2015-11-22-10-00-00', 2400);
 INSERT INTO `race` (`date`, `distance`) VALUES ('2015-11-24-16-30-00', 4400);
 INSERT INTO `race` (`date`, `distance`) VALUES ('2015-12-30-08-00-00', 3500);
 INSERT INTO `race` (`date`, `distance`) VALUES ('2015-12-12-15-45-00', 8800);
+INSERT INTO `race` (`date`, `distance`) VALUES ('2015-12-23-16-30-00', 9100);
 #insert horse_races
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (1, 1, 1, '2015-11-22-10-10-10');
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (1, 2, 3, '2015-11-22-10-10-30');
@@ -65,6 +66,17 @@ INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) V
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 8, 0, NULL );
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 9, 0, NULL );
 INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (4, 10, 0, NULL );
+
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (5, 1, 7, '2015-12-23-16-46-00');
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (5, 2, 4, '2015-12-23-16-45-30');
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (5, 3, 5, '2015-12-23-16-45-40');
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (5, 4, 6, '2015-12-23-16-45-50');
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (5, 5, 10, '2015-12-23-16-46-30');
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (5, 6, 2, '2015-12-23-16-45-10');
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (5, 7, 3, '2015-12-23-16-45-20');
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (5, 8, 8, '2015-12-23-16-46-10');
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (5, 9, 9, '2015-12-23-16-46-20');
+INSERT INTO `horse_race` (`race_ID`, `horse_ID`, `result_rank`, `result_time`) VALUES (5, 10, 1, '2015-12-23-16-45-00');
 #insert users
 #for store password using SHA-256
 INSERT INTO `users` (`login`, `first_name`, `last_name`, `password`, `role`, `email`, `cash_amount`) VALUES
@@ -119,6 +131,8 @@ INSERT INTO `bet` (`horse_race_ID`,
 VALUES
   (2, 3, 100.00, 20.00, TRUE, 3, '2015-11-20 15:33:23'),
   (23, 5, 50.00, NULL, NULL, 3, DEFAULT),
-  (3, 2, 10.00, 20.00, TRUE, 4, '2015-01-09 15:30:00');
+  (3, 2, 10.00, 20.00, TRUE, 4, '2015-01-09 15:30:00'),
+  (41, 7, 100.00, NULL, NULL, 3, '2015-12-23 16:34:00'),
+  (42, 1, 100.00, NULL, NULL, 3, '2015-12-23 16:34:00');
 
 
