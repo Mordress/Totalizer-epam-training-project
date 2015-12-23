@@ -32,7 +32,7 @@
                         <td>${pBet.horseRace.horse.name}</td>
                         <td>${pBet.horseRace.resultRank}</td>
                         <td>
-                            <fmt:formatDate value="${pbet.horseRace.resultTime}" pattern="HH:mm:ss"/>
+                            <fmt:formatDate value="${pBet.horseRace.resultTime}" pattern="HH:mm:ss"/>
                         </td>
                         <td>${pBet.resultRank}</td>
                         <td>${pBet.betAmount}</td>

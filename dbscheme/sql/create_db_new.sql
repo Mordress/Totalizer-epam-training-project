@@ -74,8 +74,6 @@ CREATE UNIQUE INDEX UIX_horse_race_race_ID_horse_ID ON horse_race
 	horse_ID
 );
 
-
-
 CREATE INDEX XIF1_horse_race_horse_ID ON horse_race
 (
 	horse_ID
