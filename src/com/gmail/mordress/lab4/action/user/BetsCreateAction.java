@@ -11,7 +11,6 @@ import com.gmail.mordress.lab4.services.interfaces.HorseService;
 import com.gmail.mordress.lab4.services.interfaces.RaceService;
 import com.gmail.mordress.lab4.services.interfaces.UserService;
 import org.apache.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
@@ -35,7 +34,6 @@ public class BetsCreateAction extends UserAction {
         List<Horse> allHorses = horseService.getAllHorses();
         request.setAttribute("allHorses", allHorses);
         request.setAttribute("horseCount", allHorses.size());
-
         return null;
     }
 }

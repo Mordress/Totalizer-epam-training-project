@@ -6,7 +6,6 @@ import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.interfaces.UserService;
 import com.gmail.mordress.lab4.utils.Hasher;
 import org.apache.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
@@ -42,15 +41,15 @@ public class RegistrationSaveAction extends Action {
                 user.setCashAmount(new BigDecimal("1000"));
                 userService.save(user);
                 forwardSuccesfull.getAttributes().put("message", "Пользователь успешно создан.");
-                logger.info("Пользователь " + user.getLogin() + " успешно создан.");
+                logger.info("User " + user.getLogin() + " successful created.");
             } else {
                 forwardFailed.getAttributes().put("message", "Пользователь с таким логином уже существует");
-                logger.error("Не удалось создать пользователя: " + userLogin + ". Причина: такой пользователь уже существует.");
+                logger.error("Can not create user: " + userLogin + ". Reason: user already exists.");
                 return forwardFailed;
             }
         } catch (PersistentException | NullPointerException e) {
             forwardFailed.getAttributes().put("message", "Не удалось создать пользователя с такими данным");
-            logger.error("Не удалось создать пользователя: " + userLogin + ". Причина: введены некорректные данные.");
+            logger.error("Can not create user: " + userLogin + ". Reason: incorrect input.");
             return forwardFailed;
         }
         return forwardSuccesfull;

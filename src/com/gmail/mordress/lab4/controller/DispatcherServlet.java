@@ -20,7 +20,7 @@ public class DispatcherServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-            Logger root = Logger.getRootLogger();
+        Logger root = Logger.getRootLogger();
     }
 
     public ActionManagerFactory getFactory() throws PersistentException {
@@ -37,27 +37,18 @@ public class DispatcherServlet extends HttpServlet {
         process(req, resp);
     }
 
-    /* В этом методе мы перенаправляем запрос хxx.html на xxx.jsp, сохраняя данные в сессию(откуда мы пришли)*/
     private void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        /*Читаем из реквеста экшен*/
         Action action = (Action)request.getAttribute("action");
         try {
-            /*Создаем экшен менеджер, получая его из фабрики эшен-менеджеров*/
             ActionManager actionManager = getFactory().getManager();
-            /* Передаем выполнение действия, с параметрами экшен, запрос, ответ экшен-менеджеру, который записывает в сессию с какой страницы мы пришли */
             Action.Forward forward = actionManager.execute(action, request, response);
             actionManager.close();
-            /* Создаем строку запрашиваемого URI*/
             String requestedUri = request.getRequestURI();
-            /*  */
             if(forward != null && forward.isRedirect()) {
-                /* Создаем строку URI страницы с которой мы пришли */
                 String redirectedUri = request.getContextPath() + forward.getForward();
                 logger.debug(String.format("Request for URI \"%s\" id redirected to URI \"%s\"", requestedUri, redirectedUri));
-                /* Записываем в ответ страницу с которой мы пришли */
                 response.sendRedirect(redirectedUri);
             } else {
-                /* Если мы пришли не с другой страницы, то */
                 String jspPage;
                 if(forward != null) {
                     jspPage = forward.getForward();

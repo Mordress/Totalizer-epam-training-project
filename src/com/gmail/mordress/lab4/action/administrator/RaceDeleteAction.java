@@ -4,7 +4,6 @@ import com.gmail.mordress.lab4.action.Action;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.interfaces.RaceService;
 import org.apache.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,7 +14,6 @@ public class RaceDeleteAction extends AdministratorAction {
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/races/list.html");
-
         try {
             Integer id = Integer.parseInt(request.getParameter("id"));
             RaceService service = factory.getService(RaceService.class);
@@ -26,8 +24,6 @@ public class RaceDeleteAction extends AdministratorAction {
             logger.info("Can not delete race with id= " + request.getParameter("id"));
             forward.getAttributes().put("message", "Невозможно удалить такой забег");
         }
-
-
         return forward;
     }
 }

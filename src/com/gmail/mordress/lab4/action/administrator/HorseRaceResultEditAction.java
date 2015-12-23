@@ -25,10 +25,8 @@ public class HorseRaceResultEditAction extends AdministratorAction {
             if (horseRace != null) {
                 request.setAttribute("horseRace", horseRace);
             }
-            logger.debug("Horserace is :" + horseRace.toString());
-            logger.debug("Horserace id :" + id);
         } catch (NumberFormatException e) {
-            logger.debug("Can not parse horseRace id = " + request.getAttribute("id"));
+            logger.error("Can not parse horseRace id = " + request.getAttribute("id"));
         }
         return null;
     }

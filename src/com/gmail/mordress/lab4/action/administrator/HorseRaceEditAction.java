@@ -30,9 +30,7 @@ public class HorseRaceEditAction extends AdministratorAction {
             }
             HorseRaceService horseRaceService = factory.getService(HorseRaceService.class);
             List<HorseRace> horseRaces = horseRaceService.findByRace(race);
-
             if (horseRaces != null) {
-                logger.debug("HORSERACESLENGTH: " + horseRaces.size());
                 request.setAttribute("horseRaces", horseRaces);
             }
         } catch (NumberFormatException e) {}

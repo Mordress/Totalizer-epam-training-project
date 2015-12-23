@@ -4,7 +4,6 @@ import com.gmail.mordress.lab4.action.Action;
 import com.gmail.mordress.lab4.domain.Race;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.interfaces.RaceService;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;

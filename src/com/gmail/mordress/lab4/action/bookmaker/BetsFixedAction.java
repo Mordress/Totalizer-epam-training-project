@@ -8,7 +8,6 @@ import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.interfaces.BetService;
 import com.gmail.mordress.lab4.services.interfaces.UserService;
 import org.apache.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
@@ -35,7 +34,7 @@ public class BetsFixedAction extends BookmakerAction {
                 bet.setIsWinner(false);
             }
             betService.save(bet);
-            /* Закидываем деньни юзеру на счет*/
+            /* Transfer cash to user cashAmount */
             if (bet.getIsWinner()) {
                 UserService userService = factory.getService(UserService.class);
                 User user = userService.findById(bet.getUser().getId());

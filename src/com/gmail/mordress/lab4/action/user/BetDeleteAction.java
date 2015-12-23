@@ -10,7 +10,6 @@ import com.gmail.mordress.lab4.services.interfaces.HorseService;
 import com.gmail.mordress.lab4.services.interfaces.RaceService;
 import com.gmail.mordress.lab4.services.interfaces.UserService;
 import org.apache.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
