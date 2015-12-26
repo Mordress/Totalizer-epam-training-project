@@ -12,7 +12,7 @@
             <th>Дистанции(м)</th>
             <th>Имя лошади</th>
             <th>Место</th>
-            <th>Время финиша</th>
+            <th>Времени в забеге</th>
         </tr>
         <tr>
             <td>
@@ -36,8 +36,9 @@
                     <input type="number" id="newRank" name="newRank" min="1" max="10" required="required"/>
                 </td>
                 <td>
-                    <input type="datetime-local" id="newTime" name="newTime" required="required"/>
-                    <input type="number" min="0" max="59" id="newTimeSeconds" name="newTimeSeconds" placeholder="сек."/>
+                    <input type="number" min="0" max="23" id="newTimeHours" name="newTimeHours" required="required" placeholder="чч"/>
+                    <input type="number" min="0" max="59" id="newTimeMinutes" name="newTimeMinutes" required="required" placeholder="мм"/>
+                    <input type="number" min="0" max="59" id="newTimeSeconds" name="newTimeSeconds" required="required" placeholder="сс"/>
                 </td>
             </tr>
             <tr>

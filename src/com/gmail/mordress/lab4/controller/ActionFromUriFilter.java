@@ -9,7 +9,6 @@ import com.gmail.mordress.lab4.action.user.BetsCreateAction;
 import com.gmail.mordress.lab4.action.user.BetsListAction;
 import com.gmail.mordress.lab4.action.user.BetsNewSaveAction;
 import org.apache.log4j.Logger;
-
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;

@@ -1,7 +1,6 @@
 package com.gmail.mordress.lab4.utils;
 
 import org.apache.log4j.Logger;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -39,6 +38,10 @@ public class DateFormatConverter {
             logger.error("Can not parse datestring - " + input + "or seconds - " + seconds);
         }
         return null;
+    }
+
+    public static Date DateFromUI(Date date, Integer hours, Integer mins, Integer seconds) {
+        return new Date(date.getTime() + seconds * 1000 + mins * 60_000 + hours * 3_600_000);
     }
 
     public static String dateToString(final Date date) {

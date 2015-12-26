@@ -16,25 +16,30 @@ public class HorseRaceResultSaveAction extends AdministratorAction {
 
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
-        Forward forward = new Forward("/races/list.html");
+        Forward forward = new Forward("/horseraces/edit.html");
 
-        String parameter1 = request.getParameter("horseRaceId");
-        String parameter2 = request.getParameter("newRank");
-        String parameter3 = request.getParameter("newTime");
-        String parameter4 = request.getParameter("newTimeSeconds");
+        String horseRaceId = request.getParameter("horseRaceId");
+        String newRank = request.getParameter("newRank");
+        String newTimeHours = request.getParameter("newTimeHours");
+        String newTimeMinutes = request.getParameter("newTimeMinutes");
+        String newTimeSeconds = request.getParameter("newTimeSeconds");
+        //TODO VALIDATION FOR DUPLICATES RANKS
         try {
             HorseRaceService service = factory.getService(HorseRaceService.class);
-            HorseRace horseRace = service.findById(Integer.parseInt(parameter1));
-            horseRace.setResultRank(Integer.parseInt(parameter2));
-            Date newDate = DateFormatConverter.stringToDate(parameter3, parameter4);
-            if (horseRace.getRace().getRaceDate().getTime() > newDate.getTime()) {
-                forward.getAttributes().put("message", "Неправильное время финиша, результат не сохранен.");
-                throw new PersistentException();
-            }
-            horseRace.setResultTime(newDate);
+            HorseRace horseRace = service.findById(Integer.parseInt(horseRaceId));
+            horseRace.setResultRank(Integer.parseInt(newRank));
+            Integer hours = Integer.parseInt(newTimeHours);
+            Integer mins = Integer.parseInt(newTimeMinutes);
+            Integer secs = Integer.parseInt(newTimeSeconds);
+            Date resultTime = DateFormatConverter.DateFromUI(horseRace.getRace().getRaceDate(), hours, mins, secs);
+            horseRace.setResultTime(resultTime);
             service.save(horseRace);
+            forward.getAttributes().put("id", horseRace.getRace().getId());
         } catch (NumberFormatException e) {
-            logger.warn("Can not update horserace result with new values: " + parameter2 + " " + parameter3 + " "+ parameter4);
+            logger.warn(new StringBuilder("Can not update horse-race result, because administartor use wrong input")
+            .append(" New horse rank:").append(newRank).append(" resault hours: ").append(newTimeHours)
+            .append(" resault minutes:").append(newTimeMinutes).append(" resault secs:").append(newTimeSeconds)
+            .toString());
         }
         return forward;
     }
