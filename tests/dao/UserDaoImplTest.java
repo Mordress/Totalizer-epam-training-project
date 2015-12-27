@@ -1,10 +1,10 @@
 package dao;
 
-import com.gmail.mordress.lab4.dao.mysql.DaoFactoryImpl;
-import com.gmail.mordress.lab4.dao.mysql.UserDaoImpl;
-import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
-import com.gmail.mordress.lab4.dao.interfaces.UserDao;
-import com.gmail.mordress.lab4.entities.User;
+import com.gmail.mordress.epamproject.dao.mysql.DaoFactoryImpl;
+import com.gmail.mordress.epamproject.dao.mysql.UserDaoImpl;
+import com.gmail.mordress.epamproject.dao.interfaces.DaoFactory;
+import com.gmail.mordress.epamproject.dao.interfaces.UserDao;
+import com.gmail.mordress.epamproject.entities.User;
 public class UserDaoImplTest {
 
     public static void main(String[] args) {

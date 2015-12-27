@@ -1,11 +1,11 @@
 package dao;
 
-import com.gmail.mordress.lab4.dao.mysql.BreedDaoImpl;
-import com.gmail.mordress.lab4.dao.mysql.DaoFactoryImpl;
-import com.gmail.mordress.lab4.dao.interfaces.BreedDao;
-import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
-import com.gmail.mordress.lab4.entities.Breed;
-import com.gmail.mordress.lab4.exceptions.PersistentException;
+import com.gmail.mordress.epamproject.dao.mysql.BreedDaoImpl;
+import com.gmail.mordress.epamproject.dao.mysql.DaoFactoryImpl;
+import com.gmail.mordress.epamproject.dao.interfaces.BreedDao;
+import com.gmail.mordress.epamproject.dao.interfaces.DaoFactory;
+import com.gmail.mordress.epamproject.entities.Breed;
+import com.gmail.mordress.epamproject.exceptions.PersistentException;
 
 import java.util.List;
 

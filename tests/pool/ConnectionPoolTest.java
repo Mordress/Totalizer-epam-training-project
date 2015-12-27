@@ -1,7 +1,7 @@
 package pool;
 
-import com.gmail.mordress.lab4.dao.pool.ConnectionPool;
-import com.gmail.mordress.lab4.exceptions.PersistentException;
+import com.gmail.mordress.epamproject.dao.pool.ConnectionPool;
+import com.gmail.mordress.epamproject.exceptions.PersistentException;
 import java.sql.Connection;
 import java.sql.SQLException;
 

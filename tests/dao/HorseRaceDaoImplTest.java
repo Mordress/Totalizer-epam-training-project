@@ -1,11 +1,11 @@
 package dao;
 
-import com.gmail.mordress.lab4.dao.mysql.*;
-import com.gmail.mordress.lab4.dao.interfaces.*;
-import com.gmail.mordress.lab4.entities.Breed;
-import com.gmail.mordress.lab4.entities.Horse;
-import com.gmail.mordress.lab4.entities.HorseRace;
-import com.gmail.mordress.lab4.entities.Race;
+import com.gmail.mordress.epamproject.dao.mysql.*;
+import com.gmail.mordress.epamproject.dao.interfaces.*;
+import com.gmail.mordress.epamproject.entities.Breed;
+import com.gmail.mordress.epamproject.entities.Horse;
+import com.gmail.mordress.epamproject.entities.HorseRace;
+import com.gmail.mordress.epamproject.entities.Race;
 import java.util.Date;
 
 public class HorseRaceDaoImplTest {

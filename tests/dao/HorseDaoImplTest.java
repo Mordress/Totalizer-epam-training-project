@@ -1,12 +1,12 @@
 package dao;
 
-import com.gmail.mordress.lab4.dao.mysql.DaoFactoryImpl;
-import com.gmail.mordress.lab4.dao.mysql.HorseDaoImpl;
-import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
-import com.gmail.mordress.lab4.dao.interfaces.HorseDao;
-import com.gmail.mordress.lab4.entities.Breed;
-import com.gmail.mordress.lab4.entities.Horse;
-import com.gmail.mordress.lab4.exceptions.PersistentException;
+import com.gmail.mordress.epamproject.dao.mysql.DaoFactoryImpl;
+import com.gmail.mordress.epamproject.dao.mysql.HorseDaoImpl;
+import com.gmail.mordress.epamproject.dao.interfaces.DaoFactory;
+import com.gmail.mordress.epamproject.dao.interfaces.HorseDao;
+import com.gmail.mordress.epamproject.entities.Breed;
+import com.gmail.mordress.epamproject.entities.Horse;
+import com.gmail.mordress.epamproject.exceptions.PersistentException;
 import java.util.List;
 
 public class HorseDaoImplTest {

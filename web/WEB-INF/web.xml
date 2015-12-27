@@ -11,7 +11,7 @@
 
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
-        <servlet-class>com.gmail.mordress.lab4.controller.DispatcherServlet</servlet-class>
+        <servlet-class>com.gmail.mordress.epamproject.controller.DispatcherServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
@@ -20,7 +20,7 @@
 
     <filter>
         <filter-name>EncodingFilter</filter-name>
-        <filter-class>com.gmail.mordress.lab4.controller.EncodingFilter</filter-class>
+        <filter-class>com.gmail.mordress.epamproject.controller.EncodingFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>EncodingFilter</filter-name>
@@ -29,7 +29,7 @@
 
     <filter>
         <filter-name>ActionFromUriFilter</filter-name>
-        <filter-class>com.gmail.mordress.lab4.controller.ActionFromUriFilter</filter-class>
+        <filter-class>com.gmail.mordress.epamproject.controller.ActionFromUriFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>ActionFromUriFilter</filter-name>
@@ -38,7 +38,7 @@
 
     <filter>
         <filter-name>SecurityFilter</filter-name>
-        <filter-class>com.gmail.mordress.lab4.controller.SecurityFilter</filter-class>
+        <filter-class>com.gmail.mordress.epamproject.controller.SecurityFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>SecurityFilter</filter-name>

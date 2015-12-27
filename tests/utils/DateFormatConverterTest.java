@@ -1,10 +1,8 @@
 package utils;
 
-import com.gmail.mordress.lab4.utils.DateFormatConverter;
+import com.gmail.mordress.epamproject.utils.DateFormatConverter;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 public class DateFormatConverterTest {
 
