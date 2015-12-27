@@ -5,7 +5,6 @@ import com.gmail.mordress.lab4.domain.HorseRace;
 import com.gmail.mordress.lab4.domain.Race;
 import com.gmail.mordress.lab4.exceptions.IncorrectUserDataException;
 import org.apache.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.Collections;
 import java.util.HashMap;

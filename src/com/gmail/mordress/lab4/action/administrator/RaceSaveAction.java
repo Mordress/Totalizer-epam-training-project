@@ -10,6 +10,7 @@ import com.gmail.mordress.lab4.services.interfaces.HorseService;
 import com.gmail.mordress.lab4.services.interfaces.RaceService;
 import com.gmail.mordress.lab4.services.interfaces.ServiceFactory;
 import com.gmail.mordress.lab4.utils.DateFormatConverter;
+import com.gmail.mordress.lab4.validators.RaceValidator;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,7 +33,11 @@ public class RaceSaveAction extends AdministratorAction {
                 if (date != null) {
                     race.setRaceDate(date);
                 }
-
+                RaceValidator validator = RaceValidator.getInstance();
+                if (!validator.isRaceNotPassed(race)) {
+                    forward.getAttributes().put("message", "Нельзя создавать забеги в прошлом.");
+                    return forward;
+                }
             }
             parameter = request.getParameter("distance");
             if (parameter != null && !parameter.isEmpty()) {
@@ -54,7 +59,6 @@ public class RaceSaveAction extends AdministratorAction {
         } catch (NumberFormatException e) {
             logger.error("administrator had tried to create new race with wrong parameters");
             forward.getAttributes().put("message", "Невозможно создать такой забег");
-
         }
         return forward;
     }
