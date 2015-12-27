@@ -41,5 +41,12 @@
                     </td>
                 </tr>
             </c:forEach>
+        <tr>
+            <td colspan="6">
+                <form action="/races/list.html" method="post">
+                    <button type="submit">Вернуться</button>
+                </form>
+            </td>
+        </tr>
     </table>
 </u:html>
