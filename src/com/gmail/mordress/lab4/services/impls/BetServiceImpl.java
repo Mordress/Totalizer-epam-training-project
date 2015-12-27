@@ -1,10 +1,9 @@
-package com.gmail.mordress.lab4.services.implementations;
+package com.gmail.mordress.lab4.services.impls;
 
 import com.gmail.mordress.lab4.dao.interfaces.*;
-import com.gmail.mordress.lab4.domain.*;
+import com.gmail.mordress.lab4.entities.*;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.interfaces.BetService;
-import com.gmail.mordress.lab4.services.interfaces.HorseRaceService;
+import com.gmail.mordress.lab4.services.ifaces.BetService;
 
 import java.util.ArrayList;
 import java.util.Date;

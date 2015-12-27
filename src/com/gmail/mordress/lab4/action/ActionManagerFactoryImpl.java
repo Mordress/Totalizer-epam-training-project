@@ -1,7 +1,6 @@
 package com.gmail.mordress.lab4.action;
 
-import com.gmail.mordress.lab4.services.implementations.ServiceFactoryImpl;
-import com.gmail.mordress.lab4.services.interfaces.ServiceFactory;
+import com.gmail.mordress.lab4.services.ifaces.ServiceFactory;
 
 public class ActionManagerFactoryImpl implements ActionManagerFactory {
 

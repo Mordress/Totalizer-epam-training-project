@@ -1,4 +1,4 @@
-package com.gmail.mordress.lab4.domain;
+package com.gmail.mordress.lab4.entities;
 
 public class Breed extends Entity {
 

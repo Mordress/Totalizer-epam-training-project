@@ -56,30 +56,30 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/mysql/UserDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/pool/ConnectionPool.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/pool/PooledConnection.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/domain/Bet.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/domain/Breed.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/domain/Entity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/domain/Horse.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/domain/HorseRace.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/domain/Race.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/domain/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/entities/Bet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/entities/Breed.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/entities/Entity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/entities/Horse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/entities/HorseRace.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/entities/Race.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/entities/User.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/exceptions/PersistentException.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/BetServiceImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/BreedServiceImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/HorseRaceServiceImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/HorseServiceImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/RaceServiceImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/ServiceFactoryImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/ServiceImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/implementations/UserServiceImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/BetService.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/BreedService.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/HorseRaceService.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/HorseService.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/RaceService.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/Service.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/ServiceFactory.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/interfaces/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/ifaces/BetService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/ifaces/BreedService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/ifaces/HorseRaceService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/ifaces/HorseService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/ifaces/RaceService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/ifaces/Service.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/ifaces/ServiceFactory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/ifaces/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/impls/BetServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/impls/BreedServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/impls/HorseRaceServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/impls/HorseServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/impls/RaceServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/impls/ServiceFactoryImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/impls/ServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/services/impls/UserServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/utils/DateFormatConverter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/utils/Hasher.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/TimeTest.java" charset="UTF-8" />

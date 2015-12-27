@@ -1,11 +1,11 @@
 package services;
 
 import com.gmail.mordress.lab4.dao.mysql.DaoFactoryImpl;
-import com.gmail.mordress.lab4.domain.Bet;
+import com.gmail.mordress.lab4.entities.Bet;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.implementations.ServiceFactoryImpl;
-import com.gmail.mordress.lab4.services.interfaces.BetService;
-import com.gmail.mordress.lab4.services.interfaces.ServiceFactory;
+import com.gmail.mordress.lab4.services.impls.ServiceFactoryImpl;
+import com.gmail.mordress.lab4.services.ifaces.BetService;
+import com.gmail.mordress.lab4.services.ifaces.ServiceFactory;
 import java.util.List;
 
 public class BetServiceImplTest {

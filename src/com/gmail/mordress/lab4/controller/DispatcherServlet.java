@@ -6,7 +6,7 @@ import com.gmail.mordress.lab4.action.ActionManagerFactory;
 import com.gmail.mordress.lab4.action.ActionManagerFactoryImpl;
 import com.gmail.mordress.lab4.dao.mysql.DaoFactoryImpl;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.implementations.ServiceFactoryImpl;
+import com.gmail.mordress.lab4.services.impls.ServiceFactoryImpl;
 import org.apache.log4j.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -1,6 +1,6 @@
 package com.gmail.mordress.lab4.action;
 
-import com.gmail.mordress.lab4.domain.Role;
+import com.gmail.mordress.lab4.entities.Role;
 
 import java.util.Arrays;
 

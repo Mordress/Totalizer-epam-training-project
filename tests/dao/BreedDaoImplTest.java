@@ -4,7 +4,7 @@ import com.gmail.mordress.lab4.dao.mysql.BreedDaoImpl;
 import com.gmail.mordress.lab4.dao.mysql.DaoFactoryImpl;
 import com.gmail.mordress.lab4.dao.interfaces.BreedDao;
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
-import com.gmail.mordress.lab4.domain.Breed;
+import com.gmail.mordress.lab4.entities.Breed;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 
 import java.util.List;

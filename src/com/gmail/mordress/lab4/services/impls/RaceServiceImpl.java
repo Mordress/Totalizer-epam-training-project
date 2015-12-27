@@ -1,9 +1,9 @@
-package com.gmail.mordress.lab4.services.implementations;
+package com.gmail.mordress.lab4.services.impls;
 
 import com.gmail.mordress.lab4.dao.interfaces.RaceDao;
-import com.gmail.mordress.lab4.domain.Race;
+import com.gmail.mordress.lab4.entities.Race;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.interfaces.RaceService;
+import com.gmail.mordress.lab4.services.ifaces.RaceService;
 
 import java.util.List;
 

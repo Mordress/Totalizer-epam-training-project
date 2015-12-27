@@ -1,7 +1,7 @@
-package com.gmail.mordress.lab4.services.implementations;
+package com.gmail.mordress.lab4.services.impls;
 
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
-import com.gmail.mordress.lab4.services.interfaces.Service;
+import com.gmail.mordress.lab4.services.ifaces.Service;
 
 abstract public class ServiceImpl implements Service {
 

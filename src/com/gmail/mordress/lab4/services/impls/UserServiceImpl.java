@@ -1,9 +1,9 @@
-package com.gmail.mordress.lab4.services.implementations;
+package com.gmail.mordress.lab4.services.impls;
 
 import com.gmail.mordress.lab4.dao.interfaces.UserDao;
-import com.gmail.mordress.lab4.domain.User;
+import com.gmail.mordress.lab4.entities.User;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.interfaces.UserService;
+import com.gmail.mordress.lab4.services.ifaces.UserService;
 import com.gmail.mordress.lab4.utils.Hasher;
 import java.math.BigDecimal;
 import java.util.List;

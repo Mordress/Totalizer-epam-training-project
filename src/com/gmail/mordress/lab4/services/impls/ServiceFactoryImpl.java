@@ -1,8 +1,8 @@
-package com.gmail.mordress.lab4.services.implementations;
+package com.gmail.mordress.lab4.services.impls;
 
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.interfaces.*;
+import com.gmail.mordress.lab4.services.ifaces.*;
 import org.apache.log4j.Logger;
 
 import java.util.Map;

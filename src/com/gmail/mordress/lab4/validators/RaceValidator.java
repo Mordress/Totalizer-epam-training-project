@@ -1,10 +1,8 @@
 package com.gmail.mordress.lab4.validators;
 
-import com.gmail.mordress.lab4.domain.HorseRace;
-import com.gmail.mordress.lab4.domain.Race;
+import com.gmail.mordress.lab4.entities.Race;
 
 import java.util.Date;
-import java.util.List;
 
 public class RaceValidator {
 

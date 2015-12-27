@@ -4,7 +4,7 @@ import com.gmail.mordress.lab4.dao.mysql.DaoFactoryImpl;
 import com.gmail.mordress.lab4.dao.mysql.UserDaoImpl;
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
 import com.gmail.mordress.lab4.dao.interfaces.UserDao;
-import com.gmail.mordress.lab4.domain.User;
+import com.gmail.mordress.lab4.entities.User;
 public class UserDaoImplTest {
 
     public static void main(String[] args) {

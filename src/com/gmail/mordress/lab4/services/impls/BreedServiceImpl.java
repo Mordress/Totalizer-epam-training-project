@@ -1,9 +1,9 @@
-package com.gmail.mordress.lab4.services.implementations;
+package com.gmail.mordress.lab4.services.impls;
 
 import com.gmail.mordress.lab4.dao.interfaces.BreedDao;
-import com.gmail.mordress.lab4.domain.Breed;
+import com.gmail.mordress.lab4.entities.Breed;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.interfaces.BreedService;
+import com.gmail.mordress.lab4.services.ifaces.BreedService;
 import java.util.List;
 
 public class BreedServiceImpl extends ServiceImpl implements BreedService {

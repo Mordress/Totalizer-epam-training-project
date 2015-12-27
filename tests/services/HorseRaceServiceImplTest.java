@@ -1,13 +1,13 @@
 package services;
 
 import com.gmail.mordress.lab4.dao.mysql.DaoFactoryImpl;
-import com.gmail.mordress.lab4.domain.HorseRace;
-import com.gmail.mordress.lab4.domain.Race;
+import com.gmail.mordress.lab4.entities.HorseRace;
+import com.gmail.mordress.lab4.entities.Race;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.implementations.ServiceFactoryImpl;
-import com.gmail.mordress.lab4.services.interfaces.HorseRaceService;
-import com.gmail.mordress.lab4.services.interfaces.RaceService;
-import com.gmail.mordress.lab4.services.interfaces.ServiceFactory;
+import com.gmail.mordress.lab4.services.impls.ServiceFactoryImpl;
+import com.gmail.mordress.lab4.services.ifaces.HorseRaceService;
+import com.gmail.mordress.lab4.services.ifaces.RaceService;
+import com.gmail.mordress.lab4.services.ifaces.ServiceFactory;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.gmail.mordress.lab4.action.bookmaker;
 
 import com.gmail.mordress.lab4.action.Action;
-import com.gmail.mordress.lab4.domain.Role;
+import com.gmail.mordress.lab4.entities.Role;
 
 public abstract class BookmakerAction extends Action {
 

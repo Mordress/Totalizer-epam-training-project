@@ -1,9 +1,9 @@
 package com.gmail.mordress.lab4.dao.mysql;
 
 import com.gmail.mordress.lab4.dao.interfaces.BetDao;
-import com.gmail.mordress.lab4.domain.Bet;
-import com.gmail.mordress.lab4.domain.HorseRace;
-import com.gmail.mordress.lab4.domain.User;
+import com.gmail.mordress.lab4.entities.Bet;
+import com.gmail.mordress.lab4.entities.HorseRace;
+import com.gmail.mordress.lab4.entities.User;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import org.apache.log4j.Logger;
 import java.sql.PreparedStatement;

@@ -1,15 +1,15 @@
-package com.gmail.mordress.lab4.services.implementations;
+package com.gmail.mordress.lab4.services.impls;
 
 import com.gmail.mordress.lab4.dao.interfaces.BreedDao;
 import com.gmail.mordress.lab4.dao.interfaces.HorseDao;
 import com.gmail.mordress.lab4.dao.interfaces.HorseRaceDao;
 import com.gmail.mordress.lab4.dao.interfaces.RaceDao;
-import com.gmail.mordress.lab4.domain.Breed;
-import com.gmail.mordress.lab4.domain.Horse;
-import com.gmail.mordress.lab4.domain.HorseRace;
-import com.gmail.mordress.lab4.domain.Race;
+import com.gmail.mordress.lab4.entities.Breed;
+import com.gmail.mordress.lab4.entities.Horse;
+import com.gmail.mordress.lab4.entities.HorseRace;
+import com.gmail.mordress.lab4.entities.Race;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.interfaces.HorseRaceService;
+import com.gmail.mordress.lab4.services.ifaces.HorseRaceService;
 
 import java.util.List;
 

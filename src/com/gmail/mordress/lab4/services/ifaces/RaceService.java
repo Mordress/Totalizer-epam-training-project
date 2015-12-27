@@ -1,6 +1,6 @@
-package com.gmail.mordress.lab4.services.interfaces;
+package com.gmail.mordress.lab4.services.ifaces;
 
-import com.gmail.mordress.lab4.domain.Race;
+import com.gmail.mordress.lab4.entities.Race;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 
 import java.util.List;

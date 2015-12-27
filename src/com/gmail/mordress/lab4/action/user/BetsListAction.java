@@ -1,15 +1,11 @@
 package com.gmail.mordress.lab4.action.user;
 
 import com.gmail.mordress.lab4.action.Action;
-import com.gmail.mordress.lab4.domain.Bet;
-import com.gmail.mordress.lab4.domain.HorseRace;
-import com.gmail.mordress.lab4.domain.Race;
-import com.gmail.mordress.lab4.domain.User;
+import com.gmail.mordress.lab4.entities.Bet;
+import com.gmail.mordress.lab4.entities.User;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.interfaces.BetService;
-import com.gmail.mordress.lab4.services.interfaces.HorseRaceService;
-import com.gmail.mordress.lab4.services.interfaces.RaceService;
-import com.gmail.mordress.lab4.services.interfaces.UserService;
+import com.gmail.mordress.lab4.services.ifaces.BetService;
+import com.gmail.mordress.lab4.services.ifaces.UserService;
 import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -1,4 +1,4 @@
-package com.gmail.mordress.lab4.services.interfaces;
+package com.gmail.mordress.lab4.services.ifaces;
 
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 

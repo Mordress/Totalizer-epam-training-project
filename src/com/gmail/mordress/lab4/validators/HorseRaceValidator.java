@@ -1,15 +1,8 @@
 package com.gmail.mordress.lab4.validators;
 
-import com.gmail.mordress.lab4.domain.Entity;
-import com.gmail.mordress.lab4.domain.HorseRace;
-import com.gmail.mordress.lab4.domain.Race;
-import com.gmail.mordress.lab4.exceptions.IncorrectUserDataException;
-import org.apache.log4j.Logger;
-import javax.servlet.http.HttpServletRequest;
-import java.util.Collections;
-import java.util.HashMap;
+import com.gmail.mordress.lab4.entities.HorseRace;
+
 import java.util.List;
-import java.util.Map;
 
 public class HorseRaceValidator {
 

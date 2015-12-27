@@ -1,9 +1,9 @@
 package com.gmail.mordress.lab4.action.user;
 
 import com.gmail.mordress.lab4.action.Action;
-import com.gmail.mordress.lab4.domain.*;
+import com.gmail.mordress.lab4.entities.*;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.interfaces.*;
+import com.gmail.mordress.lab4.services.ifaces.*;
 import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

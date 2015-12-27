@@ -1,8 +1,8 @@
 package com.gmail.mordress.lab4.action;
 
-import com.gmail.mordress.lab4.domain.Horse;
+import com.gmail.mordress.lab4.entities.Horse;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.interfaces.HorseService;
+import com.gmail.mordress.lab4.services.ifaces.HorseService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
