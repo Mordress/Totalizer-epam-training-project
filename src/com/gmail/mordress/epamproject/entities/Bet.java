@@ -77,14 +77,15 @@ public class Bet extends Entity {
 
     @Override
     public String toString() {
-        return "Bet{" +
-                "horseRace=" + horseRace +
-                ", resultRank=" + resultRank +
-                ", betAmount=" + betAmount +
-                ", winAmount=" + winAmount +
-                ", isWinner=" + isWinner +
-                ", user=" + user +
-                ", createdDate=" + createdDate +
-                '}';
+        return new StringBuilder("Bet:{")
+                .append("BetId = ").append(this.getId())
+                .append(", horseRace = ").append(horseRace)
+                .append(", resultRank = ").append(resultRank)
+                .append(", betAmount = ").append(betAmount)
+                .append(", isWinner = ").append(isWinner)
+                .append(", user = ").append(user)
+                .append(", createdDate = ").append(createdDate)
+                .append("}")
+                .toString();
     }
 }

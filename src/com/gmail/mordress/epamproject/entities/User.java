@@ -76,14 +76,15 @@ public class User extends Entity {
 
     @Override
     public String toString() {
-        return "User{" +
-                "login='" + login + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", role=" + role +
-                ", cashAmount=" + cashAmount +
-                '}';
+        return new StringBuilder("User:{")
+                .append("UserId = ").append(this.getId())
+                .append(", login = ").append(login)
+                .append(", firstName = ").append(firstName)
+                .append(", lastName = ").append(lastName)
+                .append(", email = ").append(email)
+                .append(", role = ").append(role)
+                .append(", cashAmount = ").append(cashAmount)
+                .append("}")
+                .toString();
     }
 }

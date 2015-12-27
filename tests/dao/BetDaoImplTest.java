@@ -1,16 +1,24 @@
 package dao;
 
+import com.gmail.mordress.epamproject.dao.interfaces.*;
+import com.gmail.mordress.epamproject.dao.mysql.*;
+import com.gmail.mordress.epamproject.entities.*;
+import com.gmail.mordress.epamproject.exceptions.PersistentException;
+
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.List;
+
 public class BetDaoImplTest {
 
     public static void main(String[] args) {
-        /*
         try {
             DaoFactory factory = new DaoFactoryImpl();
             BetDaoImpl bdi = factory.createDao(BetDao.class);
             Bet bet = bdi.read(3);
             System.out.println(bet);
 
-            UserDaoImpl udi = factory.createDao(UserDao.class);
+           /* UserDaoImpl udi = factory.createDao(UserDao.class);
             User user = udi.read(4);
 
             List<Bet> bets = bdi.findWinnedBetsByUser(user);
@@ -55,10 +63,9 @@ public class BetDaoImplTest {
             List<Bet> bets = bdi.findNotCompleteBets();
             for (Bet bet : bets) {
                 System.out.println(bet);
-            }
+            }*/
         } catch (PersistentException e1) {
             e1.printStackTrace();
         }
-        */
     }
 }

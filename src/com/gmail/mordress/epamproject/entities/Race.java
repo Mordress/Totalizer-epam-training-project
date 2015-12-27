@@ -26,9 +26,11 @@ public class Race extends Entity {
 
     @Override
     public String toString() {
-        return "Race{" +
-                "raceDate=" + raceDate +
-                ", distance=" + distance +
-                '}';
+        return new StringBuilder("Race:{")
+                .append("RaceId = ").append(this.getId())
+                .append(", raceDate = ").append(raceDate)
+                .append(", distance = ").append(distance)
+                .append("}")
+                .toString();
     }
 }

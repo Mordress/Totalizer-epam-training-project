@@ -44,11 +44,13 @@ public class Horse extends Entity {
 
     @Override
     public String toString() {
-        return "Horse{" +
-                "name='" + name + '\'' +
-                ", breed=" + breed +
-                ", weight=" + weight +
-                ", age=" + age +
-                '}';
+        return new StringBuilder("Horse:{")
+                .append("HorseId = ").append(this.getId())
+                .append(", horseName = ").append(name)
+                .append(", Breed = ").append(breed)
+                .append(", weight = ").append(weight)
+                .append(", age = ").append(age)
+                .append("}")
+                .toString();
     }
 }

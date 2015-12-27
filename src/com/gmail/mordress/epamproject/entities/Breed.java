@@ -14,8 +14,10 @@ public class Breed extends Entity {
 
     @Override
     public String toString() {
-        return "Breed{" +
-                "name='" + name + '\'' +
-                '}';
+        return new StringBuilder("Breed:{")
+                .append("BreedId = ").append(this.getId())
+                .append(", breedName = ").append(name)
+                .append("}")
+                .toString();
     }
 }
