@@ -34,7 +34,6 @@ public class BetDeleteAction extends UserAction {
             logger.info("User " + currentUser.getLogin() + " deleted his bet with id = " + betId);
         } catch (PersistentException | NumberFormatException e ) {
             logger.error("Can not delete bet with id = " + request.getParameter("id"));
-
         }
         return forward;
     }

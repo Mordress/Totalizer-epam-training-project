@@ -1,6 +1,5 @@
 package services;
 
-
 import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
 import com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl;
 import com.gmail.mordress.lab4.domain.HorseRace;
@@ -27,7 +26,6 @@ public class HorseRaceServiceImplTest {
             for (HorseRace horseRace : horseRaces) {
                 System.out.println(horseRace);
             }
-
         } catch (PersistentException e) {
             e.printStackTrace();
         }

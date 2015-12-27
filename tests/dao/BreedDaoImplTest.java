@@ -16,52 +16,36 @@ public class BreedDaoImplTest {
             DaoFactory instance = new DaoFactoryImpl();
             BreedDaoImpl bdi = instance.createDao(BreedDao.class);
 
-            /*Testing BreedDaoImpl.getAllBreeds()*/
+            /* Testing BreedDaoImpl.getAllBreeds() */
             List<Breed> breeds = bdi.getAllBreeds();
             for (Breed breed : breeds) {
                 System.out.println(breed.getId() + " " + breed.getName());
             }
-/*
 
-            */
-/*Testing BreedDaoImpl.findByName()*//*
-
+            /*Testing BreedDaoImpl.findByName()*/
             Breed b = bdi.findByName("Американский рысак");
             System.out.println(b);
 
-            */
-/*Testing BreedDaoImpl.create()*//*
-
-
-            */
-/*Breed br = new Breed();
+            /*Testing BreedDaoImpl.create()*/
+            Breed br = new Breed();
             br.setName("some");
             br.setId(6);
             Integer i = bdi.create(br);
-            System.out.println(i);*//*
+            System.out.println(i);
 
-
-            */
-/*Testing read*//*
-
-            Integer i = 3;
-            Breed brd = bdi.read(i);
+            /*Testing read*/
+            Integer j = 3;
+            Breed brd = bdi.read(j);
             System.out.println(brd);
 
-            */
-/*Testing update*//*
-
+            /*Testing update*/
             Breed bUpdate = new Breed();
             bUpdate.setId(3);
             bUpdate.setName("Американский гусь");
             bdi.update(bUpdate);
 
-            */
-/*Testing delete*//*
-
+            /*Testing delete*/
             bdi.delete(5);
-*/
-
         } catch (PersistentException e) {
             e.printStackTrace();
         }

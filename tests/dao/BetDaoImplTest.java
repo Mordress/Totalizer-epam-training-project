@@ -12,20 +12,21 @@ import java.util.List;
 public class BetDaoImplTest {
 
     public static void main(String[] args) {
+        /*
         try {
             DaoFactory factory = new DaoFactoryImpl();
             BetDaoImpl bdi = factory.createDao(BetDao.class);
-            //Bet bet = bdi.read(3);
-            //System.out.println(bet);
+            Bet bet = bdi.read(3);
+            System.out.println(bet);
 
-           /* UserDaoImpl udi = factory.createDao(UserDao.class);
+            UserDaoImpl udi = factory.createDao(UserDao.class);
             User user = udi.read(4);
 
             List<Bet> bets = bdi.findWinnedBetsByUser(user);
             for (Bet bet : bets) {
                 System.out.println(bet);
-            }*/
-            /*BreedDaoImpl brdi = factory.createDao(BreedDao.class);
+            }
+            BreedDaoImpl brdi = factory.createDao(BreedDao.class);
             HorseDaoImpl hdi = factory.createDao(HorseDao.class);
             RaceDaoImpl rdi = factory.createDao(RaceDao.class);
             UserDaoImpl udi = factory.createDao(UserDao.class);
@@ -58,21 +59,15 @@ public class BetDaoImplTest {
             System.out.println(bet);
             bdi.create(bet);
             bet.setIsWinner(true);
-            bdi.update(bet);*/
+            bdi.update(bet);
 
             List<Bet> bets = bdi.findNotCompleteBets();
             for (Bet bet : bets) {
                 System.out.println(bet);
             }
-
-
-
-
         } catch (PersistentException e1) {
             e1.printStackTrace();
         }
-
-        ;
-        //TODO other test
+        */
     }
 }

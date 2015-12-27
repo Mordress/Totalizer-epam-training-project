@@ -6,7 +6,6 @@ import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.implementations.ServiceFactoryImpl;
 import com.gmail.mordress.lab4.services.interfaces.BetService;
 import com.gmail.mordress.lab4.services.interfaces.ServiceFactory;
-
 import java.util.List;
 
 public class BetServiceImplTest {
@@ -19,7 +18,6 @@ public class BetServiceImplTest {
             for (Bet bet : bets) {
                 System.out.println(bets);
             }
-
         } catch (PersistentException e) {
             e.printStackTrace();
         }

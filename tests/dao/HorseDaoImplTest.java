@@ -4,8 +4,10 @@ import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
 import com.gmail.mordress.lab4.dao.implementation.HorseDaoImpl;
 import com.gmail.mordress.lab4.dao.interfaces.DaoFactory;
 import com.gmail.mordress.lab4.dao.interfaces.HorseDao;
+import com.gmail.mordress.lab4.domain.Breed;
 import com.gmail.mordress.lab4.domain.Horse;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
+import java.util.List;
 
 public class HorseDaoImplTest {
 
@@ -13,7 +15,7 @@ public class HorseDaoImplTest {
         try {
             DaoFactory instance = new DaoFactoryImpl();
             HorseDaoImpl hdi = instance.createDao(HorseDao.class);
-           /* Horse horse1 = hdi.read(2);
+            Horse horse1 = hdi.read(2);
             System.out.println(horse1);
 
             Horse horse2 = new Horse();
@@ -25,27 +27,21 @@ public class HorseDaoImplTest {
             breed2.setId(1);
             breed2.setName("Орловский рысак");
             horse2.setBreed(breed2);
+            hdi.update(horse2);
 
-            hdi.update(horse2);*/
-
-            /*List<Horse> horses = hdi.getAllHorses();
+            List<Horse> horses = hdi.getAllHorses();
             for (Horse horse : horses) {
                 System.out.println(horse);
             }
-            */
 
-            /*Breed breed = new Breed();
+            Breed breed = new Breed();
             breed.setId(3);
-            List<Horse> horses = hdi.findHorsesByBreed(breed);
-            for (Horse horse : horses) {
+            List<Horse> horsez = hdi.findHorsesByBreed(breed);
+            for (Horse horse : horsez) {
                 System.out.println(horse);
-            }*/
-
+            }
             Horse horse = hdi.findByName("Зератул");
             System.out.println(horse);
-
-
-
         } catch (PersistentException e) {
             e.printStackTrace();
         }

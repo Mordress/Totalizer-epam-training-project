@@ -46,7 +46,6 @@ public class SecurityFilter implements Filter {
             }
             if(canExecute) {
                 chain.doFilter(request, response);
-                logger.debug("Successful past throught Security filter");
             } else {
                 logger.info(String.format("Trying of %s access to forbidden resource \"%s\"", userName, action.getName()));
                 if(session != null && action.getClass() != MainAction.class) {

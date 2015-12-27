@@ -41,15 +41,16 @@ public class RegistrationSaveAction extends Action {
                 user.setCashAmount(new BigDecimal("1000"));
                 userService.save(user);
                 forwardSuccesfull.getAttributes().put("message", "Пользователь успешно создан.");
-                logger.info("User " + user.getLogin() + " successful created.");
+                logger.info(String.format("User \"%s\" successful created.", user.getLogin()));
             } else {
                 forwardFailed.getAttributes().put("message", "Пользователь с таким логином уже существует");
-                logger.error("Can not create user: " + userLogin + ". Reason: user already exists.");
+                logger.error(String.format("Impossible to create user \"%s\"." +
+                        " Reason: that user already exists.", userLogin));
                 return forwardFailed;
             }
         } catch (PersistentException | NullPointerException e) {
             forwardFailed.getAttributes().put("message", "Не удалось создать пользователя с такими данным");
-            logger.error("Can not create user: " + userLogin + ". Reason: incorrect input.");
+            logger.error(String.format("Can not create user:\"%s\". Reason: incorrect input.", userLogin));
             return forwardFailed;
         }
         return forwardSuccesfull;
