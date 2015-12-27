@@ -26,7 +26,6 @@ public class HorseRaceResultSaveAction extends AdministratorAction {
         String newTimeHours = request.getParameter("newTimeHours");
         String newTimeMinutes = request.getParameter("newTimeMinutes");
         String newTimeSeconds = request.getParameter("newTimeSeconds");
-        //TODO VALIDATION FOR DUPLICATES RANKS
         try {
             HorseRaceService horseRaceService = factory.getService(HorseRaceService.class);
             HorseRace horseRace = horseRaceService.findById(Integer.parseInt(horseRaceId));

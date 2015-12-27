@@ -10,7 +10,7 @@
         <ul class="right">
         <c:forEach items="${menu}" var="item">
             <c:url value="${item.url}" var="itemUrl"/>
-            <li class="item"><A href="${itemUrl}">на главную</A></li>
+            <li class="item"><A href="${itemUrl}">${item.name}</A></li>
         </c:forEach>
         <c:url value="/profile/edit.html" var="profileEditUrl"/>
         <li class="item"><A href="${profileEditUrl}">профиль</A></li>
