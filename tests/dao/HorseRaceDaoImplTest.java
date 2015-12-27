@@ -1,6 +1,6 @@
 package dao;
 
-import com.gmail.mordress.lab4.dao.implementation.*;
+import com.gmail.mordress.lab4.dao.mysql.*;
 import com.gmail.mordress.lab4.dao.interfaces.*;
 import com.gmail.mordress.lab4.domain.Breed;
 import com.gmail.mordress.lab4.domain.Horse;

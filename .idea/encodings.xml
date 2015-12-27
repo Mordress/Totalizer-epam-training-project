@@ -38,14 +38,6 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/controller/DispatcherServlet.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/controller/EncodingFilter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/controller/SecurityFilter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/BaseDaoImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/BetDaoImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/BreedDaoImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/DaoFactoryImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/HorseDaoImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/HorseRaceDaoImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/RaceDaoImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/implementation/UserDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/interfaces/BetDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/interfaces/BreedDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/interfaces/Dao.java" charset="UTF-8" />
@@ -54,6 +46,14 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/interfaces/HorseRaceDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/interfaces/RaceDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/interfaces/UserDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/mysql/BaseDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/mysql/BetDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/mysql/BreedDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/mysql/DaoFactoryImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/mysql/HorseDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/mysql/HorseRaceDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/mysql/RaceDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/mysql/UserDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/pool/ConnectionPool.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/dao/pool/PooledConnection.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/lab4/domain/Bet.java" charset="UTF-8" />

@@ -1,6 +1,6 @@
 package services;
 
-import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
+import com.gmail.mordress.lab4.dao.mysql.DaoFactoryImpl;
 import com.gmail.mordress.lab4.domain.Bet;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.implementations.ServiceFactoryImpl;

@@ -1,4 +1,4 @@
-package com.gmail.mordress.lab4.dao.implementation;
+package com.gmail.mordress.lab4.dao.mysql;
 
 import com.gmail.mordress.lab4.dao.interfaces.BetDao;
 import com.gmail.mordress.lab4.domain.Bet;
@@ -45,7 +45,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             }
             return bets;
         } catch (SQLException e) {
-            logger.error("Can not find bets by userID = " + instance.getId());
+            logger.error(String.format("Can not find bets by user \"%s\"", instance.getLogin()));
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -126,7 +126,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             }
             return bets;
         } catch (SQLException e) {
-            logger.error("Can not find winned users by user with id = " + instance.getId());
+            logger.error(String.format("Can not find winned bets by user \"%s\"", instance.getLogin()));
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {
@@ -166,7 +166,7 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
             }
             return bets;
         } catch (SQLException e) {
-            logger.error("Can not take no complete bets form db");
+            logger.error("Can not take no-complete bets form db");
             throw new PersistentException(e.getMessage(), e.getCause());
         } finally {
             try {

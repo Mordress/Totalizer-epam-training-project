@@ -1,4 +1,4 @@
-package com.gmail.mordress.lab4.dao.implementation;
+package com.gmail.mordress.lab4.dao.mysql;
 
 import java.sql.Connection;
 

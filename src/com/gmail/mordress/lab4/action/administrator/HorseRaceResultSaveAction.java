@@ -48,10 +48,7 @@ public class HorseRaceResultSaveAction extends AdministratorAction {
                 return forward;
             }
         } catch (NumberFormatException e) {
-            logger.warn(new StringBuilder("Can not update horse-race result, because administartor use wrong input")
-            .append(" New horse rank:").append(newRank).append(" resault hours: ").append(newTimeHours)
-            .append(" resault minutes:").append(newTimeMinutes).append(" resault secs:").append(newTimeSeconds)
-            .toString());
+            logger.error("Can not update horseRace result, because administrator use wrong data");
         }
         return forward;
     }

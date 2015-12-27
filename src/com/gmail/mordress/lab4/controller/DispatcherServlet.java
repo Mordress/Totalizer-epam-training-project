@@ -4,7 +4,7 @@ import com.gmail.mordress.lab4.action.Action;
 import com.gmail.mordress.lab4.action.ActionManager;
 import com.gmail.mordress.lab4.action.ActionManagerFactory;
 import com.gmail.mordress.lab4.action.ActionManagerFactoryImpl;
-import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
+import com.gmail.mordress.lab4.dao.mysql.DaoFactoryImpl;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
 import com.gmail.mordress.lab4.services.implementations.ServiceFactoryImpl;
 import org.apache.log4j.Logger;

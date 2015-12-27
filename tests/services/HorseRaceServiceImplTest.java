@@ -1,12 +1,9 @@
 package services;
 
-import com.gmail.mordress.lab4.dao.implementation.DaoFactoryImpl;
-import com.gmail.mordress.lab4.dao.implementation.RaceDaoImpl;
+import com.gmail.mordress.lab4.dao.mysql.DaoFactoryImpl;
 import com.gmail.mordress.lab4.domain.HorseRace;
 import com.gmail.mordress.lab4.domain.Race;
 import com.gmail.mordress.lab4.exceptions.PersistentException;
-import com.gmail.mordress.lab4.services.implementations.HorseRaceServiceImpl;
-import com.gmail.mordress.lab4.services.implementations.RaceServiceImpl;
 import com.gmail.mordress.lab4.services.implementations.ServiceFactoryImpl;
 import com.gmail.mordress.lab4.services.interfaces.HorseRaceService;
 import com.gmail.mordress.lab4.services.interfaces.RaceService;

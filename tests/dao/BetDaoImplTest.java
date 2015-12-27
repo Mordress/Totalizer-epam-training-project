@@ -1,14 +1,5 @@
 package dao;
 
-import com.gmail.mordress.lab4.dao.implementation.*;
-import com.gmail.mordress.lab4.dao.interfaces.*;
-import com.gmail.mordress.lab4.domain.*;
-import com.gmail.mordress.lab4.exceptions.PersistentException;
-
-import java.math.BigDecimal;
-import java.util.Date;
-import java.util.List;
-
 public class BetDaoImplTest {
 
     public static void main(String[] args) {
