@@ -2,6 +2,11 @@ package com.gmail.mordress.epamproject.entities;
 
 import java.util.Date;
 
+/**
+ * Class-Entity, describes race.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class Race extends Entity {
 
     private Date raceDate;

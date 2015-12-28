@@ -1,5 +1,10 @@
 package com.gmail.mordress.epamproject.entities;
 
+/**
+ * Class-Entity, describes horse's breed.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class Breed extends Entity {
 
     private String name;

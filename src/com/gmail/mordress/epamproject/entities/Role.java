@@ -1,5 +1,11 @@
 package com.gmail.mordress.epamproject.entities;
 
+/**
+ * Class-Entity, describes user's roles. There are 3 possible roles:
+ * <b>user</b>, <b>bookmaker</b>, <b>administrator</b>.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public enum Role {
 
     USER("пользователь"),

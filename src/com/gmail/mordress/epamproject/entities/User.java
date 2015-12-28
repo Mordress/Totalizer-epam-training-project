@@ -2,20 +2,28 @@ package com.gmail.mordress.epamproject.entities;
 
 import java.math.BigDecimal;
 
+/**
+ * Class-Entity, describes user.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class User extends Entity {
 
+    /** Unique field needs to authentication and authorization user in web-app. */
     private String login;
 
     private String firstName;
 
     private String lastName;
 
+    /** This field stores user's password as SHA-256 hash*/
     private String password;
 
     private String email;
 
     private Role role;
 
+    /** This field uses to store user's cash. User-administrator and user-bookmaker have not cash(value == null). */
     private BigDecimal cashAmount;
 
     public String getLogin() {

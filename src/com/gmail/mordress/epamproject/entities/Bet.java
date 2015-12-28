@@ -3,14 +3,23 @@ package com.gmail.mordress.epamproject.entities;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * Class-Entity, describes user's bet.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class Bet extends Entity {
 
+    /** This field store result of race for distinct horse */
     private HorseRace horseRace;
 
+    /** This field store expected result of race for distinct horse */
     private Integer resultRank;
 
+    /** This field store size of bet's cash(USD). */
     private BigDecimal betAmount;
 
+    /** This field store size of gain cash(USD). */
     private BigDecimal winAmount;
 
     private Boolean isWinner;

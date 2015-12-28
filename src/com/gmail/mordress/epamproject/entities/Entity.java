@@ -2,6 +2,11 @@ package com.gmail.mordress.epamproject.entities;
 
 import java.io.Serializable;
 
+/**
+ * Class-Entity, describes abstract entity.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public abstract class Entity  implements Serializable {
 
     private Integer id;

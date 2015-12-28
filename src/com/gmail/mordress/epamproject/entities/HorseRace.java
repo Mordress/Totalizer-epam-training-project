@@ -2,6 +2,11 @@ package com.gmail.mordress.epamproject.entities;
 
 import java.util.Date;
 
+/**
+ * Class-Entity, describes results of race for each horse.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class HorseRace extends Entity {
 
     private Race race;
