@@ -7,6 +7,7 @@ import com.gmail.mordress.epamproject.services.ifaces.BreedService;
 import java.util.List;
 
 public class BreedServiceImpl extends ServiceImpl implements BreedService {
+
     @Override
     public Breed findByName(String name) throws PersistentException {
         BreedDao dao = factory.createDao(BreedDao.class);

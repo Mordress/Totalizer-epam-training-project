@@ -18,7 +18,7 @@ public class ProfileSaveAction extends AuthorizedUserAction {
         String newPassword = request.getParameter("new-password");
         String confirmPassword = request.getParameter("confirm-password");
         User authorizedUser = getAuthorizedUser();
-        if(oldPassword != null && newPassword != null && confirmPassword != null) {
+        if (oldPassword != null && newPassword != null && confirmPassword != null) {
             if (!newPassword.equals(confirmPassword)) {
                 forward.getAttributes().put("message", "Ошибка при наборе нового пароля");
                 logger.info(String.format("User \"%s\" tried to change password and specified the incorrect new password", authorizedUser.getLogin()));

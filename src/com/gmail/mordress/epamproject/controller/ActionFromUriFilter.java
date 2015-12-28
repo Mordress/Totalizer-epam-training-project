@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ActionFromUriFilter implements Filter {
+
     private static Logger logger = Logger.getLogger(ActionFromUriFilter.class);
 
     private static Map<String, Class<? extends Action>> actions = new ConcurrentHashMap<>();
@@ -28,7 +29,6 @@ public class ActionFromUriFilter implements Filter {
         actions.put("/logout", LogoutAction.class);
         actions.put("/registration", RegistrationAction.class);
         actions.put("/regsave", RegistrationSaveAction.class);
-
         actions.put("/profile/edit", ProfileEditAction.class);
         actions.put("/profile/save", ProfileSaveAction.class);
         actions.put("/horses", HorseListAction.class);
@@ -55,7 +55,7 @@ public class ActionFromUriFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        if(request instanceof HttpServletRequest) {
+        if (request instanceof HttpServletRequest) {
             HttpServletRequest httpRequest = (HttpServletRequest)request;
             String contextPath = httpRequest.getContextPath();
             String uri = httpRequest.getRequestURI();

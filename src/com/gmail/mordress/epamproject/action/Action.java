@@ -14,13 +14,13 @@ import java.util.Set;
 
 public abstract class Action {
 
+    protected ServiceFactory factory;
+
     private Set<Role> allowRoles = new HashSet<>();
 
     private User authorizedUser;
 
     private String name;
-
-    protected ServiceFactory factory;
 
     public Set<Role> getAllowRoles() {
         return allowRoles;

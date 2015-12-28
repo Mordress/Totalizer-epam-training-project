@@ -46,13 +46,13 @@ public class DispatcherServlet extends HttpServlet {
             Action.Forward forward = actionManager.execute(action, request, response);
             actionManager.close();
             String requestedUri = request.getRequestURI();
-            if(forward != null && forward.isRedirect()) {
+            if (forward != null && forward.isRedirect()) {
                 String redirectedUri = request.getContextPath() + forward.getForward();
                 logger.debug(String.format("Request for URI \"%s\" id redirected to URI \"%s\"", requestedUri, redirectedUri));
                 response.sendRedirect(redirectedUri);
             } else {
                 String jspPage;
-                if(forward != null) {
+                if (forward != null) {
                     jspPage = forward.getForward();
                 } else {
                     jspPage = action.getName() + ".jsp";

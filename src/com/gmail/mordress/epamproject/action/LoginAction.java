@@ -40,10 +40,10 @@ public class LoginAction extends Action {
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-        if(login != null && password != null) {
+        if (login != null && password != null) {
             UserService service = factory.getService(UserService.class);
             User user = service.findUser(login, password);
-            if(user != null) {
+            if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("authorizedUser", user);
                 session.setAttribute("menu", menu.get(user.getRole()));

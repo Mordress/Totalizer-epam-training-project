@@ -23,8 +23,7 @@ public class BetsNewSaveAction extends UserAction {
             Integer horseId = Integer.parseInt(request.getParameter("chosenHorseId"));
             String betAmount = request.getParameter("betAmount");
             Integer rank = Integer.parseInt(request.getParameter("rank"));
-
-            /*Создаем по частям новую ставку*/
+            /* creating new bet from parts*/
             HorseService horseService = factory.getService(HorseService.class);
             Horse horse = horseService.findHorseById(horseId);
             RaceService raceService = factory.getService(RaceService.class);
@@ -39,21 +38,16 @@ public class BetsNewSaveAction extends UserAction {
             bet.setUser(currentUser);
             bet.setCreatedDate(new Date());
             betService.save(bet);
-
-            /*Если всё прошло хорошо и не был выброшен никакой эксепшн, то вычитаем размер ставки из баланса пользователя */
+            /* if exception not be throwed, updating user cash */
             UserService userService = factory.getService(UserService.class);
             BigDecimal newCashAmount = currentUser.getCashAmount();
             newCashAmount = newCashAmount.subtract(new BigDecimal(betAmount));
             currentUser.setCashAmount(newCashAmount);
             userService.updateUserCash(currentUser.getId(), currentUser.getCashAmount());
             forward.getAttributes().put("message", "Ваша ставка успешно создана");
-
         } catch (NumberFormatException | PersistentException e) {
             logger.error("User " + currentUser.getLogin() + " can't create new bet");
             forward.getAttributes().put("message", "Не удалось создать ставку");
-            //написать в mesage, что он не может сделать ставку
-            //откатить деньги назад
-            //ловить эксепшн, есои что- то пошло не так и не создавать ставку
         }
 
         return forward;

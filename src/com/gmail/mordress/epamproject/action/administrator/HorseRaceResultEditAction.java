@@ -30,6 +30,4 @@ public class HorseRaceResultEditAction extends AdministratorAction {
         }
         return null;
     }
-
-
 }

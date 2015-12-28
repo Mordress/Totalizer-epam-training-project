@@ -22,7 +22,7 @@ public class SecurityFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        if(request instanceof HttpServletRequest && response instanceof HttpServletResponse) {
+        if (request instanceof HttpServletRequest && response instanceof HttpServletResponse) {
             HttpServletRequest httpRequest = (HttpServletRequest)request;
             HttpServletResponse httpResponse = (HttpServletResponse)response;
             Action action = (Action)httpRequest.getAttribute("action");
@@ -30,21 +30,21 @@ public class SecurityFilter implements Filter {
             String userName = "unauthorized user";
             HttpSession session = httpRequest.getSession(false);
             User user = null;
-            if(session != null) {
+            if (session != null) {
                 user = (User)session.getAttribute("authorizedUser");
                 action.setAuthorizedUser(user);
                 String errorMessage = (String)session.getAttribute("SecurityFilterMessage");
-                if(errorMessage != null) {
+                if (errorMessage != null) {
                     httpRequest.setAttribute("message", errorMessage);
                     session.removeAttribute("SecurityFilterMessage");
                 }
             }
             boolean canExecute = allowRoles == null || allowRoles.isEmpty();
-            if(user != null) {
+            if (user != null) {
                 userName = "\"" + user.getLogin() + "\" user";
                 canExecute = canExecute || allowRoles.contains(user.getRole());
             }
-            if(canExecute) {
+            if (canExecute) {
                 chain.doFilter(request, response);
             } else {
                 logger.info(String.format("Trying of %s access to forbidden resource \"%s\"", userName, action.getName()));
@@ -61,5 +61,4 @@ public class SecurityFilter implements Filter {
 
     @Override
     public void destroy() {}
-
 }

@@ -59,13 +59,13 @@ public class UserServiceImpl extends ServiceImpl implements UserService {
 
     }
 
-    private String hashing(String input) {
-        return Hasher.SHA256(input);
-    }
-
     @Override
     public void updateUserCash(Integer userId, BigDecimal newCashAmount) throws PersistentException {
         UserDao dao = factory.createDao(UserDao.class);
         dao.updateUserCash(userId, newCashAmount);
+    }
+
+    private String hashing(String input) {
+        return Hasher.SHA256(input);
     }
 }
