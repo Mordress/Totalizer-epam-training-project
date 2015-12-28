@@ -15,6 +15,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Authentication and authorization user.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class LoginAction extends Action {
 
     private static Logger logger = Logger.getLogger(LoginAction.class);
@@ -36,6 +41,12 @@ public class LoginAction extends Action {
         )));
     }
 
+    /** Process data from user's input. Redirect to appropriate action basing user role. Fixing information
+     * about try to login in web-app.
+     * @param request incapsulating of HTTP request
+     * @param response incapsulating of HTTP response
+     * @return null - if try to login failed; forward to main page - if login succesful.
+     * @throws PersistentException - if service and dao layers produce this exception */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         String login = request.getParameter("login");

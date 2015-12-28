@@ -33,7 +33,6 @@ public interface UserDao extends Dao<User> {
     /** Update user's cash amount.
      * @param userId - user's id.
      * @param newCashAmount - value of new cash for user.
-     * @return List of user instances.
      * @throws PersistentException - if DBMS can't successful complete this operation. */
     public void updateUserCash(Integer userId, BigDecimal newCashAmount) throws PersistentException;
 }

@@ -12,10 +12,16 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * This class incapsulate requested action, which matches URI, requested by front-end.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public abstract class Action {
 
     protected ServiceFactory factory;
 
+    /** This field contains set of roles, possible for that authorized user */
     private Set<Role> allowRoles = new HashSet<>();
 
     private User authorizedUser;
@@ -50,10 +56,21 @@ public abstract class Action {
         this.factory = factory;
     }
 
+    /** Execute commands, which needs for formation jsp, and pass contorls to next servlet or to jsp
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     * @return {@link Action.Forward}
+     * @throws PersistentException - if service and dao layers produce this exception */
     public abstract Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException;
 
+    /**
+     * This class incapsulate passing controls between servlets and/or jsp.
+     * @author Alexey Kardychko
+     * @version 1.0
+     */
     public static class Forward {
 
+        /** This field contains URI with next servlet or jsp */
         private String forward;
 
         private boolean redirect;

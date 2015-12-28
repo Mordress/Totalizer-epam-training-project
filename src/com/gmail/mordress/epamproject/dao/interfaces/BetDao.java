@@ -15,21 +15,26 @@ public interface BetDao extends Dao<Bet> {
     /** Returns all bets by some user.
      * @param user - user.
      * @return List of user's bets
-     * @throws PersistentException - if DBMS can't successful complete this operation. */
+     * @throws PersistentException - if DBMS can't successful complete this operation.
+     */
     public List<Bet> findAllBetsByUser(User user) throws PersistentException;
 
     /** Returns all bets, which winned in racing.
      * @return List of bets.
-     * @throws PersistentException - if DBMS can't successful complete this operation. */
+     * @throws PersistentException - if DBMS can't successful complete this operation.
+     */
     public List<Bet> findWinnedBets() throws PersistentException;
 
     /** Returns all bets, which winned in racing, by some user.
+     * @param user - user.
      * @return List of user's bets.
-     * @throws PersistentException - if DBMS can't successful complete this operation. */
+     * @throws PersistentException - if DBMS can't successful complete this operation.
+     */
     public List<Bet> findWinnedBetsByUser(User user) throws PersistentException;
 
     /** Returns all bets, which have no been processed by bookmaker.
      * @return List of bets.
-     * @throws PersistentException - if DBMS can't successful complete this operation. */
+     * @throws PersistentException - if DBMS can't successful complete this operation.
+     */
     public List<Bet> findNotCompleteBets() throws PersistentException;
 }

@@ -10,10 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 
+/**
+ * Process input data for create new user.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class RegistrationSaveAction extends Action {
 
     private static Logger logger = Logger.getLogger(RegistrationSaveAction.class);
 
+    /** Process user's input. If data is correct - create new user.
+     * @param request incapsulating of HTTP request
+     * @param response incapsulating of HTTP response
+     * @return forward to login page if registration was successful, and forward to registration page, if registration
+     * failed.
+     * @throws PersistentException - if service and dao layers produce this exception */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Action.Forward forwardSuccesfull = new Action.Forward("/login.html");

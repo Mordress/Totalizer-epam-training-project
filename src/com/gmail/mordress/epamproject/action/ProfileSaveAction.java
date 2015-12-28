@@ -7,10 +7,20 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Process user's input for change his personal data.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class ProfileSaveAction extends AuthorizedUserAction {
 
     private static Logger logger = Logger.getLogger(ProfileSaveAction.class);
 
+    /** Checking user's input old and new passwords, if that correct - changes it.
+     * @param request incapsulating of HTTP request
+     * @param response incapsulating of HTTP response
+     * @return forward to this page.
+     * @throws PersistentException - if service and dao layers produce this exception */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Action.Forward forward = new Action.Forward("/profile/edit.html");

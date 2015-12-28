@@ -5,6 +5,11 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Forward user to registration page.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class RegistrationAction extends Action {
 
     private static Logger logger = Logger.getLogger(RegistrationAction.class);

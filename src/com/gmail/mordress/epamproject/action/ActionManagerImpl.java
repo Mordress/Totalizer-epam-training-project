@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 
+/**
+ * Provides processing actions and transfer attributes between servlets.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class ActionManagerImpl implements ActionManager {
 
     private ServiceFactory factory;

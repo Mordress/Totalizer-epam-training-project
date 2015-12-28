@@ -11,6 +11,7 @@ public interface DaoFactory {
 
     /** Returns distinct DAO implementation for distinct DAO interface.
      * @param key - Distinct DAO interface.
+     * @param <T> - Distinct DAO implementation.
      * @return Distinct DAO implementation.
      * @throws PersistentException - if DBMS can't successful complete this operation. */
     <T extends Dao<?>> T createDao(Class<? extends Dao<?>> key) throws PersistentException;
