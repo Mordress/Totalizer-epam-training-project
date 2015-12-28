@@ -10,11 +10,25 @@ import java.io.Serializable;
  */
 public interface Dao<T extends Serializable> {
 
+    /** Create in db entity instance.
+     * @param instance - generic instance of some entity.
+     * @return id of created entity.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     public Integer create(T instance) throws PersistentException;
 
+    /** Read from db entity instance.
+     * @param id - generic instance id of some entity.
+     * @return generic instance of readed entity.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     public T read(Integer id) throws PersistentException;
 
+    /** Update db record with new entity instance.
+     * @param instance - generic instance of some entity.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     public void update(T instance) throws PersistentException;
 
+    /** Delete db record with entity instance.
+     * @param id - generic instance id of some entity.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     public void delete(Integer id) throws PersistentException;
 }
