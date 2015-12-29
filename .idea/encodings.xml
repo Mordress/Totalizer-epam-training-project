@@ -26,14 +26,18 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/administrator/RaceEditAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/administrator/RaceListAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/administrator/RaceSaveAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/administrator/package-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/bookmaker/BetFixListAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/bookmaker/BetsFixedAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/bookmaker/BookmakerAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/bookmaker/package-info.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/package-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/user/BetDeleteAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/user/BetsCreateAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/user/BetsListAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/user/BetsNewSaveAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/user/UserAction.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/action/user/package-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/controller/ActionFromUriFilter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/controller/DispatcherServlet.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/controller/EncodingFilter.java" charset="UTF-8" />
@@ -46,6 +50,7 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/interfaces/HorseRaceDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/interfaces/RaceDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/interfaces/UserDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/interfaces/package-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/mysql/BaseDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/mysql/BetDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/mysql/BreedDaoImpl.java" charset="UTF-8" />
@@ -54,6 +59,7 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/mysql/HorseRaceDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/mysql/RaceDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/mysql/UserDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/mysql/package-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/pool/ConnectionPool.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/dao/pool/PooledConnection.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/entities/Bet.java" charset="UTF-8" />
@@ -63,7 +69,9 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/entities/HorseRace.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/entities/Race.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/entities/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/entities/package-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/exceptions/PersistentException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/exceptions/package-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/ifaces/BetService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/ifaces/BreedService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/ifaces/HorseRaceService.java" charset="UTF-8" />
@@ -72,6 +80,7 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/ifaces/Service.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/ifaces/ServiceFactory.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/ifaces/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/ifaces/package-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/impls/BetServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/impls/BreedServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/impls/HorseRaceServiceImpl.java" charset="UTF-8" />
@@ -80,8 +89,11 @@
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/impls/ServiceFactoryImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/impls/ServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/impls/UserServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/services/impls/package-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/utils/DateFormatConverter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/utils/Hasher.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/utils/package-info.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/gmail/mordress/epamproject/validators/package-info.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/TimeTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/dao/BetDaoImplTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/dao/BreedDaoImplTest.java" charset="UTF-8" />
