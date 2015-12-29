@@ -13,10 +13,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
+/**
+ * Process input data from administrator about horseRaces for save changes.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class HorseRaceResultSaveAction extends AdministratorAction {
 
     private static Logger logger = Logger.getLogger(HorseRaceResultSaveAction.class);
 
+    /** Saving horseRaces's changes, if they valid, using service layer.
+     * @param request incapsulating of HTTP request.
+     * @param response incapsulating of HTTP response.
+     * @return forward to page for editing horseRaces.
+     * @throws PersistentException - if service and dao layers produce this exception. */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/horseraces/edit.html");

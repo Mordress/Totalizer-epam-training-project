@@ -6,6 +6,11 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Forwarding administrator to page for editing races.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class RaceEditAction extends AdministratorAction {
 
     private static Logger logger = Logger.getLogger(RaceEditAction.class);

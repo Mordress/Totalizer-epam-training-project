@@ -21,12 +21,11 @@ public class HorseRaceEditAction extends AdministratorAction {
 
     private static Logger logger = Logger.getLogger(HorseRaceEditAction.class);
 
-    /** Forming horseRaces for race, chosen by administrator.
-     * @param request incapsulating of HTTP request
-     * @param response incapsulating of HTTP response
-     * @return forward to login page if registration was successful, and forward to registration page, if registration
-     * failed.
-     * @throws PersistentException - if service and dao layers produce this exception */
+    /** Forming horseRaces using service layer for race, chosen by administrator.
+     * @param request incapsulating of HTTP request.
+     * @param response incapsulating of HTTP response.
+     * @return {@code null}.
+     * @throws PersistentException - if service and dao layers produce this exception. */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         try {

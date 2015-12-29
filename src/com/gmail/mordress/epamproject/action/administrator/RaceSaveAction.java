@@ -17,10 +17,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Processing input data from administrator for save new race.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class RaceSaveAction extends AdministratorAction {
 
     private static Logger logger = Logger.getLogger(RaceSaveAction.class);
 
+    /** Validate input data from administrator and create new race using service layer.
+     * @param request incapsulating of HTTP request.
+     * @param response incapsulating of HTTP response.
+     * @return forward to main page for administrator.
+     * @throws PersistentException - if service and dao layers produce this exception. */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/races/list.html");
