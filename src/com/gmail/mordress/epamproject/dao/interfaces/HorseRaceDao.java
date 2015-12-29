@@ -19,10 +19,10 @@ public interface HorseRaceDao extends Dao<HorseRace> {
      * @throws PersistentException - if DBMS can't successful complete this operation. */
     public List<HorseRace> findByRace(Race race) throws PersistentException;
 
-    /** Returns all horseRace instances with same race and same horse.
+    /** Returns horseRace instance with same race and same horse.
      * @param horseId - Horse instance id.
      * @param raceId - Race instance id.
-     * @return List of HorseRace instances.
+     * @return horseRace instance.
      * @throws PersistentException - if DBMS can't successful complete this operation. */
     public HorseRace findByRaceAndHorse(Integer horseId, Integer raceId) throws PersistentException;
 
