@@ -1,0 +1,16 @@
+com.gmail.mordress.epamproject.action
+com.gmail.mordress.epamproject.action.administrator
+com.gmail.mordress.epamproject.action.bookmaker
+com.gmail.mordress.epamproject.action.user
+com.gmail.mordress.epamproject.controller
+com.gmail.mordress.epamproject.dao.interfaces
+com.gmail.mordress.epamproject.dao.mysql
+com.gmail.mordress.epamproject.dao.pool
+com.gmail.mordress.epamproject.entities
+com.gmail.mordress.epamproject.exceptions
+com.gmail.mordress.epamproject.services.ifaces
+com.gmail.mordress.epamproject.services.impls
+com.gmail.mordress.epamproject.utils
+com.gmail.mordress.epamproject.validators
+javax.servlet
+javax.servlet.http
