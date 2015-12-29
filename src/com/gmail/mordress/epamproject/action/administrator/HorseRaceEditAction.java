@@ -12,10 +12,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+/**
+ * Process input data from administrator about horseRaces for some race.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class HorseRaceEditAction extends AdministratorAction {
 
     private static Logger logger = Logger.getLogger(HorseRaceEditAction.class);
 
+    /** Forming horseRaces for race, chosen by administrator.
+     * @param request incapsulating of HTTP request
+     * @param response incapsulating of HTTP response
+     * @return forward to login page if registration was successful, and forward to registration page, if registration
+     * failed.
+     * @throws PersistentException - if service and dao layers produce this exception */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         try {
