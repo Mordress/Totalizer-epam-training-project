@@ -11,10 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 
+/**
+ * Processing user's bets.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class BetsFixedAction extends BookmakerAction {
 
     private static Logger logger = Logger.getLogger(BetsFixedAction.class);
 
+    /** Sets winned bets, and size of win cash. Transfer win cash to user' cash.
+     * @param request incapsulating of HTTP request.
+     * @param response incapsulating of HTTP response.
+     * @return main page for bookmaker.
+     * @throws PersistentException - if service and dao layers produce this exception. */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/bets/fix.html");

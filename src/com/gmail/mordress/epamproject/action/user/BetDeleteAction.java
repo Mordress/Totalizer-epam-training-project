@@ -10,10 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 
+/**
+ * Deletes user's bets.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class BetDeleteAction extends UserAction {
 
     private static Logger logger = Logger.getLogger(BetDeleteAction.class);
 
+    /** Delete no-complete bet. Refound cash to user.
+     * @param request incapsulating of HTTP request.
+     * @param response incapsulating of HTTP response.
+     * @return main page for bookmaker.
+     * @throws PersistentException - if service and dao layers produce this exception. */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/bets/list.html");

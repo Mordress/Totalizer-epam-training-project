@@ -10,10 +10,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * Processes input data from user for create new bet.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class BetsNewSaveAction extends UserAction {
 
     private static Logger logger = Logger.getLogger(BetsNewSaveAction.class);
 
+    /** Creates new bet, updates user's cash after it. If bet can not be created, cash will be not updated.
+     * @param request incapsulating of HTTP request.
+     * @param response incapsulating of HTTP response.
+     * @return forward to main page for user.
+     * @throws PersistentException - if service and dao layers produce this exception. */
     @Override
     public Action.Forward exec(HttpServletRequest request, HttpServletResponse response) throws PersistentException {
         Forward forward = new Forward("/bets/list.html");
