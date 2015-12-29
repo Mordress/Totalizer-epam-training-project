@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Provides operations for bet-interaction with dao-layer.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class BetServiceImpl extends ServiceImpl implements BetService {
 
     @Override

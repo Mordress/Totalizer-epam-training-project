@@ -12,10 +12,18 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Provides additional operations race-interaction with mysql.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
 
     private static Logger logger = Logger.getLogger(RaceDaoImpl.class);
 
+    /** Returns all currently passed race instances.
+     * @return List of HorseRace instances.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public List<Race> getPassedRaces() throws PersistentException {
         String sql = "SELECT * FROM `race` WHERE date < ?";
@@ -49,6 +57,9 @@ public class RaceDaoImpl extends BaseDaoImpl implements RaceDao {
         }
     }
 
+    /** Returns all currently not passed race instances.
+     * @return List of HorseRace instances.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public List<Race> getFutureRaces() throws PersistentException {
         String sql = "SELECT * FROM `race` WHERE date > ?";

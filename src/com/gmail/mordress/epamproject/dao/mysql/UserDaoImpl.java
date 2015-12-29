@@ -14,10 +14,20 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Provides additional operations for user-interaction with mysql.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     private static Logger logger = Logger.getLogger(UserDaoImpl.class);
 
+    /** Returns user, found by login and password.
+     * @param login user's login.
+     * @param password user's password.
+     * @return User instances.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public User findUser(String login, String password) throws PersistentException {
         String sql = "SELECT * FROM `users` WHERE (`login` = ? AND `password` = ?)";
@@ -54,6 +64,10 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
         }
     }
 
+    /** Check for exists some login.
+     * @param login - user's login.
+     * @return Boolean value, true if that login NOT currently exist in db.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public boolean checkUniqueLogin(String login) throws PersistentException {
         String sql = "SELECT `user_ID` FROM `users` WHERE `login` = ?";
@@ -80,6 +94,9 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
         }
     }
 
+    /** Returns all users, not bookmakers and not administrators.
+     * @return List of user instances.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public List<User> getAllSimpleUsers() throws PersistentException {
         String sql = "SELECT * FROM `users` WHERE role = 0";
@@ -232,6 +249,10 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
         }
     }
 
+    /** Update user's cash amount.
+     * @param userId - user's id.
+     * @param newCashAmount - value of new cash for user.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public void updateUserCash(Integer userId, BigDecimal newCashAmount) throws PersistentException {
         String sql = "UPDATE `users` SET `cash_amount` = ? WHERE `user_ID` = ?";

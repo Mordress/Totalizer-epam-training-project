@@ -12,10 +12,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Provides additional operations for horse-interaction with mysql.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
 
     private static Logger logger = Logger.getLogger(HorseDaoImpl.class);
 
+    /** Returns horse instance found by name.
+     * @param name - horse's name.
+     * @return Horse instance.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public Horse findByName(String name) throws PersistentException {
         String sql = "SELECT * FROM `horse` WHERE `name` = ?";
@@ -50,6 +59,10 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
         }
     }
 
+    /** Returns all horses with same breed.
+     * @param instance - Some breed instance.
+     * @return List of Horses.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public List<Horse> findHorsesByBreed(Breed instance) throws PersistentException {
         String sql = "SELECT * FROM `horse` WHERE `breed_ID` = ?";
@@ -88,6 +101,9 @@ public class HorseDaoImpl extends BaseDaoImpl implements HorseDao {
         }
     }
 
+    /** Returns all possible horses.
+     * @return List of Horses.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public List<Horse> getAllHorses() throws PersistentException {
         String sql = "SELECT * FROM `horse` ORDER BY `name`";

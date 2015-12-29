@@ -40,6 +40,7 @@ public interface BetService extends Service{
 
     /** Reads bet from dao-layer.
      * @param id - bet's id.
+     * @return bet's instance.
      * @throws PersistentException - if dao-layer can't successful complete this operation.
      */
     public Bet read(Integer id) throws PersistentException;

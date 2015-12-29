@@ -8,6 +8,11 @@ import org.apache.log4j.Logger;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Provides access to service-classes for interact dao-classes.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class ServiceFactoryImpl implements ServiceFactory {
 
     private static Logger logger = Logger.getLogger(ServiceFactoryImpl.class);

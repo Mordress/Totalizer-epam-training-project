@@ -14,10 +14,20 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Provides additional operations for bet-interaction with mysql.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class BetDaoImpl extends BaseDaoImpl implements BetDao {
 
     private static Logger logger = Logger.getLogger(BetDaoImpl.class);
 
+    /** Returns all bets by some user.
+     * @param instance - user.
+     * @return List of user's bets
+     * @throws PersistentException - if DBMS can't successful complete this operation.
+     */
     @Override
     public List<Bet> findAllBetsByUser(User instance) throws PersistentException {
         String sql = "SELECT * FROM `bet` WHERE `user_ID` = ?";
@@ -57,6 +67,10 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
         }
     }
 
+    /** Returns all bets, which winned in racing.
+     * @return List of bets.
+     * @throws PersistentException - if DBMS can't successful complete this operation.
+     */
     @Override
     public List<Bet> findWinnedBets() throws PersistentException {
         String sql = "SELECT * FROM `bet` WHERE `is_winner` = ?";
@@ -98,6 +112,11 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
         }
     }
 
+    /** Returns all bets, which winned in racing, by some user.
+     * @param instance - user.
+     * @return List of user's bets.
+     * @throws PersistentException - if DBMS can't successful complete this operation.
+     */
     @Override
     public List<Bet> findWinnedBetsByUser(User instance) throws PersistentException {
         String sql = "SELECT * FROM `bet` WHERE (`user_ID` = ? AND `is_winner` = ?)";
@@ -138,6 +157,10 @@ public class BetDaoImpl extends BaseDaoImpl implements BetDao {
         }
     }
 
+    /** Returns all bets, which have no been processed by bookmaker.
+     * @return List of bets.
+     * @throws PersistentException - if DBMS can't successful complete this operation.
+     */
     @Override
     public List<Bet> findNotCompleteBets() throws PersistentException {
         String sql = "SELECT * FROM `bet` WHERE `win_amount` IS NULL";

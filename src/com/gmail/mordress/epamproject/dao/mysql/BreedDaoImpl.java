@@ -11,10 +11,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Provides additional operations for breed-interaction with mysql.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
 
     private static Logger logger = Logger.getLogger(BreedDaoImpl.class);
 
+    /** Returns breed instance found by name.
+     * @param name - breed's name.
+     * @return Breed instance.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public Breed findByName(String name) throws PersistentException {
         String sql = "SELECT * FROM `breed` WHERE `name` = ?";
@@ -44,6 +53,9 @@ public class BreedDaoImpl extends BaseDaoImpl implements BreedDao{
         }
     }
 
+    /** Returns all possible breeds.
+     * @return List of Breeds.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public List<Breed> getAllBreeds() throws PersistentException {
         String sql = "SELECT * FROM `breed` ORDER BY `name`";

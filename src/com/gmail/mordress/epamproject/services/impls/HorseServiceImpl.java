@@ -10,10 +10,19 @@ import org.apache.log4j.Logger;
 
 import java.util.List;
 
+/**
+ * Provides operations for horse-interaction with dao-layer.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class HorseServiceImpl extends ServiceImpl implements HorseService {
 
     private static Logger logger = Logger.getLogger(HorseServiceImpl.class);
 
+    /** Returns horse instance found by name.
+     * @param name - horse's name.
+     * @return Horse instance.
+     * @throws PersistentException - if dao-layer can't successful complete this operation. */
     @Override
     public Horse findByName(String name) throws PersistentException {
         HorseDao horseDao = factory.createDao(HorseDao.class);
@@ -22,6 +31,10 @@ public class HorseServiceImpl extends ServiceImpl implements HorseService {
         return horse;
     }
 
+    /** Returns horse instance found by id.
+     * @param id - horse's id.
+     * @return Horse instance.
+     * @throws PersistentException - if dao-layer can't successful complete this operation. */
     @Override
     public Horse findHorseById(Integer id) throws PersistentException {
         HorseDao horseDao = factory.createDao(HorseDao.class);
@@ -30,6 +43,10 @@ public class HorseServiceImpl extends ServiceImpl implements HorseService {
         return horse;
     }
 
+    /** Returns all horses with same breed.
+     * @param breed - Some breed instance.
+     * @return List of Horses.
+     * @throws PersistentException - if dao-layer can't successful complete this operation. */
     @Override
     public List<Horse> findHorsesByBreed(Breed breed) throws PersistentException {
         HorseDao horseDao = factory.createDao(HorseDao.class);
@@ -38,6 +55,9 @@ public class HorseServiceImpl extends ServiceImpl implements HorseService {
         return horses;
     }
 
+    /** Returns all possible horses.
+     * @return List of Horses.
+     * @throws PersistentException - if dao-layer can't successful complete this operation. */
     @Override
     public List<Horse> getAllHorses() throws PersistentException {
         HorseDao horseDao = factory.createDao(HorseDao.class);

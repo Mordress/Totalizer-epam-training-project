@@ -14,10 +14,19 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Provides additional operations for results horse and race to interaction with mysql.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
 
     private static Logger logger = Logger.getLogger(HorseRaceDaoImpl.class);
 
+    /** Returns all horseRace instances with same race.
+     * @param instance - Race.
+     * @return List of HorseRace instances.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public List<HorseRace> findByRace(Race instance) throws PersistentException {
         String sql = "SELECT * FROM `horse_race` WHERE race_ID = ? ORDER BY `result_rank`";
@@ -61,6 +70,10 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
 
     }
 
+    /** Returns all horseRace instances with same horse.
+     * @param instance - Some horse.
+     * @return List of HorseRace instances.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public List<HorseRace> getHorseRacePerHorse(Horse instance) throws PersistentException {
         String sql = "SELECT * FROM `horse_race` WHERE horse_ID = ?";
@@ -103,6 +116,9 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
         }
     }
 
+    /** Returns all possible instances of horseRaces.
+     * @return List of HorseRace instances.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public List<HorseRace> getAllHorseRaces() throws PersistentException {
         String sql = "SELECT * FROM `horse_race`";
@@ -271,6 +287,11 @@ public class HorseRaceDaoImpl extends BaseDaoImpl implements HorseRaceDao {
         }
     }
 
+    /** Returns horseRace instance with same race and same horse.
+     * @param horseId - Horse instance id.
+     * @param raceId - Race instance id.
+     * @return horseRace instance.
+     * @throws PersistentException - if DBMS can't successful complete this operation. */
     @Override
     public HorseRace findByRaceAndHorse(Integer horseId, Integer raceId) throws PersistentException {
         String sql = "SELECT * FROM `horse_race` WHERE (`horse_ID` = ? AND `race_ID` = ?)";
