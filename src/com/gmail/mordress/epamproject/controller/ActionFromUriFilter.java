@@ -15,10 +15,16 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Processes requested page and forwards to appropriate servlet.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class ActionFromUriFilter implements Filter {
 
     private static Logger logger = Logger.getLogger(ActionFromUriFilter.class);
 
+    /** Contains pairs URI-action.class */
     private static Map<String, Class<? extends Action>> actions = new ConcurrentHashMap<>();
 
     static {
@@ -53,6 +59,12 @@ public class ActionFromUriFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {}
 
+    /** Processes requested page and forwards to appropriate servlet.
+     * @param request servlet request.
+     * @param response servlet response.
+     * @param chain servlet filter chain
+     * @throws IOException - if process requested URI throws this exception.
+     * @throws ServletException - if servlet can not do this operation correctly. */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         if (request instanceof HttpServletRequest) {

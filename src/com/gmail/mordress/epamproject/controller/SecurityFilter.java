@@ -13,6 +13,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Set;
 
+/**
+ * Checks user's rights to forward him to appropriate servlet/jsp.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class SecurityFilter implements Filter {
 
     private static Logger logger = Logger.getLogger(SecurityFilter.class);
@@ -20,6 +25,12 @@ public class SecurityFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {}
 
+    /** Checks user's rights to forward him to appropriate servlet/jsp.
+     * @param request servlet request.
+     * @param response servlet response.
+     * @param chain servlet filter chain
+     * @throws IOException - if process requested URI throws this exception.
+     * @throws ServletException - if servlet can not do this operation correctly. */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         if (request instanceof HttpServletRequest && response instanceof HttpServletResponse) {

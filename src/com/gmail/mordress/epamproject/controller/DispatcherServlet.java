@@ -15,10 +15,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.TimeZone;
 
+/**
+ * Processes all requested pages and forwards to appropriate servlet.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class DispatcherServlet extends HttpServlet {
 
     private static Logger logger = Logger.getLogger(DispatcherServlet.class);
 
+    /** Initializes logger and set locale timezone.
+     * @throws ServletException - if servlet can not process this request. */
     @Override
     public void init() throws ServletException {
         Logger root = Logger.getRootLogger();
@@ -39,6 +46,11 @@ public class DispatcherServlet extends HttpServlet {
         process(req, resp);
     }
 
+    /** Processes requsted URI, and redirect to appropriate jsp.
+     * @param request Http servlet request.
+     * @param response Http servlet response.
+     * @throws IOException - if process requested URI throws this exception.
+     * @throws ServletException - if servlet can not do this operation correctly. */
     private void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Action action = (Action)request.getAttribute("action");
         try {

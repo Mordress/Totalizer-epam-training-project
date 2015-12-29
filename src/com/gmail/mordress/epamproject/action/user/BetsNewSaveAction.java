@@ -59,9 +59,6 @@ public class BetsNewSaveAction extends UserAction {
             logger.error("User " + currentUser.getLogin() + " can't create new bet");
             forward.getAttributes().put("message", "Не удалось создать ставку");
         }
-
         return forward;
     }
-
-
 }

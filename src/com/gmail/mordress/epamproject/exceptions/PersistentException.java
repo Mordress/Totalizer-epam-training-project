@@ -1,5 +1,10 @@
 package com.gmail.mordress.epamproject.exceptions;
 
+/**
+ * Exception, throwed if database can not execute request.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public class PersistentException extends Exception {
 
     public PersistentException() {

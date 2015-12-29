@@ -9,13 +9,18 @@ import com.gmail.mordress.epamproject.exceptions.PersistentException;
 import org.apache.log4j.Logger;
 import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListSet;
-
+/**
+ * Contains realisation connection pool to database, for optimize perfomance.
+ * @author Alexey Kardychko
+ * @version 1.0
+ */
 public final class ConnectionPool {
 
     private static ConnectionPool instance = new ConnectionPool();
 
     private static Logger logger = Logger.getLogger(ConnectionPool.class);
 
+    /** JDBC driver for database*/
     private String driverClass;
 
     private String dbURL;
